@@ -1,0 +1,3179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t;try{t=localStorage.getItem("dcs-theme")}catch(e){}if(t==="light")document.documentElement.setAttribute("data-theme","light")})()</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DCS Complete Component Library</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Diaz Creative Studio — Warm Dark Design System Component Library. Fully interactive workshop, maker, and CNC specimens.">
+  <meta name="author" content="Diaz Creative Studio">
+  
+  <link rel="stylesheet" href="css/dcs-core.css?v=1789999999">
+  <link rel="stylesheet" href="css/dcs-components.css?v=1789999999">
+  <link rel="stylesheet" href="css/dcs-specimen.css?v=1789999999">
+  <script src="js/dcs-core.js?v=1789999999" defer></script>
+  <script src="js/dcs-accordion.js?v=1789999999" defer></script>
+  <script src="js/dcs-tabs.js?v=1789999999" defer></script>
+  <script src="js/dcs-toasts.js?v=1789999999" defer></script>
+  <script src="js/dcs-code.js?v=1789999999" defer></script>
+  <script src="js/dcs-toggles.js?v=1789999999" defer></script>
+  <script src="js/dcs-checkboxes-v1.js?v=1789999999" defer></script>
+  <script src="js/dcs-palette.js?v=1789999999" defer></script>
+  <script src="js/dcs-modal.js?v=1789999999" defer></script>
+  <script src="js/dcs-breadcrumbs.js?v=1789999999" defer></script>
+  <script src="js/dcs-alerts.js?v=1789999999" defer></script>
+  <script src="js/dcs-popover.js?v=1789999999" defer></script>
+  <script src="js/dcs-slider.js?v=1789999999" defer></script>
+  <script src="js/dcs-pagination.js?v=1789999999" defer></script>
+  <script src="js/dcs-tables.js?v=1789999999" defer></script>
+  <script src="js/dcs-buttons.js?v=1789999999" defer></script>
+  <script src="js/dcs-cards.js?v=1789999999" defer></script>
+  <script src="js/dcs-badges.js?v=1789999999" defer></script>
+  <script src="js/dcs-inputs.js?v=1789999999" defer></script>
+  <script src="js/dcs-progress.js?v=1789999999" defer></script>
+  <script src="js/dcs-header.js?v=1789999999" defer></script>
+  <script src="js/dcs-empty.js?v=1789999999" defer></script>
+  <script src="js/dcs-kpi.js?v=1789999999" defer></script>
+  <script src="js/dcs-fab.js?v=1789999999" defer></script>
+  <script src="js/dcs-dropdown.js?v=1789999999" defer></script>
+  <script src="js/dcs-chips.js?v=1789999999" defer></script>
+  <script src="js/dcs-context-menu.js?v=1789999999" defer></script>
+  <script src="js/dcs-stepper.js?v=1789999999" defer></script>
+  <script src="js/dcs-drawer.js?v=1789999999" defer></script>
+  <script src="js/dcs-bottom-sheet.js?v=1789999999" defer></script>
+  <script src="js/dcs-dropzone.js?v=1789999999" defer></script>
+  <script src="js/dcs-segmented-control.js?v=1789999999" defer></script>
+  <script src="js/dcs-combobox.js?v=1789999999" defer></script>
+  <script src="js/dcs-scrollspy.js?v=1789999999" defer></script>
+  <script src="js/dcs-image-compare.js?v=1789999999" defer></script>
+  <script src="js/dcs-split-pane.js?v=1789999999" defer></script>
+  <script src="js/dcs-search.js?v=1789999999" defer></script>
+  <script src="js/dcs-sticky-bar.js?v=1789999999" defer></script>
+  <script src="js/dcs-carousel.js?v=1789999999" defer></script>
+</head>
+<body>
+
+  <!-- SKIP LINK — first focusable element; press Tab on page load to reveal -->
+  <a href="#main-content" class="dcs-skip-link">Skip to main content</a>
+
+  <!-- TOAST CONTAINER (7. TOAST NOTIFICATIONS) -->
+  <div class="toast-container" id="toast-container"></div>
+
+
+
+
+
+  <!-- CONTEXT MENU CONTAINER (19. CONTEXT MENU) -->
+  <div class="context-menu-floating" data-context-menu>
+    <div class="context-menu-item" data-context-action="Edit Job Profile">
+      <div class="context-menu-item-icon-wrapper">
+        <svg class="context-menu-icon" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+        <span>Edit Job Profile</span>
+      </div>
+      <span class="context-menu-shortcut">E</span>
+    </div>
+    <div class="context-menu-item" data-context-action="Duplicate File">
+      <div class="context-menu-item-icon-wrapper">
+        <svg class="context-menu-icon" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        <span>Duplicate File</span>
+      </div>
+      <span class="context-menu-shortcut">⌘D</span>
+    </div>
+    
+    <!-- SUBMENU NESTED CONTAINER -->
+    <div class="context-menu-item">
+      <div class="context-menu-item-icon-wrapper">
+        <svg class="context-menu-icon" viewBox="0 0 24 24"><path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+        <span>Export G-Code</span>
+      </div>
+      <span class="context-menu-submenu-indicator">▶</span>
+      
+      <div class="context-submenu-panel">
+        <div class="context-menu-item" data-context-action="Export (Mach3/4)">
+          <span>.gcode (Mach3)</span>
+        </div>
+        <div class="context-menu-item" data-context-action="Export (Grbl)">
+          <span>.nc (Grbl)</span>
+        </div>
+        <div class="context-menu-item" data-context-action="Export (LinuxCNC)">
+          <span>.tap (LinuxCNC)</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="divider-subtle" style="margin: var(--space-xs) 0;"></div>
+    <div class="context-menu-item" data-context-action="Archive File">
+      <div class="context-menu-item-icon-wrapper">
+        <svg class="context-menu-icon" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-3h4v3h3.5L12 17.5zM5.12 5l.82-1h10.06l.82 1H5.12z"/></svg>
+        <span>Archive File</span>
+      </div>
+    </div>
+    <div class="context-menu-item context-menu-item-danger" data-context-action="Delete File">
+      <div class="context-menu-item-icon-wrapper">
+        <svg class="context-menu-icon" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+        <span>Delete File</span>
+      </div>
+      <span class="context-menu-shortcut">⌥⌫</span>
+    </div>
+  </div>
+
+
+  <!-- Sticky Navigation -->
+  <nav class="sticky-nav">
+    <div class="nav-container nav-container--full">
+      <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">☰</button>
+      <a href="component-library.html" class="nav-logo">
+        <svg class="nav-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="currentColor" aria-label="Diaz Creative Studio">
+          <g><g ><g><g><path d="M565.8,322.4c-.4,1.1-.9,2.1-1.3,3.1,4.1-1.3,8-4.5,11.3-10.4-3.4,3.6-6.8,6-10,7.3Z"/><path d="M654.1,387.4c-2.7-8.2-2.7-14.9,6.3-17.4,21.6-6,38.6,13,52.7,27,6.1-34.9-3.4-67-31.8-88.9,33.9-24.8,22.3-62,12.4-96,.7-10.8-1.4-20.3-14.3-15-.4-27.5-19.8-52.3-36-17-8.4-15.6-20.8-102.8-42.3-53.4-4.5,5.7-4.3,24.9-14.5,20.7-13.2-11.8-36.8-90.2-57.6-66-3.9,10.8,1.4,24.9,2.9,35.5,2,10-1.3,12.9-7.4,19.7-10.7,2.2-16.2-12-23.1-17.9-12.2-9.4-45.4-59.9-58.7-47.8-14.9,16.5.4,37.8,7.7,54.3,5.4,37.2-74.9-76.7-84.2-34.5-4.2,19.7,36.2,39.3,14.7,52.6-60.7-44.2-81.3-38.7-61,38.2,18.9,34.5,47.6,64.7,87,73.7-106.8,94.4-54.3,163.6-204.9,240.5,16.6,2.7,32.8,2.6,49.6,1.2-19.9,10.1-40.5,18.7-59.6,30.2,54.2,17.6,79.4,9.9,125.6-20.1-5.2,14.4-7.3,27.6-6.7,42.9.8.3,1.6.7,2.4,1,6.8-6.4,13.7-12.8,20.9-18.8-4.2,15.7-5.2,30-2.2,46.1.7,0,1.4,0,2,0,7.3-9.6,15-18.6,23.6-26.9,5.2,17,13,31.7,23.2,46.2,11.5-14.7,23.6-28.9,36.3-42.7-10,26.8-21,53.6-15,82.6,92.2-60.3,93.3-70.1,93.7-127.7,9.3,12.6,32.7,47.3,25.3,68.1,11.8-18.3,16.6-35,16-56.6,0-.3,0-.4,0-.4,0,0,21.6,22.4,17.1,57.2,9.2-11.8,15.6-24,20.2-38.2,27.6,33.7,71,16,101.7-4.5,19.8-7,42.2-18.7,41.6-43.8,1.6-47.9-32.8-74.9-63.8-104.1ZM582.6,321.6c0-1.1.2-2.1.4-3.2-1.6.9-3.3,1.9-5,2.5.8-2.8,1.5-6.3.8-9.3-4.5,31.3-39.3,24.3-44.1-2.8,0,0,.1,0,.2,0,1.1,1.6,2.3,3.1,3.6,4.6-1.5-4.9-.2-9,.7-11.6.6-1.6,3.3-3.4,6.3-5-4.3.9-8.6,2.6-12.7,4.5-10.6,0-21.1,0-31.7.5,6-3,12.1-5.8,18.3-8.3.1,0,.2,0,.4,0,0,0,0,0,0,0,12.3-3.9,24.5-6.3,37.4-7.4-.2-2.1-3-3.3-4.3-5,.2-.3.3-.5.5-.8,5.2,2.6,10.4,5.3,15.6,7.8.4-.7.9-.3,1.6-.2,5.1,6.1,9.7,12.5,14.3,19,.4-.2.7-.3,1.1-.5-.9-4.1-1.7-8.2-2.7-12.3,10.9,6.8,8.3,20.2-.7,27.4ZM643.1,385.3h0s0,0,0,0c0,0,0,0,0,0Z"/></g><path d="M404.5,722.9c-6.4-130-74.2-141.3-214.7-156l-5.6,5.3c25.8,32,38.6,74.3,38.6,126.8,0,53.9,8.5,110.4-38.6,154.1v1.9l1.9,1.7c118.7-9.7,209.1-38.3,218.3-133.8ZM294.4,790.8c-15.1,2.8-23.2-38.2-22-88.2,2.3-15.4.7-74.3,20-73.4,35.8-6.5,47.3,29.5,53.4,93.7h0c1.4,33.7-20.3,75.3-51.5,67.9Z"/><path d="M377.7,864.5c18.7,9.1,38.4-11.5,30.5-30.2-20-36.2-64.1,9.9-30.5,30.2Z"/><path d="M598.1,784.7h0s-3.9-5.6-3.9-5.6h-1.7c-42.7,72.2-137.9,50.5-130.4-47.6-1.7-79.8,75-89.6,126.8-36.7,8.4,8.5,12.2-70.6,7.2-104.6h-1.9c-40.1,35.6-39.1,10-77,10.9-34.6,9.9-64.3,30.4-86.2,55.1-17.2,11.2-25.2,101.3-11.1,146.8,55.4,104.2,84.3,81.8,167.1,62.5,13,3.9,11.3-62.5,11.1-80.9Z"/><path d="M606,900c18.7,9.1,38.4-11.5,30.5-30.2-20-36.2-64.1,9.9-30.5,30.2Z"/><path d="M800,726.9h0c-1-48.9-117.1-82.7-119.3-93.7,5.8-49,73.1-35.5,104.6,0,6-24.5,12.2-55.7,7.2-84.3-62.8,26.3-40.7,13.5-87.9,7.2-92.1,13.5-131.2,142.9-22.2,154.1,36.7,2.1,55.1,8.9,55.1,20.3,1.5,38.5-8.4,69.9-29.2,67.9-36.2,1.9-34.6-30.4-3.6-55.1v-3.6c-55.5-.1-96.2,1.8-112.1,5.5,0,7.7,6.8,17.5,20.3,29.2,30.5,56,58.9,83.2,89.8,82.6,56.3-10.2,103-87.4,97.3-130.2Z"/><path d="M817.5,827.3c-12.4-32.3-56.8-8.4-40,20.1,14.9,21.6,46.3,4.5,40-20.1Z"/></g></g></g></svg>
+        <span class="nav-logo-status">COMPONENT LIBRARY</span>
+      </a>
+      <div class="nav-links">
+        <a href="brand-guide.html">Brand Guide</a>
+        <a href="demo/blog.html">Blog</a>
+        <a href="component-library.html" class="active">Components</a>
+        <a href="demo/coming-soon.html">Coming Soon</a>
+      </div>
+      <div data-dcs-component="theme"></div>
+    </div>
+  </nav>
+
+  <button class="fab-button fab-back-to-top" aria-label="Back to top" style="position: fixed !important; bottom: var(--space-lg); right: var(--space-lg); width: 48px; height: 48px; z-index: 900; opacity: 1; pointer-events: auto;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <div class="app-container">
+    
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="nav-sidebar" id="sidebar" data-dcs-component="scrollspy">
+      <h3 class="sidebar-section-title">SPECIMEN LIST</h3>
+      <nav>
+        <ul class="sidebar-menu">
+
+          <!-- ===== FORMS & INPUT ===== -->
+          <li class="sidebar-section-header">Forms &amp; Input</li>
+          <li class="sidebar-item active" data-section="buttons"><a href="#buttons"><span class="sidebar-num"></span> Buttons</a></li>
+          <li class="sidebar-item" data-section="toggles"><a href="#toggles"><span class="sidebar-num"></span> Toggle Switches</a></li>
+          <li class="sidebar-item" data-section="checkboxes"><a href="#checkboxes"><span class="sidebar-num"></span> Checkboxes</a></li>
+          <li class="sidebar-item" data-section="fab-sec"><a href="#fab-sec"><span class="sidebar-num"></span> Floating Action Button</a></li>
+          <li class="sidebar-item" data-section="inputs"><a href="#inputs"><span class="sidebar-num"></span> Inputs &amp; Forms</a></li>
+          <li class="sidebar-item" data-section="dropdown-sec"><a href="#dropdown-sec"><span class="sidebar-num"></span> Dropdown Select</a></li>
+          <li class="sidebar-item" data-section="combo-sec"><a href="#combo-sec"><span class="sidebar-num"></span> Combo Box</a></li>
+          <li class="sidebar-item" data-section="search-sec"><a href="#search-sec"><span class="sidebar-num"></span> Search Input</a></li>
+          <li class="sidebar-item" data-section="chips-sec"><a href="#chips-sec"><span class="sidebar-num"></span> Chips &amp; Tags</a></li>
+          <li class="sidebar-item" data-section="slider-sec"><a href="#slider-sec"><span class="sidebar-num"></span> Slider / Range</a></li>
+          <li class="sidebar-item" data-section="dropzone-sec"><a href="#dropzone-sec"><span class="sidebar-num"></span> File Drop Zone</a></li>
+          <li class="sidebar-item" data-section="segment-sec"><a href="#segment-sec"><span class="sidebar-num"></span> Segmented Control</a></li>
+
+          <!-- ===== NAVIGATION ===== -->
+          <li class="sidebar-section-header">Navigation</li>
+          <li class="sidebar-item" data-section="tabs"><a href="#tabs"><span class="sidebar-num"></span> Tabs</a></li>
+          <li class="sidebar-item" data-section="breadcrumbs-sec"><a href="#breadcrumbs-sec"><span class="sidebar-num"></span> Breadcrumbs</a></li>
+          <li class="sidebar-item" data-section="pagination-sec"><a href="#pagination-sec"><span class="sidebar-num"></span> Pagination</a></li>
+          <li class="sidebar-item" data-section="stepper-sec"><a href="#stepper-sec"><span class="sidebar-num"></span> Stepper / Wizard</a></li>
+          <li class="sidebar-item" data-section="command-palette"><a href="#command-palette"><span class="sidebar-num"></span> Command Palette</a></li>
+          <li class="sidebar-item" data-section="scrollspy-sec"><a href="#scrollspy-sec"><span class="sidebar-num"></span> Scroll Spy</a></li>
+          <li class="sidebar-item" data-section="header-sec"><a href="#header-sec"><span class="sidebar-num"></span> Header / Navigation</a></li>
+          <li class="sidebar-item" data-section="skiplink-sec"><a href="#skiplink-sec"><span class="sidebar-num"></span> Skip Link</a></li>
+          <li class="sidebar-item" data-section="theme-sec"><a href="#theme-sec"><span class="sidebar-num"></span> Theme Toggle</a></li>
+
+          <!-- ===== DATA DISPLAY ===== -->
+          <li class="sidebar-section-header">Data Display</li>
+          <li class="sidebar-item" data-section="cards"><a href="#cards"><span class="sidebar-num"></span> Cards</a></li>
+          <li class="sidebar-item" data-section="tables"><a href="#tables"><span class="sidebar-num"></span> Tables</a></li>
+          <li class="sidebar-item" data-section="badges"><a href="#badges"><span class="sidebar-num"></span> Badges &amp; Status</a></li>
+          <li class="sidebar-item" data-section="kpi-sec"><a href="#kpi-sec"><span class="sidebar-num"></span> KPI / Stat Cards</a></li>
+          <li class="sidebar-item" data-section="gauge-sec"><a href="#gauge-sec"><span class="sidebar-num"></span> Meter / Gauge</a></li>
+          <li class="sidebar-item" data-section="kvlist-sec"><a href="#kvlist-sec"><span class="sidebar-num"></span> Key-Value List</a></li>
+          <li class="sidebar-item" data-section="code"><a href="#code"><span class="sidebar-num"></span> Code Blocks</a></li>
+          <li class="sidebar-item" data-section="timeline-sec"><a href="#timeline-sec"><span class="sidebar-num"></span> Timeline / Activity</a></li>
+          <li class="sidebar-item" data-section="avatars"><a href="#avatars"><span class="sidebar-num"></span> Avatars</a></li>
+          <li class="sidebar-item" data-section="testimonial-sec"><a href="#testimonial-sec"><span class="sidebar-num"></span> Rating &amp; Testimonial</a></li>
+          <li class="sidebar-item" data-section="carousel-sec"><a href="#carousel-sec"><span class="sidebar-num"></span> Carousel</a></li>
+
+          <!-- ===== FEEDBACK ===== -->
+          <li class="sidebar-section-header">Feedback</li>
+          <li class="sidebar-item" data-section="toasts"><a href="#toasts"><span class="sidebar-num"></span> Toasts</a></li>
+          <li class="sidebar-item" data-section="alert-sec"><a href="#alert-sec"><span class="sidebar-num"></span> Alert Banner</a></li>
+          <li class="sidebar-item" data-section="modal-sec"><a href="#modal-sec"><span class="sidebar-num"></span> Modal / Dialog</a></li>
+          <li class="sidebar-item" data-section="loading"><a href="#loading"><span class="sidebar-num"></span> Progress &amp; Loading</a></li>
+          <li class="sidebar-item" data-section="empty-sec"><a href="#empty-sec"><span class="sidebar-num"></span> Empty State</a></li>
+
+          <!-- ===== OVERLAYS ===== -->
+          <li class="sidebar-section-header">Overlays</li>
+          <li class="sidebar-item" data-section="tooltips"><a href="#tooltips"><span class="sidebar-num"></span> Tooltips</a></li>
+          <li class="sidebar-item" data-section="popover-sec"><a href="#popover-sec"><span class="sidebar-num"></span> Popover</a></li>
+          <li class="sidebar-item" data-section="context-sec"><a href="#context-sec"><span class="sidebar-num"></span> Context Menu</a></li>
+          <li class="sidebar-item" data-section="drawer-sec"><a href="#drawer-sec"><span class="sidebar-num"></span> Drawer Panel</a></li>
+          <li class="sidebar-item" data-section="sheet-sec"><a href="#sheet-sec"><span class="sidebar-num"></span> Bottom Sheet</a></li>
+          <li class="sidebar-item" data-section="accordion"><a href="#accordion"><span class="sidebar-num"></span> Accordion</a></li>
+
+          <!-- ===== LAYOUT ===== -->
+          <li class="sidebar-section-header">Layout</li>
+          <li class="sidebar-item" data-section="container-sec"><a href="#container-sec"><span class="sidebar-num"></span> Container</a></li>
+          <li class="sidebar-item" data-section="dividers"><a href="#dividers"><span class="sidebar-num"></span> Divider</a></li>
+          <li class="sidebar-item" data-section="grid-sec"><a href="#grid-sec"><span class="sidebar-num"></span> Grid</a></li>
+          <li class="sidebar-item" data-section="stack-sec"><a href="#stack-sec"><span class="sidebar-num"></span> Stack</a></li>
+          <li class="sidebar-item" data-section="cluster-sec"><a href="#cluster-sec"><span class="sidebar-num"></span> Inline Cluster</a></li>
+          <li class="sidebar-item" data-section="toolbar-sec"><a href="#toolbar-sec"><span class="sidebar-num"></span> Toolbar</a></li>
+          <li class="sidebar-item" data-section="panel-sec"><a href="#panel-sec"><span class="sidebar-num"></span> Panel</a></li>
+          <li class="sidebar-item" data-section="splitpane-sec"><a href="#splitpane-sec"><span class="sidebar-num"></span> Split Pane</a></li>
+          <li class="sidebar-item" data-section="stickybar-sec"><a href="#stickybar-sec"><span class="sidebar-num"></span> Sticky Action Bar</a></li>
+          <li class="sidebar-item" data-section="compare-sec"><a href="#compare-sec"><span class="sidebar-num"></span> Image Comparison</a></li>
+
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- CONTENT WRAPPER -->
+    <main class="main-content" id="main-content">
+      
+      <!-- HERO BANNER -->
+      <div class="brand-intro-banner">
+        <h2 class="brand-display-title">Diaz Creative Studio</h2>
+        <div class="brand-display-subtitle">Warm Dark Design System — Interactive Specimens</div>
+        <p style="max-width: 700px; font-size: var(--type-sm); margin-bottom: var(--space-sm);">
+          Production-grade system layout crafted for fabrication, workshop automation, and CNC operations. 
+          All components are wired dynamically. Test state changes, calculations, and simulations in real time.
+        </p>
+        <p style="max-width: 700px; font-size: var(--type-xs); color: var(--text-muted); margin-bottom: var(--space-md);">
+          Built on the <a href="brand-guide.html" style="color: var(--accent-amber); text-decoration: none; border-bottom: 1px solid rgba(232,153,43,0.2);">DCS Warm Dark Design System</a> — 
+          <a href="brand-guide.html#brand-philosophy" style="color: var(--text-secondary); text-decoration: none;">philosophy</a> · 
+          <a href="brand-guide.html#typography" style="color: var(--text-secondary); text-decoration: none;">typography</a> · 
+          <a href="brand-guide.html#principles" style="color: var(--text-secondary); text-decoration: none;">principles</a>
+        </p>
+      </div>
+
+      
+<!-- 1. BUTTONS -->
+      <section id="buttons" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Buttons</h2>
+          </div>
+          <p class="section-description">Interactive action triggers matching primary, secondary, and ghost themes. Includes disabled and sizing matrices. Action items trigger system notices.</p>
+        </div>
+        <div class="demo-area">
+          <div style="display: flex; flex-direction: column; gap: var(--space-xl);" data-dcs-component="buttons">
+            <!-- Large buttons -->
+            <div>
+              <h4 style="font-size: var(--type-sm); color: var(--text-muted); margin-bottom: var(--space-sm); text-transform: uppercase; font-family: var(--font-mono);">Large Buttons (height: 48px)</h4>
+              <div class="flex-wrap-gap">
+                <button class="btn btn-lg btn-primary">Start Job</button>
+                <button class="btn btn-lg btn-secondary">Export G-Code</button>
+                <button class="btn btn-lg btn-ghost">Cancel</button>
+                <button class="btn btn-lg btn-primary" disabled>Locked</button>
+              </div>
+            </div>
+            <!-- Medium buttons -->
+            <div>
+              <h4 style="font-size: var(--type-sm); color: var(--text-muted); margin-bottom: var(--space-sm); text-transform: uppercase; font-family: var(--font-mono);">Medium Buttons (height: 40px)</h4>
+              <div class="flex-wrap-gap">
+                <button class="btn btn-md btn-primary">Start Job</button>
+                <button class="btn btn-md btn-secondary">Export G-Code</button>
+                <button class="btn btn-md btn-ghost">Cancel</button>
+                <button class="btn btn-md btn-secondary" disabled>Lock State</button>
+              </div>
+            </div>
+            <!-- Small buttons -->
+            <div>
+              <h4 style="font-size: var(--type-sm); color: var(--text-muted); margin-bottom: var(--space-sm); text-transform: uppercase; font-family: var(--font-mono);">Small Buttons (height: 32px)</h4>
+              <div class="flex-wrap-gap">
+                <button class="btn btn-sm btn-primary">Start Job</button>
+                <button class="btn btn-sm btn-secondary">Export G-Code</button>
+                <button class="btn btn-sm btn-ghost">Cancel</button>
+                <button class="btn btn-sm btn-ghost" disabled>Ignored</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- 11. TOGGLE SWITCHES -->
+      <section id="toggles" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Toggle Switches</h2>
+          </div>
+          <p class="section-description">Custom track and sliding thumb checkbox inputs. Toggle states trigger instant notices.</p>
+        </div>
+        <div class="demo-area">
+          <div style="display: flex; flex-direction: column; gap: var(--space-sm);" data-dcs-component="toggles">
+            
+            <label class="toggle-switch-label">
+              <span class="toggle-switch-text">Spindle Enable (Laser Homing)</span>
+              <input type="checkbox" class="toggle-switch-input" checked>
+              <div class="toggle-switch-track">
+                <div class="toggle-switch-thumb"></div>
+              </div>
+            </label>
+
+            <label class="toggle-switch-label">
+              <span class="toggle-switch-text">Coolant Mist (Aux Pump)</span>
+              <input type="checkbox" class="toggle-switch-input">
+              <div class="toggle-switch-track">
+                <div class="toggle-switch-thumb"></div>
+              </div>
+            </label>
+
+            <label class="toggle-switch-label disabled">
+              <span class="toggle-switch-text">Soft Limits Protection (Locked)</span>
+              <input type="checkbox" class="toggle-switch-input" disabled checked>
+              <div class="toggle-switch-track">
+                <div class="toggle-switch-thumb"></div>
+              </div>
+            </label>
+
+          </div>
+        </div>
+      </section>
+
+<!-- 11a. CHECKBOXES -->
+      <section id="checkboxes" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Checkboxes</h2>
+          </div>
+          <p class="section-description">Standard checkbox inputs with custom box styling, indeterminate state, and disabled variants. Ideal for multi-select lists, settings panels, and filter groups.</p>
+        </div>
+        <div class="demo-area">
+          <div style="display: flex; flex-direction: column; gap: var(--space-md);" data-dcs-component="checkboxes">
+
+            <!-- Basic states -->
+            <div class="checkbox-group">
+              <span class="checkbox-group-legend">Single Checkboxes</span>
+              <label class="checkbox-label block">
+                <input type="checkbox" class="checkbox-input" checked>
+                <span class="checkbox-box"></span>
+                Spindle Calibrated
+              </label>
+              <label class="checkbox-label block">
+                <input type="checkbox" class="checkbox-input">
+                <span class="checkbox-box"></span>
+                Coolant Primed
+              </label>
+              <label class="checkbox-label block disabled">
+                <input type="checkbox" class="checkbox-input" disabled>
+                <span class="checkbox-box"></span>
+                Axis Locked (Unavailable)
+              </label>
+              <label class="checkbox-label block disabled">
+                <input type="checkbox" class="checkbox-input" disabled checked>
+                <span class="checkbox-box"></span>
+                Firmware Verified (Locked)
+              </label>
+            </div>
+
+            <!-- Indeterminate -->
+            <div class="checkbox-group">
+              <span class="checkbox-group-legend">Indeterminate State</span>
+              <label class="checkbox-label block" id="parent-check">
+                <input type="checkbox" class="checkbox-input" id="parent-input">
+                <span class="checkbox-box"></span>
+                Select All Tool Paths
+              </label>
+              <div style="padding-left: calc(18px + var(--space-sm)); display: flex; flex-direction: column; gap: var(--space-xs);">
+                <label class="checkbox-label block">
+                  <input type="checkbox" class="checkbox-input" checked>
+                  <span class="checkbox-box"></span>
+                  Roughing Pass (0.25in step-down)
+                </label>
+                <label class="checkbox-label block">
+                  <input type="checkbox" class="checkbox-input">
+                  <span class="checkbox-box"></span>
+                  Finishing Pass (0.005in step-over)
+                </label>
+                <label class="checkbox-label block">
+                  <input type="checkbox" class="checkbox-input" checked>
+                  <span class="checkbox-box"></span>
+                  Chamfer Edge Break
+                </label>
+              </div>
+            </div>
+
+            <!-- Multi-select group -->
+            <div class="checkbox-group">
+              <span class="checkbox-group-legend">Material Selection</span>
+              <label class="checkbox-label block">
+                <input type="checkbox" class="checkbox-input" checked>
+                <span class="checkbox-box"></span>
+                6061 Aluminum — 0.125in sheet
+              </label>
+              <label class="checkbox-label block">
+                <input type="checkbox" class="checkbox-input">
+                <span class="checkbox-box"></span>
+                304 Stainless — 0.063in sheet
+              </label>
+              <label class="checkbox-label block">
+                <input type="checkbox" class="checkbox-input" checked>
+                <span class="checkbox-box"></span>
+                Baltic Birch Ply — 0.5in sheet
+              </label>
+              <label class="checkbox-label block">
+                <input type="checkbox" class="checkbox-input">
+                <span class="checkbox-box"></span>
+                Black Acrylic — 0.25in sheet
+              </label>
+              <label class="checkbox-label block">
+                <input type="checkbox" class="checkbox-input">
+                <span class="checkbox-box"></span>
+                C360 Brass — 0.125in plate
+              </label>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+<!-- 38. FLOATING ACTION BUTTON -->
+      <section id="fab-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Floating Action Button</h2>
+          </div>
+          <p class="section-description">High-visibility floating action buttons. Includes a primary CTA with pulse animation, an icon-only variant, and a back-to-top button that appears after scrolling.</p>
+        </div>
+        <div class="demo-area">
+          <div class="fab-demo-container" data-dcs-component="fab">
+            <div class="fab-demo-placeholder">
+              <p>[ Simulated Page Area ]</p>
+              <p style="color: var(--text-muted); margin-top: var(--space-sm);">The action buttons below are positioned absolutely inside this window, representing how they stick to the screen edges on page layouts.</p>
+            </div>
+            
+            <button class="fab-button fab-button-icon fab-action" data-toast-msg="Creating new project entry..." data-toast-type="success" aria-label="Add new item" title="Quick Add">
+              <span>+</span>
+            </button>
+
+            <button class="fab-button fab-back-to-top" aria-label="Back to top" style="bottom: calc(var(--space-lg) + 60px); right: var(--space-lg); width: 48px; height: 48px; opacity: 1; pointer-events: auto;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+
+            <button class="fab-button fab-button-main fab-main" data-toast-msg="Directing to project builder..." data-toast-type="success">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <span>Start a Project</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+<!-- 3. INPUTS & FORMS -->
+      <section id="inputs" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Inputs & Forms</h2>
+          </div>
+          <p class="section-description">Interactive forms and inputs. Includes a real-time speeds & feeds calculator designed specifically for machining parameters.</p>
+        </div>
+        <div class="demo-area">
+          <div class="grid-2-col" data-dcs-component="inputs">
+            
+            <!-- Standard Inputs -->
+            <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+              <h4 style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase;">Standard Form Inputs</h4>
+              
+              <div class="form-group">
+                <label class="form-label">Job Name</label>
+                <input class="form-input" type="text" value="birch_cabinet_face_v3.nc" placeholder="Enter NC filename...">
+                <span class="form-helper">Specifies target G-code filename. Do not include spaces.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Machining Notes</label>
+                <textarea class="form-input" rows="3" placeholder="Enter notes (e.g. clamp offsets, vacuum zones)..."></textarea>
+                <span class="form-helper">Optional notes readable by CNC operator.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Controller IP (Static)</label>
+                <input class="form-input" type="text" value="192.168.1.142" disabled>
+                <span class="form-helper">Hardware device path locked by network admin.</span>
+              </div>
+            </div>
+
+            <!-- Dynamic Calculator Form -->
+            <div class="calc-container">
+              <h4 style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--accent-primary); text-transform: uppercase; margin-bottom: var(--space-md);">Live Speeds & Feeds Calculator</h4>
+              
+              <div class="calc-grid">
+                <div class="form-group">
+                  <label class="form-label">Spindle RPM</label>
+                  <input class="form-input tabular-nums" type="number" data-calc-input="rpm" value="18000" min="6000" max="24000" step="500">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Flute Count</label>
+                  <input class="form-input tabular-nums" type="number" data-calc-input="flutes" value="2" min="1" max="4" step="1">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Chipload (in)</label>
+                  <input class="form-input tabular-nums" type="number" data-calc-input="chipload" value="0.003" min="0.001" max="0.015" step="0.001">
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                <div class="calc-result-box">
+                  <span style="font-size: var(--type-sm); font-weight: 500;">Calculated Feed Rate:</span>
+                  <span class="calc-result-val" data-calc-output>108 <span style="font-size: var(--type-sm); color: var(--text-secondary);">IPM</span></span>
+                </div>
+                <span class="form-helper" style="text-align: right;">Formula: RPM × Flutes × Chipload = Inches Per Minute.</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+<!-- 17. DROPDOWN SELECT -->
+      <section id="dropdown-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Dropdown Select</h2>
+          </div>
+          <p class="section-description">Custom floating select input. Keyboard interactive (Arrow keys, Enter, Escape) with customized active checkmarks.</p>
+        </div>
+        <div class="demo-area" style="min-height: 280px;">
+          
+          <div class="dropdown-container" data-dropdown data-dcs-component="dropdown">
+            <label class="form-label" style="margin-bottom: var(--space-xs); display: block;">Select Target Workpiece Material</label>
+            <button class="dropdown-trigger" data-dropdown-trigger aria-haspopup="listbox" aria-expanded="false">
+              <span data-dropdown-label>Baltic Birch</span>
+              <svg style="fill: var(--text-secondary); width: 12px; height: 12px;" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            
+            <div class="dropdown-panel" data-dropdown-panel role="listbox">
+              <div class="dropdown-option selected" role="option" aria-selected="true" data-value="Baltic Birch" tabindex="0">
+                <span>Baltic Birch</span>
+                <svg class="dropdown-checkmark" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </div>
+              <div class="dropdown-option" role="option" aria-selected="false" data-value="6061 Aluminum" tabindex="-1">
+                <span>6061 Aluminum</span>
+                <svg class="dropdown-checkmark" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </div>
+              <div class="dropdown-option" role="option" aria-selected="false" data-value="Black Delrin" tabindex="-1">
+                <span>Black Delrin</span>
+                <svg class="dropdown-checkmark" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </div>
+              <div class="dropdown-option" role="option" aria-selected="false" data-value="Hard Maple" tabindex="-1">
+                <span>Hard Maple</span>
+                <svg class="dropdown-checkmark" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </div>
+              <div class="dropdown-option" role="option" aria-selected="false" data-value="Acrylic" tabindex="-1">
+                <span>Acrylic</span>
+                <svg class="dropdown-checkmark" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+<!-- 34. COMBO BOX -->
+      <section id="combo-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Combo Box</h2>
+          </div>
+          <p class="section-description">An inline text search combobox that dynamically filters selections as the user types. Supports mouse, keyboard shortcuts, and clear buttons.</p>
+        </div>
+        <div class="demo-area" style="min-height: 280px;">
+          <div class="combobox-container" data-dcs-component="combobox">
+            <label class="combobox-label">Select Tool</label>
+            <div class="combobox-input-wrapper">
+              <input type="text" class="combobox-input" placeholder="Type to filter tools..." autocomplete="off">
+              <div class="combobox-controls">
+                <button type="button" class="combobox-clear-btn" aria-label="Clear selection">×</button>
+                <span class="combobox-chevron">▼</span>
+              </div>
+            </div>
+            <div class="combobox-dropdown">
+              <div class="combobox-item" data-value="1/4in Flat End Mill">1/4in Flat End Mill</div>
+              <div class="combobox-item" data-value="1/4in Ball End Mill">1/4in Ball End Mill</div>
+              <div class="combobox-item" data-value="1/4in Spot Drill">1/4in Spot Drill</div>
+              <div class="combobox-item" data-value="1/8in Flat End Mill">1/8in Flat End Mill</div>
+              <div class="combobox-item" data-value="1/2in Indexable Mill">1/2in Indexable Mill</div>
+              <div class="combobox-item" data-value="3/8in Rougher">3/8in Rougher</div>
+            </div>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted); max-width: 450px; line-height: 1.5;">
+            <p><strong>Interactive Tips:</strong> Type "1/4" to filter for quarter-inch tools. Use Up/Down arrows to highlight, Enter to select, and Escape to close the dropdown list.</p>
+          </div>
+        </div>
+      </section>
+
+<!-- SEARCH INPUT -->
+      <section id="search-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Search Input</h2>
+          </div>
+          <p class="section-description">Search field with leading icon and a clear button that appears once text is entered. Three heights: large, medium (default), and small.</p>
+        </div>
+        <div class="demo-area">
+          <div class="dcs-search-group">
+
+            <!-- Large -->
+            <div class="dcs-search dcs-search-lg" data-dcs-component="search">
+              <span class="dcs-search-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </span>
+              <input type="text" class="dcs-search-input" placeholder="Search components..." autocomplete="off">
+              <button type="button" class="dcs-search-clear" aria-label="Clear search">&times;</button>
+            </div>
+
+            <!-- Medium (default) — pre-filled to show the clear button -->
+            <div class="dcs-search dcs-search-md" data-dcs-component="search">
+              <span class="dcs-search-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </span>
+              <input type="text" class="dcs-search-input" placeholder="Search components..." value="end mill" autocomplete="off">
+              <button type="button" class="dcs-search-clear" aria-label="Clear search">&times;</button>
+            </div>
+
+            <!-- Small -->
+            <div class="dcs-search dcs-search-sm" data-dcs-component="search">
+              <span class="dcs-search-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </span>
+              <input type="text" class="dcs-search-input" placeholder="Search..." autocomplete="off">
+              <button type="button" class="dcs-search-clear" aria-label="Clear search">&times;</button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+<!-- 18. CHIPS / TAGS -->
+      <section id="chips-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Chips / Tags</h2>
+          </div>
+          <p class="section-description">Interactive filtering tags. Type a name and press Enter inside input field to append new chips dynamically.</p>
+        </div>
+        <div class="demo-area">
+          <div class="chips-container" data-chips data-dcs-component="chips">
+            <div class="chip chip-accent">
+              <span>Baltic Birch</span>
+              <span class="chip-close">&times;</span>
+            </div>
+            <div class="chip">
+              <span>¼″ endmill</span>
+              <span class="chip-close">&times;</span>
+            </div>
+            <div class="chip">
+              <span>18K RPM</span>
+              <span class="chip-close">&times;</span>
+            </div>
+            <div class="chip">
+              <span>Pocket</span>
+              <span class="chip-close">&times;</span>
+            </div>
+            
+            <input type="text" class="chip-input" data-chip-input placeholder="+ Add a tag" autocomplete="off">
+          </div>
+        </div>
+      </section>
+
+<!-- =========================================================
+           26. SLIDER / RANGE INPUT
+           ========================================================= -->
+      <section id="slider-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Slider / Range Input</h2>
+          </div>
+          <p class="section-description">Linear range controls for CNC overrides: feed rate, spindle speed, jog increment. Real-time value feedback with amber/purple accent fills and a discrete notch selector.</p>
+        </div>
+        <div class="demo-area">
+
+          <!-- Feed Rate Override -->
+          <div class="slider-group" data-dcs-component="slider">
+            <div class="slider-label-row">
+              <span class="slider-label">Feed Rate Override</span>
+              <span class="slider-value-badge range-badge">100%</span>
+            </div>
+            <div class="slider-track-wrapper">
+              <div class="slider-track-fill range-fill amber" style="width:48%;"></div>
+              <input type="range" class="dcs-range range-slider"
+                     min="10" max="200" step="5" value="100">
+            </div>
+            <div class="slider-minmax-row"><span>10%</span><span>200%</span></div>
+          </div>
+
+          <!-- Spindle Speed Override -->
+          <div class="slider-group" data-dcs-component="slider">
+            <div class="slider-label-row">
+              <span class="slider-label">Spindle Speed Override</span>
+              <span class="slider-value-badge range-badge primary">100%</span>
+            </div>
+            <div class="slider-track-wrapper">
+              <div class="slider-track-fill range-fill purple" style="width:50%;"></div>
+              <input type="range" class="dcs-range range-slider purple-thumb"
+                     min="50" max="150" step="1" value="100">
+            </div>
+            <div class="slider-minmax-row"><span>50%</span><span>150%</span></div>
+            <div class="slider-current-label">Current: 100%</div>
+          </div>
+
+          <!-- Jog Increment — Discrete Notch Selector -->
+          <div class="slider-group" data-dcs-component="slider">
+            <div class="slider-label-row">
+              <span class="slider-label">Jog Increment</span>
+            </div>
+            <div class="jog-notch-row">
+              <div class="jog-notch-track"></div>
+              <div class="jog-notch-item jog-btn" data-jog="0.001&quot;">
+                <div class="jog-notch-dot"></div>
+                <span class="jog-notch-label">0.001"</span>
+              </div>
+              <div class="jog-notch-item jog-btn active" data-jog="0.010&quot;">
+                <div class="jog-notch-dot"></div>
+                <span class="jog-notch-label">0.010"</span>
+              </div>
+              <div class="jog-notch-item jog-btn" data-jog="0.100&quot;">
+                <div class="jog-notch-dot"></div>
+                <span class="jog-notch-label">0.100"</span>
+              </div>
+              <div class="jog-notch-item jog-btn" data-jog="1.000&quot;">
+                <div class="jog-notch-dot"></div>
+                <span class="jog-notch-label">1.000"</span>
+              </div>
+              <div class="jog-notch-item jog-btn" data-jog="Continuous">
+                <div class="jog-notch-dot"></div>
+                <span class="jog-notch-label">Continuous</span>
+              </div>
+            </div>
+            <div class="jog-active-display jog-display">Active: 0.010"</div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 23. FILE DROP ZONE -->
+      <section id="dropzone-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">File Drop Zone</h2>
+          </div>
+          <p class="section-description">Drag-and-drop upload area for G-code files, tool libraries, and firmware. Supports visual dragover state, file-selected confirmation, and rejection messaging.</p>
+        </div>
+        <div class="demo-area" data-dcs-component="dropzone">
+
+          <div class="drop-zone"
+               aria-label="G-code file upload zone">
+            <span class="drop-zone-icon">📂</span>
+            <span class="drop-zone-label">Drop G-code file here or click to browse</span>
+            <span class="drop-zone-sublabel">.nc, .tap, .gcode — Max 50MB</span>
+          </div>
+
+          <div class="drop-zone-status"></div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-md);">
+            <button class="btn btn-sm btn-secondary" data-action="dz-dragover">⇄ Simulate Drag Over</button>
+            <button class="btn btn-sm btn-secondary" data-action="dz-valid">✓ Simulate File Select</button>
+            <button class="btn btn-sm btn-ghost" style="border-color: rgba(184,69,58,0.3); color: var(--accent-rose);" data-action="dz-invalid">✕ Simulate Invalid File</button>
+            <button class="btn btn-sm btn-ghost" data-action="dz-reset">↺ Reset</button>
+          </div>
+
+        </div>
+      </section>
+
+<!-- 31. SEGMENTED CONTROL -->
+      <section id="segment-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Segmented Control</h2>
+          </div>
+          <p class="section-description">A compact, mutually exclusive navigation or filtering bar. Best used to sort or filter contents within a single view without page reloads.</p>
+        </div>
+        <div class="demo-area" style="display: flex; flex-direction: column; gap: var(--space-xl);">
+          <!-- State A: Visual Demo (All active) -->
+          <div>
+            <p class="specimen-label">Static Demo (All active)</p>
+            <div class="segmented-control-wrapper">
+              <div class="segmented-control-label">Filter by Category</div>
+              <div class="segmented-control">
+                <button class="segment-btn active">All</button>
+                <button class="segment-btn">CNC</button>
+                <button class="segment-btn">3D Printing</button>
+                <button class="segment-btn">Laser</button>
+                <button class="segment-btn">Code</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- State B: Visual Demo (CNC active) -->
+          <div>
+            <p class="specimen-label">Static Demo (CNC active)</p>
+            <div class="segmented-control-wrapper">
+              <div class="segmented-control-label">Filter by Category</div>
+              <div class="segmented-control">
+                <button class="segment-btn">All</button>
+                <button class="segment-btn active">CNC</button>
+                <button class="segment-btn">3D Printing</button>
+                <button class="segment-btn">Laser</button>
+                <button class="segment-btn">Code</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Demo -->
+          <div data-dcs-component="segmented-control">
+            <p class="specimen-label">Interactive Demo</p>
+            <div class="segmented-control-wrapper">
+              <div class="segmented-control-label">Filter by Category</div>
+              <div class="segmented-control" data-segmented="interactive">
+                <button class="segment-btn active" data-filter="all">All</button>
+                <button class="segment-btn" data-filter="cnc">CNC</button>
+                <button class="segment-btn" data-filter="3dp">3D Printing</button>
+                <button class="segment-btn" data-filter="laser">Laser</button>
+                <button class="segment-btn" data-filter="code">Code</button>
+              </div>
+            </div>
+            <div class="segmented-feedback" style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--accent-primary); margin-top: var(--space-sm);">
+              ACTIVE FILTER: ALL
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- 5. TABS -->
+      <section id="tabs" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Tabs</h2>
+          </div>
+          <p class="section-description">A fully interactive tab manager. Arrow key navigation shifts active status and focus natively.</p>
+        </div>
+        <div class="demo-area">
+          <div class="tabs-wrapper tabs-container" data-dcs-component="tabs">
+            <div class="tabs-list" role="tablist" aria-label="CNC Configuration Sections">
+              <button class="tab-trigger tab-btn active" role="tab" aria-selected="true" data-tab="speeds" tabindex="0">Speeds & Feeds</button>
+              <button class="tab-trigger tab-btn" role="tab" aria-selected="false" data-tab="toolpaths" tabindex="-1">Toolpaths</button>
+              <button class="tab-trigger tab-btn" role="tab" aria-selected="false" data-tab="materials" tabindex="-1">Materials</button>
+              <div class="tab-active-indicator tab-indicator"></div>
+            </div>
+            
+            <!-- Tab Panels -->
+            <div class="tab-panel active" data-tab="speeds" role="tabpanel">
+              <h4 style="margin-bottom: var(--space-xs); font-size: var(--type-md);">Speeds & Feeds Profiles</h4>
+              <p style="font-size: var(--type-sm); margin-bottom: var(--space-md);">Material chips require dedicated speeds. Speed values dictate dimensional accuracy of finished components.</p>
+              <div style="background: var(--bg-deepest); padding: var(--space-md); border-radius: 4px; border: 1px solid var(--border-default); font-family: var(--font-mono); font-size: var(--type-xs);">
+                - Softwood Profile: 18,000 RPM | 120 IPM | 0.125" DOC<br>
+                - Aluminum Profile: 15,000 RPM | 45 IPM | 0.020" DOC<br>
+                - Acrylic Profile: 18,000 RPM | 110 IPM | 0.080" DOC
+              </div>
+            </div>
+
+            <div class="tab-panel" data-tab="toolpaths" role="tabpanel">
+              <h4 style="margin-bottom: var(--space-xs); font-size: var(--type-md);">Active Toolpath Sequencing</h4>
+              <p style="font-size: var(--type-sm); margin-bottom: var(--space-md);">Default layout path operations ordered by structural priority to prevent panel breakout.</p>
+              <div style="display: flex; flex-direction: column; gap: var(--space-xs); font-family: var(--font-mono); font-size: var(--type-xs);">
+                <div style="display:flex; justify-content:space-between; border-bottom: 1px solid var(--border-default); padding-bottom: 4px;">
+                  <span>1. Bore Clearance (0.25in Dowels)</span>
+                  <span style="color: var(--accent-sage);">ACTIVE</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; border-bottom: 1px solid var(--border-default); padding-bottom: 4px;">
+                  <span>2. Pocket Milling (Door Recess)</span>
+                  <span style="color: var(--text-muted);">QUEUED</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; padding-bottom: 4px;">
+                  <span>3. Outer Contour Cutout</span>
+                  <span style="color: var(--text-muted);">QUEUED</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-panel" data-tab="materials" role="tabpanel">
+              <h4 style="margin-bottom: var(--space-xs); font-size: var(--type-md);">Workshop Sheet Library</h4>
+              <p style="font-size: var(--type-sm); margin-bottom: var(--space-md);">Verified calibration settings for common raw materials maintained in the studio inventory.</p>
+              <ul style="padding-left: var(--space-lg); font-size: var(--type-sm); color: var(--text-secondary); display: flex; flex-direction: column; gap: 4px;">
+                <li>Baltic Birch - Premium grade cross-banded plywood from Russian source.</li>
+                <li>6061-T6 Aluminum - High strength alloy for custom CNC structural clamps.</li>
+                <li>Black Delrin (POM) - Engineering thermoplastic with ultra-slick mechanical friction.</li>
+                <li>Cast Acrylic - High optical clarity acrylic sheet for transparent windows.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- 20. BREADCRUMBS -->
+      <section id="breadcrumbs-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Breadcrumbs</h2>
+          </div>
+          <p class="section-description">Navigation trail for multi-level machine and job hierarchies. Intermediate items are clickable; the current page item is non-interactive.</p>
+        </div>
+        <div class="demo-area">
+          <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+
+            <!-- Example 1: 4-level machine nav -->
+            <div>
+              <p class="specimen-label">Machine Job Navigation</p>
+              <nav class="breadcrumb-nav" aria-label="Machine navigation" data-dcs-component="breadcrumbs">
+                <span class="breadcrumb-item">
+                  <a class="breadcrumb-link" title="Dashboard">🏠 Dashboard</a>
+                  <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                </span>
+                <span class="breadcrumb-item">
+                  <a class="breadcrumb-link">Mills</a>
+                  <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                </span>
+                <span class="breadcrumb-item">
+                  <a class="breadcrumb-link">HAAS VF-2</a>
+                  <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                </span>
+                <span class="breadcrumb-item">
+                  <span class="breadcrumb-current" aria-current="page">Job #447</span>
+                </span>
+              </nav>
+            </div>
+
+            <!-- Example 2: 5-level nested -->
+            <div>
+              <p class="specimen-label">Calibration Hierarchy</p>
+              <nav class="breadcrumb-nav" aria-label="Calibration navigation" data-dcs-component="breadcrumbs">
+                <span class="breadcrumb-item">
+                  <a class="breadcrumb-link" title="Workshop">🏠 Workshop</a>
+                  <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                </span>
+                <span class="breadcrumb-item">
+                  <a class="breadcrumb-link">Calibration</a>
+                  <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                </span>
+                <span class="breadcrumb-item">
+                  <a class="breadcrumb-link">Touch-Off</a>
+                  <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                </span>
+                <span class="breadcrumb-item">
+                  <a class="breadcrumb-link">Z-Axis</a>
+                  <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                </span>
+                <span class="breadcrumb-item">
+                  <span class="breadcrumb-current" aria-current="page">Results</span>
+                </span>
+              </nav>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+<!-- =========================================================
+           28. PAGINATION
+           ========================================================= -->
+      <section id="pagination-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Pagination</h2>
+          </div>
+          <p class="section-description">Page navigation for tool libraries, job archives, and material databases. Active amber highlight, ghost prev/next with disabled state, and live page switching.</p>
+        </div>
+        <div class="demo-area">
+
+          <!-- State A: Page 3 active -->
+          <div class="pagination-wrapper">
+            <div class="pagination-info-label">Showing 21–30 of 247 tools</div>
+            <div class="pagination-bar" data-dcs-component="pagination">
+              <div class="page-btn page-prev">← Prev</div>
+              <div class="page-item page-num" data-pg="1">1</div>
+              <div class="page-item page-num" data-pg="2">2</div>
+              <div class="page-item page-num active" data-pg="3">3</div>
+              <div class="page-item page-num" data-pg="4">4</div>
+              <div class="page-item page-num" data-pg="5">5</div>
+              <div class="page-item ellipsis">…</div>
+              <div class="page-item page-num" data-pg="25">25</div>
+              <div class="page-btn page-next">Next →</div>
+            </div>
+          </div>
+
+          <!-- State B: Page 1 — Prev disabled -->
+          <div class="pagination-wrapper">
+            <div class="pagination-info-label">Showing 1–10 of 247 tools</div>
+            <div class="pagination-bar" data-dcs-component="pagination">
+              <div class="page-btn page-prev disabled">← Prev</div>
+              <div class="page-item page-num active" data-pg="1">1</div>
+              <div class="page-item page-num" data-pg="2">2</div>
+              <div class="page-item page-num" data-pg="3">3</div>
+              <div class="page-item page-num" data-pg="4">4</div>
+              <div class="page-item page-num" data-pg="5">5</div>
+              <div class="page-item ellipsis">…</div>
+              <div class="page-item page-num" data-pg="25">25</div>
+              <div class="page-btn page-next">Next →</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+<!-- 21. STEPPER / WIZARD -->
+      <section id="stepper-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Stepper / Wizard</h2>
+          </div>
+          <p class="section-description">Multi-step guided workflow. Demonstrates a 4-step New Job Setup flow: completed steps show a checkmark in green, the active step pulses amber, and upcoming steps remain muted.</p>
+        </div>
+        <div class="demo-area">
+          <div class="stepper-wrapper" data-stepper data-dcs-component="stepper">
+
+            <!-- Step Track -->
+            <div class="stepper-track">
+              <div class="stepper-step completed" data-stepper-step="1">
+                <div class="stepper-circle completed" title="Select Material">✓</div>
+                <span class="stepper-label completed">Select Material</span>
+              </div>
+              <div class="stepper-step completed" data-stepper-step="2">
+                <div class="stepper-circle completed" title="Load Toolpath">✓</div>
+                <span class="stepper-label completed">Load Toolpath</span>
+              </div>
+              <div class="stepper-step active" data-stepper-step="3">
+                <div class="stepper-circle active" title="Set Zero Point">3</div>
+                <span class="stepper-label active">Set Zero Point</span>
+              </div>
+              <div class="stepper-step" data-stepper-step="4">
+                <div class="stepper-circle upcoming" title="Confirm & Run">4</div>
+                <span class="stepper-label upcoming">Confirm &amp; Run</span>
+              </div>
+            </div>
+
+            <!-- Step Content -->
+            <div class="stepper-content-area" data-stepper-content>
+              <!-- Content is rendered by JS -->
+            </div>
+
+            <!-- Navigation -->
+            <div class="stepper-nav-row">
+              <button class="btn btn-md btn-ghost" data-stepper-back>← Back</button>
+              <button class="btn btn-md btn-primary" data-stepper-next>Next Step →</button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+<!-- 15. COMMAND PALETTE (⌘K) -->
+      <section id="command-palette" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Command Palette (⌘K)</h2>
+          </div>
+          <p class="section-description">A floating glass-morphism overlay triggered by key presses or clicks. Search input filters results. Full arrow-key navigation, Enter to select, Escape to close.</p>
+        </div>
+        <div class="demo-area">
+          <div class="palette-trigger-box palette-viewport" data-dcs-component="palette">
+            <button class="btn btn-md btn-primary palette-open-btn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              Show Palette (⌘K)
+            </button>
+            <p class="shortcut-tip">Or press <kbd class="cmd-palette-kbd">⌘ K</kbd> / <kbd class="cmd-palette-kbd">Ctrl + K</kbd> anywhere on the page.</p>
+
+            <div class="palette-modal-backdrop palette-backdrop">
+              <div class="command-palette-dialog">
+                <div class="palette-search-container">
+                  <svg class="palette-search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  <input type="text" class="palette-input" placeholder="Search workshop commands... (e.g. Speeds, Wizard)" autocomplete="off">
+                  <div class="palette-esc-hint">ESC</div>
+                </div>
+                <div class="palette-results-container palette-results">
+
+                  <div class="palette-results-section">
+                    <div class="palette-section-label">Pages</div>
+                    <div class="palette-item" data-action="G-Code Export" data-shortcut="⌘E">
+                      <span class="palette-item-icon">⚡</span>
+                      <span class="palette-item-name">G-Code Export</span>
+                      <span class="palette-item-shortcut">⌘E</span>
+                    </div>
+                    <div class="palette-item" data-action="Calibration Wizard" data-shortcut="⌘C">
+                      <span class="palette-item-icon">📐</span>
+                      <span class="palette-item-name">Calibration Wizard</span>
+                      <span class="palette-item-shortcut">⌘C</span>
+                    </div>
+                  </div>
+
+                  <div class="palette-results-section">
+                    <div class="palette-section-label">Commands</div>
+                    <div class="palette-item" data-action="Speeds &amp; Feeds Calculator" data-shortcut="⌘S">
+                      <span class="palette-item-icon">⚙️</span>
+                      <span class="palette-item-name">Speeds &amp; Feeds Calculator</span>
+                      <span class="palette-item-shortcut">⌘S</span>
+                    </div>
+                    <div class="palette-item" data-action="Material Library" data-shortcut="⌘M">
+                      <span class="palette-item-icon">🪵</span>
+                      <span class="palette-item-name">Material Library</span>
+                      <span class="palette-item-shortcut">⌘M</span>
+                    </div>
+                    <div class="palette-item" data-action="Tool Library" data-shortcut="⌘T">
+                      <span class="palette-item-icon">🔧</span>
+                      <span class="palette-item-name">Tool Library</span>
+                      <span class="palette-item-shortcut">⌘T</span>
+                    </div>
+                    <div class="palette-item" data-action="Reset Homing Limits" data-shortcut="">
+                      <span class="palette-item-icon">🏠</span>
+                      <span class="palette-item-name">Reset Homing Limits</span>
+                      <span class="palette-item-shortcut"></span>
+                    </div>
+                    <div class="palette-item" data-action="Emergency STOP Signal" data-shortcut="">
+                      <span class="palette-item-icon">🛑</span>
+                      <span class="palette-item-name">Emergency STOP Signal</span>
+                      <span class="palette-item-shortcut"></span>
+                    </div>
+                  </div>
+
+                  <div class="palette-results-section">
+                    <div class="palette-section-label">Recent</div>
+                    <div class="palette-item" data-action="Recent Cuts" data-shortcut="">
+                      <span class="palette-item-icon">⏱️</span>
+                      <span class="palette-item-name">Recent Cuts</span>
+                      <span class="palette-item-shortcut"></span>
+                    </div>
+                    <div class="palette-item" data-action="System Diagnostics" data-shortcut="">
+                      <span class="palette-item-icon">🛠️</span>
+                      <span class="palette-item-name">System Diagnostics</span>
+                      <span class="palette-item-shortcut"></span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+<!-- 35. SCROLL SPY -->
+      <section id="scrollspy-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Scroll Spy</h2>
+          </div>
+          <p class="section-description">A table of contents sidebar that sticky-tracks user reading progress, highlighting the active section based on the current scroll position.</p>
+        </div>
+        <div class="demo-area">
+          <div class="scrollspy-demo-layout" data-dcs-component="scrollspy">
+            <div class="scrollspy-toc">
+              <div class="scrollspy-toc-title">ON THIS PAGE</div>
+              <div class="toc-item active" data-target="spy-intro">Introduction</div>
+              <div class="toc-item" data-target="spy-material">Material Selection</div>
+              <div class="toc-item" data-target="spy-toolpath">Tool Path Strategy</div>
+              <div class="toc-item" data-target="spy-finish">Results & Finish</div>
+            </div>
+
+            <div class="scrollspy-content-area" data-scrollspy-content>
+              <div class="scrollspy-section" data-spy-target="spy-intro">
+                <h4 class="scrollspy-section-title">Introduction</h4>
+                <p>Establishing proper machine alignment is the foundation of high-precision CNC manufacturing. In this study, we look at milling custom brackets for our dust collection manifolds using 3/4-inch stock. A structured approach ensures consistent tolerances and prevents waste.</p>
+              </div>
+
+              <div class="scrollspy-section" data-spy-target="spy-material">
+                <h4 class="scrollspy-section-title">Material Selection</h4>
+                <p>For these brackets, we selected 6061-T6 aluminum due to its exceptional strength-to-weight ratio and clean machinability. When sourcing billet stock, ensuring thickness tolerances are verified prevents Z-axis discrepancies on critical pockets.</p>
+              </div>
+
+              <div class="scrollspy-section" data-spy-target="spy-toolpath">
+                <h4 class="scrollspy-section-title">Tool Path Strategy</h4>
+                <p>We ran adaptive clearing operations using a 3-flute carbide end mill. Feeds and speeds were locked at 8,200 RPM and 72 IPM, maintaining a consistent radial engagement to minimize heat build-up. Stepdowns were set to 0.40 inches.</p>
+              </div>
+
+              <div class="scrollspy-section" data-spy-target="spy-finish">
+                <h4 class="scrollspy-section-title">Results & Finish</h4>
+                <p>Final contour passes left a pristine finish requiring minimal post-processing. Verification measurements confirm bracket bore sizes are within our targeted ±0.002-inch tolerance. Clean anodizing adds protection and matches our workshop color scheme.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- 29. HEADER / NAVIGATION -->
+      <section id="header-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Header / Navigation</h2>
+          </div>
+          <p class="section-description">Constrained (centered, 1440px max-width) sticky nav with logo, badge, links, and theme toggle. Resize below 768px to reveal the mobile menu.</p>
+        </div>
+        <div class="demo-area">
+          <div class="header-demo" data-dcs-component="header">
+            <nav class="sticky-nav" style="position: sticky; top: 0; z-index: 10;">
+              <div class="nav-container">
+                <button class="mobile-menu-toggle" type="button" aria-label="Toggle Navigation" aria-expanded="false">☰</button>
+                <a href="#" class="nav-logo">
+                  <svg class="nav-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="currentColor" aria-label="Diaz Creative Studio">
+                    <g><g ><g><g><path d="M565.8,322.4c-.4,1.1-.9,2.1-1.3,3.1,4.1-1.3,8-4.5,11.3-10.4-3.4,3.6-6.8,6-10,7.3Z"/><path d="M654.1,387.4c-2.7-8.2-2.7-14.9,6.3-17.4,21.6-6,38.6,13,52.7,27,6.1-34.9-3.4-67-31.8-88.9,33.9-24.8,22.3-62,12.4-96,.7-10.8-1.4-20.3-14.3-15-.4-27.5-19.8-52.3-36-17-8.4-15.6-20.8-102.8-42.3-53.4-4.5,5.7-4.3,24.9-14.5,20.7-13.2-11.8-36.8-90.2-57.6-66-3.9,10.8,1.4,24.9,2.9,35.5,2,10-1.3,12.9-7.4,19.7-10.7,2.2-16.2-12-23.1-17.9-12.2-9.4-45.4-59.9-58.7-47.8-14.9,16.5.4,37.8,7.7,54.3,5.4,37.2-74.9-76.7-84.2-34.5-4.2,19.7,36.2,39.3,14.7,52.6-60.7-44.2-81.3-38.7-61,38.2,18.9,34.5,47.6,64.7,87,73.7-106.8,94.4-54.3,163.6-204.9,240.5,16.6,2.7,32.8,2.6,49.6,1.2-19.9,10.1-40.5,18.7-59.6,30.2,54.2,17.6,79.4,9.9,125.6-20.1-5.2,14.4-7.3,27.6-6.7,42.9.8.3,1.6.7,2.4,1,6.8-6.4,13.7-12.8,20.9-18.8-4.2,15.7-5.2,30-2.2,46.1.7,0,1.4,0,2,0,7.3-9.6,15-18.6,23.6-26.9,5.2,17,13,31.7,23.2,46.2,11.5-14.7,23.6-28.9,36.3-42.7-10,26.8-21,53.6-15,82.6,92.2-60.3,93.3-70.1,93.7-127.7,9.3,12.6,32.7,47.3,25.3,68.1,11.8-18.3,16.6-35,16-56.6,0-.3,0-.4,0-.4,0,0,21.6,22.4,17.1,57.2,9.2-11.8,15.6-24,20.2-38.2,27.6,33.7,71,16,101.7-4.5,19.8-7,42.2-18.7,41.6-43.8,1.6-47.9-32.8-74.9-63.8-104.1ZM582.6,321.6c0-1.1.2-2.1.4-3.2-1.6.9-3.3,1.9-5,2.5.8-2.8,1.5-6.3.8-9.3-4.5,31.3-39.3,24.3-44.1-2.8,0,0,.1,0,.2,0,1.1,1.6,2.3,3.1,3.6,4.6-1.5-4.9-.2-9,.7-11.6.6-1.6,3.3-3.4,6.3-5-4.3.9-8.6,2.6-12.7,4.5-10.6,0-21.1,0-31.7.5,6-3,12.1-5.8,18.3-8.3.1,0,.2,0,.4,0,0,0,0,0,0,0,12.3-3.9,24.5-6.3,37.4-7.4-.2-2.1-3-3.3-4.3-5,.2-.3.3-.5.5-.8,5.2,2.6,10.4,5.3,15.6,7.8.4-.7.9-.3,1.6-.2,5.1,6.1,9.7,12.5,14.3,19,.4-.2.7-.3,1.1-.5-.9-4.1-1.7-8.2-2.7-12.3,10.9,6.8,8.3,20.2-.7,27.4ZM643.1,385.3h0s0,0,0,0c0,0,0,0,0,0Z"/></g><path d="M404.5,722.9c-6.4-130-74.2-141.3-214.7-156l-5.6,5.3c25.8,32,38.6,74.3,38.6,126.8,0,53.9,8.5,110.4-38.6,154.1v1.9l1.9,1.7c118.7-9.7,209.1-38.3,218.3-133.8ZM294.4,790.8c-15.1,2.8-23.2-38.2-22-88.2,2.3-15.4.7-74.3,20-73.4,35.8-6.5,47.3,29.5,53.4,93.7h0c1.4,33.7-20.3,75.3-51.5,67.9Z"/><path d="M377.7,864.5c18.7,9.1,38.4-11.5,30.5-30.2-20-36.2-64.1,9.9-30.5,30.2Z"/><path d="M598.1,784.7h0s-3.9-5.6-3.9-5.6h-1.7c-42.7,72.2-137.9,50.5-130.4-47.6-1.7-79.8,75-89.6,126.8-36.7,8.4,8.5,12.2-70.6,7.2-104.6h-1.9c-40.1,35.6-39.1,10-77,10.9-34.6,9.9-64.3,30.4-86.2,55.1-17.2,11.2-25.2,101.3-11.1,146.8,55.4,104.2,84.3,81.8,167.1,62.5,13,3.9,11.3-62.5,11.1-80.9Z"/><path d="M606,900c18.7,9.1,38.4-11.5,30.5-30.2-20-36.2-64.1,9.9-30.5,30.2Z"/><path d="M800,726.9h0c-1-48.9-117.1-82.7-119.3-93.7,5.8-49,73.1-35.5,104.6,0,6-24.5,12.2-55.7,7.2-84.3-62.8,26.3-40.7,13.5-87.9,7.2-92.1,13.5-131.2,142.9-22.2,154.1,36.7,2.1,55.1,8.9,55.1,20.3,1.5,38.5-8.4,69.9-29.2,67.9-36.2,1.9-34.6-30.4-3.6-55.1v-3.6c-55.5-.1-96.2,1.8-112.1,5.5,0,7.7,6.8,17.5,20.3,29.2,30.5,56,58.9,83.2,89.8,82.6,56.3-10.2,103-87.4,97.3-130.2Z"/><path d="M817.5,827.3c-12.4-32.3-56.8-8.4-40,20.1,14.9,21.6,46.3,4.5,40-20.1Z"/></g></g></g></svg>
+                  <span class="nav-logo-status">COMPONENT LIBRARY</span>
+                  <span class="header-status-dot pulse-dot pulse-green" style="margin-left: 8px; width: 8px; height: 8px; cursor: pointer; display: inline-block; vertical-align: middle;" title="Toggle Node Status"></span>
+                </a>
+                <div class="nav-links">
+                  <a href="#">Brand Guide</a>
+                  <a href="#" class="active">Components</a>
+                  <a href="#">Blog</a>
+                  <a href="#">Coming Soon</a>
+                </div>
+                <button data-theme-toggle class="theme-toggle-btn" aria-label="Toggle theme">
+                  <span data-theme-icon>☀️</span>
+                  <span data-theme-label>LIGHT</span>
+                </button>
+              </div>
+            </nav>
+            <div style="padding: var(--space-xl) var(--space-lg);">
+              <p style="color: var(--text-primary); font-weight: 600; margin-bottom: var(--space-sm);">Sample Page Content</p>
+              <p style="color: var(--text-secondary); font-size: var(--type-sm); margin-bottom: var(--space-md);">The navigation bar above is sticky within this container. It matches the live nav used across all DCS pages: Blog, Brand Guide, Component Library, and Coming Soon.</p>
+              <p style="color: var(--text-muted); font-size: var(--type-sm); margin-bottom: var(--space-sm);">G-code parsing, toolpath optimization, and spindle calibration are core CNC workflows. The HAAS VF-2 and ShopBot PRSalpha represent two ends of the precision spectrum.</p>
+              <p style="color: var(--text-muted); font-size: var(--type-sm);">Feed rates for Baltic Birch typically range from 80–180 IPM depending on flute count and chipload.</p>
+            </div>
+          </div>
+          <h4 class="specimen-label" style="margin-top: var(--space-xl);">Full-Width Variant</h4>
+          <div class="header-demo" data-dcs-component="header">
+            <nav class="sticky-nav" style="position: sticky; top: 0; z-index: 10;">
+              <div class="nav-container nav-container--full">
+                <button class="mobile-menu-toggle" type="button" aria-label="Toggle Navigation" aria-expanded="false">☰</button>
+                <a href="#" class="nav-logo">
+                  <svg class="nav-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="currentColor" aria-label="Diaz Creative Studio">
+                    <g><g><g><g><path d="M565.8,322.4c-.4,1.1-.9,2.1-1.3,3.1,4.1-1.3,8-4.5,11.3-10.4-3.4,3.6-6.8,6-10,7.3Z"/><path d="M654.1,387.4c-2.7-8.2-2.7-14.9,6.3-17.4,21.6-6,38.6,13,52.7,27,6.1-34.9-3.4-67-31.8-88.9,33.9-24.8,22.3-62,12.4-96,.7-10.8-1.4-20.3-14.3-15-.4-27.5-19.8-52.3-36-17-8.4-15.6-20.8-102.8-42.3-53.4-4.5,5.7-4.3,24.9-14.5,20.7-13.2-11.8-36.8-90.2-57.6-66-3.9,10.8,1.4,24.9,2.9,35.5,2,10-1.3,12.9-7.4,19.7-10.7,2.2-16.2-12-23.1-17.9-12.2-9.4-45.4-59.9-58.7-47.8-14.9,16.5.4,37.8,7.7,54.3,5.4,37.2-74.9-76.7-84.2-34.5-4.2,19.7,36.2,39.3,14.7,52.6-60.7-44.2-81.3-38.7-61,38.2,18.9,34.5,47.6,64.7,87,73.7-106.8,94.4-54.3,163.6-204.9,240.5,16.6,2.7,32.8,2.6,49.6,1.2-19.9,10.1-40.5,18.7-59.6,30.2,54.2,17.6,79.4,9.9,125.6-20.1-5.2,14.4-7.3,27.6-6.7,42.9.8.3,1.6.7,2.4,1,6.8-6.4,13.7-12.8,20.9-18.8-4.2,15.7-5.2,30-2.2,46.1.7,0,1.4,0,2,0,7.3-9.6,15-18.6,23.6-26.9,5.2,17,13,31.7,23.2,46.2,11.5-14.7,23.6-28.9,36.3-42.7-10,26.8-21,53.6-15,82.6,92.2-60.3,93.3-70.1,93.7-127.7,9.3,12.6,32.7,47.3,25.3,68.1,11.8-18.3,16.6-35,16-56.6,0-.3,0-.4,0-.4,0,0,21.6,22.4,17.1,57.2,9.2-11.8,15.6-24,20.2-38.2,27.6,33.7,71,16,101.7-4.5,19.8-7,42.2-18.7,41.6-43.8,1.6-47.9-32.8-74.9-63.8-104.1ZM582.6,321.6c0-1.1.2-2.1.4-3.2-1.6.9-3.3,1.9-5,2.5.8-2.8,1.5-6.3.8-9.3-4.5,31.3-39.3,24.3-44.1-2.8,0,0,.1,0,.2,0,1.1,1.6,2.3,3.1,3.6,4.6-1.5-4.9-.2-9,.7-11.6.6-1.6,3.3-3.4,6.3-5-4.3.9-8.6,2.6-12.7,4.5-10.6,0-21.1,0-31.7.5,6-3,12.1-5.8,18.3-8.3.1,0,.2,0,.4,0,0,0,0,0,0,0,12.3-3.9,24.5-6.3,37.4-7.4-.2-2.1-3-3.3-4.3-5,.2-.3.3-.5.5-.8,5.2,2.6,10.4,5.3,15.6,7.8.4-.7.9-.3,1.6-.2,5.1,6.1,9.7,12.5,14.3,19,.4-.2.7-.3,1.1-.5-.9-4.1-1.7-8.2-2.7-12.3,10.9,6.8,8.3,20.2-.7,27.4ZM643.1,385.3h0s0,0,0,0c0,0,0,0,0,0Z"/></g><path d="M404.5,722.9c-6.4-130-74.2-141.3-214.7-156l-5.6,5.3c25.8,32,38.6,74.3,38.6,126.8,0,53.9,8.5,110.4-38.6,154.1v1.9l1.9,1.7c118.7-9.7,209.1-38.3,218.3-133.8ZM294.4,790.8c-15.1,2.8-23.2-38.2-22-88.2,2.3-15.4.7-74.3,20-73.4,35.8-6.5,47.3,29.5,53.4,93.7h0c1.4,33.7-20.3,75.3-51.5,67.9Z"/><path d="M691.6,483.8c-22.5-53.1-63.1-42.5-112.3-41.8-1.4,13.3-1.1,27,12.1,35.9,10.3,16.4,14.6,34.8,10.4,74.1-.7,2-1.3,3.9-1.9,5.7,11.6,3.9,22.5,8.3,33.5,13.3,4.4-16.9,8.5-33.9,13.1-50.7,8.5,5.2,18.7,5.3,28.3,6.8,11.2-21.9,21.9-44.2,16.7-43.3Z"/></g></g></g>
+                  </svg>
+                  <span class="nav-logo-status">FULL-WIDTH NAV</span>
+                </a>
+                <div class="nav-links">
+                  <a href="#">Projects</a>
+                  <a href="#" class="active">Dashboard</a>
+                  <a href="#">Settings</a>
+                  <a href="#">Help</a>
+                </div>
+                <button data-theme-toggle class="theme-toggle-btn" aria-label="Toggle theme">
+                  <span data-theme-icon>☀️</span>
+                  <span data-theme-label>LIGHT</span>
+                </button>
+              </div>
+            </nav>
+            <div style="padding: var(--space-xl) var(--space-lg);">
+              <p style="color: var(--text-primary); font-weight: 600; margin-bottom: var(--space-sm);">Full-Width Navigation</p>
+              <p style="color: var(--text-secondary); font-size: var(--type-sm); margin-bottom: var(--space-md);">This variant uses <code style="color: var(--accent-gold); font-family: var(--font-mono); font-size: 11px;">nav-container--full</code> — no max-width constraint. Content spans the full viewport. Useful for dashboards, admin panels, or data-dense interfaces where every pixel counts.</p>
+              <p style="color: var(--text-muted); font-size: var(--type-sm);">Resize your browser to see the mobile menu toggle (☰) appear below 768px. Click it to open the dropdown nav.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- SKIP LINK -->
+      <section id="skiplink-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Skip Link</h2>
+          </div>
+          <p class="section-description">An accessibility affordance: the first focusable element on the page. It stays visually hidden until it receives keyboard focus, then slides down from the top so keyboard and screen-reader users can jump straight to the main content. Reload this page and press <kbd>Tab</kbd> to reveal the live link at the very top.</p>
+        </div>
+        <div class="demo-area">
+          <div style="display: flex; flex-direction: column; gap: var(--space-md); align-items: flex-start;">
+            <span class="specimen-class-label">Focused appearance (static preview of <code>.dcs-skip-link</code>)</span>
+            <a href="#main-content" class="dcs-skip-link dcs-skip-link-preview">Skip to main content</a>
+            <p style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted); line-height: 1.5;">The functional instance lives at the top of <code>&lt;body&gt;</code> and targets <code>#main-content</code>. It is invisible until <kbd>Tab</kbd>bed to — pure CSS via <code>:focus-visible</code>, no JS required.</p>
+          </div>
+        </div>
+      </section>
+
+<!-- THEME TOGGLE -->
+      <section id="theme-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Theme Toggle</h2>
+          </div>
+          <p class="section-description">A drop-in dark/light theme switcher. Drop <code>&lt;div data-dcs-component="theme"&gt;&lt;/div&gt;</code> anywhere and it auto-generates the full toggle button — no configuration. It persists the choice to <code>localStorage</code>, swaps the icon and label to match the active theme, and keeps every toggle button on the page in sync. Click a button below to flip the whole page.</p>
+        </div>
+        <div class="demo-area">
+          <h4 class="specimen-label">Live Toggle</h4>
+          <div style="display: flex; flex-direction: column; gap: var(--space-md); align-items: flex-start;">
+            <div data-dcs-component="theme"></div>
+            <p style="color: var(--text-muted); font-size: var(--type-sm); line-height: 1.5;">This is a second live instance (the nav bar hosts the first). Clicking either one toggles the page theme — both buttons update their icon and label together because the component syncs all toggles on the page.</p>
+          </div>
+
+          <h4 class="specimen-label" style="margin-top: var(--space-xl);">Both Modes</h4>
+          <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+            <div class="demo-card" data-theme="dark" style="flex: 1; min-width: 200px; padding: var(--space-lg); border-radius: var(--radius-md); background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08);">
+              <p style="color: #fff; font-weight: 600; margin-bottom: var(--space-sm);">🌙 Dark Mode</p>
+              <p style="color: rgba(255,255,255,0.6); font-size: var(--type-sm);">Icon shows ☀️, label reads <strong>LIGHT</strong> — one tap switches to light.</p>
+            </div>
+            <div class="demo-card" data-theme="light" style="flex: 1; min-width: 200px; padding: var(--space-lg); border-radius: var(--radius-md); background: #f5f5f5; border: 1px solid rgba(0,0,0,0.08);">
+              <p style="color: #111; font-weight: 600; margin-bottom: var(--space-sm);">☀️ Light Mode</p>
+              <p style="color: rgba(0,0,0,0.55); font-size: var(--type-sm);">Icon shows 🌙, label reads <strong>DARK</strong> — one tap switches back.</p>
+            </div>
+          </div>
+
+          <h4 class="specimen-label" style="margin-top: var(--space-xl);">Usage</h4>
+          <div style="display: flex; flex-direction: column; gap: var(--space-sm); align-items: flex-start;">
+            <span class="specimen-class-label"><code>data-dcs-component="theme"</code> — drop-in, no configuration needed</span>
+            <p style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted); line-height: 1.6;">
+              Features: <code>localStorage</code> persistence across page loads · automatic icon &amp; label swap · syncs every <code>[data-theme-toggle]</code> button on the page.
+            </p>
+          </div>
+        </div>
+      </section>
+
+<!-- 2. CARDS -->
+      <section id="cards" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Cards</h2>
+          </div>
+          <p class="section-description">Structural content blocks representing machinery profiles and shop calibrations.</p>
+        </div>
+        <div class="demo-area">
+          <div class="grid-3-col" data-dcs-component="cards">
+            <!-- Default Card -->
+            <div class="card">
+              <div class="card-meta">PROFILE DEFAULT</div>
+              <h3 class="card-title">Standard Feedrate</h3>
+              <p class="card-description">Default profile configured for softwood plywood sheet processing. Solid baseline tolerances for multi-flute tools.</p>
+            </div>
+            <!-- Interactive Card -->
+            <div class="card card-interactive">
+              <div class="card-meta" style="color: var(--accent-gold);">SWEET SPOT SWEEP</div>
+              <h3 class="card-title">Spindle Sweeper</h3>
+              <p class="card-description">Interactive calibration script analyzing physical machine vibration. Click or hover to initiate target test sequence.</p>
+            </div>
+            <!-- Featured Card -->
+            <div class="card card-featured">
+              <div class="card-meta" style="color: var(--accent-terracotta);">CRITICAL ACTION</div>
+              <h3 class="card-title">Auto-Z Touchplate</h3>
+              <p class="card-description">Automated alignment sensor configuration. Prioritizes immediate homing limits for active high-load bits.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- 6. TABLES -->
+      <section id="tables" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Tables</h2>
+          </div>
+          <p class="section-description">A sortable structural data table. Click on column header tags to rearrange profiles. Digit values are tab-aligned.</p>
+        </div>
+        <div class="demo-area">
+          <div class="table-container" data-dcs-component="tables">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th class="sort-header" data-col="0">Material</th>
+                  <th class="sort-header" data-col="1">Tooling</th>
+                  <th class="sort-header" data-col="2">Spindle Speed</th>
+                  <th class="sort-header" data-col="3">Feed Rate</th>
+                  <th class="sort-header" data-col="4">DOC</th>
+                  <th class="sort-header" data-col="5">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Baltic Birch</td>
+                  <td>1/4" Upcut</td>
+                  <td class="tabular-nums">18,000 RPM</td>
+                  <td class="tabular-nums">120 IPM</td>
+                  <td class="tabular-nums">0.125"</td>
+                  <td><span class="badge badge-success">verified</span></td>
+                </tr>
+                <tr>
+                  <td>6061 Aluminum</td>
+                  <td>1/8" O-Flute</td>
+                  <td class="tabular-nums">15,000 RPM</td>
+                  <td class="tabular-nums">45 IPM</td>
+                  <td class="tabular-nums">0.020"</td>
+                  <td><span class="badge badge-warning">testing</span></td>
+                </tr>
+                <tr>
+                  <td>Black Delrin</td>
+                  <td>1/4" Downcut</td>
+                  <td class="tabular-nums">16,500 RPM</td>
+                  <td class="tabular-nums">90 IPM</td>
+                  <td class="tabular-nums">0.100"</td>
+                  <td><span class="badge badge-success">verified</span></td>
+                </tr>
+                <tr>
+                  <td>Hard Maple</td>
+                  <td>1/2" Ballnose</td>
+                  <td class="tabular-nums">14,000 RPM</td>
+                  <td class="tabular-nums">80 IPM</td>
+                  <td class="tabular-nums">0.150"</td>
+                  <td><span class="badge badge-success">verified</span></td>
+                </tr>
+                <tr>
+                  <td>Cast Acrylic</td>
+                  <td>1/4" O-Flute</td>
+                  <td class="tabular-nums">18,000 RPM</td>
+                  <td class="tabular-nums">110 IPM</td>
+                  <td class="tabular-nums">0.080"</td>
+                  <td><span class="badge badge-warning">testing</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+<!-- 4. BADGES & STATUS -->
+      <section id="badges" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Badges & Status</h2>
+          </div>
+          <p class="section-description">Pill indicators, status dots, counts, ribbons, and dismissible tags. Ant Design-inspired system with warm-dark finishes.</p>
+        </div>
+        <div class="demo-area">
+          <div style="display: flex; flex-direction: column; gap: var(--space-lg);" data-dcs-component="badges">
+
+            <!-- GROUP 1 — Sizes -->
+            <div>
+              <h4 class="specimen-label">Sizes</h4>
+              <div class="flex-wrap-gap" style="align-items: center;">
+                <span class="badge badge-success badge-sm">Small</span>
+                <span class="badge badge-success">Default</span>
+                <span class="badge badge-success badge-lg">Large</span>
+              </div>
+            </div>
+
+            <!-- GROUP 2 — Semantic Variants -->
+            <div>
+              <h4 class="specimen-label">Semantic Variants</h4>
+              <div class="flex-wrap-gap">
+                <span class="badge badge-default">Neutral</span>
+                <span class="badge badge-info">Info</span>
+                <span class="badge badge-success">Success</span>
+                <span class="badge badge-warning">Warning</span>
+                <span class="badge badge-error">Error</span>
+              </div>
+            </div>
+
+            <!-- GROUP 3 — Count Badges -->
+            <div>
+              <h4 class="specimen-label">Count Badges</h4>
+              <div class="flex-wrap-gap" style="align-items: center;">
+                <span class="badge badge--count badge-error">5</span>
+                <span class="badge badge--count badge-warning">42</span>
+                <span class="badge badge--count badge-success">99+</span>
+                <span class="badge badge--count badge-default">0</span>
+              </div>
+            </div>
+
+            <!-- GROUP 4 — Dot Badges -->
+            <div>
+              <h4 class="specimen-label">Dot Badges</h4>
+              <div class="flex-wrap-gap" style="align-items: center; gap: var(--space-lg);">
+                <span style="display: inline-flex; align-items: center; gap: var(--space-sm);"><span class="badge badge--dot badge-default"></span>Idle</span>
+                <span style="display: inline-flex; align-items: center; gap: var(--space-sm);"><span class="badge badge--dot badge-info"></span>Info</span>
+                <span style="display: inline-flex; align-items: center; gap: var(--space-sm);"><span class="badge badge--dot badge-success"></span>Online</span>
+                <span style="display: inline-flex; align-items: center; gap: var(--space-sm);"><span class="badge badge--dot badge-warning"></span>Busy</span>
+                <span style="display: inline-flex; align-items: center; gap: var(--space-sm);"><span class="badge badge--dot badge-error badge--pulse"></span>Live</span>
+              </div>
+            </div>
+
+            <!-- GROUP 5 — Status Indicators -->
+            <div>
+              <h4 class="specimen-label">Status Indicators</h4>
+              <div class="flex-wrap-gap" style="align-items: center; gap: var(--space-lg);">
+                <span class="badge badge--status badge-default">Default</span>
+                <span class="badge badge--status badge-info">Info</span>
+                <span class="badge badge--status badge-success">Success</span>
+                <span class="badge badge--status badge-warning">Warning</span>
+                <span class="badge badge--status badge-error">Error</span>
+                <span class="badge badge--status badge-success badge--processing">Processing</span>
+              </div>
+            </div>
+
+            <!-- GROUP 6 — Outline Style -->
+            <div>
+              <h4 class="specimen-label">Outline Style</h4>
+              <div class="flex-wrap-gap">
+                <span class="badge badge-outline badge-default">Neutral</span>
+                <span class="badge badge-outline badge-info">Info</span>
+                <span class="badge badge-outline badge-success">Success</span>
+                <span class="badge badge-outline badge-warning">Warning</span>
+                <span class="badge badge-outline badge-error">Error</span>
+              </div>
+            </div>
+
+            <!-- GROUP 7 — With Icons -->
+            <div>
+              <h4 class="specimen-label">With Icons</h4>
+              <div class="flex-wrap-gap">
+                <span class="badge badge-success badge--icon">
+                  <svg class="badge-icon badge-icon--left" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Verified
+                </span>
+                <span class="badge badge-warning badge--icon">
+                  <svg class="badge-icon badge-icon--left" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                  Review
+                </span>
+                <span class="badge badge-error badge--icon">
+                  <svg class="badge-icon badge-icon--left" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                  Failed
+                </span>
+              </div>
+            </div>
+
+            <!-- GROUP 8 — Dismissible -->
+            <div>
+              <h4 class="specimen-label">Dismissible</h4>
+              <div class="flex-wrap-gap">
+                <span class="badge badge-default badge--dismissible">Machine #1<button class="badge-dismiss" type="button" aria-label="Dismiss">×</button></span>
+                <span class="badge badge-success badge--dismissible">CNC Router<button class="badge-dismiss" type="button" aria-label="Dismiss">×</button></span>
+                <span class="badge badge-info badge--dismissible">3D Scanner<button class="badge-dismiss" type="button" aria-label="Dismiss">×</button></span>
+              </div>
+            </div>
+
+            <!-- GROUP 9 — Ribbon -->
+            <div>
+              <h4 class="specimen-label">Ribbon</h4>
+              <div class="flex-wrap-gap" style="gap: var(--space-lg);">
+                <div class="badge-ribbon-wrapper">
+                  <div style="width:180px;height:120px;background:var(--surface-elevated);border-radius:8px;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;color:var(--text-secondary);font-size:14px;">Product Card</div>
+                  <div class="badge-ribbon"><span class="badge-ribbon-content">NEW</span><div class="badge-ribbon-corner"></div></div>
+                </div>
+                <div class="badge-ribbon-wrapper">
+                  <div style="width:180px;height:120px;background:var(--surface-elevated);border-radius:8px;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;color:var(--text-secondary);font-size:14px;">Product Card</div>
+                  <div class="badge-ribbon badge-success badge-ribbon--start"><span class="badge-ribbon-content">SALE</span><div class="badge-ribbon-corner"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- GROUP 9.5 — Overlay Badges -->
+            <div>
+              <h4 class="specimen-label">Overlay Badges</h4>
+
+              <!-- Sub-group A — Count on Icons -->
+              <p style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-secondary); margin-bottom: var(--space-sm);">Count on Icons</p>
+              <div class="flex-wrap-gap" style="gap: var(--space-lg);">
+                <div class="badge-overlay-wrapper">
+                  <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:var(--surface-elevated);border-radius:8px;border:1px solid var(--border-default);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+                  </div>
+                  <span class="badge badge--count badge-error">3</span>
+                </div>
+                <div class="badge-overlay-wrapper">
+                  <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:var(--surface-elevated);border-radius:8px;border:1px solid var(--border-default);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg>
+                  </div>
+                  <span class="badge badge--count badge-warning">7</span>
+                </div>
+                <div class="badge-overlay-wrapper">
+                  <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:var(--surface-elevated);border-radius:8px;border:1px solid var(--border-default);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+                  </div>
+                  <span class="badge badge--count badge-success">1</span>
+                </div>
+              </div>
+
+              <!-- Sub-group B — Dot on Avatars -->
+              <p style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-secondary); margin: var(--space-md) 0 var(--space-sm);">Dot on Avatars</p>
+              <div class="flex-wrap-gap" style="gap: var(--space-lg); align-items: center;">
+                <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                  <div class="badge-overlay-wrapper">
+                    <div style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:var(--surface-elevated);border-radius:50%;font-family:var(--font-headings);font-weight:600;font-size:14px;color:var(--text-primary);">JD</div>
+                    <span class="badge badge--dot badge-success"></span>
+                  </div>
+                  <span style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-secondary);">Online</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                  <div class="badge-overlay-wrapper">
+                    <div style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:var(--surface-elevated);border-radius:50%;font-family:var(--font-headings);font-weight:600;font-size:14px;color:var(--text-primary);">MK</div>
+                    <span class="badge badge--dot badge-warning badge--pulse"></span>
+                  </div>
+                  <span style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-secondary);">Busy</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                  <div class="badge-overlay-wrapper">
+                    <div style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:var(--surface-elevated);border-radius:50%;font-family:var(--font-headings);font-weight:600;font-size:14px;color:var(--text-primary);">RL</div>
+                    <span class="badge badge--dot badge-default"></span>
+                  </div>
+                  <span style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-secondary);">Offline</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+<!-- 21. KPI / STAT CARDS -->
+      <section id="kpi-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">KPI / Stat Cards</h2>
+          </div>
+          <p class="section-description">Glanceable metrics for dashboards, portfolio summaries, and shop-floor monitoring. Three variants: featured (amber accent), standard (neutral), and progress (with bar). All support optional trend indicators and status dots.</p>
+        </div>
+        <div class="demo-area">
+          <div class="kpi-grid" data-dcs-component="kpi">
+
+            <!-- Card 1: Featured — Completed Projects -->
+            <div class="kpi-card kpi-card--featured">
+              <div class="kpi-icon-wrapper kpi-icon--amber">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div class="kpi-label">Completed Projects</div>
+              <div class="kpi-value kpi-value--hero">14</div>
+              <div class="kpi-trend kpi-trend--up">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+                +12% this year
+              </div>
+            </div>
+
+            <!-- Card 2: Active Clients -->
+            <div class="kpi-card">
+              <div class="kpi-icon-wrapper kpi-icon--sage">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="kpi-label">Active Clients</div>
+              <div class="kpi-value">3</div>
+              <div class="kpi-subtitle">
+                <span class="kpi-status-dot kpi-status--online"></span> Available for new work
+              </div>
+            </div>
+
+            <!-- Card 3: Progress — Years Building -->
+            <div class="kpi-card kpi-card--progress" style="--kpi-progress: 80%;">
+              <div class="kpi-icon-wrapper kpi-icon--amber">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="kpi-label">Years Building</div>
+              <div class="kpi-value">8</div>
+              <div class="kpi-progress-wrapper">
+                <div class="kpi-progress-bar-bg">
+                  <div class="kpi-progress-bar-fill kpi-progress--high" style="width: 80%;"></div>
+                </div>
+                <div class="kpi-progress-label">Decade Goal</div>
+              </div>
+            </div>
+
+            <!-- Card 4: Hero — YouTube -->
+            <div class="kpi-card">
+              <div class="kpi-icon-wrapper kpi-icon--rose">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                </svg>
+              </div>
+              <div class="kpi-label">YouTube Subscribers</div>
+              <div class="kpi-value kpi-value--hero">24.7K</div>
+              <div class="kpi-trend kpi-trend--up">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+                +8.3% this month
+              </div>
+            </div>
+
+            <!-- Card 5: Machine Uptime -->
+            <div class="kpi-card">
+              <div class="kpi-icon-wrapper kpi-icon--sage">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <div class="kpi-label">Machine Uptime</div>
+              <div class="kpi-value">98.4<span class="kpi-unit">%</span></div>
+              <div class="kpi-subtitle">
+                <span class="kpi-status-dot kpi-status--online"></span> Last 30 days
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+<!-- METER / GAUGE -->
+      <section id="gauge-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Meter / Gauge</h2>
+          </div>
+          <p class="section-description">Circular gauges for spindle load, feed rate, coolant temp. Pure CSS + SVG arc on a 0–100% scale with a large center readout. Ring color follows the KPI threshold convention — sage (high), amber (mid), rose (low). Sizes: <code>.gauge-lg</code> (160px), <code>.gauge-md</code> (120px), <code>.gauge-sm</code> (80px).</p>
+        </div>
+        <div class="demo-area">
+          <div class="gauge-group">
+
+            <!-- Spindle Load — 78%, amber (mid) -->
+            <div class="gauge gauge-lg gauge--mid" style="--gauge-pct: 78;">
+              <svg class="gauge-svg" viewBox="0 0 100 100">
+                <circle class="gauge-track" cx="50" cy="50" r="42" pathLength="100"></circle>
+                <circle class="gauge-value" cx="50" cy="50" r="42" pathLength="100"></circle>
+              </svg>
+              <div class="gauge-center">
+                <span class="gauge-number">78<span class="gauge-percent">%</span></span>
+                <span class="gauge-label">Spindle Load</span>
+              </div>
+            </div>
+
+            <!-- Feed Rate — 92%, sage (high) -->
+            <div class="gauge gauge-lg gauge--high" style="--gauge-pct: 92;">
+              <svg class="gauge-svg" viewBox="0 0 100 100">
+                <circle class="gauge-track" cx="50" cy="50" r="42" pathLength="100"></circle>
+                <circle class="gauge-value" cx="50" cy="50" r="42" pathLength="100"></circle>
+              </svg>
+              <div class="gauge-center">
+                <span class="gauge-number">92<span class="gauge-percent">%</span></span>
+                <span class="gauge-label">Feed Rate</span>
+              </div>
+            </div>
+
+            <!-- Coolant Temp — 34%, rose (low) -->
+            <div class="gauge gauge-lg gauge--low" style="--gauge-pct: 34;">
+              <svg class="gauge-svg" viewBox="0 0 100 100">
+                <circle class="gauge-track" cx="50" cy="50" r="42" pathLength="100"></circle>
+                <circle class="gauge-value" cx="50" cy="50" r="42" pathLength="100"></circle>
+              </svg>
+              <div class="gauge-center">
+                <span class="gauge-number">34<span class="gauge-percent">%</span></span>
+                <span class="gauge-label">Coolant Temp</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+<!-- 33. KEY-VALUE LIST -->
+      <section id="kvlist-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Key-Value List</h2>
+          </div>
+          <p class="section-description">A clean, structured list format for displaying metadata, machine dimensions, project specifications, or case study facts.</p>
+        </div>
+        <div class="demo-area">
+          <div class="kv-card">
+            <h3 class="kv-title">Project Specs</h3>
+            <dl class="kv-list">
+              <div class="kv-pair">
+                <dt class="kv-key">Material</dt>
+                <dd class="kv-value">6061-T6 Aluminum</dd>
+              </div>
+              <div class="kv-pair">
+                <dt class="kv-key">Tolerance</dt>
+                <dd class="kv-value">±0.005in</dd>
+              </div>
+              <div class="kv-pair">
+                <dt class="kv-key">Runtime</dt>
+                <dd class="kv-value">4h 22min</dd>
+              </div>
+              <div class="kv-pair">
+                <dt class="kv-key">Tool Changes</dt>
+                <dd class="kv-value">7</dd>
+              </div>
+              <div class="kv-pair">
+                <dt class="kv-key">Surface Finish</dt>
+                <dd class="kv-value">Brushed + Anodized</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+<!-- 10. CODE BLOCKS -->
+      <section id="code" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Code Blocks</h2>
+          </div>
+          <p class="section-description">Syntax highlighted G-code block. Clicking copy stores raw code in user clipboard.</p>
+        </div>
+        <div class="demo-area">
+          <div class="code-block-wrapper" data-dcs-component="code">
+            <div class="code-block-header">
+              <span class="code-block-title">grbl_spindle_calibration.gcode</span>
+              <button class="code-block-copy-btn btn-copy-code">Copy G-Code</button>
+            </div>
+            <pre class="code-pre code-content"><div class="code-line-numbers" aria-hidden="true"><span class="code-line-num">1</span><span class="code-line-num">2</span><span class="code-line-num">3</span><span class="code-line-num">4</span><span class="code-line-num">5</span><span class="code-line-num">6</span><span class="code-line-num">7</span><span class="code-line-num">8</span><span class="code-line-num">9</span></div><div class="code-lines"><span class="code-line"><span class="code-comment">( Baltic Birch Cabinet Profile )</span></span>
+<span class="code-line"><span class="code-keyword">G90</span> <span class="code-comment">( Absolute Positioning )</span></span>
+<span class="code-line"><span class="code-keyword">G20</span> <span class="code-comment">( Inches Mode )</span></span>
+<span class="code-line"><span class="code-keyword">M3</span> S<span class="code-number">18000</span> <span class="code-comment">( Spindle ON )</span></span>
+<span class="code-line"><span class="code-keyword">G0</span> X<span class="code-number">0.00</span> Y<span class="code-number">0.00</span> Z<span class="code-number">0.25</span> <span class="code-comment">( Safe Z-height )</span></span>
+<span class="code-line"><span class="code-keyword">G1</span> Z-<span class="code-number">0.125</span> F<span class="code-number">40</span> <span class="code-comment">( Feed into material )</span></span>
+<span class="code-line"><span class="code-keyword">G1</span> X<span class="code-number">4.00</span> F<span class="code-number">120</span> <span class="code-comment">( Cut path )</span></span>
+<span class="code-line"><span class="code-keyword">M5</span> <span class="code-comment">( Spindle OFF )</span></span>
+<span class="code-line"><span class="code-keyword">M30</span> <span class="code-comment">( End of Program )</span></span></div></pre>
+          </div>
+          <p style="margin-top: var(--space-md); font-size: var(--type-sm);">
+            Ensure you always issue a <code class="inline-code">G90</code> absolute command prior to executing toolpaths.
+          </p>
+        </div>
+      </section>
+
+<!-- =========================================================
+           27. TIMELINE / ACTIVITY FEED
+           ========================================================= -->
+      <section id="timeline-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Timeline / Activity Feed</h2>
+          </div>
+          <p class="section-description">Chronological event log for job tracking, calibration events, errors, and maintenance records. Staggered fade-in animation, semantic dot colors, and tinted backgrounds for warnings and errors.</p>
+        </div>
+        <div class="demo-area">
+          <div class="timeline-feed">
+
+            <!-- Event 1: Job Started -->
+            <div class="timeline-entry">
+              <div class="timeline-dot green"></div>
+              <div class="timeline-content">
+                <div class="timeline-ts">Just now</div>
+                <div class="timeline-title">Job #447 Started</div>
+              </div>
+            </div>
+
+            <!-- Event 2: Auto-Z -->
+            <div class="timeline-entry">
+              <div class="timeline-dot green"></div>
+              <div class="timeline-content">
+                <div class="timeline-ts">2 min ago</div>
+                <div class="timeline-title">Auto-Z Touch-Off Complete</div>
+                <div class="timeline-detail">Z offset: -0.342mm</div>
+              </div>
+            </div>
+
+            <!-- Event 3: Warning -->
+            <div class="timeline-entry">
+              <div class="timeline-dot amber"></div>
+              <div class="timeline-content warn">
+                <div class="timeline-ts">12 min ago</div>
+                <div class="timeline-title">⚠ Spindle Temp Warning</div>
+                <div class="timeline-detail">Temperature exceeded 82°C for 30s. Auto-reduced feed to 85%.</div>
+              </div>
+            </div>
+
+            <!-- Event 4: Tool Change -->
+            <div class="timeline-entry">
+              <div class="timeline-dot gray"></div>
+              <div class="timeline-content">
+                <div class="timeline-ts">38 min ago</div>
+                <div class="timeline-title">Tool Change — ¼" to ⅛" Compression</div>
+                <div class="timeline-detail">Bit #12 installed. Expected life: 4.2 hrs</div>
+              </div>
+            </div>
+
+            <!-- Event 5: Error -->
+            <div class="timeline-entry">
+              <div class="timeline-dot red"></div>
+              <div class="timeline-content error">
+                <div class="timeline-ts">1 hr ago</div>
+                <div class="timeline-title">✕ Calibration Failed</div>
+                <div class="timeline-detail">Touch plate not detected. Check connection.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+<!-- 13. AVATARS -->
+      <section id="avatars" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Avatars</h2>
+          </div>
+          <p class="section-description">Maker profiles representation. Hovering elements reveals team roles.</p>
+        </div>
+        <div class="demo-area">
+          <div class="avatar-group">
+            <div class="avatar avatar-sm tooltip-trigger" data-tooltip="Robert Diaz (Lead Machinist)" style="z-index: 4;">RD</div>
+            <div class="avatar avatar-sm avatar-glow tooltip-trigger" data-tooltip="Alex Kovalenko (Designer)" style="z-index: 3;">AK</div>
+            <div class="avatar avatar-lg tooltip-trigger" data-tooltip="Julio Martinez (Apprentice)" style="z-index: 2;">JM</div>
+            <div class="avatar avatar-sm avatar-counter tooltip-trigger" data-tooltip="+3 Apprentices" style="z-index: 1;">+3</div>
+          </div>
+        </div>
+      </section>
+
+<!-- 37. RATING & TESTIMONIAL -->
+      <section id="testimonial-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Rating & Testimonial</h2>
+          </div>
+          <p class="section-description">Star ratings and pull-quote testimonials for client feedback, project reviews, and social proof. Three variants: inline rating, featured testimonial card, and compact testimonial.</p>
+        </div>
+        <div class="demo-area">
+          <div class="testimonial-demos">
+
+            <!-- Inline Star Ratings -->
+            <div class="testimonial-demo">
+              <h4 class="testimonial-demo-label">Inline Ratings</h4>
+              <div class="rating-list">
+                <div class="rating-group">
+                  <div class="rating-stars" data-rating="5" title="5 out of 5">
+                    <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+                  </div>
+                  <p class="rating-snippet"><span class="rating-score">5.0</span>Absolutely flawless surface finish. The anodizing came out perfect.</p>
+                </div>
+                <div class="rating-group">
+                  <div class="rating-stars" data-rating="4" title="4 out of 5">
+                    <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">☆</span>
+                  </div>
+                  <p class="rating-snippet"><span class="rating-score">4.0</span>Great tolerances on the aluminum parts. One minor burr on the edge.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Featured Testimonial Card -->
+            <div class="testimonial-demo">
+              <h4 class="testimonial-demo-label">Featured Testimonial Card</h4>
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+                </div>
+                <blockquote class="testimonial-quote">Roman doesn't just machine parts — he engineers solutions. Our prototypes went from concept to production in under two weeks. The tolerances were tighter than our in-house shop.</blockquote>
+                <div class="testimonial-author">
+                  <div class="avatar avatar-sm avatar-glow" aria-label="Alex Chen">AC</div>
+                  <div>
+                    <div class="testimonial-name">Alex Chen</div>
+                    <div class="testimonial-role">Lead Engineer, Volta Robotics</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Compact Testimonial -->
+            <div class="testimonial-demo">
+              <h4 class="testimonial-demo-label">Compact Variant</h4>
+              <div class="testimonial-compact">
+                <div class="testimonial-stars testimonial-stars-sm">
+                  <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+                </div>
+                <p class="testimonial-compact-text">Best CNC shop we've worked with. Period.</p>
+                <span class="testimonial-compact-author">— Sarah Okonkwo, Arc Design Co.</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+<!-- CAROUSEL -->
+      <section id="carousel-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Carousel</h2>
+          </div>
+          <p class="section-description">Fade-transitioning project showcase with autoplay, progress bar, dots, touch swipe, and keyboard navigation. Multiple configurations for different use cases.</p>
+        </div>
+        <div class="demo-area">
+          <h4 class="specimen-label">Standard Autoplay</h4>
+          <div class="dcs-carousel" data-dcs-component="carousel" aria-label="CNC project showcase">
+            <button class="dcs-carousel-arrow dcs-carousel-prev" type="button" aria-label="Previous slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <div class="dcs-carousel-track">
+
+              <div class="dcs-carousel-slide">
+                <div class="dcs-carousel-card">
+                  <div class="dcs-carousel-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3"></circle></svg>
+                  </div>
+                  <div class="dcs-carousel-overlay">
+                    <h4 class="dcs-carousel-title">Precision CNC Faceplate</h4>
+                    <p class="dcs-carousel-desc">6061-T6 aluminum · 3-axis pocketing · 0.005&quot; tolerance</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dcs-carousel-slide">
+                <div class="dcs-carousel-card">
+                  <div class="dcs-carousel-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l9-3 9 3-9 3-9-3z"></path><path d="M3 6v12l9 3 9-3V6"></path><path d="M12 9v12"></path></svg>
+                  </div>
+                  <div class="dcs-carousel-overlay">
+                    <h4 class="dcs-carousel-title">Hardwood Inlay Sign</h4>
+                    <p class="dcs-carousel-desc">Black walnut + maple · 60° V-bit · hand-finished</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dcs-carousel-slide">
+                <div class="dcs-carousel-card">
+                  <div class="dcs-carousel-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"></rect><line x1="8" y1="7" x2="16" y2="7"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                  </div>
+                  <div class="dcs-carousel-overlay">
+                    <h4 class="dcs-carousel-title">3D Contour Topo Map</h4>
+                    <p class="dcs-carousel-desc">Baltic birch ply · ball-nose roughing · 8hr carve</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dcs-carousel-slide">
+                <div class="dcs-carousel-card">
+                  <div class="dcs-carousel-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"></path></svg>
+                  </div>
+                  <div class="dcs-carousel-overlay">
+                    <h4 class="dcs-carousel-title">Brass Nameplate Set</h4>
+                    <p class="dcs-carousel-desc">C360 brass · diamond drag engraving · mirror polish</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button class="dcs-carousel-arrow dcs-carousel-next" type="button" aria-label="Next slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="dcs-carousel-dots">
+              <button class="dcs-carousel-dot" type="button" aria-label="Go to slide 1"></button>
+              <button class="dcs-carousel-dot" type="button" aria-label="Go to slide 2"></button>
+              <button class="dcs-carousel-dot" type="button" aria-label="Go to slide 3"></button>
+              <button class="dcs-carousel-dot" type="button" aria-label="Go to slide 4"></button>
+            </div>
+          </div>
+
+          <h4 class="specimen-label">Manual Navigation</h4>
+          <div class="dcs-carousel" data-dcs-component="carousel" data-autoplay="false" aria-label="CNC job walkthrough">
+            <button class="dcs-carousel-arrow dcs-carousel-prev" type="button" aria-label="Previous slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <div class="dcs-carousel-track">
+
+              <div class="dcs-carousel-slide">
+                <div class="dcs-carousel-card">
+                  <div class="dcs-carousel-image" style="background: linear-gradient(135deg, #1a2a3a, #2a3a5a);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"></path><path d="M12 18v4"></path><path d="M2 12h4"></path><path d="M18 12h4"></path><circle cx="12" cy="12" r="4"></circle></svg>
+                  </div>
+                  <div class="dcs-carousel-overlay">
+                    <h4 class="dcs-carousel-title">Setup &amp; Calibration</h4>
+                    <p class="dcs-carousel-desc">Tram the spindle, set work offsets, verify tool table</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dcs-carousel-slide">
+                <div class="dcs-carousel-card">
+                  <div class="dcs-carousel-image" style="background: linear-gradient(135deg, #3a2a1a, #5a3a2a);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"></path><path d="M3 6h18"></path><path d="M3 18h18"></path></svg>
+                  </div>
+                  <div class="dcs-carousel-overlay">
+                    <h4 class="dcs-carousel-title">Roughing Pass</h4>
+                    <p class="dcs-carousel-desc">3/8&quot; end mill · 18,000 RPM · 0.125&quot; DOC</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dcs-carousel-slide">
+                <div class="dcs-carousel-card">
+                  <div class="dcs-carousel-image" style="background: linear-gradient(135deg, #1a3a2a, #2a5a3a);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+                  </div>
+                  <div class="dcs-carousel-overlay">
+                    <h4 class="dcs-carousel-title">Finishing Pass</h4>
+                    <p class="dcs-carousel-desc">1/4&quot; ball nose · 12,000 RPM · 0.010&quot; stepover</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button class="dcs-carousel-arrow dcs-carousel-next" type="button" aria-label="Next slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="dcs-carousel-dots">
+              <button class="dcs-carousel-dot" type="button" aria-label="Go to slide 1"></button>
+              <button class="dcs-carousel-dot" type="button" aria-label="Go to slide 2"></button>
+              <button class="dcs-carousel-dot" type="button" aria-label="Go to slide 3"></button>
+            </div>
+          </div>
+
+          <h4 class="specimen-label">Multi-Card (3 at Once)</h4>
+          <div class="dcs-carousel dcs-carousel--multi" data-dcs-component="carousel" data-cards-visible="3" data-autoplay="true" aria-label="CNC tooling showcase">
+            <button class="dcs-carousel-arrow dcs-carousel-prev" type="button" aria-label="Previous page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <div class="dcs-carousel-track">
+
+              <div class="dcs-carousel-slide">
+                <div class="dcs-carousel-card">
+                  <div class="dcs-carousel-image" style="background: linear-gradient(135deg, #2a3a3a, #1a2a2a);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+                  </div>
+                  <div class="dcs-carousel-overlay">
+                    <h4 class="dcs-carousel-title">End Mill Set</h4>
+                    <p class="dcs-carousel-desc">Carbide · 2/4 flute</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dcs-carousel-slide">
+                <div class="dcs-carousel-card">
+                  <div class="dcs-carousel-image" style="background: linear-gradient(135deg, #1a2a3a, #2a3a5a);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+                  </div>
+                  <div class="dcs-carousel-overlay">
+                    <h4 class="dcs-carousel-title">V-Bit Set</h4>
+                    <p class="dcs-carousel-desc">30°/60°/90°</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dcs-carousel-slide">
+                <div class="dcs-carousel-card">
+                  <div class="dcs-carousel-image" style="background: linear-gradient(135deg, #3a2a1a, #5a3a2a);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                  </div>
+                  <div class="dcs-carousel-overlay">
+                    <h4 class="dcs-carousel-title">Ball Nose</h4>
+                    <p class="dcs-carousel-desc">1/8"–1/2" shank</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dcs-carousel-slide">
+                <div class="dcs-carousel-card">
+                  <div class="dcs-carousel-image" style="background: linear-gradient(135deg, #1a3a2a, #2a5a3a);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
+                  </div>
+                  <div class="dcs-carousel-overlay">
+                    <h4 class="dcs-carousel-title">Engraving Bit</h4>
+                    <p class="dcs-carousel-desc">Diamond drag tip</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dcs-carousel-slide">
+                <div class="dcs-carousel-card">
+                  <div class="dcs-carousel-image" style="background: linear-gradient(135deg, #4a2a2a, #6a3a3a);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6l9-3 9 3-9 3-9-3z"/><path d="M3 6v12l9 3 9-3V6"/></svg>
+                  </div>
+                  <div class="dcs-carousel-overlay">
+                    <h4 class="dcs-carousel-title">Surfacing Bit</h4>
+                    <p class="dcs-carousel-desc">2" fly cutter</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dcs-carousel-slide">
+                <div class="dcs-carousel-card">
+                  <div class="dcs-carousel-image" style="background: linear-gradient(135deg, #2a2a4a, #3a3a6a);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                  </div>
+                  <div class="dcs-carousel-overlay">
+                    <h4 class="dcs-carousel-title">Chamfer Mill</h4>
+                    <p class="dcs-carousel-desc">45° included angle</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button class="dcs-carousel-arrow dcs-carousel-next" type="button" aria-label="Next page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="dcs-carousel-dots">
+              <button class="dcs-carousel-dot" type="button" aria-label="Go to page 1"></button>
+              <button class="dcs-carousel-dot" type="button" aria-label="Go to page 2"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- 7. TOAST NOTIFICATIONS -->
+      <section id="toasts" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Toast Notifications</h2>
+          </div>
+          <p class="section-description">A micro-notice interface showing temporary system messages. Triggers bottom-center alerts.</p>
+        </div>
+        <div class="demo-area">
+          <div class="flex-wrap-gap" data-dcs-component="toasts">
+            <button class="btn btn-md btn-secondary" data-action="show-toast" data-toast-msg="SETTINGS SAVED SUCCESSFULLY" data-toast-type="success">Trigger SUCCESS Toast</button>
+            <button class="btn btn-md btn-secondary" data-action="show-toast" data-toast-msg="EXPORT SEQUENCE COMPLETE" data-toast-type="info">Trigger INFO Toast</button>
+            <button class="btn btn-md btn-secondary" style="border-color: var(--accent-rose); color: var(--accent-rose);" data-action="show-toast" data-toast-msg="⚠ CONNECTION LOST / RE-ESTABLISHING" data-toast-type="error">Trigger ALERT Toast</button>
+          </div>
+        </div>
+      </section>
+
+<!-- 22. ALERT BANNER -->
+      <section id="alert-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Alert Banner</h2>
+          </div>
+          <p class="section-description">Persistent system-wide notification banners. Unlike toasts, these remain until dismissed. Each is independently closeable with a slide-up animation.</p>
+        </div>
+        <div class="demo-area" data-dcs-component="alerts">
+          <div class="alert-banners-stack" id="alert-banners-stack">
+
+            <!-- Danger / Fault -->
+            <div class="alert-banner alert-banner-danger">
+              <span class="alert-banner-icon">⚠</span>
+              <div class="alert-banner-body">
+                <div class="alert-banner-title">E-STOP ACTIVATED — Machine Halted</div>
+                <div class="alert-banner-text">Clear obstruction before resetting. Check all axis limit switches and verify spindle is at rest before re-arming the controller.</div>
+              </div>
+              <button class="alert-banner-dismiss alert-dismiss" aria-label="Dismiss danger alert">&times;</button>
+            </div>
+
+            <!-- Warning -->
+            <div class="alert-banner alert-banner-warning">
+              <span class="alert-banner-icon">⚠</span>
+              <div class="alert-banner-body">
+                <div class="alert-banner-title">Spindle Temperature Above 85°C</div>
+                <div class="alert-banner-text">Consider pausing the current job for cooldown. Sustained high temps may cause premature bit wear and reduce surface finish quality.</div>
+              </div>
+              <button class="alert-banner-dismiss alert-dismiss" aria-label="Dismiss warning alert">&times;</button>
+            </div>
+
+            <!-- Success / Info -->
+            <div class="alert-banner alert-banner-success">
+              <span class="alert-banner-icon">✓</span>
+              <div class="alert-banner-body">
+                <div class="alert-banner-title">Job #447 Complete</div>
+                <div class="alert-banner-text">1,204 parts produced in 3h 12m. Toolpath efficiency: 94.3%. Machine is ready for the next run.</div>
+              </div>
+              <button class="alert-banner-dismiss alert-dismiss" aria-label="Dismiss success alert">&times;</button>
+            </div>
+
+          </div>
+
+          <!-- Restore button -->
+          <div style="margin-top: var(--space-lg); text-align: center;">
+            <button class="btn btn-sm btn-ghost" data-action="restore-alerts">↺ Restore All Banners</button>
+          </div>
+        </div>
+      </section>
+
+<!-- 16. MODAL / DIALOG -->
+      <section id="modal-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Modal / Dialog</h2>
+          </div>
+          <p class="section-description">Overlay dialog panels with backdrop blur and scaling entrance effects.</p>
+        </div>
+        <div class="demo-area">
+          <div class="flex-wrap-gap" data-dcs-component="modal">
+            <button class="btn btn-md btn-secondary" data-action="modal-open" data-modal="info">Open Info Success Dialog</button>
+            <button class="btn btn-md btn-secondary" style="border-color: var(--accent-rose); color: var(--accent-rose);" data-action="modal-open" data-modal="confirm">Open Confirm Delete Dialog</button>
+
+            <!-- MODAL 1: CONFIRM DELETE -->
+            <div class="modal-backdrop" data-modal="confirm">
+              <div class="modal-box">
+                <div class="modal-header">
+                  <h3 class="modal-title">Delete CNC Profile</h3>
+                  <button class="modal-close-btn" data-action="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to delete the job settings for <strong class="inline-code">baltic_birch_cabinet_face.nc</strong>? This action cannot be undone and will erase spindle sweep settings.</p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-sm btn-ghost" data-action="modal-close">Cancel</button>
+                  <button class="btn btn-sm btn-danger" data-action="confirm-delete">Delete Profile</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- MODAL 2: CALIBRATION SUCCESS -->
+            <div class="modal-backdrop" data-modal="info">
+              <div class="modal-box">
+                <div class="modal-header">
+                  <h3 class="modal-title" style="color: var(--accent-sage);">Calibration Wizard Completed</h3>
+                  <button class="modal-close-btn" data-action="modal-close">&times;</button>
+                </div>
+                <div class="modal-body" style="text-align: center; padding: var(--space-xl) var(--space-lg);">
+                  <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(90, 158, 111, 0.1); border: 2px solid var(--accent-sage); display: inline-flex; align-items: center; justify-content: center; margin-bottom: var(--space-md);">
+                    <svg style="fill: var(--accent-sage); width: 24px; height: 24px;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  </div>
+                  <h4 style="margin-bottom: var(--space-sm);">System Tolerance Confirmed</h4>
+                  <p>Spindle tramming calibration reports error index below <strong class="inline-code">0.005mm</strong>. Workpiece offset axes successfully homed to structural boundary.</p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-sm btn-primary" style="background-color: var(--accent-sage); border-color: var(--accent-sage); color: var(--text-inverse);" data-action="modal-close">Awesome</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- 9. PROGRESS & LOADING -->
+      <section id="loading" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Progress & Loading</h2>
+          </div>
+          <p class="section-description">Machining progress, spinner animation, and visual content shimmer skeleton block. Trigger the simulation to witness state flow changes.</p>
+        </div>
+        <div class="demo-area">
+          <div class="grid-2-col">
+            
+            <!-- Progress bars & Spinners -->
+            <div style="display: flex; flex-direction: column; gap: var(--space-lg);" data-dcs-component="progress">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xs); font-family: var(--font-mono); font-size: var(--type-xs);">
+                  <span class="progress-step-text">Status: Static</span>
+                  <span class="progress-pct">68%</span>
+                </div>
+                <div class="progress-bar-container">
+                  <div class="progress-bar-fill progress-fill" style="width: 68%;"></div>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--space-xl);">
+                <div>
+                  <h4 style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase; margin-bottom: var(--space-sm);">Spinner</h4>
+                  <div class="spinner-loader"></div>
+                </div>
+                <div>
+                  <h4 style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase; margin-bottom: var(--space-sm);">Actions</h4>
+                  <button class="btn btn-sm btn-primary btn-run-sim">Simulate CNC Job Run</button>
+                </div>
+              </div>
+
+              <!-- Sim Console -->
+              <div class="simulation-console sim-console">
+                [SYSTEM] Ready to initiate simulation. Click "Simulate CNC Job Run".
+              </div>
+            </div>
+
+            <!-- Shimmer skeleton -->
+            <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+              <h4 style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase;">Shimmer Skeleton Loader</h4>
+              <div class="skeleton-card">
+                <div class="skeleton-line" style="width: 40%; height: 20px;"></div>
+                <div class="skeleton-line" style="width: 85%;"></div>
+                <div class="skeleton-line" style="width: 95%;"></div>
+                <div class="skeleton-line" style="width: 60%;"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+<!-- 30. EMPTY STATE -->
+      <section id="empty-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Empty State</h2>
+          </div>
+          <p class="section-description">Shows when filtered lists, search results, or category pages return zero records. Clean, visually balanced, and straightforward maker feedback.</p>
+        </div>
+        <div class="demo-area" style="display: flex; flex-direction: column; gap: var(--space-xl);" data-dcs-component="empty">
+          <!-- Variant 1: No projects in category -->
+          <div>
+            <p class="specimen-label">Variant A: Empty Category</p>
+            <div class="empty-state-card">
+              <div class="empty-state-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                  <path d="M12 22V12"/>
+                  <path d="m12 12 8.71-5"/>
+                  <path d="M12 12 3.29 7"/>
+                  <path d="M5 4.86 19 13"/>
+                </svg>
+              </div>
+              <h3 class="empty-state-title">Nothing here yet</h3>
+              <p class="empty-state-desc">Projects tagged 'Laser' will appear here. Check back soon or browse all projects.</p>
+              <button class="btn-outline empty-action" data-toast-msg="Redirecting to browse all..." data-toast-type="info">Browse All Projects</button>
+            </div>
+          </div>
+
+          <!-- Variant 2: No search results -->
+          <div>
+            <p class="specimen-label">Variant B: No Search Results</p>
+            <div class="empty-state-card">
+              <div class="empty-state-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <path d="m21 21-4.3-4.3"/>
+                </svg>
+              </div>
+              <h3 class="empty-state-title">No results for 'aluminum extrusion'</h3>
+              <p class="empty-state-desc">Try adjusting your search terms or browse by category.</p>
+              <a href="#" class="empty-state-link empty-action" data-toast-msg="Resetting search filters..." data-toast-type="success">Clear Search</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- 8. TOOLTIPS -->
+      <section id="tooltips" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Tooltips</h2>
+          </div>
+          <p class="section-description">Dotted underlines indicate terms that show descriptions on mouse hover.</p>
+        </div>
+        <div class="demo-area">
+          <p style="line-height: 2;">
+            During test runs on hardwood stock, maintaining the proper 
+            <span class="tooltip-trigger" data-tooltip="Feed Rate / (RPM × Flutes). Ideal: 0.003 - 0.005 in/tooth">chipload definition</span> 
+            is essential. Exceeding the maximum 
+            <span class="tooltip-trigger" data-tooltip="Maximum safe structural rotation limit: 24,000 RPM">RPM range</span> 
+            will cause localized burning and premature tool breakdown.
+          </p>
+        </div>
+      </section>
+
+<!-- 25. POPOVER -->
+      <section id="popover-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Popover</h2>
+          </div>
+          <p class="section-description">Rich hover-triggered card appearing near its trigger. Used for machine status details, tool info, and quick-glance data. 300ms delay before showing, 150ms hide delay.</p>
+        </div>
+        <div class="demo-area">
+          <div class="popover-demo-row">
+
+            <!-- Popover Trigger 1: HAAS VF-2 -->
+            <div class="popover-wrapper popover-anchor" data-dcs-component="popover">
+              <div class="popover-trigger-pill popover-trigger">
+                <span class="pill-dot" style="background: var(--accent-sage);"></span>
+                HAAS VF-2
+              </div>
+              <div class="popover-card">
+                <div class="popover-machine-name">HAAS VF-2</div>
+                <div class="popover-status-line">
+                  <span class="pulse-dot pulse-green" style="width:6px;height:6px;"></span>
+                  Running — Job #447 Active
+                </div>
+                <div class="popover-stats-grid">
+                  <div class="popover-stat">
+                    <span class="popover-stat-label">RPM</span>
+                    <span class="popover-stat-value">12,400</span>
+                  </div>
+                  <div class="popover-stat">
+                    <span class="popover-stat-label">Feed</span>
+                    <span class="popover-stat-value">108 IPM</span>
+                  </div>
+                  <div class="popover-stat">
+                    <span class="popover-stat-label">Temp</span>
+                    <span class="popover-stat-value">72°C</span>
+                  </div>
+                  <div class="popover-stat">
+                    <span class="popover-stat-label">Runtime</span>
+                    <span class="popover-stat-value">3.2h</span>
+                  </div>
+                </div>
+                <a href="#" class="popover-link">View Details →</a>
+              </div>
+            </div>
+
+            <!-- Popover Trigger 2: DeWalt DWP611 -->
+            <div class="popover-wrapper popover-anchor" data-dcs-component="popover">
+              <div class="popover-trigger-pill popover-trigger">
+                <span class="pill-dot" style="background: var(--text-muted);"></span>
+                DeWalt DWP611
+              </div>
+              <div class="popover-card">
+                <div class="popover-machine-name">DeWalt DWP611</div>
+                <div class="popover-status-line">
+                  <span class="pulse-dot pulse-grey" style="width:6px;height:6px;"></span>
+                  Idle — No active job
+                </div>
+                <div class="popover-stats-grid">
+                  <div class="popover-stat">
+                    <span class="popover-stat-label">RPM</span>
+                    <span class="popover-stat-value">0</span>
+                  </div>
+                  <div class="popover-stat">
+                    <span class="popover-stat-label">Feed</span>
+                    <span class="popover-stat-value">— IPM</span>
+                  </div>
+                  <div class="popover-stat">
+                    <span class="popover-stat-label">Temp</span>
+                    <span class="popover-stat-value">24°C</span>
+                  </div>
+                  <div class="popover-stat">
+                    <span class="popover-stat-label">Runtime</span>
+                    <span class="popover-stat-value">0.0h</span>
+                  </div>
+                </div>
+                <a href="#" class="popover-link">View Details →</a>
+              </div>
+            </div>
+
+          </div>
+          <p style="font-size: var(--type-xs); color: var(--text-muted); margin-top: var(--space-lg); font-family: var(--font-mono);">↑ Click either machine pill to reveal the popover card</p>
+        </div>
+      </section>
+
+<!-- 19. CONTEXT MENU -->
+      <section id="context-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Context Menu</h2>
+          </div>
+          <p class="section-description">Right-click anywhere inside the CNC file specimen card to display context operations. Nested submenu opens on hover.</p>
+        </div>
+        <div class="demo-area" style="min-height: 220px;">
+          
+          <div class="context-card" data-context-trigger data-dcs-component="context-menu">
+            <div style="width: 48px; height: 48px; border-radius: 6px; background: rgba(232, 153, 43, 0.06); border: 1px solid var(--border-default); display: inline-flex; align-items: center; justify-content: center; margin-bottom: var(--space-md);">
+              <svg style="fill: var(--accent-primary); width: 24px; height: 24px;" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            </div>
+            <h4 style="margin-bottom: var(--space-xs);">cabinet_door_v4.nc</h4>
+            <p style="font-size: var(--type-xs); font-family: var(--font-mono); color: var(--accent-primary);">G-CODE PROFILE SPECIMEN</p>
+            <p style="font-size: var(--type-xs); color: var(--text-muted); margin-top: var(--space-sm);">[ Right-Click Inside This Area to open Context Menu ]</p>
+          </div>
+
+        </div>
+      </section>
+
+<!-- 24. DRAWER / SLIDE-OUT PANEL -->
+      <section id="drawer-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Drawer / Slide-Out Panel</h2>
+          </div>
+          <p class="section-description">A panel that slides in from the right edge. Used for job details, machine settings, and quick-edit panels. Dismissible via backdrop click, close button, or Escape key.</p>
+        </div>
+        <div class="demo-area" style="text-align: center; padding: var(--space-2xl) var(--space-xl);" data-dcs-component="drawer">
+          <p style="font-size: var(--type-sm); color: var(--text-secondary); margin-bottom: var(--space-lg);">Click the button to open the Job Detail slide-out panel.</p>
+          <button class="btn btn-md btn-primary" data-action="drawer-open" data-drawer="drawer-1">Open Job Detail</button>
+        </div>
+      </section>
+
+<!-- 39. BOTTOM SHEET -->
+      <section id="sheet-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Bottom Sheet</h2>
+          </div>
+          <p class="section-description">A mobile-optimized slide-up panel for sorting, filtering parameters, or selecting actions. Features a drag handle and full keyboard/click dismiss integration.</p>
+        </div>
+        <div class="demo-area">
+          <div class="bottom-sheet-viewport" data-dcs-component="bottom-sheet">
+            <button class="btn btn-md btn-secondary" data-action="sheet-open">Trigger Bottom Sheet</button>
+            <div class="bottom-sheet-backdrop" data-action="sheet-close"></div>
+            <div class="bottom-sheet" aria-modal="true" role="dialog">
+              <div class="bottom-sheet-drag-handle" data-action="sheet-close"></div>
+              <div class="bottom-sheet-header">
+                <h4 class="bottom-sheet-title">Filter Projects</h4>
+              </div>
+              <div class="bottom-sheet-content">
+                <div class="bottom-sheet-filter-group">
+                  <span class="bottom-sheet-filter-label">Material</span>
+                  <div class="bottom-sheet-chips">
+                    <span class="sheet-chip active" data-action="sheet-chip-toggle">Aluminum</span>
+                    <span class="sheet-chip" data-action="sheet-chip-toggle">Baltic Birch</span>
+                    <span class="sheet-chip" data-action="sheet-chip-toggle">Acrylic</span>
+                    <span class="sheet-chip" data-action="sheet-chip-toggle">Brass</span>
+                  </div>
+                </div>
+
+                <div class="bottom-sheet-filter-group">
+                  <span class="bottom-sheet-filter-label">Tolerance</span>
+                  <div class="bottom-sheet-chips">
+                    <span class="sheet-chip" data-action="sheet-chip-toggle">±0.001in</span>
+                    <span class="sheet-chip active" data-action="sheet-chip-toggle">±0.005in</span>
+                    <span class="sheet-chip" data-action="sheet-chip-toggle">±0.010in</span>
+                  </div>
+                </div>
+
+                <div class="bottom-sheet-filter-group">
+                  <span class="bottom-sheet-filter-label">Date Range</span>
+                  <div class="bottom-sheet-chips">
+                    <span class="sheet-chip active" data-action="sheet-chip-single">Past Month</span>
+                    <span class="sheet-chip" data-action="sheet-chip-single">Past Year</span>
+                    <span class="sheet-chip" data-action="sheet-chip-single">All Time</span>
+                  </div>
+                </div>
+
+                <button class="sheet-apply-btn" data-action="sheet-apply">Apply Filters</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- 14. ACCORDION -->
+      <section id="accordion" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Accordion</h2>
+          </div>
+          <p class="section-description">Collapsible data lists. Expanding updates left amber highlights. Multiple tabs can be active simultaneously.</p>
+        </div>
+        <div class="demo-area">
+          <div class="accordion-group" data-dcs-component="accordion" data-accordion-mode="multi">
+            
+            <!-- Accordion Item 1 — pre-opened -->
+            <div class="accordion-item open">
+              <button class="accordion-trigger">
+                <span>Spindle Tramming Procedure</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  Instructions on how to align the spindle perpendicular to the wasteboard. 
+                  <ul style="padding-left: var(--space-lg); margin-top: var(--space-sm); display:flex; flex-direction:column; gap:4px;">
+                    <li>Step 1: Mount dual-dial indicator to spindle collet.</li>
+                    <li>Step 2: Sweep wasteboard along Y axis, checking high spots.</li>
+                    <li>Step 3: Sweep wasteboard along X axis to check tilt.</li>
+                    <li>Step 4: Shim aluminum mount bracket until delta is below 0.02mm.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>Baltic Birch Sheet Grade Specs</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  Technical characteristics of standard Baltic Birch sheets stocked in the storage cabinet:
+                  <div style="background: var(--bg-deepest); padding: var(--space-md); border-radius: 4px; border: 1px solid var(--border-default); margin-top: var(--space-sm); font-family: var(--font-mono); font-size: var(--type-xs);">
+                    - Grade: B/BB (Premium single-piece face veneer)<br>
+                    - Layer construction: 13-ply cross-banded birch layers<br>
+                    - Density: 650 kg/m³ for high-speed routing<br>
+                    - Moisture Content: 8% - 10% tolerance
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 3 -->
+            <div class="accordion-item">
+              <button class="accordion-trigger">
+                <span>G-Code Post-Processor Configuration</span>
+                <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-content-inner">
+                  Exporter parameters for Fusion360 or Vectric VCarve. Match these settings to prevent axis error overrides:
+                  <ul style="padding-left: var(--space-lg); margin-top: var(--space-sm); display:flex; flex-direction:column; gap:4px;">
+                    <li>Post-processor type: Grbl/Mach4 (Metric or Imperial outputs).</li>
+                    <li>Circular interpolation: Enable G2/G3 helical arcs.</li>
+                    <li>Working coordinate systems: G54 active base offset.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+            <!-- Minimal Variant label -->
+            <h3 style="margin: var(--space-2xl) 0 var(--space-md); font-family: var(--font-headings); font-size: var(--type-xs); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);">Minimal Variant</h3>
+
+            <!-- Minimal Accordion — flat divider-line style -->
+            <div class="accordion-group accordion--minimal" data-dcs-component="accordion">
+
+              <!-- Minimal Item 1 — pre-opened -->
+              <div class="accordion-item open">
+                <button class="accordion-trigger">
+                  <span>Enable telemetry</span>
+                  <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                </button>
+                <div class="accordion-content">
+                  <div class="accordion-content-inner">
+                    Anonymous usage data helps tune toolpath defaults. File contents are never transmitted.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Minimal Item 2 -->
+              <div class="accordion-item">
+                <button class="accordion-trigger">
+                  <span>Auto-save projects</span>
+                  <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                </button>
+                <div class="accordion-content">
+                  <div class="accordion-content-inner">
+                    Snapshots are written to the local cache every 5 minutes.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Minimal Item 3 -->
+              <div class="accordion-item">
+                <button class="accordion-trigger">
+                  <span>Keyboard shortcuts</span>
+                  <svg class="accordion-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                </button>
+                <div class="accordion-content">
+                  <div class="accordion-content-inner">
+                    Press ⌘K to open the command palette, or ? to view all bindings.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+        </div>
+      </section>
+
+<!-- 38. CONTAINER -->
+      <section id="container-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Container</h2>
+          </div>
+          <p class="section-description">Centered max-width wrapper that constrains content to a comfortable reading measure and adds consistent horizontal gutters. Use it as the outermost layout boundary for page content.</p>
+        </div>
+        <div class="demo-area">
+          <span class="specimen-class-label">Content flows edge-to-edge without a container</span>
+          <div style="background: var(--surface-elevated); border: 1px dashed var(--border-default); border-radius: var(--radius-sm); padding: var(--space-sm); font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted); margin: var(--space-xs) 0 var(--space-lg);">Full-bleed content — no max-width, no gutters</div>
+
+          <span class="specimen-class-label">Wrapped in <code>.dcs-container</code> — centered, capped at 1280px, gutters applied</span>
+          <div style="background: var(--bg-default); border: 1px dashed var(--border-default); border-radius: var(--radius-sm); margin-top: var(--space-xs);">
+            <div class="dcs-container" style="background: var(--surface-elevated); padding-top: var(--space-sm); padding-bottom: var(--space-sm);">
+              <span style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-secondary)">Centered container content with symmetric side padding</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- 12. DIVIDERS -->
+      <section id="dividers" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Dividers</h2>
+          </div>
+          <p class="section-description">Accent boundaries and centered markers dividing machining layers.</p>
+        </div>
+        <div class="demo-area">
+          <div>
+            <span class="specimen-class-label">Subtle Border Divider</span>
+            <hr class="divider-subtle">
+            
+            <span class="specimen-class-label">Amber Accent Gradient</span>
+            <hr class="divider-gradient">
+            
+            <span class="specimen-class-label">Labeled Mono Centered</span>
+            <div class="divider-labeled">MACHINING OPERATIONS</div>
+          </div>
+        </div>
+      </section>
+
+<!-- 40. GRID -->
+      <section id="grid-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Grid</h2>
+          </div>
+          <p class="section-description">Responsive column grid with 2, 3, and 4-column variants that collapse gracefully on narrow viewports. Use for card decks, stat rows, and gallery layouts.</p>
+        </div>
+        <div class="demo-area">
+          <span class="specimen-class-label">.dcs-grid .dcs-grid-2</span>
+          <div class="dcs-grid dcs-grid-2 specimen-demo-group">
+            <div class="specimen-demo-cell-lg">1</div>
+            <div class="specimen-demo-cell-lg">2</div>
+          </div>
+
+          <span class="specimen-class-label">.dcs-grid .dcs-grid-3</span>
+          <div class="dcs-grid dcs-grid-3 specimen-demo-group">
+            <div class="specimen-demo-cell-lg">1</div>
+            <div class="specimen-demo-cell-lg">2</div>
+            <div class="specimen-demo-cell-lg">3</div>
+          </div>
+
+          <span class="specimen-class-label">.dcs-grid .dcs-grid-4</span>
+          <div class="dcs-grid dcs-grid-4 specimen-demo-group-tight">
+            <div class="specimen-demo-cell-lg">1</div>
+            <div class="specimen-demo-cell-lg">2</div>
+            <div class="specimen-demo-cell-lg">3</div>
+            <div class="specimen-demo-cell-lg">4</div>
+          </div>
+        </div>
+      </section>
+
+<!-- 41. STACK -->
+      <section id="stack-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Stack</h2>
+          </div>
+          <p class="section-description">Vertical layout primitive that applies consistent spacing between children via a single gap token. Five steps from <code>xs</code> to <code>xl</code> keep rhythm predictable.</p>
+        </div>
+        <div class="demo-area">
+          <div class="dcs-grid dcs-grid-2" style="gap: var(--space-xl);">
+            <div>
+              <span class="specimen-class-label">.dcs-stack-xs</span>
+              <div class="dcs-stack dcs-stack-xs specimen-demo-group-tight">
+                <div class="specimen-demo-cell">Item A</div>
+                <div class="specimen-demo-cell">Item B</div>
+                <div class="specimen-demo-cell">Item C</div>
+              </div>
+            </div>
+            <div>
+              <span class="specimen-class-label">.dcs-stack-lg</span>
+              <div class="dcs-stack dcs-stack-lg specimen-demo-group-tight">
+                <div class="specimen-demo-cell">Item A</div>
+                <div class="specimen-demo-cell">Item B</div>
+                <div class="specimen-demo-cell">Item C</div>
+              </div>
+            </div>
+          </div>
+          <p style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted); margin-top: var(--space-md);">Variants: <code>.dcs-stack-xs</code> · <code>.dcs-stack-sm</code> · <code>.dcs-stack-md</code> · <code>.dcs-stack-lg</code> · <code>.dcs-stack-xl</code></p>
+        </div>
+      </section>
+
+<!-- 42. INLINE CLUSTER -->
+      <section id="cluster-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Inline Cluster</h2>
+          </div>
+          <p class="section-description">Horizontal row of items that wraps onto new lines when space runs out, with even spacing on both axes. Ideal for tag lists, filter chips, and button groups.</p>
+        </div>
+        <div class="demo-area">
+          <div class="dcs-cluster-group">
+            <span class="dcs-cluster-label">Tight spacing — small chips <code>.dcs-cluster-xs</code></span>
+            <div class="dcs-cluster dcs-cluster-xs">
+              <span class="dcs-cluster-item dcs-cluster-item--sm">Aluminum</span>
+              <span class="dcs-cluster-item dcs-cluster-item--sm">Steel</span>
+              <span class="dcs-cluster-item dcs-cluster-item--sm">Brass</span>
+              <span class="dcs-cluster-item dcs-cluster-item--sm">Titanium</span>
+              <span class="dcs-cluster-item dcs-cluster-item--sm">Copper</span>
+            </div>
+          </div>
+
+          <div class="dcs-cluster-group">
+            <span class="dcs-cluster-label">Medium spacing — medium chips <code>.dcs-cluster-md</code></span>
+            <div class="dcs-cluster dcs-cluster-md">
+              <span class="dcs-cluster-item dcs-cluster-item--md dcs-cluster-item--active">Roughing</span>
+              <span class="dcs-cluster-item dcs-cluster-item--md">Finishing</span>
+              <span class="dcs-cluster-item dcs-cluster-item--md">Drilling</span>
+              <span class="dcs-cluster-item dcs-cluster-item--md">Tapping</span>
+              <span class="dcs-cluster-item dcs-cluster-item--md">Boring</span>
+            </div>
+          </div>
+
+          <div class="dcs-cluster-group">
+            <span class="dcs-cluster-label">Loose spacing — large chips <code>.dcs-cluster-lg</code></span>
+            <div class="dcs-cluster dcs-cluster-lg">
+              <span class="dcs-cluster-item dcs-cluster-item--lg dcs-cluster-item--active">End Mill</span>
+              <span class="dcs-cluster-item dcs-cluster-item--lg">Ball Nose</span>
+              <span class="dcs-cluster-item dcs-cluster-item--lg">V-Bit</span>
+              <span class="dcs-cluster-item dcs-cluster-item--lg">Fly Cutter</span>
+              <span class="dcs-cluster-item dcs-cluster-item--lg">Face Mill</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- 43. TOOLBAR -->
+      <section id="toolbar-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Toolbar</h2>
+          </div>
+          <p class="section-description">Horizontal action bar that organizes controls into groups separated by dividers, with a flexible spacer to push trailing actions to the far edge. Shown as a CNC jog-control strip.</p>
+        </div>
+        <div class="demo-area">
+          <div class="dcs-toolbar">
+            <div class="dcs-toolbar-group">
+              <button class="btn btn-sm btn-ghost">X−</button>
+              <button class="btn btn-sm btn-ghost">X+</button>
+              <button class="btn btn-sm btn-ghost">Y−</button>
+              <button class="btn btn-sm btn-ghost">Y+</button>
+              <button class="btn btn-sm btn-ghost">Z−</button>
+              <button class="btn btn-sm btn-ghost">Z+</button>
+            </div>
+            <div class="dcs-toolbar-divider"></div>
+            <div class="dcs-toolbar-group">
+              <button class="btn btn-sm btn-ghost">0.1</button>
+              <button class="btn btn-sm btn-ghost">1.0</button>
+              <button class="btn btn-sm btn-ghost">10</button>
+            </div>
+            <div class="dcs-toolbar-spacer"></div>
+            <div class="dcs-toolbar-group">
+              <button class="btn btn-sm btn-primary">Home</button>
+            </div>
+          </div>
+          <p style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted); margin-top: var(--space-md);">Jog axes · step size · homing pushed right by <code>.dcs-toolbar-spacer</code></p>
+        </div>
+      </section>
+
+<!-- 44. PANEL -->
+      <section id="panel-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Panel</h2>
+          </div>
+          <p class="section-description">Self-contained surface with an uppercase mono header, a padded body, and an optional footer for actions. Use to group related controls or content into a bordered card.</p>
+        </div>
+        <div class="demo-area">
+          <div class="dcs-panel" style="max-width: 480px;">
+            <div class="dcs-panel-header">
+              <span>Spindle Settings</span>
+              <span style="color: var(--accent-primary)">●</span>
+            </div>
+            <div class="dcs-panel-body">
+              <div class="dcs-stack dcs-stack-sm">
+                <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-secondary)"><span>RPM</span><span>12,000</span></div>
+                <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-secondary)"><span>Feed Rate</span><span>1,800 mm/min</span></div>
+                <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-secondary)"><span>Coolant</span><span>Flood</span></div>
+              </div>
+            </div>
+            <div class="dcs-panel-footer">
+              <button class="btn btn-sm btn-ghost">Reset</button>
+              <button class="btn btn-sm btn-primary">Apply</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- 45. SPLIT PANE -->
+      <section id="splitpane-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Split Pane</h2>
+          </div>
+          <p class="section-description">Resizable side-by-side panels with a draggable handle. Grab the divider and slide to reallocate width between panes. Interactive — G-code on the left, job settings on the right.</p>
+        </div>
+        <div class="demo-area">
+          <div class="dcs-split-pane" data-dcs-component="split-pane">
+            <div class="dcs-split-left" style="flex: 0 0 55%;">
+              <span class="specimen-class-label">program.nc</span>
+              <pre style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-secondary); line-height: 1.6; margin-top: var(--space-sm); white-space: pre;">G21 G90 G94
+G0 Z5.000
+G0 X0.000 Y0.000
+M3 S12000
+G1 Z-1.000 F300
+G1 X50.000 F1800
+G1 Y25.000
+G1 X0.000
+G1 Y0.000
+G0 Z5.000
+M5
+M30</pre>
+            </div>
+            <div class="dcs-split-handle"></div>
+            <div class="dcs-split-right" style="flex: 1 1 auto;">
+              <span class="specimen-class-label">Job Settings</span>
+              <div class="dcs-stack dcs-stack-sm" style="margin-top: var(--space-sm);">
+                <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-secondary)"><span>Units</span><span>Metric</span></div>
+                <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-secondary)"><span>Stock</span><span>6061-T6</span></div>
+                <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-secondary)"><span>Tool</span><span>⌀6 Flat</span></div>
+                <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-secondary)"><span>Est. Time</span><span>4:12</span></div>
+              </div>
+            </div>
+          </div>
+          <p style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted); margin-top: var(--space-md); text-align: center;">Drag the center handle to resize the panes — <code>.dcs-split-pane</code> driven by <code>dcs-split-pane.js</code></p>
+        </div>
+      </section>
+
+<!-- STICKY ACTION BAR -->
+      <section id="stickybar-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Sticky Action Bar</h2>
+          </div>
+          <p class="section-description">A horizontal action bar that pins to the bottom of its container while content scrolls past, then releases at the end. When pinned it gains a top border and shadow and slides up subtly. An IntersectionObserver detects the stuck state. Scroll the panel below to see it engage.</p>
+        </div>
+        <div class="demo-area">
+          <div class="dcs-actionbar-demo">
+            <div class="dcs-actionbar-scroll">
+              <div class="dcs-actionbar-content">
+                <p>You have staged three toolpaths for the current job. Review the operation summary below before committing changes to the post-processor.</p>
+                <p>Facing pass — ⌀12 insert mill, 1800 mm/min, 0.5mm stepdown across the full stock face. Estimated 2:40 at 60% spindle load.</p>
+                <p>Adaptive clearing — ⌀6 flat end mill, 12000 RPM, trochoidal engagement kept under 8% to protect the tool. Estimated 6:15.</p>
+                <p>Contour finish — ⌀6 flat end mill, 0.1mm radial, climb milling for a clean wall finish. Estimated 3:05.</p>
+                <p>Chamfer pass — 90° spot drill run as an edge break on all top perimeter edges. Estimated 0:45.</p>
+                <p>Drilling cycle — peck drill ⌀5 through four mounting holes with G83 retract. Estimated 1:10.</p>
+                <p>Keep scrolling — the action bar stays pinned to the bottom edge until this content runs out, at which point it releases inline.</p>
+                <p>Verify work offsets (G54) and confirm the tool table matches the physical carousel before you export.</p>
+              </div>
+              <div class="dcs-sticky-bar" data-dcs-component="sticky-bar">
+                <div class="dcs-sticky-bar-meta">3 files selected</div>
+                <div class="dcs-sticky-bar-actions">
+                  <button class="btn btn-md btn-ghost">Discard</button>
+                  <button class="btn btn-md btn-secondary">Export G-Code</button>
+                  <button class="btn btn-md btn-primary">Save Changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- 36. IMAGE COMPARISON SLIDER -->
+      <section id="compare-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Image Comparison Slider</h2>
+          </div>
+          <p class="section-description">Before/after split-view slider for project portfolios, material finishes, and build progress. Drag the handle to reveal. Interactive — grab the divider and slide.</p>
+        </div>
+        <div class="demo-area">
+          <div class="compare-container" data-dcs-component="image-compare">
+            <div class="compare-before">
+              <div class="compare-label">Raw Stock</div>
+              <div class="compare-image" style="background: linear-gradient(135deg, #1a1b2a 0%, #252840 50%, #1a1b2a 100%); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted);">
+                <div style="text-align: center;">
+                  <div style="font-size: 48px; margin-bottom: var(--space-sm); opacity: 0.3;">⬡</div>
+                  <div>Raw 6061 Aluminum</div>
+                </div>
+              </div>
+            </div>
+            <div class="compare-after">
+              <div class="compare-label after">Anodized Finish</div>
+              <div class="compare-image" style="background: linear-gradient(135deg, #1a1520 0%, #2a2040 50%, #1a1520 100%); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: var(--type-sm); color: var(--accent-primary);">
+                <div style="text-align: center;">
+                  <div style="font-size: 48px; margin-bottom: var(--space-sm); opacity: 0.5;">✦</div>
+                  <div>Hard Anodized — Type III</div>
+                </div>
+              </div>
+            </div>
+            <div class="compare-handle">
+                <div class="compare-grip">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 2L6 14M10 2L10 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              <input type="range" min="0" max="100" value="50" class="compare-slider" aria-label="Comparison slider">
+          </div>
+          <p style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted); margin-top: var(--space-md); text-align: center;">Drag the handle to compare before and after finishes</p>
+        </div>
+      </section>
+
+
+    </main>
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT LOGIC
+       ========================================================================== -->
+
+
+  <!-- Drawer DOM (fixed overlay, outside main layout) -->
+  <div class="drawer-overlay" data-drawer="drawer-1">
+    <div class="drawer-backdrop" data-action="drawer-close"></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Job Detail">
+      <div class="drawer-header">
+        <div>
+          <div class="drawer-title">Job #447</div>
+          <div style="font-size:var(--type-xs);color:var(--text-muted);font-family:var(--font-mono);margin-top:2px;">Birch Cabinet Face</div>
+        </div>
+        <button class="drawer-close-btn" data-action="drawer-close" aria-label="Close drawer">&times;</button>
+      </div>
+      <div class="drawer-body">
+        <div class="drawer-row">
+          <span class="drawer-row-label">Material</span>
+          <span class="drawer-row-value">Baltic Birch 18mm</span>
+        </div>
+        <div class="drawer-row">
+          <span class="drawer-row-label">Tool</span>
+          <span class="drawer-row-value">¼" Compression</span>
+        </div>
+        <div class="drawer-row">
+          <span class="drawer-row-label">Status</span>
+          <span class="drawer-row-value">
+            <span class="badge badge-success" style="background:rgba(90,158,111,0.12);color:var(--accent-sage);border-color:rgba(90,158,111,0.25);">● Running</span>
+          </span>
+        </div>
+        <div class="drawer-row">
+          <span class="drawer-row-label">Started</span>
+          <span class="drawer-row-value">2026-06-30  14:22</span>
+        </div>
+        <div class="drawer-row">
+          <span class="drawer-row-label">Est. Runtime</span>
+          <span class="drawer-row-value">42 min</span>
+        </div>
+        <div style="padding: var(--space-sm) 0;">
+          <div class="drawer-progress-label">
+            <span>Progress</span>
+            <span style="color:var(--text-primary);font-weight:600;">68%</span>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 68%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="drawer-footer">
+        <button class="btn btn-sm btn-secondary" data-action="drawer-toast-close" data-toast-msg="JOB PAUSED" data-toast-type="warning">Pause Job</button>
+        <button class="btn btn-sm btn-primary" data-action="drawer-toast-close" data-toast-msg="Opening full report…" data-toast-type="info">View Full Report</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       V1 COMMAND PALETTE ENGINE (Global Scope)
+       Full glass-morphism, section headers, arrow-key navigation, toast on select
+       ========================================================================== -->
+
+  <!-- DYNAMIC COMPONENT NUMBERING -->
+  <script>
+    (function() {
+      'use strict';
+      var num = 1;
+      document.querySelectorAll('.sidebar-item').forEach(function(item) {
+        var span = item.querySelector('.sidebar-num');
+        if (span) span.textContent = String(num++).padStart(2, '0');
+      });
+      num = 1;
+      document.querySelectorAll('.section-specimen').forEach(function(section) {
+        var span = section.querySelector('.section-index');
+        if (span) span.textContent = String(num++).padStart(2, '0');
+      });
+    })();
+  </script>
+</body>
+</html>

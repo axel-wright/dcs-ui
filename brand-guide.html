@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t;try{t=localStorage.getItem("dcs-theme")}catch(e){}if(t==="light")document.documentElement.setAttribute("data-theme","light")})()</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diaz Creative Studio — Warm Dark Brand Design System</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="A comprehensive, production-ready brand design system guide for Diaz Creative Studio's Warm Dark (Workshop at Night) visual language. Featuring a live component library, modular type scale, and interactive system specimens.">
+
+  <!-- Design System Styles -->
+  <link rel="stylesheet" href="css/dcs-core.css?v=1789999999">
+  <link rel="stylesheet" href="css/dcs-components.css?v=1789999999">
+  <link rel="stylesheet" href="guide.css?v=1789999999">
+
+  <!-- Design System Component Registry (defer) -->
+  <script src="js/dcs-core.js?v=1789999999" defer></script>
+  <script src="js/dcs-fab.js?v=1789999999" defer></script>
+
+  <!-- Page-specific layer (defer) -->
+  <script src="guide.js?v=1789999999" defer></script>
+</head>
+<body>
+  <!-- Sticky Navigation -->
+  <nav class="sticky-nav">
+    <div class="nav-container">
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation">☰</button>
+      <a href="#" class="nav-logo">
+        <svg class="nav-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="currentColor">
+          <g>
+            <path d="M565.8,322.4c-.4,1.1-.9,2.1-1.3,3.1,4.1-1.3,8-4.5,11.3-10.4-3.4,3.6-6.8,6-10,7.3Z"/>
+            <path d="M654.1,387.4c-2.7-8.2-2.7-14.9,6.3-17.4,21.6-6,38.6,13,52.7,27,6.1-34.9-3.4-67-31.8-88.9,33.9-24.8,22.3-62,12.4-96,.7-10.8-1.4-20.3-14.3-15-.4-27.5-19.8-52.3-36-17-8.4-15.6-20.8-102.8-42.3-53.4-4.5,5.7-4.3,24.9-14.5,20.7-13.2-11.8-36.8-90.2-57.6-66-3.9,10.8,1.4,24.9,2.9,35.5,2,10-1.3,12.9-7.4,19.7-10.7,2.2-16.2-12-23.1-17.9-12.2-9.4-45.4-59.9-58.7-47.8-14.9,16.5.4,37.8,7.7,54.3,5.4,37.2-74.9-76.7-84.2-34.5-4.2,19.7,36.2,39.3,14.7,52.6-60.7-44.2-81.3-38.7-61,38.2,18.9,34.5,47.6,64.7,87,73.7-106.8,94.4-54.3,163.6-204.9,240.5,16.6,2.7,32.8,2.6,49.6,1.2-19.9,10.1-40.5,18.7-59.6,30.2,54.2,17.6,79.4,9.9,125.6-20.1-5.2,14.4-7.3,27.6-6.7,42.9.8.3,1.6.7,2.4,1,6.8-6.4,13.7-12.8,20.9-18.8-4.2,15.7-5.2,30-2.2,46.1.7,0,1.4,0,2,0,7.3-9.6,15-18.6,23.6-26.9,5.2,17,13,31.7,23.2,46.2,11.5-14.7,23.6-28.9,36.3-42.7-10,26.8-21,53.6-15,82.6,92.2-60.3,93.3-70.1,93.7-127.7,9.3,12.6,32.7,47.3,25.3,68.1,11.8-18.3,16.6-35,16-56.6,0-.3,0-.4,0-.4,0,0,21.6,22.4,17.1,57.2,9.2-11.8,15.6-24,20.2-38.2,27.6,33.7,71,16,101.7-4.5,19.8-7,42.2-18.7,41.6-43.8,1.6-47.9-32.8-74.9-63.8-104.1ZM582.6,321.6c0-1.1.2-2.1.4-3.2-1.6.9-3.3,1.9-5,2.5.8-2.8,1.5-6.3.8-9.3-4.5,31.3-39.3,24.3-44.1-2.8,0,0,.1,0,.2,0,1.1,1.6,2.3,3.1,3.6,4.6-1.5-4.9-.2-9,.7-11.6.6-1.6,3.3-3.4,6.3-5-4.3.9-8.6,2.6-12.7,4.5-10.6,0-21.1,0-31.7.5,6-3,12.1-5.8,18.3-8.3.1,0,.2,0,.4,0,0,0,0,0,0,0,12.3-3.9,24.5-6.3,37.4-7.4-.2-2.1-3-3.3-4.3-5,.2-.3.3-.5.5-.8,5.2,2.6,10.4,5.3,15.6,7.8.4-.7.9-.3,1.6-.2,5.1,6.1,9.7,12.5,14.3,19,.4-.2.7-.3,1.1-.5-.9-4.1-1.7-8.2-2.7-12.3,10.9,6.8,8.3,20.2-.7,27.4ZM643.1,385.3h0s0,0,0,0c0,0,0,0,0,0Z"/>
+            <path d="M404.5,722.9c-6.4-130-74.2-141.3-214.7-156l-5.6,5.3c25.8,32,38.6,74.3,38.6,126.8,0,53.9,8.5,110.4-38.6,154.1v1.9l1.9,1.7c118.7-9.7,209.1-38.3,218.3-133.8ZM294.4,790.8c-15.1,2.8-23.2-38.2-22-88.2,2.3-15.4.7-74.3,20-73.4,35.8-6.5,47.3,29.5,53.4,93.7h0c1.4,33.7-20.3,75.3-51.5,67.9Z"/>
+            <path d="M377.7,864.5c18.7,9.1,38.4-11.5,30.5-30.2-20-36.2-64.1,9.9-30.5,30.2Z"/>
+            <path d="M598.1,784.7h0s-3.9-5.6-3.9-5.6h-1.7c-42.7,72.2-137.9,50.5-130.4-47.6-1.7-79.8,75-89.6,126.8-36.7,8.4,8.5,12.2-70.6,7.2-104.6h-1.9c-40.1,35.6-39.1,10-77,10.9-34.6,9.9-64.3,30.4-86.2,55.1-17.2,11.2-25.2,101.3-11.1,146.8,55.4,104.2,84.3,81.8,167.1,62.5,13,3.9,11.3-62.5,11.1-80.9Z"/>
+            <path d="M606,900c18.7,9.1,38.4-11.5,30.5-30.2-20-36.2-64.1,9.9-30.5,30.2Z"/>
+            <path d="M800,726.9h0c-1-48.9-117.1-82.7-119.3-93.7,5.8-49,73.1-35.5,104.6,0,6-24.5,12.2-55.7,7.2-84.3-62.8,26.3-40.7,13.5-87.9,7.2-92.1,13.5-131.2,142.9-22.2,154.1,36.7,2.1,55.1,8.9,55.1,20.3,1.5,38.5-8.4,69.9-29.2,67.9-36.2,1.9-34.6-30.4-3.6-55.1v-3.6c-55.5-.1-96.2,1.8-112.1,5.5,0,7.7,6.8,17.5,20.3,29.2,30.5,56,58.9,83.2,89.8,82.6,56.3-10.2,103-87.4,97.3-130.2Z"/>
+            <path d="M817.5,827.3c-12.4-32.3-56.8-8.4-40,20.1,14.9,21.6,46.3,4.5,40-20.1Z"/>
+          </g>
+        </svg>
+        <span class="nav-logo-status">WARM DARK</span>
+      </a>
+      <div class="nav-links">
+        <a href="#colors">01 Colors</a>
+        <a href="#typography">02 Typography</a>
+        <a href="#spacing">03 Spacing</a>
+        <a href="#components">04 Components</a>
+        <a href="#photography">05 Photography</a>
+        <a href="#principles">06 Principles</a>
+        <a href="#hero-sandbox" class="nav-cta">07 Live Sandbox</a>
+      </div>
+      <div data-dcs-component="theme"></div>
+    </div>
+  </nav>
+
+  <button class="fab-button fab-back-to-top" aria-label="Back to top" style="position: fixed !important; bottom: var(--space-lg); right: var(--space-lg); width: 48px; height: 48px; z-index: 900;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Main Content Container -->
+  <main class="container">
+    <!-- Brand Header -->
+    <header class="brand-header">
+      <span class="header-badge">WARM DARK DESIGN SYSTEM</span>
+      <h1 class="brand-title">Workshop at night.</h1>
+      <p class="brand-subtitle">Diaz Creative Studio — Brand Design System Specification</p>
+      
+      <div class="brand-concept-card">
+        <p>
+          Inspired by the tactile warmth of a metal and woodworking shop after hours. Deep industrial steel tones paired with glowing tungsten accents, high-contrast typography, and organic ambient shadows. This guide details the specifications and live component implementation.
+        </p>
+      </div>
+    </header>
+
+    <!-- Table of Contents Section -->
+    <section class="brand-section toc-section">
+      <div class="toc-grid">
+        <a href="#colors" class="toc-card">
+          <span class="toc-number">01</span>
+          <span class="toc-title">Color System</span>
+          <span class="toc-desc">Background steel shades, tungsten accents, and organic glowing shadows.</span>
+        </a>
+        <a href="#typography" class="toc-card">
+          <span class="toc-number">02</span>
+          <span class="toc-title">Typography</span>
+          <span class="toc-desc">Functional geometric sans paired with editorial high-contrast serif italic.</span>
+        </a>
+        <a href="#spacing" class="toc-card">
+          <span class="toc-number">03</span>
+          <span class="toc-title">Spacing System</span>
+          <span class="toc-desc">Mathematical 4px-base grid guiding layout density and alignments.</span>
+        </a>
+        <a href="#components" class="toc-card">
+          <span class="toc-number">04</span>
+          <span class="toc-title">Component Library</span>
+          <span class="toc-desc">Interactive buttons, cards, text fields, badges, and active state styles.</span>
+        </a>
+        <a href="#photography" class="toc-card">
+          <span class="toc-number">05</span>
+          <span class="toc-title">Photography</span>
+          <span class="toc-desc">Atmospheric, high-contrast visual standards focusing on the maker context.</span>
+        </a>
+        <a href="#principles" class="toc-card">
+          <span class="toc-number">06</span>
+          <span class="toc-title">Layout & Motion</span>
+          <span class="toc-desc">Standards for negative space, luminance hierarchy, and hover dynamics.</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider-subtle"></div>
+
+    <!-- SECTION 01: COLOR SYSTEM -->
+    <section id="colors" class="brand-section">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2>Color System</h2>
+        <p class="section-description">
+          The Diaz Creative Studio color system is built on a "Workshop at Night" aesthetic. It leverages dark, structural steel tones as a foundation, highlighted by warm tungsten accents, organic glows, and high-readability text variables.
+        </p>
+      </div>
+
+      <!-- Backgrounds -->
+      <div class="color-category">
+        <h3 class="color-category-title">Backgrounds</h3>
+        <div class="swatch-grid">
+          <div class="swatch-card" data-action="copy-color" data-color="#0b0d14">
+            <div class="swatch-preview" style="background-color: var(--bg-deepest);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">bg-deepest</div>
+              <div class="swatch-value">#0b0d14</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+          <div class="swatch-card" data-action="copy-color" data-color="#0f1119">
+            <div class="swatch-preview" style="background-color: var(--bg-default);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">bg-default</div>
+              <div class="swatch-value">#0f1119</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+          <div class="swatch-card" data-action="copy-color" data-color="#161922">
+            <div class="swatch-preview" style="background-color: var(--surface-elevated);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">surface-elevated</div>
+              <div class="swatch-value">#161922</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+          <div class="swatch-card" data-action="copy-color" data-color="#1c1f2a">
+            <div class="swatch-preview" style="background-color: var(--surface-hover);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">surface-hover</div>
+              <div class="swatch-value">#1c1f2a</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accents -->
+      <div class="color-category">
+        <h3 class="color-category-title">Accents</h3>
+        <div class="swatch-grid">
+          <div class="swatch-card" data-action="copy-color" data-color="#e8992b">
+            <div class="swatch-preview" style="background-color: var(--accent-primary);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">accent-primary</div>
+              <div class="swatch-value">#e8992b</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+          <div class="swatch-card" data-action="copy-color" data-color="#f0a83d">
+            <div class="swatch-preview" style="background-color: var(--accent-primary-hover);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">accent-primary-hover</div>
+              <div class="swatch-value">#f0a83d</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+          <div class="swatch-card" data-action="copy-color" data-color="#c4653a">
+            <div class="swatch-preview" style="background-color: var(--accent-terracotta);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">accent-terracotta</div>
+              <div class="swatch-value">#c4653a</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+          <div class="swatch-card" data-action="copy-color" data-color="#d4a853">
+            <div class="swatch-preview" style="background-color: var(--accent-gold);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">accent-gold</div>
+              <div class="swatch-value">#d4a853</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+          <div class="swatch-card" data-action="copy-color" data-color="#5a9e6f">
+            <div class="swatch-preview" style="background-color: var(--accent-sage);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">accent-sage</div>
+              <div class="swatch-value">#5a9e6f</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+          <div class="swatch-card" data-action="copy-color" data-color="#b8453a">
+            <div class="swatch-preview" style="background-color: var(--accent-rose);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">accent-rose</div>
+              <div class="swatch-value">#b8453a</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="color-category">
+        <h3 class="color-category-title">Text</h3>
+        <div class="swatch-grid">
+          <div class="swatch-card" data-action="copy-color" data-color="#ede6dc">
+            <div class="swatch-preview" style="background-color: var(--text-primary);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">text-primary</div>
+              <div class="swatch-value">#ede6dc</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+          <div class="swatch-card" data-action="copy-color" data-color="#a89e92">
+            <div class="swatch-preview" style="background-color: var(--text-secondary);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">text-secondary</div>
+              <div class="swatch-value">#a89e92</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+          <div class="swatch-card" data-action="copy-color" data-color="#6b635a">
+            <div class="swatch-preview" style="background-color: var(--text-muted);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">text-muted</div>
+              <div class="swatch-value">#6b635a</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+          <div class="swatch-card" data-action="copy-color" data-color="#1a1814">
+            <div class="swatch-preview" style="background-color: var(--text-inverse);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">text-inverse</div>
+              <div class="swatch-value">#1a1814</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Glows & Shadows -->
+      <div class="color-category">
+        <h3 class="color-category-title">Glows & Shadows</h3>
+        <div class="swatch-grid">
+          <div class="swatch-card" data-action="copy-glow" data-glow="0 0 20px rgba(232, 153, 43, 0.15), 0 0 60px rgba(232, 153, 43, 0.05)">
+            <div class="swatch-preview glow-preview-card glow-amber-light"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">glow-amber</div>
+              <div class="swatch-value">var(--glow-amber)</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+          <div class="swatch-card" data-action="copy-glow" data-glow="0 0 16px rgba(196, 101, 58, 0.12)">
+            <div class="swatch-preview glow-preview-card glow-terracotta-light"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">glow-terracotta</div>
+              <div class="swatch-value">var(--glow-terracotta)</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+          <div class="swatch-card" data-action="copy-glow" data-glow="0 4px 24px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3)">
+            <div class="swatch-preview glow-preview-card glow-card-shadow"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">shadow-card</div>
+              <div class="swatch-value">var(--shadow-card)</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+          <div class="swatch-card" data-action="copy-glow" data-glow="0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.4)">
+            <div class="swatch-preview glow-preview-card glow-elevated-shadow"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">shadow-elevated</div>
+              <div class="swatch-value">var(--shadow-elevated)</div>
+              <div class="swatch-copy-hint">CLICK TO COPY</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider-subtle"></div>
+
+    <!-- SECTION 02: TYPOGRAPHY -->
+    <section id="typography" class="brand-section">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>Typography</h2>
+        <p class="section-description">
+          Diaz Creative Studio pairs the clean, geometric structure of Inter for headings and functional interfaces with the historical, literary warmth of Playfair Display for editorial expressions.
+        </p>
+      </div>
+
+      <!-- Type Scale Specimens -->
+      <div class="specimen-table">
+        <div class="specimen-row">
+          <div class="specimen-meta">
+            <span class="specimen-label">5XL Heading</span>
+            <span class="specimen-details">64px / Inter 800 / Line Height 1.1</span>
+          </div>
+          <div class="specimen-text" style="font-family: var(--font-headings); font-size: var(--type-5xl); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em;">
+            Milled Brass & Steel
+          </div>
+        </div>
+
+        <div class="specimen-row">
+          <div class="specimen-meta">
+            <span class="specimen-label">4XL Heading</span>
+            <span class="specimen-details">48px / Inter 800 / Line Height 1.2</span>
+          </div>
+          <div class="specimen-text" style="font-family: var(--font-headings); font-size: var(--type-4xl); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em;">
+            Diaz Creative Studio
+          </div>
+        </div>
+
+        <div class="specimen-row">
+          <div class="specimen-meta">
+            <span class="specimen-label">3XL Heading</span>
+            <span class="specimen-details">36px / Inter 800 / Line Height 1.2</span>
+          </div>
+          <div class="specimen-text" style="font-family: var(--font-headings); font-size: var(--type-3xl); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em;">
+            Late Night Synthesis
+          </div>
+        </div>
+
+        <div class="specimen-row">
+          <div class="specimen-meta">
+            <span class="specimen-label">2XL Subheading</span>
+            <span class="specimen-details">28px / Inter 700 / Line Height 1.3</span>
+          </div>
+          <div class="specimen-text" style="font-family: var(--font-headings); font-size: var(--type-2xl); font-weight: 700; line-height: 1.3;">
+            Designed for the Workbench
+          </div>
+        </div>
+
+        <div class="specimen-row">
+          <div class="specimen-meta">
+            <span class="specimen-label">XL Subheading</span>
+            <span class="specimen-details">24px / Inter 700 / Line Height 1.3</span>
+          </div>
+          <div class="specimen-text" style="font-family: var(--font-headings); font-size: var(--type-xl); font-weight: 700; line-height: 1.3;">
+            Synthesizer Control Decks
+          </div>
+        </div>
+
+        <div class="specimen-row">
+          <div class="specimen-meta">
+            <span class="specimen-label">LG Large Text</span>
+            <span class="specimen-details">20px / Inter 600 / Line Height 1.4</span>
+          </div>
+          <div class="specimen-text" style="font-family: var(--font-body); font-size: var(--type-lg); font-weight: 600; line-height: 1.4;">
+            Warm amber glows reflecting off brushed aluminum panel surfaces.
+          </div>
+        </div>
+
+        <div class="specimen-row">
+          <div class="specimen-meta">
+            <span class="specimen-label">MD Medium Text</span>
+            <span class="specimen-details">18px / Inter 500 / Line Height 1.5</span>
+          </div>
+          <div class="specimen-text" style="font-family: var(--font-body); font-size: var(--type-md); font-weight: 500; line-height: 1.5;">
+            Tactile materials, directional light paths, and organic shadow systems.
+          </div>
+        </div>
+
+        <div class="specimen-row">
+          <div class="specimen-meta">
+            <span class="specimen-label">BASE Body Text</span>
+            <span class="specimen-details">16px / Inter 400 / Line Height 1.6</span>
+          </div>
+          <div class="specimen-text" style="font-family: var(--font-body); font-size: var(--type-base); font-weight: 400; line-height: 1.6;">
+            A structured modular system ensures that visual scale is mathematically balanced. All body text scales are designed to read comfortably under varied lighting conditions.
+          </div>
+        </div>
+
+        <div class="specimen-row">
+          <div class="specimen-meta">
+            <span class="specimen-label">SM Caption / Label</span>
+            <span class="specimen-details">14px / Inter 400 / Line Height 1.6</span>
+          </div>
+          <div class="specimen-text" style="font-family: var(--font-body); font-size: var(--type-sm); font-weight: 400; line-height: 1.6;">
+            All system properties align to a rigid 4px horizontal baseline grid.
+          </div>
+        </div>
+
+        <div class="specimen-row">
+          <div class="specimen-meta">
+            <span class="specimen-label">XS Micro Label</span>
+            <span class="specimen-details">12px / JetBrains Mono 500 / Letter Spacing 0.05em</span>
+          </div>
+          <div class="specimen-text" style="font-family: var(--font-mono); font-size: var(--type-xs); font-weight: 500; letter-spacing: 0.05em; color: var(--accent-gold);">
+            DCS DESIGN SYSTEM VER. 1.0 // PETALUMA
+          </div>
+        </div>
+      </div>
+
+      <!-- Typography Pairing Showcase -->
+      <div class="type-pairing-card">
+        <div style="font-family: var(--font-headings); font-weight: 800; font-size: var(--type-3xl); color: var(--text-primary); margin-bottom: var(--space-sm);">Workshop at night.</div>
+        <div style="font-family: var(--font-display); font-size: var(--type-2xl); font-style: italic; color: var(--text-secondary);">Dark doesn't have to be cold.</div>
+      </div>
+
+      <!-- Display vs Heading Usage Guide -->
+      <div style="margin-top: var(--space-3xl); padding-top: var(--space-3xl); border-top: 1px solid var(--border-default);">
+        <h3 style="font-family: var(--font-headings); font-size: var(--type-xl); font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-sm);">Display vs. Heading: When to Use Each</h3>
+        <p style="color: var(--text-secondary); font-size: var(--type-sm); margin-bottom: var(--space-xl); max-width: 720px;">
+          These two typefaces serve different roles. Inter carries the functional weight — navigation, labels, data. Playfair Display carries the emotional weight — it's the voice that stops someone scrolling.
+        </p>
+
+        <div class="comparison-container">
+          <div class="comparison-card">
+            <div class="comparison-badge badge-good">Primary — UI &amp; Functional</div>
+            <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md);">
+              <span style="font-family: var(--font-headings); font-weight: 800; font-size: var(--type-lg); color: var(--accent-primary);">Inter</span>
+              <span style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted);">var(--font-headings)</span>
+            </div>
+            <div style="font-size: var(--type-xs); color: var(--accent-sage); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-md);">Use for</div>
+            <ul style="color: var(--text-secondary); font-size: var(--type-sm); line-height: 1.8; margin: 0 0 var(--space-lg) 0; padding-left: var(--space-lg);">
+              <li>Page headings &amp; section titles</li>
+              <li>Navigation links &amp; breadcrumbs</li>
+              <li>Button text &amp; form labels</li>
+              <li>Card titles &amp; metadata</li>
+              <li>Data tables &amp; dashboards</li>
+              <li>Badge text &amp; UI chrome</li>
+            </ul>
+            <div style="background: var(--bg-deepest); border-radius: 8px; padding: var(--space-md); border: 1px solid var(--border-default);">
+              <div style="font-family: var(--font-headings); font-weight: 800; font-size: var(--type-lg); color: var(--text-primary); margin-bottom: 4px;">Speeds &amp; Feeds</div>
+              <div style="font-family: var(--font-headings); font-weight: 700; font-size: var(--type-sm); color: var(--accent-primary); margin-bottom: var(--space-sm);">Baltic Birch · 18,000 RPM</div>
+              <div style="font-family: var(--font-headings); font-weight: 500; font-size: var(--type-sm); color: var(--text-secondary);">Geometric clarity at every weight — scannable at a glance.</div>
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <div class="comparison-badge badge-good">Editorial — Brand Voice</div>
+            <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md);">
+              <span style="font-family: var(--font-display); font-weight: 700; font-style: italic; font-size: var(--type-lg); color: var(--accent-gold);">Playfair Display</span>
+              <span style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted);">var(--font-display)</span>
+            </div>
+            <div style="font-size: var(--type-xs); color: var(--accent-sage); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-md);">Use for</div>
+            <ul style="color: var(--text-secondary); font-size: var(--type-sm); line-height: 1.8; margin: 0 0 var(--space-lg) 0; padding-left: var(--space-lg);">
+              <li>Article hero titles</li>
+              <li>Pull quotes &amp; editorial callouts</li>
+              <li>Brand statements &amp; taglines</li>
+              <li>Section dividers with personality</li>
+              <li>Landing page hero text</li>
+              <li>Social media quote cards</li>
+            </ul>
+            <div style="background: var(--bg-deepest); border-radius: 8px; padding: var(--space-md); border: 1px solid var(--border-default);">
+              <div style="font-family: var(--font-display); font-weight: 700; font-style: italic; font-size: var(--type-lg); color: var(--text-primary); margin-bottom: var(--space-sm); line-height: 1.2;">"Tramming is the difference between a CNC that makes parts and a CNC that makes <em style="color: var(--accent-gold);">good</em> parts."</div>
+              <div style="font-family: var(--font-body); font-weight: 500; font-size: var(--type-sm); color: var(--text-secondary);">High-contrast italic commands attention — reserved for moments that deserve it.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: var(--surface-elevated); border: 1px solid var(--border-default); border-radius: 12px; padding: var(--space-lg); margin-top: var(--space-lg);">
+          <div style="font-family: var(--font-headings); font-weight: 700; font-size: var(--type-sm); color: var(--text-primary); margin-bottom: var(--space-sm);">Rule of Thumb</div>
+          <ul style="color: var(--text-secondary); font-size: var(--type-sm); line-height: 1.7; margin: 0; padding-left: var(--space-lg);">
+            <li><strong style="color: var(--text-primary);">Inter does the work.</strong> Navigation, data, buttons, forms — anything the user needs to <em>act on</em> or <em>scan</em>.</li>
+            <li><strong style="color: var(--text-primary);">Playfair makes the statement.</strong> Hero titles, pull quotes, brand moments — anything meant to <em>land emotionally</em> or <em>set tone</em>.</li>
+            <li><strong style="color: var(--accent-rose);">Never swap them.</strong> A Playfair nav bar feels pretentious. An Inter pull quote feels sterile. Each has its place.</li>
+            <li><strong style="color: var(--accent-primary);">Together they create rhythm.</strong> A page that's all Inter feels clinical. All Playfair feels like a wedding invitation. The mix is the brand.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Divider -->
+    <div class="divider-subtle"></div>
+
+    <!-- SECTION 03: SPACING SYSTEM -->
+    <section id="spacing" class="brand-section">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Spacing System</h2>
+        <p class="section-description">
+          A mathematically proportional 4px-base spacing system guarantees structural harmony. It scales from 4px micro-adjustments to 96px layout separations.
+        </p>
+      </div>
+
+      <!-- Spacing Visualizer -->
+      <div class="spacing-visualizer">
+        <div class="spacing-row">
+          <div class="spacing-label">space-xs</div>
+          <div class="spacing-bar-wrapper">
+            <div class="spacing-bar" style="width: var(--space-xs);"></div>
+          </div>
+          <div class="spacing-value">4px</div>
+        </div>
+        
+        <div class="spacing-row">
+          <div class="spacing-label">space-sm</div>
+          <div class="spacing-bar-wrapper">
+            <div class="spacing-bar" style="width: var(--space-sm);"></div>
+          </div>
+          <div class="spacing-value">8px</div>
+        </div>
+
+        <div class="spacing-row">
+          <div class="spacing-label">space-md</div>
+          <div class="spacing-bar-wrapper">
+            <div class="spacing-bar" style="width: var(--space-md);"></div>
+          </div>
+          <div class="spacing-value">16px</div>
+        </div>
+
+        <div class="spacing-row">
+          <div class="spacing-label">space-lg</div>
+          <div class="spacing-bar-wrapper">
+            <div class="spacing-bar" style="width: var(--space-lg);"></div>
+          </div>
+          <div class="spacing-value">24px</div>
+        </div>
+
+        <div class="spacing-row">
+          <div class="spacing-label">space-xl</div>
+          <div class="spacing-bar-wrapper">
+            <div class="spacing-bar" style="width: var(--space-xl);"></div>
+          </div>
+          <div class="spacing-value">32px</div>
+        </div>
+
+        <div class="spacing-row">
+          <div class="spacing-label">space-2xl</div>
+          <div class="spacing-bar-wrapper">
+            <div class="spacing-bar" style="width: var(--space-2xl);"></div>
+          </div>
+          <div class="spacing-value">48px</div>
+        </div>
+
+        <div class="spacing-row">
+          <div class="spacing-label">space-3xl</div>
+          <div class="spacing-bar-wrapper">
+            <div class="spacing-bar" style="width: var(--space-3xl);"></div>
+          </div>
+          <div class="spacing-value">64px</div>
+        </div>
+
+        <div class="spacing-row">
+          <div class="spacing-label">space-4xl</div>
+          <div class="spacing-bar-wrapper">
+            <div class="spacing-bar" style="width: var(--space-4xl);"></div>
+          </div>
+          <div class="spacing-value">96px</div>
+        </div>
+      </div>
+
+      <!-- Spacing Info Grid -->
+      <div class="spacing-info-grid">
+        <div class="spacing-info-card">
+          <div class="spacing-info-title">Grid Base</div>
+          <div class="spacing-info-val">4px</div>
+        </div>
+        <div class="spacing-info-card">
+          <div class="spacing-info-title">Flow Padding</div>
+          <div class="spacing-info-val">16px / 24px</div>
+        </div>
+        <div class="spacing-info-card">
+          <div class="spacing-info-title">Section Gaps</div>
+          <div class="spacing-info-val">64px / 96px</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider-subtle"></div>
+
+    <!-- SECTION 04: COMPONENT LIBRARY -->
+    <section id="components" class="brand-section">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2>Component Library</h2>
+        <p class="section-description">
+          Diaz Creative Studio's functional interface elements are optimized for micro-interactions, boasting active hover, focus, and state animations.
+        </p>
+        <div style="margin-top: var(--space-lg); padding: var(--space-md) var(--space-lg); background: var(--surface-elevated); border: 1px solid var(--border-default); border-radius: 8px; display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap;">
+          <span style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted); white-space: nowrap;">📦 FULL LIBRARY →</span>
+          <a href="component-library.html" style="color: var(--accent-primary); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(232,153,43,0.2);">click for interactive components</a>
+          <span style="color: var(--text-muted); font-size: var(--type-xs);">— production-ready components with live demos, keyboard nav, and real-time state</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Divider -->
+    <div class="divider-subtle"></div>
+
+    <section id="photography" class="brand-section">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2>Photography / Imagery</h2>
+        <p class="section-description">
+          The photography language establishes an atmospheric, tactile connection. Below is the style blueprint and a live CSS/SVG visual direction.
+        </p>
+      </div>
+
+      <div class="photography-grid">
+        <!-- Principles -->
+        <div class="photography-text-card">
+          <ul class="photography-list">
+            <li class="photography-list-item">
+              <strong>Dark, dramatic lighting:</strong> High contrast, directional, single-source light setups. Let subject edges capture glows while background details recede.
+            </li>
+            <li class="photography-list-item">
+              <strong>Warm color temperatures:</strong> Emphasize deep gold, amber, and tungsten glows, avoiding cold neon or diagnostic white fluorescent lights.
+            </li>
+            <li class="photography-list-item">
+              <strong>Macro detail:</strong> Close-ups of steel blades, wood grains, dust particles, and material finishes.
+            </li>
+            <li class="photography-list-item">
+              <strong>Maker context:</strong> Focus on hands actively craftmaking. The creator is implied, the physical process is the focus.
+            </li>
+            <li class="photography-list-item">
+              <strong>Atmospheric motion:</strong> Stutter sparks, dust floating, lathe turn speeds, using slight motion blur to indicate authenticity.
+            </li>
+            <li class="photography-list-item">
+              <strong>Never use:</strong> Sterile white-background product sheets, cool blue tones, generic stock corporate photography.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Monochrome Hero Treatment -->
+      <div style="margin-top: var(--space-3xl); padding-top: var(--space-3xl); border-top: 1px solid var(--border-default);">
+        <h3 style="font-family: var(--font-display); font-size: var(--type-2xl); font-style: italic; color: var(--accent-gold); margin-bottom: var(--space-md);">Monochrome Hero Image Treatment</h3>
+        <p style="color: var(--text-secondary); margin-bottom: var(--space-xl); max-width: 720px;">
+          For article headers, landing pages, and section heroes — full-bleed photography is desaturated, sepia-tinted to the brand palette, and dimmed or lifted to match the active theme. The result: atmospheric, on-brand imagery that never fights the text.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); margin-bottom: var(--space-xl);">
+          <!-- Dark Mode Spec Card -->
+          <div style="background: var(--surface-elevated); border: 1px solid var(--border-default); border-radius: 12px; padding: var(--space-lg);">
+            <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md);">
+              <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #0f1119; border: 1px solid var(--border-active);"></span>
+              <strong style="color: var(--text-primary); font-size: var(--type-sm);">Dark Mode</strong>
+            </div>
+            <div style="background: #0f1119; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-default); margin-bottom: var(--space-md);">
+              <div style="position: relative; height: 160px; overflow: hidden; background: #0a0d13;">
+                <img src="demo/assets/dcs-blog-hero-workshop.jpg" alt="Workshop hero — dark mode" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) sepia(35%) brightness(0.35);">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 25%, #0f1119 100%);"></div>
+                <div style="position: absolute; bottom: var(--space-lg); left: var(--space-lg); right: var(--space-lg);">
+                  <div style="font-family: var(--font-display); font-size: var(--type-md); font-style: italic; color: #ede6dc; line-height: 1.2;">Deep, atmospheric — the image recedes into shadow</div>
+                </div>
+              </div>
+            </div>
+            <code style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-secondary); display: block; line-height: 1.6;">
+              filter: grayscale(100%) sepia(35%) <span style="color: var(--accent-primary);">brightness(0.35)</span>;
+            </code>
+          </div>
+
+          <!-- Light Mode Spec Card -->
+          <div style="background: var(--surface-elevated); border: 1px solid var(--border-default); border-radius: 12px; padding: var(--space-lg);">
+            <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md);">
+              <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #f5f2eb; border: 1px solid var(--border-active);"></span>
+              <strong style="color: var(--text-primary); font-size: var(--type-sm);">Light Mode</strong>
+            </div>
+            <div style="background: #f5f2eb; border-radius: 8px; overflow: hidden; border: 1px solid rgba(232,153,43,0.12); margin-bottom: var(--space-md);">
+              <div style="position: relative; height: 160px; overflow: hidden; background: #f5f2eb;">
+                <img src="demo/assets/dcs-blog-hero-workshop.jpg" alt="Workshop hero — light mode" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) sepia(55%) brightness(1.15); opacity: 0.40;">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 25%, #f5f2eb 100%);"></div>
+                <div style="position: absolute; bottom: var(--space-lg); left: var(--space-lg); right: var(--space-lg);">
+                  <div style="font-family: var(--font-display); font-size: var(--type-md); font-style: italic; color: #1a1510; line-height: 1.2;">Washed, airy — cream background bleeds through</div>
+                </div>
+              </div>
+            </div>
+            <code style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-secondary); display: block; line-height: 1.6;">
+              filter: grayscale(100%) <span style="color: var(--accent-gold);">sepia(55%)</span> brightness(1.15);<br>
+              <span style="color: var(--accent-primary);">opacity: 0.40</span>;
+            </code>
+          </div>
+        </div>
+
+        <div style="background: var(--surface-elevated); border: 1px solid var(--border-default); border-radius: 12px; padding: var(--space-lg);">
+          <strong style="color: var(--text-primary); font-size: var(--type-sm); display: block; margin-bottom: var(--space-sm);">Implementation Notes</strong>
+          <ul style="color: var(--text-secondary); font-size: var(--type-sm); line-height: 1.7; margin: 0; padding-left: var(--space-lg);">
+            <li>The image sits absolutely positioned behind an overlay gradient that fades to <code style="font-family: var(--font-mono); color: var(--accent-primary);">var(--bg-default)</code> — no hard edge, just a smooth dissolve into the page background.</li>
+            <li>Dark mode uses <code style="font-family: var(--font-mono); color: var(--accent-primary);">brightness(0.35)</code> for a deep, moody near-silhouette — the title and badge pop forward.</li>
+            <li>Light mode combines <code style="font-family: var(--font-mono); color: var(--accent-gold);">sepia(55%)</code> with <code style="font-family: var(--font-mono); color: var(--accent-primary);">opacity(0.40)</code> — the cream <code style="font-family: var(--font-mono); color: var(--accent-primary);">#f5f2eb</code> background bleeds through, naturally washing the image without artificial filter gymnastics.</li>
+            <li>Hero height: 640px (desktop), 480px (mobile). Content padding: <code style="font-family: var(--font-mono); color: var(--accent-primary);">var(--space-3xl)</code> (64px).</li>
+            <li>Title: Playfair Display italic 64px, centered, with subtle text-shadow for legibility over the image.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Divider -->
+    <div class="divider-subtle"></div>
+
+    <!-- SECTION 06: DESIGN & LAYOUT PRINCIPLES -->
+    <section id="principles" class="brand-section">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2>Layout Principles & Motion</h2>
+        <p class="section-description">
+          The layout standards for Diaz Creative Studio guarantee ambient warmth, readability, and interaction consistency.
+        </p>
+      </div>
+
+      <!-- Principles Grid -->
+      <div class="principles-grid">
+        <div class="principle-card">
+          <div class="principle-title">
+            <span>Breathing Room</span>
+            <span class="principle-tag">SPACE</span>
+          </div>
+          <p class="principle-body">
+            Dark themes depend on generous negative space (blackspace). Avoid visual congestion; if elements feel cramped, increase spacing margins by 8px.
+          </p>
+          <div class="comparison-container" style="margin-top: var(--space-md);">
+            <div class="comparison-card">
+              <div class="comparison-badge badge-bad">Cramped — 8px Gaps</div>
+              <div style="background: var(--surface-elevated); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; gap: 8px;">
+                <div style="height: 20px; background: var(--bg-deepest); border-radius: 4px; width: 60%;"></div>
+                <div style="height: 12px; background: var(--bg-deepest); border-radius: 3px; width: 90%;"></div>
+                <div style="height: 12px; background: var(--bg-deepest); border-radius: 3px; width: 75%;"></div>
+                <div style="height: 12px; background: var(--bg-deepest); border-radius: 3px; width: 85%;"></div>
+              </div>
+            </div>
+            <div class="comparison-card" style="border: 1px solid var(--border-default);">
+              <div class="comparison-badge badge-good">Spacious — 16px Gaps</div>
+              <div style="background: var(--surface-elevated); border: 1px solid var(--border-default); border-radius: 8px; padding: var(--space-md); display: flex; flex-direction: column; gap: var(--space-md);">
+                <div style="height: 20px; background: var(--bg-deepest); border-radius: 4px; width: 60%;"></div>
+                <div style="height: 12px; background: var(--bg-deepest); border-radius: 3px; width: 90%;"></div>
+                <div style="height: 12px; background: var(--bg-deepest); border-radius: 3px; width: 75%;"></div>
+                <div style="height: 12px; background: var(--bg-deepest); border-radius: 3px; width: 85%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-title">
+            <span>Luminance Hierarchy</span>
+            <span class="principle-tag">CONTRAST</span>
+          </div>
+          <p class="principle-body">
+            Importance is mapped directly to brightness. Interactive targets glow, headers are warm white (#ede6dc), secondary details step down to warm gray (#a89e92).
+          </p>
+          <div class="comparison-container" style="margin-top: var(--space-md);">
+            <div class="comparison-card">
+              <div class="comparison-badge badge-bad">Flat — Uniform Brightness</div>
+              <div style="background: var(--surface-elevated); border-radius: 8px; padding: var(--space-md);">
+                <div style="font-weight: 700; color: #6b635a; margin-bottom: 4px;">Heading</div>
+                <div style="color: #6b635a; font-size: var(--type-sm); margin-bottom: 6px;">Subtitle text</div>
+                <div style="color: #6b635a; font-size: var(--type-xs);">Body copy — everything same weight</div>
+              </div>
+            </div>
+            <div class="comparison-card" style="border: 1px solid var(--border-default);">
+              <div class="comparison-badge badge-good">Stepped — Luminance Scale</div>
+              <div style="background: var(--surface-elevated); border: 1px solid var(--border-default); border-radius: 8px; padding: var(--space-md);">
+                <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">Heading</div>
+                <div style="color: var(--text-secondary); font-size: var(--type-sm); margin-bottom: 6px;">Subtitle text</div>
+                <div style="color: var(--text-muted); font-size: var(--type-xs);">Body copy — stepped in brightness</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-title">
+            <span>Amber as Punctuation</span>
+            <span class="principle-tag">FOCUS</span>
+          </div>
+          <p class="principle-body">
+            Use amber as an accent mark, never as a structural block. One hero button, one critical warning indicator, one glow highlight, and it commands focus.
+          </p>
+          <div class="comparison-container" style="margin-top: var(--space-md);">
+            <div class="comparison-card">
+              <div class="comparison-badge badge-bad">Overuse — No Focal Point</div>
+              <div style="background: var(--surface-elevated); border-radius: 8px; padding: var(--space-md); text-align: center;">
+                <div style="color: var(--accent-primary); font-weight: 700; margin-bottom: 8px; font-size: var(--type-sm);">EVERYTHING AMBER</div>
+                <div style="display: inline-block; background: var(--accent-primary); color: var(--text-inverse); padding: 6px 16px; border-radius: 8px; font-size: var(--type-xs); font-weight: 600; margin-bottom: 6px;">Submit</div>
+                <div style="color: var(--accent-primary); font-size: var(--type-xs);">Overwhelming, no focal point</div>
+              </div>
+            </div>
+            <div class="comparison-card" style="border: 1px solid var(--border-default);">
+              <div class="comparison-badge badge-good">Single Accent — Instant Clarity</div>
+              <div style="background: var(--surface-elevated); border: 1px solid var(--border-default); border-radius: 8px; padding: var(--space-md); text-align: center;">
+                <div style="color: var(--text-primary); font-weight: 700; margin-bottom: 8px; font-size: var(--type-sm);">Workshop Notes</div>
+                <div style="display: inline-block; background: var(--accent-primary); color: var(--text-inverse); padding: 6px 16px; border-radius: 8px; font-size: var(--type-xs); font-weight: 600; margin-bottom: 6px; box-shadow: var(--glow-amber);">Submit</div>
+                <div style="color: var(--text-secondary); font-size: var(--type-xs);">One focus, instant clarity</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Comparison: Glow vs Border -->
+      <div class="divider-labeled">
+        <span class="divider-label">LIVE PRINCIPLE EVALUATION: GLOW OVER BORDERS</span>
+      </div>
+      
+      <div class="comparison-container">
+        <div class="comparison-card">
+          <div class="comparison-badge badge-good">Preferred</div>
+          <div class="comparison-preview-glow">
+            <div style="padding: var(--space-xl); text-align: center;">
+              <div style="display: inline-block; background: var(--surface-elevated); border-radius: 12px; padding: var(--space-lg) var(--space-xl); box-shadow: var(--glow-amber);">
+                <div style="font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-xs);">Elevated Card</div>
+                <div style="color: var(--text-secondary); font-size: var(--type-sm);">Soft amber glow lifts it from the page</div>
+              </div>
+            </div>
+          </div>
+          <div class="comparison-caption">
+            <strong>Organic Ambient Glow:</strong> Uses custom shadows (<code>var(--glow-amber)</code>) to represent elevated surfaces in a naturally lit room.
+          </div>
+        </div>
+        
+        <div class="comparison-card">
+          <div class="comparison-badge badge-bad">Avoid</div>
+          <div class="comparison-preview-border">
+            <div style="padding: var(--space-xl); text-align: center;">
+              <div style="display: inline-block; background: var(--surface-elevated); border-radius: 12px; padding: var(--space-lg) var(--space-xl); border: 2px solid rgba(255,255,255,0.8);">
+                <div style="font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-xs);">Boxed Card</div>
+                <div style="color: var(--text-secondary); font-size: var(--type-sm);">Harsh white border cuts into the darkness</div>
+              </div>
+            </div>
+          </div>
+          <div class="comparison-caption">
+            <strong>Cold Solid White Border:</strong> Creates diagnostic, high-contrast separation which destroys the soft lighting of the workshop.
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Comparison: Surface Elevation -->
+      <div class="divider-labeled" style="margin-top: var(--space-2xl);">
+        <span class="divider-label">LIVE PRINCIPLE EVALUATION: SURFACE ELEVATION LAYERS</span>
+      </div>
+
+      <div class="comparison-container">
+        <div class="comparison-card">
+          <div class="comparison-badge badge-good">Preferred — Stacked Depth</div>
+          <div style="padding: var(--space-lg); display: flex; flex-direction: column; gap: 0;">
+            <div style="background: var(--bg-deepest); padding: var(--space-md); border-radius: 12px 12px 0 0; border: 1px solid var(--border-default); border-bottom: none;">
+              <span style="color: var(--text-muted); font-size: var(--type-xs); font-family: var(--font-mono);">bg-deepest #0b0d14</span>
+            </div>
+            <div style="background: var(--bg-default); padding: var(--space-md); border: 1px solid var(--border-default); border-bottom: none;">
+              <span style="color: var(--text-secondary); font-size: var(--type-xs); font-family: var(--font-mono);">bg-default #0f1119</span>
+            </div>
+            <div style="background: var(--surface-elevated); padding: var(--space-md); border: 1px solid var(--border-default); border-bottom: none; box-shadow: var(--shadow-card);">
+              <span style="color: var(--text-primary); font-size: var(--type-xs); font-family: var(--font-mono); font-weight: 700;">surface-elevated #161922 ↑ CARD</span>
+            </div>
+            <div style="background: var(--surface-hover); padding: var(--space-md); border-radius: 0 0 12px 12px; border: 1px solid var(--border-active); box-shadow: var(--glow-amber);">
+              <span style="color: var(--accent-primary); font-size: var(--type-xs); font-family: var(--font-mono); font-weight: 700;">surface-hover #1c1f2a ↑ HOVER</span>
+            </div>
+          </div>
+          <div class="comparison-caption">
+            <strong>Four distinct layers:</strong> Each surface level has a clear purpose — background, resting cards, elevated cards, and hovered/interactive elements. Stack builds visual depth without borders.
+          </div>
+        </div>
+
+        <div class="comparison-card">
+          <div class="comparison-badge badge-bad">Avoid — Flat Uniformity</div>
+          <div style="padding: var(--space-lg); display: flex; flex-direction: column; gap: 0;">
+            <div style="background: #0f1119; padding: var(--space-md); border-radius: 12px 12px 0 0; border: 1px solid rgba(255,255,255,0.15); border-bottom: none;">
+              <span style="color: #a89e92; font-size: var(--type-xs); font-family: var(--font-mono);">All surfaces same color</span>
+            </div>
+            <div style="background: #0f1119; padding: var(--space-md); border: 1px solid rgba(255,255,255,0.15); border-bottom: none;">
+              <span style="color: #a89e92; font-size: var(--type-xs); font-family: var(--font-mono);">No depth differentiation</span>
+            </div>
+            <div style="background: #0f1119; padding: var(--space-md); border: 1px solid rgba(255,255,255,0.15); border-bottom: none;">
+              <span style="color: #a89e92; font-size: var(--type-xs); font-family: var(--font-mono);">Hard borders separate instead of glow</span>
+            </div>
+            <div style="background: #0f1119; padding: var(--space-md); border-radius: 0 0 12px 12px; border: 1px solid rgba(255,255,255,0.15);">
+              <span style="color: #a89e92; font-size: var(--type-xs); font-family: var(--font-mono);">Flat — no visual hierarchy</span>
+            </div>
+          </div>
+          <div class="comparison-caption">
+            <strong>Monochromatic flatness:</strong> Without surface elevation, nothing stands out. Cards and backgrounds merge into an undifferentiated slab. User can't tell what's interactive.
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Comparison: Type Hierarchy -->
+      <div class="divider-labeled" style="margin-top: var(--space-2xl);">
+        <span class="divider-label">LIVE PRINCIPLE EVALUATION: TYPE HIERARCHY IN PRACTICE</span>
+      </div>
+
+      <div class="comparison-container">
+        <div class="comparison-card">
+          <div class="comparison-badge badge-good">Preferred — Clear Scannable Hierarchy</div>
+          <div style="background: var(--surface-elevated); border-radius: 12px; padding: var(--space-lg); border: 1px solid var(--border-default);">
+            <div style="font-family: var(--font-headings); font-weight: 800; font-size: var(--type-xl); color: var(--text-primary); margin-bottom: var(--space-xs);">Speeds & Feeds Calculator</div>
+            <div style="font-family: var(--font-headings); font-weight: 700; font-size: var(--type-md); color: var(--accent-primary); margin-bottom: var(--space-md);">v2.4 — Baltic Birch Profile</div>
+            <div style="font-family: var(--font-body); font-size: var(--type-sm); color: var(--text-secondary); line-height: 1.5; margin-bottom: var(--space-md);">
+              Optimized for single-flute carbide on plywood. Adjust depth-of-cut per pass based on material density and hold-down method.
+            </div>
+            <div style="display: flex; gap: var(--space-md);">
+              <div style="background: var(--bg-deepest); border-radius: 6px; padding: var(--space-sm) var(--space-md);">
+                <div style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--accent-primary); font-weight: 700;">18,000</div>
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); text-transform: uppercase;">RPM</div>
+              </div>
+              <div style="background: var(--bg-deepest); border-radius: 6px; padding: var(--space-sm) var(--space-md);">
+                <div style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--accent-primary); font-weight: 700;">0.003″</div>
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); text-transform: uppercase;">chipload</div>
+              </div>
+            </div>
+          </div>
+          <div class="comparison-caption">
+            <strong>Stepped visual weight:</strong> 800-weight heading, amber accent subheading, secondary body text, muted micro-labels. Each level has a distinct job — the eye flows naturally top to bottom.
+          </div>
+        </div>
+
+        <div class="comparison-card">
+          <div class="comparison-badge badge-bad">Avoid — Chaotic Undifferentiated Text</div>
+          <div style="background: var(--surface-elevated); border-radius: 12px; padding: var(--space-lg); border: 1px solid var(--border-default);">
+            <div style="font-size: var(--type-base); color: var(--text-secondary); margin-bottom: var(--space-xs);">SPEEDS & FEEDS CALCULATOR</div>
+            <div style="font-size: var(--type-xl); color: #6b635a; font-weight: 400; margin-bottom: var(--space-md);">v2.4 — Baltic Birch Profile</div>
+            <div style="font-size: var(--type-md); color: var(--text-primary); font-weight: 700; line-height: 1.5; margin-bottom: var(--space-md);">
+              OPTIMIZED FOR SINGLE-FLUTE CARBIDE ON PLYWOOD. ADJUST DEPTH-OF-CUT PER PASS BASED ON MATERIAL DENSITY.
+            </div>
+            <div style="display: flex; gap: var(--space-md);">
+              <div style="background: var(--bg-deepest); border-radius: 6px; padding: var(--space-sm) var(--space-md);">
+                <div style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted);">18,000</div>
+                <div style="font-size: var(--type-sm); color: var(--text-muted);">RPM</div>
+              </div>
+              <div style="background: var(--bg-deepest); border-radius: 6px; padding: var(--space-sm) var(--space-md);">
+                <div style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted);">0.003″</div>
+                <div style="font-size: var(--type-sm); color: var(--text-muted);">chipload</div>
+              </div>
+            </div>
+          </div>
+          <div class="comparison-caption">
+            <strong>Hierarchy collapse:</strong> Subheading is larger than the heading. Body is bold and all-caps. Stats have no amber accent. Everything competes for attention — nothing wins.
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Interactive Motion Tester -->
+      <div class="divider-labeled" style="margin-top: var(--space-2xl);">
+        <span class="divider-label">MOTION PREVIEW & INTERACTION PHYSICS</span>
+      </div>
+
+      <div class="motion-playground">
+        <div class="motion-controls">
+          <div style="font-family: var(--font-headings); font-weight: 700; color: var(--text-primary); font-size: var(--type-md);">Page Load Physics</div>
+          <button class="btn btn-secondary btn-sm" data-action="replay-animation">Replay Fade-Up</button>
+        </div>
+        <div class="motion-sandbox">
+          <div class="playground-element card-demo-default animate-fade-up" data-pg-card="1">
+            <div style="font-family: var(--font-mono); color: var(--accent-primary); font-size: var(--type-sm);">[01] CNC CALIBRATION</div>
+            <p class="card-demo-body" style="margin-top: var(--space-sm); font-size: var(--type-sm); line-height: 1.4; color: var(--text-secondary);">
+              Re-zeroing the custom steel engraving spindle before milling the brass control knobs for the synthesizer panel.
+            </p>
+            <p class="card-demo-body" style="margin-top: var(--space-md); font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted);">Stagger delay: 0ms</p>
+          </div>
+          <div class="playground-element card-demo-default animate-fade-up" data-pg-card="2" style="animation-delay: 100ms;">
+            <div style="font-family: var(--font-mono); color: var(--accent-primary); font-size: var(--type-sm);">[02] PETALUMA STUDIO</div>
+            <p class="card-demo-body" style="margin-top: var(--space-sm); font-size: var(--type-sm); line-height: 1.4; color: var(--text-secondary);">
+              Ambient desk setups under warm Edison bulbs, designing modular synth brackets and layout specimen documents.
+            </p>
+            <p class="card-demo-body" style="margin-top: var(--space-md); font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted);">Stagger delay: 100ms</p>
+          </div>
+          <div class="playground-element card-demo-default animate-fade-up" data-pg-card="3" style="animation-delay: 200ms;">
+            <div style="font-family: var(--font-mono); color: var(--accent-primary); font-size: var(--type-sm);">[03] SYNTH ASSEMBLY</div>
+            <p class="card-demo-body" style="margin-top: var(--space-sm); font-size: var(--type-sm); line-height: 1.4; color: var(--text-secondary);">
+              Hand-soldering the gold-plated tactile switches onto the prototype circuit board in the late night workshop.
+            </p>
+            <p class="card-demo-body" style="margin-top: var(--space-md); font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted);">Stagger delay: 200ms</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Divider -->
+    <div class="divider-subtle"></div>
+
+    <!-- SECTION 07: EXAMPLE HERO SECTION -->
+    <section id="hero-sandbox" class="brand-section" style="padding-bottom: var(--space-4xl);">
+
+      <div class="section-header">
+        <span class="section-num">07</span>
+        <h2>Live Sandbox</h2>
+        <p class="section-description">
+          A fully rendered, responsive hero built entirely from the "Warm Dark" design tokens &mdash; the real landing experience, not a mockup.
+        </p>
+      </div>
+
+      <!-- Live Hero Specimen Container -->
+      <div class="live-hero-section" style="background: none; border: none; box-shadow: none; border-radius: 0; padding: var(--space-3xl) 0;">
+
+        <div class="live-hero-glow"></div>
+
+        <!-- DCS Logo -->
+        <div class="animate-fade-up" style="margin-bottom: var(--space-lg);">
+          <svg width="80" height="80" viewBox="0 0 1000 1000" fill="currentColor" style="color: var(--text-primary); opacity: 0.85;">
+            <g>
+              <path d="M565.8,322.4c-.4,1.1-.9,2.1-1.3,3.1,4.1-1.3,8-4.5,11.3-10.4-3.4,3.6-6.8,6-10,7.3Z"/>
+              <path d="M654.1,387.4c-2.7-8.2-2.7-14.9,6.3-17.4,21.6-6,38.6,13,52.7,27,6.1-34.9-3.4-67-31.8-88.9,33.9-24.8,22.3-62,12.4-96,.7-10.8-1.4-20.3-14.3-15-.4-27.5-19.8-52.3-36-17-8.4-15.6-20.8-102.8-42.3-53.4-4.5,5.7-4.3,24.9-14.5,20.7-13.2-11.8-36.8-90.2-57.6-66-3.9,10.8,1.4,24.9,2.9,35.5,2,10-1.3,12.9-7.4,19.7-10.7,2.2-16.2-12-23.1-17.9-12.2-9.4-45.4-59.9-58.7-47.8-14.9,16.5.4,37.8,7.7,54.3,5.4,37.2-74.9-76.7-84.2-34.5-4.2,19.7,36.2,39.3,14.7,52.6-60.7-44.2-81.3-38.7-61,38.2,18.9,34.5,47.6,64.7,87,73.7-106.8,94.4-54.3,163.6-204.9,240.5,16.6,2.7,32.8,2.6,49.6,1.2-19.9,10.1-40.5,18.7-59.6,30.2,54.2,17.6,79.4,9.9,125.6-20.1-5.2,14.4-7.3,27.6-6.7,42.9.8.3,1.6.7,2.4,1,6.8-6.4,13.7-12.8,20.9-18.8-4.2,15.7-5.2,30-2.2,46.1.7,0,1.4,0,2,0,7.3-9.6,15-18.6,23.6-26.9,5.2,17,13,31.7,23.2,46.2,11.5-14.7,23.6-28.9,36.3-42.7-10,26.8-21,53.6-15,82.6,92.2-60.3,93.3-70.1,93.7-127.7,9.3,12.6,32.7,47.3,25.3,68.1,11.8-18.3,16.6-35,16-56.6,0-.3,0-.4,0-.4,0,0,21.6,22.4,17.1,57.2,9.2-11.8,15.6-24,20.2-38.2,27.6,33.7,71,16,101.7-4.5,19.8-7,42.2-18.7,41.6-43.8,1.6-47.9-32.8-74.9-63.8-104.1ZM582.6,321.6c0-1.1.2-2.1.4-3.2-1.6.9-3.3,1.9-5,2.5.8-2.8,1.5-6.3.8-9.3-4.5,31.3-39.3,24.3-44.1-2.8,0,0,.1,0,.2,0,1.1,1.6,2.3,3.1,3.6,4.6-1.5-4.9-.2-9,.7-11.6.6-1.6,3.3-3.4,6.3-5-4.3.9-8.6,2.6-12.7,4.5-10.6,0-21.1,0-31.7.5,6-3,12.1-5.8,18.3-8.3.1,0,.2,0,.4,0,0,0,0,0,0,0,12.3-3.9,24.5-6.3,37.4-7.4-.2-2.1-3-3.3-4.3-5,.2-.3.3-.5.5-.8,5.2,2.6,10.4,5.3,15.6,7.8.4-.7.9-.3,1.6-.2,5.1,6.1,9.7,12.5,14.3,19,.4-.2.7-.3,1.1-.5-.9-4.1-1.7-8.2-2.7-12.3,10.9,6.8,8.3,20.2-.7,27.4ZM643.1,385.3h0s0,0,0,0c0,0,0,0,0,0Z"/>
+              <path d="M404.5,722.9c-6.4-130-74.2-141.3-214.7-156l-5.6,5.3c25.8,32,38.6,74.3,38.6,126.8,0,53.9,8.5,110.4-38.6,154.1v1.9l1.9,1.7c118.7-9.7,209.1-38.3,218.3-133.8ZM294.4,790.8c-15.1,2.8-23.2-38.2-22-88.2,2.3-15.4.7-74.3,20-73.4,35.8-6.5,47.3,29.5,53.4,93.7h0c1.4,33.7-20.3,75.3-51.5,67.9Z"/>
+              <path d="M377.7,864.5c18.7,9.1,38.4-11.5,30.5-30.2-20-36.2-64.1,9.9-30.5,30.2Z"/>
+              <path d="M598.1,784.7h0s-3.9-5.6-3.9-5.6h-1.7c-42.7,72.2-137.9,50.5-130.4-47.6-1.7-79.8,75-89.6,126.8-36.7,8.4,8.5,12.2-70.6,7.2-104.6h-1.9c-40.1,35.6-39.1,10-77,10.9-34.6,9.9-64.3,30.4-86.2,55.1-17.2,11.2-25.2,101.3-11.1,146.8,55.4,104.2,84.3,81.8,167.1,62.5,13,3.9,11.3-62.5,11.1-80.9Z"/>
+              <path d="M606,900c18.7,9.1,38.4-11.5,30.5-30.2-20-36.2-64.1,9.9-30.5,30.2Z"/>
+              <path d="M800,726.9h0c-1-48.9-117.1-82.7-119.3-93.7,5.8-49,73.1-35.5,104.6,0,6-24.5,12.2-55.7,7.2-84.3-62.8,26.3-40.7,13.5-87.9,7.2-92.1,13.5-131.2,142.9-22.2,154.1,36.7,2.1,55.1,8.9,55.1,20.3,1.5,38.5-8.4,69.9-29.2,67.9-36.2,1.9-34.6-30.4-3.6-55.1v-3.6c-55.5-.1-96.2,1.8-112.1,5.5,0,7.7,6.8,17.5,20.3,29.2,30.5,56,58.9,83.2,89.8,82.6,56.3-10.2,103-87.4,97.3-130.2Z"/>
+              <path d="M817.5,827.3c-12.4-32.3-56.8-8.4-40,20.1,14.9,21.6,46.3,4.5,40-20.1Z"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Clamped main heading -->
+        <h1 class="hero-heading animate-fade-up" style="animation-delay: 100ms;">
+          Workshop at <span class="amber-highlight">night.</span>
+        </h1>
+
+        <!-- Subheadline text -->
+        <p class="hero-subheadline animate-fade-up" style="animation-delay: 200ms;">
+          CNC build logs, 3D printing guides, laser projects, and tool reviews — straight from the shop floor in Petaluma, CA. Written deep dives that complement every video.
+        </p>
+
+        <!-- Staggered CTA Buttons -->
+        <div class="hero-ctas animate-fade-up" style="animation-delay: 300ms;">
+          <a href="#subscribe-section" class="btn btn-primary btn-md">SUBSCRIBE</a>
+          <a href="https://youtube.com/@DiazCreativeStudio" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-md">YOUTUBE &rarr;</a>
+        </div>
+
+        <!-- Bottom Stat Grid -->
+        <div class="hero-stats animate-fade-up" style="animation-delay: 400ms;">
+          <div class="hero-stat-badge">1.73K subscribers</div>
+          <div class="hero-stat-divider">&middot;</div>
+          <div class="hero-stat-badge">40 videos</div>
+          <div class="hero-stat-divider">&middot;</div>
+          <div class="hero-stat-badge">Petaluma, CA</div>
+        </div>
+      </div>
+
+      <!-- Content Preview Grid -->
+      <div class="preview-section-title animate-fade-up" style="animation-delay: 500ms;">WHAT'S COMING</div>
+
+      <div class="blog-preview-grid animate-fade-up" style="animation-delay: 600ms;">
+        <div class="blog-card">
+          <div class="blog-card-meta">DEEP DIVES</div>
+          <h3 class="blog-card-heading">Blog Posts</h3>
+          <p class="blog-card-body">Written companion pieces to every YouTube video — build logs, tool comparisons, and technique breakdowns with reference photos and measurements.</p>
+          <div class="blog-card-footer">Launching soon</div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-card-meta">DOWNLOADS</div>
+          <h3 class="blog-card-heading">STL Files</h3>
+          <p class="blog-card-body">Free 3D-printable workshop accessories, CNC jigs, and custom tool mods — tested on the Shapeoko, LowRider, and Bambu Lab printers.</p>
+          <div class="blog-card-footer">Launching soon</div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-card-meta">MEMBERS</div>
+          <h3 class="blog-card-heading">Exclusive Content</h3>
+          <p class="blog-card-body">Early access to project files, behind-the-scenes shop footage, members-only live streams, and community project showcases.</p>
+          <div class="blog-card-footer">Coming later</div>
+        </div>
+      </div>
+
+      <!-- Subscribe Form -->
+      <div id="subscribe-section" class="subscribe-container animate-fade-up" style="animation-delay: 700ms;">
+        <div class="subscribe-label">GET NOTIFIED</div>
+        <p class="subscribe-desc">New posts and videos. No spam.</p>
+        
+        <form id="subscribe-form">
+          <div class="subscribe-form-group">
+            <input type="email" id="dcs-email-input" class="subscribe-input" placeholder="Enter your email address" required>
+            <button type="submit" class="btn btn-primary btn-md">SUBSCRIBE</button>
+          </div>
+          <div id="subscribe-message" class="subscribe-message animate-fade-up"></div>
+        </form>
+      </div>
+      
+    </section>
+
+
+
+  </main>
+
+  <!-- Divider -->
+  <div class="divider-gradient" style="margin-top: var(--space-4xl);"></div>
+
+  <!-- Footer -->
+  <footer class="brand-footer" style="padding: var(--space-xl) 0 var(--space-3xl) 0; text-align: center;">
+    <div style="display: flex; flex-direction: column; gap: var(--space-md); align-items: center;">
+      <div style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-secondary); opacity: 0.8; letter-spacing: 0.05em;">
+        Diaz Creative Studio &middot; Petaluma, CA &middot; Zone 9b
+      </div>
+      <div style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted);">
+        &copy; 2026 Diaz Creative Studio
+      </div>
+      <div style="display: flex; gap: var(--space-lg); margin-top: var(--space-xs);">
+        <a href="https://youtube.com/@DiazCreativeStudio" target="_blank" rel="noopener noreferrer" class="footer-social-link">YouTube</a>
+        <a href="#" class="footer-social-link">Thangs</a>
+        <a href="#" class="footer-social-link">Twitch</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom interactive scripts -->
+</body>
+</html>

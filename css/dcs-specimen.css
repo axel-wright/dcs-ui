@@ -1,0 +1,59 @@
+/* ==========================================================================
+   dcs-specimen.css
+   Specimen-only styles for dcs-components-agy-v2.html (the component showcase).
+
+   These are demo/layout patterns unique to this showcase page — extracted from
+   repeated inline styles. They are NOT part of the framework.
+   Do NOT add framework component styles here, and do NOT move these into
+   dcs-core.css or dcs-components.css.
+   ========================================================================== */
+
+/* Subsection labels — e.g. "Large Buttons", "Standard Form Inputs".
+   Extracted from repeated inline styles on <p>/<h4> subsection headings. */
+.specimen-label {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+/* Inline CSS-class name labels — e.g. ".dcs-grid .dcs-grid-2". */
+.specimen-class-label {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  color: var(--text-muted);
+}
+
+/* Demo cells used inside grid/stack/cluster demos (small variant). */
+.specimen-demo-cell {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  color: var(--text-secondary);
+}
+
+/* Demo cells used inside grid/stack/cluster demos (large, centered variant). */
+.specimen-demo-cell-lg {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--type-sm);
+  color: var(--text-secondary);
+}
+
+/* Spacing helper for demo container groups (grid/stack/cluster wrappers). */
+.specimen-demo-group {
+  margin: var(--space-xs) 0 var(--space-lg);
+}
+
+/* Tighter spacing helper — top margin only. */
+.specimen-demo-group-tight {
+  margin-top: var(--space-xs);
+}
