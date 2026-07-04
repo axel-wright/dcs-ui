@@ -18,7 +18,7 @@ CORE_SRC="css/dcs-core.css"
 CORE_OUT="css/dcs-core.min.css"
 JS_OUT="js/dcs-components.min.js"
 GUIDE_SRC="guide.js"
-GUIDE_OUT="js/guide.min.js"
+GUIDE_OUT="guide.min.js"
 
 # ── Concatenate CSS from @import order ──────────────────────
 concat_css() {
