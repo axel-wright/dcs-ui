@@ -50,9 +50,6 @@ if (typeof window.DCS === 'undefined') {
           if (modalToDelete) {
             modalToDelete.classList.remove('open');
           }
-          if (window.DCS._showToast) {
-            window.DCS._showToast('G-CODE ACTION: Profile successfully purged.', 'error');
-          }
           return;
         }
 

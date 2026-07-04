@@ -208,8 +208,18 @@ if (typeof window.DCS === 'undefined') {
       });
 
       // ── Initial run ─────────────────────────────────────
-      // Small delay so the page layout settles
-      setTimeout(function() { doScrollCheck(); }, 100);
+      // Wait for fonts to load + layout to settle before positioning the indicator.
+      // A fixed setTimeout is unreliable — font swap changes element widths.
+      function initCheck() {
+        requestAnimationFrame(function() {
+          requestAnimationFrame(doScrollCheck);
+        });
+      }
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(initCheck);
+      } else {
+        window.addEventListener('load', initCheck);
+      }
     }
   });
 }

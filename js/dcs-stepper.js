@@ -15,12 +15,6 @@ if (typeof window.DCS === 'undefined') {
       }
 
       var total = steps.length;
-      var stepContent = {
-        1: 'Select your workpiece material from the dropdown.',
-        2: 'Load your G-code toolpath file for machining.',
-        3: 'Jog the machine to your zero point and set origin.',
-        4: 'Review settings and confirm to begin the job run.'
-      };
 
       // Determine the starting step from the .active class (defaults to 1)
       var current = 1;
@@ -84,8 +78,6 @@ if (typeof window.DCS === 'undefined') {
           }
         }
 
-        content.textContent = stepContent[current] || '';
-
         backBtn.disabled = current <= 1;
         nextBtn.textContent = current >= total ? 'Finish' : 'Next Step →';
       }
@@ -119,8 +111,6 @@ if (typeof window.DCS === 'undefined') {
         if (current < total) {
           current++;
           render();
-        } else if (window.DCS._showToast) {
-          window.DCS._showToast('Job setup complete — starting run.', 'success');
         }
       });
 

@@ -206,6 +206,17 @@
       resizeTimer = setTimeout(positionIndicator, 100);
     });
 
-    setTimeout(onScroll, 150);
+    // Initial run: wait for fonts to load + layout to settle before positioning the indicator.
+    // A fixed setTimeout is unreliable — font swap changes link widths, which shifts the underline.
+    function initScrollspy() {
+      requestAnimationFrame(function() {
+        requestAnimationFrame(onScroll);
+      });
+    }
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(initScrollspy);
+    } else {
+      window.addEventListener('load', initScrollspy);
+    }
   })();
 })();

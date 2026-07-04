@@ -2702,10 +2702,11 @@
     .drawer-backdrop {
       position: fixed;
       inset: 0;
+      top: var(--dcs-header-height, 0px);
       background: rgba(11, 13, 20, 0.55);
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
-      z-index: 200;
+      z-index: 998;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease-out;
@@ -2718,14 +2719,14 @@
 
     .drawer-panel {
       position: fixed;
-      top: 0;
+      top: var(--dcs-header-height, 0px);
       right: 0;
       bottom: 0;
       width: 420px;
       max-width: 95vw;
       background: var(--surface-elevated);
       border-left: 1px solid var(--border-active);
-      z-index: 201;
+      z-index: 999;
       display: flex;
       flex-direction: column;
       transform: translateX(100%);

@@ -14,12 +14,6 @@ if (typeof window.DCS === 'undefined') {
           allCards[i].classList.remove('card-active');
         }
         card.classList.add('card-active');
-
-        if (window.DCS._showToast) {
-          window.DCS._showToast('Calibration Swiped / Hover Active', 'info');
-        } else if (window._showToast) {
-          window.DCS._showToast('Calibration Swiped / Hover Active', 'info');
-        }
       });
     }
   });

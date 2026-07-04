@@ -21,6 +21,50 @@ if (typeof window.DCS === 'undefined') {
         return;
       }
 
+      // Position the drawer/backdrop below any fixed/sticky header at the top
+      // of the viewport. A CSS override on the overlay takes priority; only
+      // auto-detect when --dcs-header-height has not been set explicitly.
+      // Captured once at init so our own inline writes don't look like an
+      // override on later resize recalculations.
+      var hasCssOverride = overlay.style.getPropertyValue('--dcs-header-height').trim() !== '';
+
+      function updateHeaderOffset() {
+        if (hasCssOverride) {
+          return;
+        }
+        var offset = 0;
+        // Reject elements taller than 30% of the viewport — those are
+        // sidebars, full-height panels, etc., not header nav bars.
+        var maxHeaderHeight = Math.round(window.innerHeight * 0.3);
+        var nodes = document.querySelectorAll('*');
+        for (var i = 0; i < nodes.length; i++) {
+          var node = nodes[i];
+          var pos = window.getComputedStyle(node).position;
+          if (pos !== 'fixed' && pos !== 'sticky') {
+            continue;
+          }
+          var rect = node.getBoundingClientRect();
+          var height = rect.bottom - rect.top;
+          if (height > maxHeaderHeight) {
+            continue; // too tall to be a header
+          }
+          if (rect.top < 10 && rect.bottom > 0 && rect.bottom > offset) {
+            offset = rect.bottom;
+          }
+        }
+        overlay.style.setProperty('--dcs-header-height', offset + 'px');
+      }
+
+      updateHeaderOffset();
+
+      // Recalculate on resize (debounced) in case the header height changes at
+      // mobile breakpoints.
+      var resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(updateHeaderOffset, 150);
+      });
+
       function open() {
         overlay.classList.add('open');
       }
