@@ -28,30 +28,57 @@ if (typeof window.DCS === 'undefined') {
       // override on later resize recalculations.
       var hasCssOverride = overlay.style.getPropertyValue('--dcs-header-height').trim() !== '';
 
+      // The header node is located once (via a single DOM scan) and cached, so
+      // that resize handling only re-measures that one element instead of
+      // walking every node in the document again.
+      var headerEl = null;
+
+      function isHeaderCandidate(node) {
+        // Reject elements taller than 30% of the viewport — those are
+        // sidebars, full-height panels, etc., not header nav bars.
+        var maxHeaderHeight = Math.round(window.innerHeight * 0.3);
+        var pos = window.getComputedStyle(node).position;
+        if (pos !== 'fixed' && pos !== 'sticky') {
+          return false;
+        }
+        var rect = node.getBoundingClientRect();
+        var height = rect.bottom - rect.top;
+        if (height > maxHeaderHeight) {
+          return false; // too tall to be a header
+        }
+        return rect.top < 10 && rect.bottom > 0;
+      }
+
+      // Find the fixed/sticky element pinned to the top of the viewport whose
+      // bottom edge sits lowest — that is the header we offset below.
+      function findHeaderEl() {
+        var best = null;
+        var bestBottom = 0;
+        var nodes = document.querySelectorAll('*');
+        for (var i = 0; i < nodes.length; i++) {
+          var node = nodes[i];
+          if (!isHeaderCandidate(node)) {
+            continue;
+          }
+          var bottom = node.getBoundingClientRect().bottom;
+          if (bottom > bestBottom) {
+            best = node;
+            bestBottom = bottom;
+          }
+        }
+        return best;
+      }
+
       function updateHeaderOffset() {
         if (hasCssOverride) {
           return;
         }
-        var offset = 0;
-        // Reject elements taller than 30% of the viewport — those are
-        // sidebars, full-height panels, etc., not header nav bars.
-        var maxHeaderHeight = Math.round(window.innerHeight * 0.3);
-        var nodes = document.querySelectorAll('*');
-        for (var i = 0; i < nodes.length; i++) {
-          var node = nodes[i];
-          var pos = window.getComputedStyle(node).position;
-          if (pos !== 'fixed' && pos !== 'sticky') {
-            continue;
-          }
-          var rect = node.getBoundingClientRect();
-          var height = rect.bottom - rect.top;
-          if (height > maxHeaderHeight) {
-            continue; // too tall to be a header
-          }
-          if (rect.top < 10 && rect.bottom > 0 && rect.bottom > offset) {
-            offset = rect.bottom;
-          }
+        // Re-scan only when we have no cached header or the cached one is no
+        // longer a valid top-pinned header (e.g. it changed at a breakpoint).
+        if (!headerEl || !document.contains(headerEl) || !isHeaderCandidate(headerEl)) {
+          headerEl = findHeaderEl();
         }
+        var offset = headerEl ? headerEl.getBoundingClientRect().bottom : 0;
         overlay.style.setProperty('--dcs-header-height', offset + 'px');
       }
 
