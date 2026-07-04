@@ -1,0 +1,219 @@
+#!/usr/bin/env bash
+# ═══════════════════════════════════════════════════════════════
+# DCS Build Script — minify, concatenate, cache-bust
+# Usage: ./build.sh [--watch]
+# ═══════════════════════════════════════════════════════════════
+set -euo pipefail
+cd "$(dirname "$0")"
+
+RED='\033[0;31m'; GREEN='\033[0;32m'; CYAN='\033[0;36m'; NC='\033[0m'
+say() { echo -e "${GREEN}[build]${NC} $*"; }
+warn() { echo -e "${RED}[build]${NC} $*"; }
+
+VERSION_FILE="build-version.txt"
+CSS_SRC="css/dcs-components.css"
+CSS_OUT="css/dcs-components.min.css"
+JS_OUT="js/dcs-components.min.js"
+GUIDE_SRC="guide.js"
+GUIDE_OUT="js/guide.min.js"
+
+# ── Minify CSS ──────────────────────────────────────────────
+minify_css() {
+    local in="$1" out="$2"
+    say "CSS: $in → $out"
+    # Simple but effective: strip comments, collapse whitespace
+    sed -E '
+        # Strip multi-line comments
+        /\/\*/,/\*\//{
+            /\/\*/ { s/\/\*.*//; }
+            /\*\// { s/.*\*\///; b end; }
+            d
+            :end
+        }
+        # Collapse whitespace
+        s/[[:space:]]+/ /g
+        s/^[[:space:]]+//
+        s/[[:space:]]+$//
+        # Remove spaces around {};:>+~,
+        s/[[:space:]]*([{};:>+~,])[[:space:]]*/\1/g
+        # Remove trailing semicolons before }
+        s/;}/}/g
+    ' "$in" | grep -v '^$' > "$out"
+    local before=$(wc -c < "$in")
+    local after=$(wc -c < "$out")
+    local pct=$(python3 -c "print(round(($before - $after) * 100 / $before, 1))")
+    say "  ${pct}% smaller ($before → $after bytes)"
+}
+
+# ── Minify JS ───────────────────────────────────────────────
+minify_js() {
+    local in="$1" out="$2"
+    say "JS: $in → $out"
+    python3 -c "
+import re, sys
+src = sys.stdin.read()
+# Strip // comments (but not http://)
+src = re.sub(r'(?<!:)//.*$', '', src, flags=re.MULTILINE)
+# Strip /* */ comments
+src = re.sub(r'/\*.*?\*/', '', src, flags=re.DOTALL)
+# Collapse blank lines
+src = re.sub(r'\n\s*\n', '\n', src)
+# Trim whitespace per line but preserve intentional indentation
+lines = [l.rstrip() for l in src.split('\n')]
+# Remove leading/trailing blank lines
+while lines and not lines[0].strip(): lines.pop(0)
+while lines and not lines[-1].strip(): lines.pop()
+sys.stdout.write('\n'.join(lines) + '\n')
+" < "$in" > "$out"
+    local before=$(wc -c < "$in")
+    local after=$(wc -c < "$out")
+    local pct=$(python3 -c "print(round(($before - $after) * 100 / $before, 1))")
+    say "  ${pct}% smaller ($before → $after bytes)"
+}
+
+# ── Concatenate JS files ────────────────────────────────────
+concat_js() {
+    say "JS: concatenating dcs-*.js → $JS_OUT"
+    local tmp="/tmp/dcs-concat-$$.js"
+    > "$tmp"  # truncate
+
+    # Core first
+    if [ -f "js/dcs-core.js" ]; then
+        cat "js/dcs-core.js" >> "$tmp"
+        echo "" >> "$tmp"
+    fi
+
+    # All other dcs-*.js (alphabetical, skip core, demo, legacy)
+    for f in js/dcs-*.js; do
+        case "$f" in
+            js/dcs-core.js) continue ;;
+            js/dcs-checkboxes-v1.js) continue ;;  # legacy
+        esac
+        cat "$f" >> "$tmp"
+        echo "" >> "$tmp"
+    done
+
+    # Then minify the concatenated file
+    minify_js "$tmp" "$JS_OUT"
+    rm "$tmp"
+    say "  $(wc -l < "$JS_OUT") lines concatenated + minified"
+}
+
+# ── Version hash ────────────────────────────────────────────
+get_version() {
+    if git rev-parse --short HEAD >/dev/null 2>&1; then
+        echo "$(date +%Y%m%d)-$(git rev-parse --short HEAD)"
+    else
+        date +%s
+    fi
+}
+
+# ── Update HTML references ──────────────────────────────────
+bump_html() {
+    local version="$1"
+    say "Cache-busting HTML with v=$version"
+
+    local files
+    files=$(find . -name '*.html' -not -path './.codegraph/*' -not -path './node_modules/*')
+
+    for f in $files; do
+        local changed=0
+        local tmp="${f}.tmp"
+
+        cp "$f" "$tmp"
+
+        # Replace CSS references: dcs-components.css → dcs-components.min.css
+        sed -i -E "
+            s|dcs-components\.css(\?v=[^\"']*)?|dcs-components.min.css?v=${version}|g
+        " "$tmp"
+
+        # Replace guide.js references: guide.js → guide.min.js
+        sed -i -E "
+            s|guide\.js(\?v=[^\"']*)?|guide.min.js?v=${version}|g
+        " "$tmp"
+
+        # Replace multiple dcs-*.js with single minified bundle
+        # Only if the file references individual dcs-*.js files
+        if grep -q 'dcs-core\.js\|dcs-drawer\.js\|dcs-cards\.js\|dcs-header\.js' "$tmp" 2>/dev/null; then
+            python3 -c "
+import re, sys
+html = open('$tmp').read()
+# Find all dcs-*.js script tags (but not demo/ ones, those stay separate)
+pattern = re.compile(r'<script[^>]*src=\"(js/dcs-[^\"]+\.js)(\?[^\"]*)?\"[^>]*></script>\s*')
+# Only replace consecutive dcs-*.js blocks; leave solo refs alone
+# Strategy: if 2+ dcs-*.js found, replace the whole set
+matches = list(pattern.finditer(html))
+if len(matches) >= 2:
+    # Remove all dcs-*.js script tags
+    html = pattern.sub('', html)
+    # Insert the minified bundle after the last removed tag
+    # Find a good insertion point — after other script tags, before </head> or </body>
+    insert = '<script src=\"js/dcs-components.min.js?v=${version}\"></script>\n'
+    # Insert before first remaining script or before </head>
+    if '<script' in html:
+        html = html.replace('<script', insert + '<script', 1)
+    else:
+        html = html.replace('</head>', insert + '</head>')
+open('$tmp', 'w').write(html)
+"
+        fi
+
+        # Only write if actually changed
+        if ! diff -q "$f" "$tmp" >/dev/null 2>&1; then
+            mv "$tmp" "$f"
+            say "  ✓ $(echo "$f" | sed 's|^\./||')"
+        else
+            rm "$tmp"
+        fi
+    done
+}
+
+# ── Watch mode ──────────────────────────────────────────────
+watch_mode() {
+    say "Watching css/ and js/ for changes..."
+    if command -v inotifywait &>/dev/null; then
+        while true; do
+            inotifywait -q -e modify,create,delete -r css/ js/ --exclude '\.min\.' 2>/dev/null
+            sleep 0.3  # debounce
+            run_build
+        done
+    else
+        warn "inotifywait not found. Falling back to polling (3s)."
+        local last_build=0
+        while true; do
+            local latest
+            latest=$(find css/ js/ -name '*.css' -o -name '*.js' | grep -v '\.min\.' | xargs stat -c %Y 2>/dev/null | sort -rn | head -1)
+            if [ "$latest" -gt "$last_build" ] 2>/dev/null; then
+                run_build
+                last_build="$latest"
+            fi
+            sleep 3
+        done
+    fi
+}
+
+# ── Main build ──────────────────────────────────────────────
+run_build() {
+    local version
+    version=$(get_version)
+    echo "$version" > "$VERSION_FILE"
+    say "Version: $version"
+
+    minify_css "$CSS_SRC" "$CSS_OUT"
+    concat_js
+    minify_js "$GUIDE_SRC" "$GUIDE_OUT"
+    bump_html "$version"
+
+    say "Build complete. ✓"
+}
+
+# ── Entrypoint ──────────────────────────────────────────────
+case "${1:-}" in
+    --watch|-w)
+        run_build
+        watch_mode
+        ;;
+    *)
+        run_build
+        ;;
+esac
