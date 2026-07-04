@@ -15,13 +15,39 @@ if (typeof window.DCS === 'undefined') {
 
       var items = dropdown.querySelectorAll('.combobox-item');
 
+      // ── ARIA: combobox + listbox pattern ──
+      var uid = Math.floor(Math.random() * 1e6);
+      if (!dropdown.id) dropdown.id = 'dcs-combobox-list-' + uid;
+      dropdown.setAttribute('role', 'listbox');
+      input.setAttribute('role', 'combobox');
+      input.setAttribute('aria-autocomplete', 'list');
+      input.setAttribute('aria-expanded', 'false');
+      input.setAttribute('aria-controls', dropdown.id);
+      for (var ci = 0; ci < items.length; ci++) {
+        items[ci].setAttribute('role', 'option');
+        items[ci].setAttribute('aria-selected', 'false');
+        if (!items[ci].id) items[ci].id = 'dcs-combobox-opt-' + uid + '-' + ci;
+      }
+
+      function syncActive() {
+        var current = dropdown.querySelector('.combobox-item.kbd-active');
+        for (var i = 0; i < items.length; i++) {
+          items[i].setAttribute('aria-selected', items[i] === current ? 'true' : 'false');
+        }
+        if (current) input.setAttribute('aria-activedescendant', current.id);
+        else input.removeAttribute('aria-activedescendant');
+      }
+
       function open() {
         el.classList.add('open');
+        input.setAttribute('aria-expanded', 'true');
       }
 
       function close() {
         el.classList.remove('open');
+        input.setAttribute('aria-expanded', 'false');
         clearHighlight();
+        syncActive();
       }
 
       function clearHighlight() {
@@ -88,6 +114,7 @@ if (typeof window.DCS === 'undefined') {
           current = (current + 1) % vis.length;
           vis[current].classList.add('kbd-active');
           vis[current].scrollIntoView({ block: 'nearest' });
+          syncActive();
         } else if (e.key === 'ArrowUp') {
           e.preventDefault();
           open();
@@ -96,6 +123,7 @@ if (typeof window.DCS === 'undefined') {
           current = (current - 1 + vis.length) % vis.length;
           vis[current].classList.add('kbd-active');
           vis[current].scrollIntoView({ block: 'nearest' });
+          syncActive();
         } else if (e.key === 'Enter') {
           e.preventDefault();
           if (current >= 0 && current < vis.length) {

@@ -13,6 +13,16 @@ if (typeof window.DCS === 'undefined') {
       var perPage = 10;
       var totalItems = 247;
 
+      // Expose the bar as a labelled navigation landmark, and make the
+      // <div>-based controls keyboard operable.
+      if (!el.getAttribute('role')) el.setAttribute('role', 'navigation');
+      if (!el.getAttribute('aria-label')) el.setAttribute('aria-label', 'Pagination');
+      var interactive = el.querySelectorAll('.page-num, .page-prev, .page-next');
+      for (var q = 0; q < interactive.length; q++) {
+        if (!interactive[q].getAttribute('role')) interactive[q].setAttribute('role', 'button');
+        if (!interactive[q].hasAttribute('tabindex')) interactive[q].setAttribute('tabindex', '0');
+      }
+
       var activeItem = el.querySelector('.page-item.active');
       var currentPage = activeItem ? parseInt(activeItem.getAttribute('data-pg'), 10) : 1;
 
@@ -23,24 +33,22 @@ if (typeof window.DCS === 'undefined') {
           var pg = parseInt(item.getAttribute('data-pg'), 10);
           if (pg === currentPage) {
             item.classList.add('active');
+            item.setAttribute('aria-current', 'page');
           } else {
             item.classList.remove('active');
+            item.removeAttribute('aria-current');
           }
         }
 
         if (prevBtn) {
-          if (currentPage <= 1) {
-            prevBtn.classList.add('disabled');
-          } else {
-            prevBtn.classList.remove('disabled');
-          }
+          var prevDisabled = currentPage <= 1;
+          prevBtn.classList.toggle('disabled', prevDisabled);
+          prevBtn.setAttribute('aria-disabled', prevDisabled ? 'true' : 'false');
         }
         if (nextBtn) {
-          if (currentPage >= totalPages) {
-            nextBtn.classList.add('disabled');
-          } else {
-            nextBtn.classList.remove('disabled');
-          }
+          var nextDisabled = currentPage >= totalPages;
+          nextBtn.classList.toggle('disabled', nextDisabled);
+          nextBtn.setAttribute('aria-disabled', nextDisabled ? 'true' : 'false');
         }
 
         if (label) {
@@ -78,6 +86,15 @@ if (typeof window.DCS === 'undefined') {
           }
           return;
         }
+      });
+
+      // Keyboard: Enter/Space activate the focused page control.
+      el.addEventListener('keydown', function(e) {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        var target = e.target.closest('.page-num, .page-prev, .page-next');
+        if (!target) return;
+        e.preventDefault();
+        target.click();
       });
 
       render();

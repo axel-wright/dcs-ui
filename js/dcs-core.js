@@ -46,10 +46,18 @@
       container.className = 'toast-container';
       document.body.appendChild(container);
     }
+    // The container is a polite live region so screen readers announce toasts
+    // as they arrive without stealing focus.
+    if (!container.getAttribute('aria-live')) {
+      container.setAttribute('aria-live', 'polite');
+      container.setAttribute('aria-atomic', 'false');
+    }
 
     var toast = document.createElement('div');
     toast.className = 'toast toast-' + type;
     toast.textContent = message;
+    // Errors/warnings are assertive; everything else is a polite status.
+    toast.setAttribute('role', (type === 'error' || type === 'warning' || type === 'danger') ? 'alert' : 'status');
     container.appendChild(toast);
 
     // Trigger entry animation (CSS: .toast.show = translateY(0), opacity: 1)
@@ -63,6 +71,79 @@
         if (toast.parentNode) toast.parentNode.removeChild(toast);
       }, 300);
     }, 3000);
+  };
+
+  // ── Focus Management ────────────────────────────────────
+  // Shared helpers so overlay components (modal, drawer, bottom sheet,
+  // command palette) can trap focus consistently.
+  var FOCUSABLE_SELECTOR =
+    'a[href], area[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), ' +
+    'select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]), ' +
+    '[contenteditable="true"]';
+
+  // Visible, focusable elements inside a container, in DOM order.
+  window.DCS._focusable = function(container) {
+    var all = container.querySelectorAll(FOCUSABLE_SELECTOR);
+    var out = [];
+    for (var i = 0; i < all.length; i++) {
+      var el = all[i];
+      // Skip elements that are hidden (no layout box).
+      if (el.offsetWidth > 0 || el.offsetHeight > 0 || el.getClientRects().length > 0) {
+        out.push(el);
+      }
+    }
+    return out;
+  };
+
+  // Trap keyboard focus inside `container`. Saves the element that had focus,
+  // moves focus inside, and cycles Tab / Shift+Tab within. Returns a release()
+  // function that removes the trap and restores focus to the trigger.
+  window.DCS._trapFocus = function(container) {
+    var previouslyFocused = document.activeElement;
+
+    function onKeydown(e) {
+      if (e.key !== 'Tab') return;
+      var focusable = window.DCS._focusable(container);
+      if (!focusable.length) {
+        // Nothing focusable inside — keep focus on the container itself.
+        e.preventDefault();
+        return;
+      }
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      var active = document.activeElement;
+      if (e.shiftKey) {
+        if (active === first || !container.contains(active)) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (active === last || !container.contains(active)) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+
+    container.addEventListener('keydown', onKeydown);
+
+    // Move focus inside on the next frame so the container is laid out/visible.
+    requestAnimationFrame(function() {
+      var focusable = window.DCS._focusable(container);
+      if (focusable.length) {
+        focusable[0].focus();
+      } else {
+        if (!container.hasAttribute('tabindex')) container.setAttribute('tabindex', '-1');
+        container.focus();
+      }
+    });
+
+    return function release() {
+      container.removeEventListener('keydown', onKeydown);
+      if (previouslyFocused && typeof previouslyFocused.focus === 'function') {
+        previouslyFocused.focus();
+      }
+    };
   };
 
   // ── Theme Toggle ────────────────────────────────────────
@@ -86,6 +167,11 @@
       var lb = btns[i].querySelector('.theme-toggle-label') || btns[i].querySelector('[data-theme-label]');
       if (ic) ic.textContent = icon;
       if (lb) lb.textContent = label;
+      // Ensure an accessible name + pressed state on every toggle button.
+      if (!btns[i].getAttribute('aria-label')) {
+        btns[i].setAttribute('aria-label', 'Toggle light and dark theme');
+      }
+      btns[i].setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
     }
   }
 

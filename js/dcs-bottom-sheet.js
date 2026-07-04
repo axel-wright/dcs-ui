@@ -9,12 +9,25 @@ if (typeof window.DCS === 'undefined') {
       var sheet = el.querySelector('.bottom-sheet');
       var handle = el.querySelector('.bottom-sheet-drag-handle');
 
+      // Label the dialog from its title if it isn't already labelled.
+      if (sheet && !sheet.getAttribute('aria-label') && !sheet.getAttribute('aria-labelledby')) {
+        var title = sheet.querySelector('.bottom-sheet-title');
+        if (title) {
+          if (!title.id) title.id = 'dcs-sheet-title-' + Math.floor(Math.random() * 1e6);
+          sheet.setAttribute('aria-labelledby', title.id);
+        }
+      }
+
+      var release = null;
+
       function open() {
         el.classList.add('open');
+        if (sheet) release = window.DCS._trapFocus(sheet);
       }
 
       function close() {
         el.classList.remove('open');
+        if (release) { release(); release = null; }
       }
 
       // ---- Drag-to-dismiss (pointer events: unified mouse + touch) ----

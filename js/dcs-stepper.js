@@ -16,6 +16,13 @@ if (typeof window.DCS === 'undefined') {
 
       var total = steps.length;
 
+      // Make step indicators keyboard-focusable so they can be activated like
+      // buttons (matching the existing click-to-jump behavior).
+      for (var si = 0; si < steps.length; si++) {
+        if (!steps[si].getAttribute('role')) steps[si].setAttribute('role', 'button');
+        if (!steps[si].hasAttribute('tabindex')) steps[si].setAttribute('tabindex', '0');
+      }
+
       // Determine the starting step from the .active class (defaults to 1)
       var current = 1;
       for (var i = 0; i < steps.length; i++) {
@@ -47,6 +54,13 @@ if (typeof window.DCS === 'undefined') {
             state = 'active';
           } else {
             state = 'upcoming';
+          }
+
+          // aria-current marks the step the user is on.
+          if (state === 'active') {
+            step.setAttribute('aria-current', 'step');
+          } else {
+            step.removeAttribute('aria-current');
           }
 
           if (state === 'completed') {
@@ -94,6 +108,21 @@ if (typeof window.DCS === 'undefined') {
         if (!num) {
           return;
         }
+        if (num < current || num === current + 1) {
+          current = num;
+          render();
+        }
+      });
+
+      // Enter/Space activates a focused step indicator (same reachability
+      // rules as clicking).
+      el.addEventListener('keydown', function(e) {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        var stepEl = e.target.closest('.stepper-step');
+        if (!stepEl || !el.contains(stepEl)) return;
+        var num = parseInt(stepEl.getAttribute('data-stepper-step'), 10);
+        if (!num) return;
+        e.preventDefault();
         if (num < current || num === current + 1) {
           current = num;
           render();

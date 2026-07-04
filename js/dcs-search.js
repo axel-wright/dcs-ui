@@ -9,6 +9,12 @@ if (typeof window.DCS === 'undefined') {
       var clear = el.querySelector('.dcs-search-clear');
       if (!input) return;
 
+      // Expose the search landmark + name the input for screen readers.
+      if (!el.getAttribute('role')) el.setAttribute('role', 'search');
+      if (!input.getAttribute('aria-label') && !input.getAttribute('aria-labelledby')) {
+        input.setAttribute('aria-label', input.getAttribute('placeholder') || 'Search');
+      }
+
       function sync() {
         if (input.value.length > 0) {
           el.classList.add('has-value');

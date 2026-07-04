@@ -5,6 +5,14 @@ if (typeof window.DCS === 'undefined') {
 } else {
   window.DCS.register('breadcrumbs', {
     init: function(el) {
+      // Mark the final crumb as the current page for screen readers.
+      var items = el.querySelectorAll('.breadcrumb-item');
+      if (items.length) {
+        var last = items[items.length - 1];
+        var target = last.querySelector('.breadcrumb-link') || last;
+        target.setAttribute('aria-current', 'page');
+      }
+
       el.addEventListener('click', function(e) {
         var link = e.target.closest('.breadcrumb-link');
         if (!link) return;

@@ -5,6 +5,22 @@ if (typeof window.DCS === 'undefined') {
 } else {
   window.DCS.register('tabs', {
     init: function(el) {
+      // Link each tab to its panel via aria-controls / aria-labelledby so
+      // screen readers can associate the two.
+      var uid = 'dcs-tabs-' + Math.random().toString(36).substr(2, 6);
+      var allTabs = el.querySelectorAll('.tab-btn');
+      for (var t = 0; t < allTabs.length; t++) {
+        var val = allTabs[t].getAttribute('data-tab');
+        var pnl = el.querySelector('.tab-panel[data-tab="' + val + '"]');
+        if (pnl) {
+          if (!allTabs[t].id) allTabs[t].id = uid + '-tab-' + t;
+          if (!pnl.id) pnl.id = uid + '-panel-' + t;
+          allTabs[t].setAttribute('aria-controls', pnl.id);
+          pnl.setAttribute('aria-labelledby', allTabs[t].id);
+          pnl.setAttribute('tabindex', '0');
+        }
+      }
+
       var realignIndicator = function() {
         var activeTab = el.querySelector('.tab-btn.active');
         var indicator = el.querySelector('.tab-indicator');
@@ -74,6 +90,12 @@ if (typeof window.DCS === 'undefined') {
           e.preventDefault();
           var prevIdx = (currentIdx - 1 + buttons.length) % buttons.length;
           switchTab(buttons[prevIdx]);
+        } else if (e.key === 'Home') {
+          e.preventDefault();
+          switchTab(buttons[0]);
+        } else if (e.key === 'End') {
+          e.preventDefault();
+          switchTab(buttons[buttons.length - 1]);
         }
       });
 

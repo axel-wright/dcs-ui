@@ -15,9 +15,31 @@ if (typeof window.DCS === 'undefined') {
       var autoplayInterval = 4000;
       var timer = null;
       var progress = null;
-      var autoplayEnabled = el.getAttribute('data-autoplay') !== 'false';
+      // Respect reduced-motion: never autoplay if the user prefers reduced motion.
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var autoplayEnabled = el.getAttribute('data-autoplay') !== 'false' && !reduceMotion;
       var cardsVisible = parseInt(el.getAttribute('data-cards-visible'), 10) || 1;
       var multiMode = cardsVisible > 1;
+
+      // ── ARIA: identify the carousel and label its controls ──
+      el.setAttribute('aria-roledescription', 'carousel');
+      if (!el.getAttribute('aria-label') && !el.getAttribute('aria-labelledby')) {
+        el.setAttribute('aria-label', 'Carousel');
+      }
+      var liveRegion = el.querySelector('.dcs-carousel-track') || el;
+      // Announce slide changes only when the user drives navigation; keep it
+      // silent while autoplay is running so a screen reader isn't spammed.
+      liveRegion.setAttribute('aria-live', autoplayEnabled ? 'off' : 'polite');
+      for (var sa = 0; sa < slides.length; sa++) {
+        slides[sa].setAttribute('role', 'group');
+        slides[sa].setAttribute('aria-roledescription', 'slide');
+        slides[sa].setAttribute('aria-label', (sa + 1) + ' of ' + slides.length);
+      }
+      if (prev) prev.setAttribute('aria-label', 'Previous slide');
+      if (next) next.setAttribute('aria-label', 'Next slide');
+      for (var dl = 0; dl < dots.length; dl++) {
+        dots[dl].setAttribute('aria-label', 'Go to slide ' + (dl + 1));
+      }
 
       // Create progress bar — append to active slide's image area
       progress = document.createElement('div');
@@ -42,6 +64,7 @@ if (typeof window.DCS === 'undefined') {
         if (index >= slides.length) index = 0;
         for (var i = 0; i < slides.length; i++) {
           slides[i].classList.toggle('is-active', i === index);
+          slides[i].setAttribute('aria-hidden', i === index ? 'false' : 'true');
         }
         for (var j = 0; j < dots.length; j++) {
           dots[j].classList.toggle('is-active', j === index);

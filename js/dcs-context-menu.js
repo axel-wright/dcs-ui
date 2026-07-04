@@ -13,14 +13,39 @@ if (typeof window.DCS === 'undefined') {
         return;
       }
 
+      // ── ARIA menu roles (idempotent — one shared menu for all triggers) ──
+      if (menu.getAttribute('role') !== 'menu') {
+        menu.setAttribute('role', 'menu');
+        menu.setAttribute('tabindex', '-1');
+        var mItems = menu.querySelectorAll('.context-menu-item');
+        for (var mi = 0; mi < mItems.length; mi++) {
+          mItems[mi].setAttribute('role', 'menuitem');
+          mItems[mi].setAttribute('tabindex', '-1');
+        }
+      }
+
+      function menuItems() {
+        return menu.querySelectorAll('.context-menu-item');
+      }
+
+      var restoreFocus = null;
+
       function showMenu(x, y) {
+        restoreFocus = document.activeElement;
         menu.style.left = x + 'px';
         menu.style.top = y + 'px';
         menu.classList.add('open');
+        // Move focus to the first item so the menu is keyboard-operable.
+        var first = menu.querySelector('.context-menu-item');
+        if (first) first.focus();
       }
 
       function hideMenu() {
         menu.classList.remove('open');
+        if (restoreFocus && typeof restoreFocus.focus === 'function') {
+          restoreFocus.focus();
+          restoreFocus = null;
+        }
       }
 
       function isOpen() {
@@ -60,10 +85,35 @@ if (typeof window.DCS === 'undefined') {
         }
       });
 
-      // Escape hides the menu
+      // Keyboard: Escape closes, Up/Down move between items, Enter activates.
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && isOpen()) {
+        if (!isOpen()) return;
+        if (e.key === 'Escape') {
+          e.preventDefault();
           hideMenu();
+          return;
+        }
+
+        var items = menuItems();
+        if (!items.length) return;
+        var list = Array.prototype.slice.call(items);
+        var idx = list.indexOf(document.activeElement);
+
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          list[(idx + 1) % list.length].focus();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          list[(idx - 1 + list.length) % list.length].focus();
+        } else if (e.key === 'Home') {
+          e.preventDefault();
+          list[0].focus();
+        } else if (e.key === 'End') {
+          e.preventDefault();
+          list[list.length - 1].focus();
+        } else if ((e.key === 'Enter' || e.key === ' ') && idx !== -1) {
+          e.preventDefault();
+          list[idx].click();
         }
       });
     }

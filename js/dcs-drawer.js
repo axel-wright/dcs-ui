@@ -65,12 +65,18 @@ if (typeof window.DCS === 'undefined') {
         resizeTimer = setTimeout(updateHeaderOffset, 150);
       });
 
+      // The focusable dialog is the panel; trap focus within it while open.
+      var panel = overlay.querySelector('.drawer-panel') || overlay;
+      var release = null;
+
       function open() {
         overlay.classList.add('open');
+        release = window.DCS._trapFocus(panel);
       }
 
       function close() {
         overlay.classList.remove('open');
+        if (release) { release(); release = null; }
       }
 
       trigger.addEventListener('click', function() {
