@@ -77,31 +77,7 @@ sys.stdout.write('\n'.join(lines) + '\n')
     say "  ${pct}% smaller ($before → $after bytes)"
 }
 
-# ── Minify JS ───────────────────────────────────────────────
-minify_js() {
-    local in="$1" out="$2"
-    say "JS: $in → $out"
-    python3 -c "
-import re, sys
-src = sys.stdin.read()
-# Strip // comments (but not http://)
-src = re.sub(r'(?<!:)//.*$', '', src, flags=re.MULTILINE)
-# Strip /* */ comments
-src = re.sub(r'/\*.*?\*/', '', src, flags=re.DOTALL)
-# Collapse blank lines
-src = re.sub(r'\n\s*\n', '\n', src)
-# Trim whitespace per line but preserve intentional indentation
-lines = [l.rstrip() for l in src.split('\n')]
-# Remove leading/trailing blank lines
-while lines and not lines[0].strip(): lines.pop(0)
-while lines and not lines[-1].strip(): lines.pop()
-sys.stdout.write('\n'.join(lines) + '\n')
-" < "$in" > "$out"
-    local before=$(wc -c < "$in")
-    local after=$(wc -c < "$out")
-    local pct=$(python3 -c "print(round(($before - $after) * 100 / $before, 1))")
-    say "  ${pct}% smaller ($before → $after bytes)"
-}
+# ── Concatenate JS (no minification — regex minifiers break string literals) ─
 
 # ── Concatenate JS files ────────────────────────────────────
 concat_js() {
@@ -126,10 +102,10 @@ concat_js() {
         echo "" >> "$tmp"
     done
 
-    # Then minify the concatenated file
-    minify_js "$tmp" "$JS_OUT"
+    # Concatenate JS into output
+    cat "$tmp" > "$JS_OUT"
     rm "$tmp"
-    say "  $(wc -l < "$JS_OUT") lines concatenated + minified"
+    say "  $(wc -l < "$JS_OUT") lines concatenated"
 }
 
 # ── Version hash ────────────────────────────────────────────
@@ -246,7 +222,7 @@ run_build() {
     minify_css "$CSS_TMP" "$CORE_OUT"
     rm -f "$CSS_TMP"
     concat_js
-    minify_js "$GUIDE_SRC" "$GUIDE_OUT"
+    cat "$GUIDE_SRC" > "$GUIDE_OUT"
     bump_html "$version"
 
     say "Build complete. ✓"
