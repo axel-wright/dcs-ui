@@ -50,24 +50,22 @@ concat_css() {
 minify_css() {
     local in="$1" out="$2"
     say "CSS: $in → $out"
-    # Simple but effective: strip comments, collapse whitespace
-    sed -E '
-        # Strip multi-line comments
-        /\/\*/,/\*\//{
-            /\/\*/ { s/\/\*.*//; }
-            /\*\// { s/.*\*\///; b end; }
-            d
-            :end
-        }
-        # Collapse whitespace
-        s/[[:space:]]+/ /g
-        s/^[[:space:]]+//
-        s/[[:space:]]+$//
-        # Remove spaces around {};:>+~,
-        s/[[:space:]]*([{};:>+~,])[[:space:]]*/\1/g
-        # Remove trailing semicolons before }
-        s/;}/}/g
-    ' "$in" | grep -v '^$' > "$out"
+    python3 -c "
+import re, sys
+src = sys.stdin.read()
+# Strip /* */ comments (single and multi-line)
+src = re.sub(r'/\*.*?\*/', '', src, flags=re.DOTALL)
+# Collapse whitespace
+src = re.sub(r'[ \t]+', ' ', src)
+src = re.sub(r'\n\s*\n', '\n', src)
+# Remove spaces around structural chars
+src = re.sub(r'\s*([{};:,>+~])\s*', r'\1', src)
+# Remove trailing semicolons before }
+src = re.sub(r';}', '}', src)
+# Remove leading/trailing whitespace per line
+lines = [l.strip() for l in src.split('\n') if l.strip()]
+sys.stdout.write('\n'.join(lines) + '\n')
+" < "$in" > "$out"
     local before=$(wc -c < "$in")
     local after=$(wc -c < "$out")
     local pct=$(python3 -c "print(round(($before - $after) * 100 / $before, 1))")
