@@ -30,6 +30,11 @@ concat_css() {
     # Parse @import lines from the master file, preserving order
     local count=0
     while IFS= read -r line; do
+        # Pass through remote @import url(...) lines verbatim (e.g. Google Fonts)
+        if [[ "$line" =~ @import[[:space:]]+url\( ]]; then
+            echo "$line" >> "$out"
+            continue
+        fi
         # Match: @import 'filename.css';
         if [[ "$line" =~ @import[[:space:]]+[\'\"]([^\'\"]+\.css)[\'\"] ]]; then
             local f="css/${BASH_REMATCH[1]}"
@@ -115,6 +120,7 @@ concat_js() {
         case "$f" in
             js/dcs-core.js) continue ;;
             js/dcs-checkboxes-v1.js) continue ;;  # legacy
+            js/*.min.js) continue ;;  # skip our own minified output
         esac
         cat "$f" >> "$tmp"
         echo "" >> "$tmp"
