@@ -11,6 +11,7 @@ const BACKENDS = [
 
 async function checkStatus(id, path, port) {
   const dot = document.getElementById('status-' + id);
+  if (!dot) return;
   const url = port ? (location.protocol + '//' + location.hostname + ':' + port) : path;
   try {
     const resp = await fetch(url, { method: 'HEAD', mode: port ? 'cors' : 'same-origin', signal: AbortSignal.timeout(5000) });
@@ -38,6 +39,7 @@ async function checkStatus(id, path, port) {
 // ── Dynamic descriptions ──
 async function fetchGardenSeason() {
   const el = document.getElementById('garden-season');
+  if (!el) return;
   try {
     const resp = await fetch('/garden/', { signal: AbortSignal.timeout(5000) });
     const text = await resp.text();
@@ -53,6 +55,7 @@ async function fetchGardenSeason() {
 
 async function fetchFitnessPhase() {
   const el = document.getElementById('fitness-phase');
+  if (!el) return;
   try {
     const resp = await fetch('/fitness/workout-data.json', { signal: AbortSignal.timeout(5000) });
     const data = await resp.json();
