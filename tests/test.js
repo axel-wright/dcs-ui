@@ -70,6 +70,22 @@ var DCS_TEST = (function() {
       }
     },
 
+    // Assert an attribute is present. When `expected` is supplied, also assert
+    // its value matches. (Alias-style companion to assertAttr.)
+    assertHasAttribute: function(el, attr, expected, msg) {
+      if (arguments.length >= 3 && expected !== undefined && expected !== null) {
+        this.assertAttr(el, attr, expected, msg);
+        return;
+      }
+      // Presence-only form: assertHasAttribute(el, attr, msg)
+      var label = (typeof expected === 'string') ? expected : msg;
+      if (el && el.hasAttribute(attr)) {
+        log('PASS', label);
+      } else {
+        log('FAIL', label + ' — expected attribute "' + attr + '" to be present');
+      }
+    },
+
     // Create a DOM fixture inside #test-fixtures, return the container
     fixture: function(html) {
       var container = document.getElementById('test-fixtures');
