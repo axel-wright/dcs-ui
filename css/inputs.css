@@ -1,0 +1,75 @@
+/* === INPUTS & FORMS === */
+    /* 3. INPUTS & FORMS */
+    .form-group {
+      margin-bottom: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .form-label {
+      font-family: var(--font-headings);
+      font-weight: 500;
+      font-size: var(--type-sm);
+      color: var(--text-primary);
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      background: var(--bg-deepest);
+      border: 1px solid var(--border-default);
+      border-radius: 4px;
+      color: var(--text-primary);
+      padding: var(--space-sm) var(--space-md);
+      font-size: var(--type-sm);
+      font-family: var(--font-body);
+      transition: all 0.2s ease-out;
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: var(--glow-amber);
+    }
+
+    .form-input:disabled, .form-textarea:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      background: var(--surface-elevated);
+    }
+
+    .form-helper {
+      font-size: var(--type-xs);
+      color: var(--text-muted);
+    }
+
+    /* Form Speeds & Feeds Live Calculator widget styling */
+    .calc-container {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-default);
+      border-radius: 6px;
+      padding: var(--space-lg);
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+    .calc-result-box {
+      background: var(--bg-deepest);
+      border: 1px solid rgba(232, 153, 43, 0.15);
+      border-radius: 4px;
+      padding: var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .calc-result-val {
+      font-family: var(--font-mono);
+      font-size: var(--type-xl);
+      font-weight: 700;
+      color: var(--accent-primary);
+      text-shadow: 0 0 8px rgba(232, 153, 43, 0.2);
+    }
+

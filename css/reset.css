@@ -1,0 +1,47 @@
+/* === RESET & BASE === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 86px;
+}
+
+body {
+  background-color: var(--bg-default);
+  background-image: radial-gradient(1200px circle at 50% 0px, rgba(232, 153, 43, 0.07) 0%, rgba(15, 17, 25, 0) 80%);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--type-base);
+  line-height: 1.6;
+  /* Offset for fixed sticky nav — all pages get this automatically */
+  padding-top: 70px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-deepest);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-active);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Focus styling */
+*:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}

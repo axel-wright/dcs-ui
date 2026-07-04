@@ -1,0 +1,145 @@
+/* === ACCORDION === */
+    /* 14. ACCORDION */
+    .accordion-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .accordion-item {
+      position: relative;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-default);
+      border-left: 3px solid transparent;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                  background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .accordion-item.open {
+      border-left-color: var(--accent-primary);
+      border-color: var(--border-active);
+      background: linear-gradient(180deg, rgba(232, 153, 43, 0.05), rgba(232, 153, 43, 0) 45%), var(--surface-elevated);
+      box-shadow: var(--shadow-card), inset 0 0 28px rgba(232, 153, 43, 0.04);
+    }
+
+    .accordion-trigger {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+      width: 100%;
+      padding: var(--space-md) var(--space-lg);
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+      font-family: var(--font-headings);
+      font-weight: 600;
+      font-size: var(--type-base);
+      letter-spacing: -0.01em;
+      text-align: left;
+      cursor: pointer;
+      transition: color 0.25s ease, background 0.25s ease, padding-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .accordion-trigger:hover {
+      background: var(--surface-hover);
+      color: var(--accent-primary-hover);
+      padding-left: calc(var(--space-lg) + var(--space-xs));
+    }
+    .accordion-item.open .accordion-trigger {
+      color: var(--accent-primary);
+    }
+    .accordion-trigger:focus-visible {
+      outline: 2px solid var(--accent-primary);
+      outline-offset: -2px;
+      border-radius: var(--radius-sm);
+    }
+
+    .accordion-chevron {
+      flex-shrink: 0;
+      fill: var(--text-secondary);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), fill 0.3s ease;
+      width: 16px;
+      height: 16px;
+    }
+
+    .accordion-item.open .accordion-chevron {
+      transform: rotate(180deg);
+      fill: var(--accent-primary);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .accordion-content-inner {
+      padding: var(--space-sm) var(--space-lg) var(--space-lg) var(--space-lg);
+      color: var(--text-secondary);
+      font-size: var(--type-sm);
+      line-height: 1.65;
+      border-top: 1px solid transparent;
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: opacity 0.3s ease 0.05s, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
+    }
+
+    .accordion-item.open .accordion-content-inner {
+      border-top-color: var(--border-default);
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 14b. ACCORDION — Minimal Variant (flat, divider-line style) */
+    .accordion--minimal {
+      gap: var(--space-xs);
+    }
+
+    .accordion--minimal .accordion-item {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border-default);
+      border-left: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .accordion--minimal .accordion-item:last-child {
+      border-bottom: none;
+    }
+
+    .accordion--minimal .accordion-item.open {
+      background: rgba(232, 153, 43, 0.03);
+      border-color: var(--border-default);
+      box-shadow: none;
+    }
+
+    .accordion--minimal .accordion-trigger {
+      padding: var(--space-md) var(--space-md);
+      font-size: var(--type-sm);
+      font-weight: 500;
+    }
+
+    .accordion--minimal .accordion-trigger:hover {
+      background: var(--surface-hover);
+      color: var(--text-primary);
+    }
+
+    .accordion--minimal .accordion-item.open .accordion-trigger {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .accordion--minimal .accordion-content-inner {
+      padding: 0 var(--space-md) var(--space-md) var(--space-md);
+      border-top: none;
+    }
+
+    .accordion--minimal .accordion-item.open .accordion-content-inner {
+      border-top-color: transparent;
+    }
+

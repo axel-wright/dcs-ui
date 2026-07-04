@@ -1,0 +1,31 @@
+/* === SKIP LINK === */
+/* === 45: SKIP LINK === */
+.dcs-skip-link {
+  position: fixed;
+  top: 0;
+  left: var(--space-md);
+  z-index: 2000;
+  transform: translateY(-120%);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+  font-family: var(--font-body);
+  font-size: var(--type-sm);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  box-shadow: var(--shadow-elevated);
+  transition: transform var(--transition-base);
+}
+.dcs-skip-link:focus,
+.dcs-skip-link:focus-visible {
+  transform: translateY(0);
+  outline: none;
+}
+/* Static, always-visible replica used inside the specimen section so the
+   styling can be inspected without tabbing to the top of the page. */
+.dcs-skip-link-preview {
+  position: static;
+  display: inline-block;
+  transform: none;
+}

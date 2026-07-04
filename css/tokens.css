@@ -1,0 +1,89 @@
+/* === DESIGN TOKENS === */
+:root {
+  --bg-deepest: #0b0d14; 
+  --bg-default: #0f1119; 
+  --surface-elevated: #161922; 
+  --surface-card: var(--surface-elevated);
+  --surface-hover: #1c1f2a;
+  
+  --accent-primary: #e8992b; 
+  --accent-primary-hover: #f0a83d; 
+  --accent-terracotta: #c4653a; 
+  --accent-gold: #d4a853; 
+  --accent-sage: #5a9e6f; 
+  --accent-rose: #b8453a;
+  --accent-amber: var(--accent-primary);
+  --accent-green: var(--accent-sage);
+  --accent-red: var(--accent-rose);
+  
+  --text-primary: #ede6dc; 
+  --text-secondary: #a89e92; 
+  --text-muted: #6b635a; 
+  --text-inverse: #1a1814;
+  
+  --glow-amber: 0 0 20px rgba(232,153,43,0.15), 0 0 60px rgba(232,153,43,0.05);
+  --glow-terracotta: 0 0 16px rgba(196,101,58,0.12);
+  
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-elevated: 0 8px 32px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.4);
+  
+  --border-default: rgba(232,153,43,0.08); 
+  --border-active: rgba(232,153,43,0.20);
+  
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  --transition-base: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.15s ease-out;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 999px;
+
+  --font-headings: 'Inter', system-ui, sans-serif; 
+  --font-body: 'Inter', system-ui, sans-serif; 
+  --font-mono: 'JetBrains Mono', monospace; 
+  --font-display: 'Playfair Display', serif;
+  
+  --type-xs: 12px;
+  --type-sm: 14px;
+  --type-base: 16px;
+  --type-md: 18px;
+  --type-lg: 20px;
+  --type-xl: 24px;
+  --type-2xl: 28px;
+  --type-3xl: 36px;
+  --type-4xl: 48px;
+  --type-5xl: 64px;
+
+  --width-narrow: 640px;
+  --width-default: 768px;
+  --width-wide: 960px;
+  --width-full: 1200px;
+}
+
+/* Light theme token overrides */
+[data-theme="light"] {
+  --bg-deepest: #e8e3db;
+  --bg-default: #f5f2eb;
+  --surface-elevated: #ffffff;
+  --surface-card: var(--surface-elevated);
+  --surface-hover: #f0ece4;
+  --text-primary: #1a1510;
+  --text-secondary: #5c5348;
+  --text-muted: #8a8178;
+  --text-inverse: #f5f2eb;
+  --border-default: rgba(26, 21, 16, 0.10);
+  --border-active: rgba(232, 153, 43, 0.30);
+  --glow-amber: 0 0 12px rgba(232, 153, 43, 0.20), 0 0 40px rgba(232, 153, 43, 0.08);
+  --glow-terracotta: 0 0 12px rgba(196, 101, 58, 0.15);
+  --shadow-card: 0 1px 3px rgba(26, 21, 16, 0.08), 0 4px 16px rgba(26, 21, 16, 0.06);
+  --shadow-elevated: 0 2px 8px rgba(26, 21, 16, 0.10), 0 8px 24px rgba(26, 21, 16, 0.08);
+}

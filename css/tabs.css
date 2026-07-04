@@ -1,0 +1,66 @@
+/* === TABS === */
+    /* 5. TABS */
+    .tabs-wrapper {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-default);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .tabs-list {
+      display: flex;
+      border-bottom: 1px solid var(--border-default);
+      background: var(--bg-deepest);
+      list-style: none;
+      position: relative;
+    }
+
+    .tab-trigger {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-family: var(--font-headings);
+      font-weight: 500;
+      font-size: var(--type-sm);
+      padding: var(--space-md) var(--space-lg);
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+      text-align: center;
+      position: relative;
+    }
+
+    .tab-trigger:hover {
+      color: var(--text-primary);
+      background: var(--surface-hover);
+    }
+
+    .tab-trigger.active {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .tab-active-indicator {
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      background: var(--accent-primary);
+      box-shadow: 0 0 10px rgba(232, 153, 43, 0.5);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .tab-panel {
+      padding: var(--space-lg);
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+      animation: tab-fade-in 0.2s ease-out;
+    }
+
+    @keyframes tab-fade-in {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+

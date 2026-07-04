@@ -1,0 +1,268 @@
+/* === LAYOUT UTILITIES === */
+    /* === Container === */
+    .dcs-container {
+      width: 100%;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--space-lg);
+      padding-right: var(--space-lg);
+    }
+
+    /* === Grid === */
+    .dcs-grid { display: grid; gap: var(--space-lg); }
+    .dcs-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .dcs-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .dcs-grid-4 { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 768px) {
+      .dcs-grid-3, .dcs-grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .dcs-grid-2 { grid-template-columns: 1fr; }
+    }
+
+    /* === Stack === */
+    .dcs-stack { display: flex; flex-direction: column; }
+    .dcs-stack-xs { gap: var(--space-xs); }
+    .dcs-stack-sm { gap: var(--space-sm); }
+    .dcs-stack-md { gap: var(--space-md); }
+    .dcs-stack-lg { gap: var(--space-lg); }
+    .dcs-stack-xl { gap: var(--space-xl); }
+
+    /* === Inline Cluster === */
+    .dcs-cluster { display: flex; flex-wrap: wrap; align-items: center; }
+    .dcs-cluster-xs { gap: var(--space-xs); }
+    .dcs-cluster-sm { gap: var(--space-sm); }
+    .dcs-cluster-md { gap: var(--space-md); }
+    .dcs-cluster-lg { gap: var(--space-lg); }
+
+    /* === Toolbar === */
+    .dcs-toolbar {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-sm) var(--space-md);
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-md);
+    }
+    .dcs-toolbar-group {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+    .dcs-toolbar-spacer {
+      flex: 1;
+    }
+    .dcs-toolbar-divider {
+      width: 1px;
+      height: 24px;
+      background: var(--border-default);
+      margin: 0 var(--space-xs);
+    }
+
+    /* === Panel === */
+    .dcs-panel {
+      background: var(--surface-default, var(--surface-elevated));
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .dcs-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-sm) var(--space-md);
+      background: var(--surface-elevated);
+      border-bottom: 1px solid var(--border-default);
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+    }
+    .dcs-panel-body {
+      padding: var(--space-md);
+    }
+    .dcs-panel-footer {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-sm) var(--space-md);
+      background: var(--surface-elevated);
+      border-top: 1px solid var(--border-default);
+    }
+
+    /* === Split Pane === */
+    .dcs-split-pane {
+      display: flex;
+      width: 100%;
+      height: 320px;
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--surface-default, var(--surface-elevated));
+    }
+    .dcs-split-left,
+    .dcs-split-right {
+      overflow: auto;
+      padding: var(--space-md);
+    }
+    .dcs-split-left {
+      background: var(--bg-default);
+    }
+    .dcs-split-right {
+      background: var(--surface-default, var(--surface-elevated));
+    }
+    .dcs-split-handle {
+      width: 6px;
+      background: var(--border-default);
+      cursor: col-resize;
+      flex-shrink: 0;
+      transition: background 0.15s;
+      position: relative;
+    }
+    .dcs-split-handle:hover,
+    .dcs-split-handle.active {
+      background: var(--accent-primary);
+    }
+    .dcs-split-handle::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 2px;
+      height: 24px;
+      border-radius: 1px;
+      background: var(--text-muted);
+    }
+
+/* ═══════════════════════════════════════════════════════════════
+   LAYOUT COMPONENTS — Container, Grid, Stack, Cluster, Toolbar, Panel, Split Pane
+   ═══════════════════════════════════════════════════════════════ */
+
+/* === Container === */
+.dcs-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+/* === Grid === */
+.dcs-grid { display: grid; gap: var(--space-lg); }
+.dcs-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.dcs-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.dcs-grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 768px) {
+  .dcs-grid-3, .dcs-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .dcs-grid-2 { grid-template-columns: 1fr; }
+}
+
+/* === Stack === */
+.dcs-stack { display: flex; flex-direction: column; }
+.dcs-stack-xs { gap: var(--space-xs); }
+.dcs-stack-sm { gap: var(--space-sm); }
+.dcs-stack-md { gap: var(--space-md); }
+.dcs-stack-lg { gap: var(--space-lg); }
+.dcs-stack-xl { gap: var(--space-xl); }
+
+/* === Inline Cluster === */
+.dcs-cluster { display: flex; flex-wrap: wrap; align-items: center; }
+.dcs-cluster-xs { gap: var(--space-xs); }
+.dcs-cluster-sm { gap: var(--space-sm); }
+.dcs-cluster-md { gap: var(--space-md); }
+.dcs-cluster-lg { gap: var(--space-lg); }
+
+/* === Toolbar === */
+.dcs-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+}
+.dcs-toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+.dcs-toolbar-spacer { flex: 1; }
+.dcs-toolbar-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border-default);
+  margin: 0 var(--space-xs);
+}
+
+/* === Panel === */
+.dcs-panel {
+  background: var(--surface-default);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.dcs-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--surface-elevated);
+  border-bottom: 1px solid var(--border-default);
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+.dcs-panel-body { padding: var(--space-md); }
+.dcs-panel-footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--surface-elevated);
+  border-top: 1px solid var(--border-default);
+}
+
+/* === Split Pane === */
+.dcs-split-pane {
+  display: flex;
+  width: 100%;
+  height: 320px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface-default);
+}
+.dcs-split-left,
+.dcs-split-right { overflow: auto; padding: var(--space-md); }
+.dcs-split-left { background: var(--bg-default); }
+.dcs-split-right { background: var(--surface-default); }
+.dcs-split-handle {
+  width: 6px;
+  background: var(--border-default);
+  cursor: col-resize;
+  flex-shrink: 0;
+  transition: background 0.15s;
+  position: relative;
+}
+.dcs-split-handle:hover,
+.dcs-split-handle.active { background: var(--accent-primary); }
+.dcs-split-handle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 24px;
+  border-radius: 1px;
+  background: var(--text-muted);
+}
+

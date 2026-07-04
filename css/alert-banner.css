@@ -1,0 +1,86 @@
+/* === ALERT BANNER === */
+    /* === 22: ALERT BANNER === */
+    .alert-banner {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-md);
+      padding: var(--space-md) var(--space-lg);
+      border-radius: 6px;
+      border-left-width: 4px;
+      border-left-style: solid;
+      position: relative;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out, opacity 0.3s ease-out, margin-bottom 0.35s ease-out, padding 0.35s ease-out;
+      max-height: 200px;
+    }
+
+    .alert-banner.dismissing {
+      max-height: 0;
+      opacity: 0;
+      margin-bottom: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .alert-banner-danger {
+      border-left-color: var(--accent-rose);
+      background: rgba(184, 69, 58, 0.07);
+    }
+
+    .alert-banner-warning {
+      border-left-color: var(--accent-primary);
+      background: rgba(232, 153, 43, 0.07);
+    }
+
+    .alert-banner-success {
+      border-left-color: var(--accent-sage);
+      background: rgba(90, 158, 111, 0.07);
+    }
+
+    .alert-banner-icon {
+      font-size: 18px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .alert-banner-body {
+      flex: 1;
+    }
+
+    .alert-banner-title {
+      font-size: var(--type-sm);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .alert-banner-text {
+      font-size: var(--type-xs);
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .alert-banner-dismiss {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 20px;
+      cursor: pointer;
+      flex-shrink: 0;
+      line-height: 1;
+      padding: 0 0 0 var(--space-sm);
+      transition: color 0.15s ease-out;
+      align-self: flex-start;
+    }
+
+    .alert-banner-dismiss:hover {
+      color: var(--text-primary);
+    }
+
+    .alert-banners-stack {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+

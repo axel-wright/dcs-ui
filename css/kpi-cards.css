@@ -1,0 +1,194 @@
+/* === KPI / STAT CARDS === */
+    /* === 32: KPI / Stat Cards === */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-md);
+    }
+    .kpi-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-lg);
+      padding: 28px var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 140px;
+      box-shadow: var(--shadow-card);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Top accent bar — transparent by default, appears on hover (except progress cards) */
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: transparent;
+      transition: background 0.25s ease;
+    }
+    .kpi-card:not(.kpi-card--progress):hover::before {
+      background: var(--accent-primary);
+    }
+    .kpi-card:hover {
+      border-color: var(--border-active);
+      box-shadow: var(--shadow-elevated), var(--glow-amber);
+      transform: translateY(-2px);
+    }
+    .kpi-card--featured {
+      border-color: rgba(232, 153, 43, 0.18);
+      background: linear-gradient(135deg, var(--surface-card) 60%, rgba(232, 153, 43, 0.04) 100%), var(--surface-card);
+    }
+    .kpi-card--featured::before {
+      background: var(--accent-primary);
+    }
+    .kpi-card--featured:hover {
+      border-color: rgba(232, 153, 43, 0.28);
+      box-shadow: var(--shadow-elevated), var(--glow-amber);
+    }
+    .kpi-card--progress::before {
+      background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-primary) var(--kpi-progress, 80%), transparent var(--kpi-progress, 80%));
+    }
+
+    /* Light theme overrides */
+    [data-theme="light"] .kpi-card {
+      background: #ffffff;
+    }
+    [data-theme="light"] .kpi-card--featured {
+      background: linear-gradient(135deg, #ffffff 60%, rgba(232, 153, 43, 0.04) 100%), #ffffff;
+    }
+
+    /* Icon wrapper */
+    .kpi-icon-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      background: rgba(232, 153, 43, 0.08);
+      color: var(--accent-primary);
+      margin-bottom: 2px;
+      flex-shrink: 0;
+    }
+    .kpi-icon-wrapper svg {
+      width: 16px;
+      height: 16px;
+    }
+    .kpi-icon--amber { background: rgba(232, 153, 43, 0.1); color: var(--accent-primary); }
+    .kpi-icon--sage  { background: rgba(90, 158, 111, 0.1); color: var(--accent-sage); }
+    .kpi-icon--rose  { background: rgba(184, 69, 58, 0.1); color: var(--accent-rose); }
+
+    /* Label */
+    .kpi-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    /* Value */
+    .kpi-value {
+      font-family: var(--font-headings);
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .kpi-value--hero {
+      font-family: var(--font-headings);
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 4px 0;
+    }
+
+    /* Trend badge */
+    .kpi-trend {
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--accent-sage);
+      margin-top: auto;
+      padding-top: 4px;
+    }
+    .kpi-trend svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    /* Subtitle text */
+    .kpi-subtitle {
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      color: var(--text-secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: auto;
+      padding-top: 4px;
+    }
+
+    /* Status dot */
+    .kpi-status-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: var(--radius-full);
+      background: var(--accent-sage);
+      box-shadow: 0 0 6px rgba(90, 158, 111, 0.6);
+      flex-shrink: 0;
+    }
+
+    /* Progress bar */
+    .kpi-progress-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: auto;
+      width: 100%;
+    }
+    .kpi-progress-bar-bg {
+      height: 4px;
+      background: var(--bg-deepest);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      width: 100%;
+    }
+    .kpi-progress-bar-fill {
+      height: 100%;
+      background: var(--accent-primary);
+      border-radius: var(--radius-full);
+      box-shadow: 0 0 10px rgba(232, 153, 43, 0.4);
+      transition: width 0.8s ease-out;
+    }
+    /* Progress fill color by value threshold */
+    .kpi-progress-bar-fill.kpi-progress--high {
+      background: var(--accent-sage);
+      box-shadow: 0 0 10px rgba(90, 158, 111, 0.4);
+    }
+    .kpi-progress-bar-fill.kpi-progress--mid {
+      background: var(--accent-primary);
+      box-shadow: 0 0 10px rgba(232, 153, 43, 0.4);
+    }
+    .kpi-progress-bar-fill.kpi-progress--low {
+      background: var(--accent-rose);
+      box-shadow: 0 0 10px rgba(184, 69, 58, 0.4);
+    }
+    .kpi-progress-label {
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      color: var(--text-muted);
+    }
+

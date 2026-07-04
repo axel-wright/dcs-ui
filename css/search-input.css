@@ -1,0 +1,103 @@
+/* === SEARCH INPUT === */
+/* === 42: SEARCH INPUT === */
+.dcs-search {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  max-width: 360px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  /* Recessed well: a soft inner shadow gives the field depth against the card. */
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-base);
+}
+.dcs-search:hover {
+  border-color: var(--border-active);
+}
+.dcs-search:focus-within {
+  border-color: var(--accent-primary);
+  /* Amber glow settles over the retained inner shadow — depth + focus at once. */
+  box-shadow: var(--glow-amber), inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.dcs-search:focus-within .dcs-search-icon {
+  color: var(--accent-primary);
+}
+/* Height variants */
+.dcs-search-lg { height: 48px; }
+.dcs-search-md { height: 40px; }
+.dcs-search-sm { height: 32px; }
+
+.dcs-search-icon {
+  position: absolute;
+  left: var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: color var(--transition-fast);
+}
+.dcs-search-icon svg { width: 16px; height: 16px; }
+.dcs-search-sm .dcs-search-icon { left: var(--space-sm); }
+.dcs-search-sm .dcs-search-icon svg { width: 14px; height: 14px; }
+
+.dcs-search-input {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  caret-color: var(--accent-primary);
+  /* left clears the 16px icon inset + 16px glyph + gap; right clears the clear button. */
+  padding: 0 44px;
+}
+.dcs-search-lg .dcs-search-input { font-size: var(--type-base); }
+.dcs-search-md .dcs-search-input { font-size: var(--type-sm); }
+.dcs-search-sm .dcs-search-input { font-size: var(--type-sm); padding: 0 36px 0 32px; }
+.dcs-search-input::placeholder { color: var(--text-muted); }
+
+/* Clear button — hidden until the field has content (JS toggles .has-value). */
+.dcs-search-clear {
+  position: absolute;
+  right: var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--surface-hover);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-fast), visibility var(--transition-fast),
+    color var(--transition-fast), background var(--transition-fast);
+}
+.dcs-search.has-value .dcs-search-clear {
+  opacity: 1;
+  visibility: visible;
+}
+.dcs-search-clear:hover {
+  color: var(--text-inverse);
+  background: var(--accent-rose);
+}
+.dcs-search-sm .dcs-search-clear { right: var(--space-sm); }
+
+.dcs-search-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 360px;
+}
+

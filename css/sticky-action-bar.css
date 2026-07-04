@@ -1,0 +1,64 @@
+/* === STICKY ACTION BAR === */
+/* === 43: STICKY ACTION BAR === */
+.dcs-actionbar-demo {
+  position: relative;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.dcs-actionbar-scroll {
+  max-height: 340px;
+  overflow-y: auto;
+}
+.dcs-actionbar-content {
+  padding: var(--space-lg);
+}
+.dcs-actionbar-content p {
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+  font-size: var(--type-sm);
+  line-height: 1.7;
+}
+
+/* The bar sticks to the bottom of its scroll container. The -1px lets an
+   IntersectionObserver (threshold 1) detect the "stuck" state. */
+.dcs-sticky-bar {
+  position: sticky;
+  bottom: -1px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--surface-card);
+  border-top: 1px solid transparent;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+.dcs-sticky-bar.is-stuck {
+  border-top-color: var(--border-active);
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.35);
+  animation: dcs-stickybar-up var(--transition-base);
+}
+@keyframes dcs-stickybar-up {
+  from { transform: translateY(8px); opacity: 0.7; }
+  to   { transform: translateY(0);   opacity: 1; }
+}
+.dcs-sticky-bar-meta {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  color: var(--text-muted);
+}
+.dcs-sticky-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-left: auto;
+}
+@media (max-width: 640px) {
+  .dcs-sticky-bar { flex-direction: column; align-items: stretch; }
+  .dcs-sticky-bar-actions { flex-direction: column; margin-left: 0; }
+  .dcs-sticky-bar-actions .btn { width: 100%; }
+}
+

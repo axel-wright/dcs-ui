@@ -1,0 +1,41 @@
+/* === DIVIDERS === */
+    /* 12. DIVIDERS */
+    .divider-subtle {
+      border: none;
+      height: 1px;
+      background: var(--border-default);
+      margin: var(--space-lg) 0;
+    }
+
+    .divider-gradient {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--accent-primary) 50%, transparent 100%);
+      opacity: 0.5;
+      margin: var(--space-lg) 0;
+    }
+
+    .divider-labeled {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: var(--space-lg) 0;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      letter-spacing: 0.1em;
+    }
+
+    .divider-labeled::before, .divider-labeled::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .divider-labeled::before {
+      margin-right: var(--space-md);
+    }
+    .divider-labeled::after {
+      margin-left: var(--space-md);
+    }
+

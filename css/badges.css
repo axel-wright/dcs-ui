@@ -1,0 +1,414 @@
+/* === BADGES & STATUS === */
+    /* 4. BADGES & STATUS */
+    /* === BASE BADGE === */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem; /* 12px */
+      font-weight: 500;
+      font-family: var(--font-headings);
+      line-height: 1.4;
+      letter-spacing: normal;
+      text-transform: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      user-select: none;
+      transition: background 0.15s, border-color 0.15s, box-shadow 0.15s, opacity 0.15s, transform 0.15s;
+    }
+
+    /* === SEMANTIC VARIANTS (tag-style, semi-transparent bg) === */
+    .badge-default {
+      background: rgba(168, 158, 146, 0.10);
+      color: var(--text-secondary);
+      border-color: rgba(168, 158, 146, 0.18);
+    }
+    .badge-info {
+      background: rgba(102, 153, 204, 0.10);
+      color: #8ab4e0;
+      border-color: rgba(102, 153, 204, 0.20);
+    }
+    .badge-success {
+      background: rgba(90, 158, 111, 0.10);
+      color: var(--accent-sage);
+      border-color: rgba(90, 158, 111, 0.22);
+    }
+    .badge-warning {
+      background: rgba(232, 153, 43, 0.10);
+      color: var(--accent-primary);
+      border-color: rgba(232, 153, 43, 0.22);
+    }
+    .badge-error {
+      background: rgba(184, 69, 58, 0.10);
+      color: var(--accent-rose);
+      border-color: rgba(184, 69, 58, 0.22);
+    }
+
+    /* === SIZES === */
+    .badge-sm {
+      padding: 1px 8px;
+      font-size: 0.65rem;
+      border-radius: 4px;
+    }
+    .badge-lg {
+      padding: 4px 14px;
+      font-size: 0.8rem;
+      border-radius: 7px;
+    }
+
+    /* Count badge — semi-transparent colored bg with white text, pill-shaped */
+    .badge--count {
+      border-radius: 100px;
+      padding: 1px 8px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      font-family: var(--font-headings);
+      font-variant-numeric: tabular-nums;
+      min-width: 20px;
+      text-align: center;
+      justify-content: center;
+      color: #fff;
+    }
+    .badge--count.badge-default { background: var(--surface-elevated); }
+    .badge--count.badge-info    { background: #4988c8; }
+    .badge--count.badge-success { background: var(--accent-sage); }
+    .badge--count.badge-warning { background: var(--accent-primary); }
+    .badge--count.badge-error   { background: var(--accent-rose); }
+
+    /* Overflow count (99+) */
+    .badge--count .badge-overflow {
+      font-size: 0.65rem;
+      opacity: 0.85;
+    }
+    .badge--count[data-overflow]::after {
+      content: attr(data-overflow);
+    }
+
+    /* === DOT BADGE (Ant Design style — just a colored circle, no text) === */
+    .badge--dot {
+      width: 8px;
+      height: 8px;
+      min-width: 8px;
+      padding: 0;
+      border-radius: 50%;
+      border: none;
+      font-size: 0;
+      line-height: 0;
+    }
+    .badge--dot.badge-default { background: var(--text-secondary); }
+    .badge--dot.badge-info    { background: #8ab4e0; }
+    .badge--dot.badge-success { background: var(--accent-sage); }
+    .badge--dot.badge-warning { background: var(--accent-primary); }
+    .badge--dot.badge-error   { background: var(--accent-rose); }
+
+    /* Pulsing dot variant */
+    .badge--dot.badge--pulse {
+      animation: badge-pulse 2s ease-in-out infinite;
+    }
+    @keyframes badge-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* === STATUS BADGE (Ant Design style — dot + text label) === */
+    .badge--status {
+      background: transparent;
+      border: none;
+      padding: 0;
+      gap: 6px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+    .badge--status::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: currentColor;
+    }
+    .badge--status.badge-default { color: var(--text-secondary); }
+    .badge--status.badge-info    { color: #8ab4e0; }
+    .badge--status.badge-success { color: var(--accent-sage); }
+    .badge--status.badge-warning { color: var(--accent-primary); }
+    .badge--status.badge-error   { color: var(--accent-rose); }
+
+    /* Processing variant — animated dot */
+    .badge--status.badge--processing::before {
+      animation: badge-pulse 1.5s ease-in-out infinite;
+    }
+
+    /* === OUTLINE STYLE === */
+    .badge-outline {
+      background: transparent !important;
+    }
+    .badge-outline.badge-default { border-color: rgba(168, 158, 146, 0.30); }
+    .badge-outline.badge-info    { border-color: rgba(102, 153, 204, 0.30); }
+    .badge-outline.badge-success { border-color: rgba(90, 158, 111, 0.30); }
+    .badge-outline.badge-warning { border-color: rgba(232, 153, 43, 0.30); }
+    .badge-outline.badge-error   { border-color: rgba(184, 69, 58, 0.30); }
+
+    /* === ICON BADGE === */
+    .badge--icon {
+      gap: 5px;
+    }
+    .badge-icon {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      opacity: 0.85;
+    }
+    .badge-icon--left  { order: -1; }
+    .badge-icon--right { order: 1; }
+
+    /* === DISMISSIBLE BADGE === */
+    .badge--dismissible {
+      cursor: default;
+      position: relative;
+      padding-right: 26px;
+    }
+    .badge-dismiss {
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.15s, background 0.15s;
+      cursor: pointer;
+      font-size: 11px;
+      line-height: 1;
+      color: inherit;
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+    .badge--dismissible:hover .badge-dismiss {
+      opacity: 0.7;
+    }
+    .badge--dismissible .badge-dismiss:hover {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* Removing animation */
+    .badge--removing {
+      opacity: 0;
+      transform: scale(0.85);
+      pointer-events: none;
+    }
+
+    /* === RIBBON (Ant Design pattern — positioned pill + corner fold) === */
+    .badge-ribbon-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .badge-ribbon {
+      position: absolute;
+      top: 8px;
+      padding: 0 8px;
+      font-family: var(--font-headings);
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 22px;
+      white-space: nowrap;
+      background: var(--accent-primary);
+      color: var(--accent-primary);
+      border-radius: 4px;
+      z-index: 1;
+    }
+    /* End/right placement */
+    .badge-ribbon:not(.badge-ribbon--start) {
+      right: -8px;
+      border-radius: 4px 4px 0 4px;
+    }
+    /* Start/left placement */
+    .badge-ribbon--start {
+      left: -8px;
+      border-radius: 4px 4px 4px 0;
+    }
+
+    /* Ribbon content */
+    .badge-ribbon-content {
+      color: #fff;
+    }
+    .badge-ribbon .badge-ribbon-content {
+      color: #fff;
+    }
+
+    /* Corner fold triangle */
+    .badge-ribbon-corner {
+      position: absolute;
+      top: 100%;
+      width: 8px;
+      height: 6px;
+      border: 4px solid;
+      transform: scaleY(0.75);
+      transform-origin: top;
+      filter: brightness(0.55); /* shadow fold */
+    }
+    /* Right ribbon corner — points bottom-right */
+    .badge-ribbon:not(.badge-ribbon--start) .badge-ribbon-corner {
+      right: 0;
+      border-color: currentColor transparent transparent currentColor;
+    }
+    /* Left ribbon corner — points bottom-left */
+    .badge-ribbon--start .badge-ribbon-corner {
+      left: 0;
+      border-color: currentColor currentColor transparent transparent;
+    }
+
+    /* Ribbon color variants */
+    .badge-ribbon.badge-default { background: var(--surface-elevated); color: var(--surface-elevated); }
+    .badge-ribbon.badge-default .badge-ribbon-content { color: var(--text-secondary); }
+    .badge-ribbon.badge-info    { background: rgba(102, 153, 204, 0.90); color: rgba(102, 153, 204, 0.90); }
+    .badge-ribbon.badge-success { background: var(--accent-sage); color: var(--accent-sage); }
+    .badge-ribbon.badge-error   { background: var(--accent-rose); color: var(--accent-rose); }
+    .badge-ribbon.badge-warning { background: var(--accent-primary); color: var(--accent-primary); }
+
+    /* === BADGE OVERLAY — wraps a container and positions a count/dot badge at the corner === */
+    .badge-overlay-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .badge-overlay-wrapper > .badge--count,
+    .badge-overlay-wrapper > .badge--dot {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      z-index: 2;
+      /* Don't let the badge affect wrapper sizing */
+      margin: 0;
+    }
+
+    /* Overlay dot — smaller, more visible, hugs the container corner */
+    .badge-overlay-wrapper > .badge--dot {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      width: 7px;
+      height: 7px;
+      min-width: 7px;
+      padding: 0;
+      border-radius: 50%;
+      /* Dark ring around the dot so it's visible on any background */
+      box-shadow: 0 0 0 2px var(--bg-deepest);
+    }
+
+    /* === ACTIVE / TOGGLE STATE === */
+    .badge.is-active,
+    .badge.active {
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    }
+    /* Boost background on active */
+    .badge.is-active.badge-default,
+    .badge.active.badge-default { background: rgba(168, 158, 146, 0.20); }
+    .badge.is-active.badge-info,
+    .badge.active.badge-info { background: rgba(102, 153, 204, 0.20); }
+    .badge.is-active.badge-success,
+    .badge.active.badge-success { background: rgba(90, 158, 111, 0.20); }
+    .badge.is-active.badge-warning,
+    .badge.active.badge-warning { background: rgba(232, 153, 43, 0.20); }
+    .badge.is-active.badge-error,
+    .badge.active.badge-error { background: rgba(184, 69, 58, 0.20); }
+
+    /* Backward-compat alias: badge--counter behaves as badge--count */
+    .badge--counter {
+      border-radius: 100px;
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+    }
+
+    /* Pulsating status indicator */
+    .status-pulse-wrapper {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      background: var(--surface-elevated);
+      padding: var(--space-md);
+      border-radius: 6px;
+      border: 1px solid var(--border-default);
+    }
+    
+    .status-pulse-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .pulse-dot::after {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border-radius: 50%;
+      animation: pulse-ring 1.5s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+    }
+
+    /* Green pulse */
+    .pulse-green {
+      background-color: var(--accent-sage);
+    }
+    .pulse-green::after {
+      border: 2px solid rgba(90, 158, 111, 0.6);
+    }
+
+    /* Amber pulse */
+    .pulse-amber {
+      background-color: var(--accent-primary);
+    }
+    .pulse-amber::after {
+      border: 2px solid rgba(232, 153, 43, 0.6);
+    }
+
+    /* Red pulse */
+    .pulse-red {
+      background-color: var(--accent-rose);
+    }
+    .pulse-red::after {
+      border: 2px solid rgba(184, 69, 58, 0.6);
+    }
+
+    /* Grey pulse */
+    .pulse-grey {
+      background-color: var(--text-muted);
+    }
+    .pulse-grey::after {
+      border: 2px solid rgba(107, 99, 90, 0.6);
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(0.7);
+        opacity: 1;
+      }
+      80%, 100% {
+        transform: scale(1.8);
+        opacity: 0;
+      }
+    }
+

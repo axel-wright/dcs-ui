@@ -1,0 +1,51 @@
+/* === BREADCRUMBS === */
+    /* === 20: BREADCRUMBS === */
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      padding: var(--space-md) var(--space-lg);
+      background: var(--bg-deepest);
+      border: 1px solid var(--border-default);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      border-radius: 6px;
+    }
+
+    .breadcrumb-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .breadcrumb-link {
+      font-size: var(--type-sm);
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: color 0.15s ease-out, background 0.15s ease-out;
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+
+    .breadcrumb-link:hover {
+      color: var(--accent-primary);
+      background: rgba(232, 153, 43, 0.06);
+    }
+
+    .breadcrumb-current {
+      font-size: var(--type-sm);
+      color: var(--text-primary);
+      font-weight: 600;
+      padding: 2px 4px;
+    }
+
+    .breadcrumb-separator {
+      font-size: var(--type-sm);
+      color: var(--accent-primary);
+      opacity: 0.6;
+      user-select: none;
+      font-weight: 700;
+    }
+

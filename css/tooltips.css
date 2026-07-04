@@ -1,0 +1,50 @@
+/* === TOOLTIPS === */
+    /* 8. TOOLTIPS */
+    .tooltip-trigger {
+      display: inline-block;
+      border-bottom: 1px dashed var(--text-muted);
+      cursor: help;
+      position: relative;
+    }
+
+    /* Built-in tooltip implementation */
+    .tooltip-trigger::before {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      background: var(--bg-deepest);
+      border: 1px solid var(--border-active);
+      color: var(--text-primary);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: 4px;
+      font-size: var(--type-xs);
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      box-shadow: var(--shadow-elevated);
+      transition: all 0.2s ease-out;
+      z-index: 10;
+    }
+
+    .tooltip-trigger::after {
+      content: "";
+      position: absolute;
+      bottom: 105%;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      border-width: 5px;
+      border-style: solid;
+      border-color: var(--border-active) transparent transparent transparent;
+      pointer-events: none;
+      opacity: 0;
+      transition: all 0.2s ease-out;
+      z-index: 10;
+    }
+
+    .tooltip-trigger:hover::before, .tooltip-trigger:hover::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+

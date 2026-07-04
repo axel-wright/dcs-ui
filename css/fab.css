@@ -1,0 +1,90 @@
+/* === FLOATING ACTION BUTTON (FAB) === */
+    /* === 38: Floating Action Button (FAB) === */
+    .fab-demo-container {
+      position: relative;
+      border: 1px dashed var(--border-default);
+      border-radius: var(--radius-lg);
+      background: var(--bg-deepest);
+      height: 300px;
+      overflow: hidden;
+      padding: var(--space-lg);
+    }
+    .fab-demo-placeholder {
+      color: var(--text-muted);
+      font-size: var(--type-sm);
+      text-align: center;
+      margin-top: 80px;
+      font-family: var(--font-body);
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+    .fab-button {
+      position: absolute;
+      background: var(--accent-primary);
+      color: var(--text-inverse);
+      border: none;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-lg), 0 0 15px rgba(232, 153, 43, 0.2);
+      font-family: var(--font-mono);
+      font-size: var(--type-sm);
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-fast);
+      z-index: 10;
+    }
+    .fab-button:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: var(--shadow-lg), 0 0 25px rgba(232, 153, 43, 0.4);
+      background: #fca83a;
+    }
+    .fab-button:active {
+      transform: translateY(0) scale(1);
+    }
+    .fab-button-main {
+      bottom: var(--space-lg);
+      right: var(--space-lg);
+      padding: var(--space-md) var(--space-xl);
+      gap: var(--space-sm);
+      animation: fab-pulse 2.5s infinite;
+    }
+    .fab-button-icon {
+      bottom: var(--space-lg);
+      left: var(--space-lg);
+      width: 48px;
+      height: 48px;
+      font-size: var(--type-lg);
+      padding: 0;
+    }
+    /* Back to top variant */
+    .fab-back-to-top {
+      bottom: var(--space-lg);
+      right: var(--space-lg);
+      width: 48px;
+      height: 48px;
+      font-size: var(--type-lg);
+      padding: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-fast);
+    }
+    .fab-back-to-top.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    @keyframes fab-pulse {
+      0% {
+        box-shadow: var(--shadow-lg), 0 0 0 0 rgba(232, 153, 43, 0.4);
+      }
+      70% {
+        box-shadow: var(--shadow-lg), 0 0 0 10px rgba(232, 153, 43, 0);
+      }
+      100% {
+        box-shadow: var(--shadow-lg), 0 0 0 0 rgba(232, 153, 43, 0);
+      }
+    }
+

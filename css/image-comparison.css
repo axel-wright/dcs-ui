@@ -1,0 +1,110 @@
+/* === IMAGE COMPARISON SLIDER === */
+    /* === 36: Image Comparison Slider === */
+    .compare-container {
+      position: relative;
+      width: 100%;
+      max-width: 640px;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-default);
+      margin: 0 auto;
+      cursor: col-resize;
+      user-select: none;
+    }
+    .compare-before,
+    .compare-after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .compare-before {
+      z-index: 2;
+      clip-path: inset(0 50% 0 0);
+    }
+    .compare-after {
+      z-index: 1;
+    }
+    .compare-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .compare-label {
+      position: absolute;
+      top: var(--space-md);
+      padding: var(--space-xs) var(--space-md);
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      color: var(--text-secondary);
+      z-index: 5;
+      border: 1px solid var(--border-light);
+    }
+    .compare-before .compare-label {
+      left: var(--space-md);
+    }
+    .compare-after .compare-label {
+      right: var(--space-md);
+      color: var(--accent-primary);
+      border-color: rgba(232,153,43,0.25);
+    }
+    .compare-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: var(--accent-primary);
+      z-index: 10;
+      transform: translateX(-50%);
+      pointer-events: none;
+      box-shadow: 0 0 12px rgba(232,153,43,0.4);
+    }
+    .compare-grip {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      background: var(--accent-primary);
+      color: var(--text-inverse);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg), 0 0 20px rgba(232,153,43,0.3);
+    }
+    .compare-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 15;
+      opacity: 0;
+      cursor: col-resize;
+      margin: 0;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .compare-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 48px;
+      height: 48px;
+      cursor: col-resize;
+    }
+    .compare-slider::-moz-range-thumb {
+      width: 48px;
+      height: 48px;
+      cursor: col-resize;
+      border: none;
+      background: transparent;
+    }
+

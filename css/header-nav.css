@@ -1,0 +1,33 @@
+/* === HEADER / NAVIGATION === */
+    /* === 29: Header / Navigation === */
+    .header-demo {
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+
+
+    [data-theme="light"] .section-specimen {
+      background: var(--surface-elevated);
+    }
+
+    [data-theme="light"] .demo-area {
+      background: rgba(245, 242, 235, 0.6);
+      border-color: rgba(26, 21, 16, 0.06);
+    }
+
+    [data-theme="light"] .brand-intro-banner {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(245, 242, 235, 0.95) 100%);
+    }
+
+    [data-theme="light"] .sidebar-item a:hover {
+      background: rgba(232, 153, 43, 0.06);
+    }
+
+    [data-theme="light"] .sidebar-item.active a {
+      background: rgba(232, 153, 43, 0.08);
+    }
+

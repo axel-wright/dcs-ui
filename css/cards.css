@@ -1,0 +1,45 @@
+/* === CARDS === */
+    /* 2. CARDS */
+    .card {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-default);
+      border-radius: 6px;
+      padding: var(--space-lg);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+
+    .card-title {
+      font-size: var(--type-md);
+      margin-bottom: var(--space-sm);
+      color: var(--text-primary);
+    }
+
+    .card-meta {
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      color: var(--accent-primary);
+      margin-bottom: var(--space-sm);
+    }
+
+    .card-description {
+      font-size: var(--type-sm);
+      color: var(--text-secondary);
+    }
+
+    /* Card Variants */
+    .card-interactive {
+      cursor: pointer;
+    }
+    .card-interactive:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-active);
+      box-shadow: var(--shadow-elevated), var(--glow-amber);
+    }
+
+    .card-featured {
+      border-left: 4px solid var(--accent-primary);
+      box-shadow: var(--glow-terracotta);
+    }
+

@@ -1,0 +1,107 @@
+/* === CODE BLOCKS === */
+    /* 10. CODE BLOCKS */
+    .code-block-wrapper {
+      background: var(--bg-deepest);
+      border: 1px solid var(--border-default);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .code-block-header {
+      background: var(--bg-deepest);
+      border-bottom: 1px solid var(--border-default);
+      padding: var(--space-sm) var(--space-md);
+      display: flex;
+      justify-content: justify;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .code-block-title {
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      color: var(--text-secondary);
+    }
+
+    .code-block-copy-btn {
+      background: transparent;
+      border: 1px solid var(--border-default);
+      color: var(--text-secondary);
+      border-radius: 4px;
+      padding: var(--space-xs) var(--space-sm);
+      cursor: pointer;
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      transition: all 0.15s ease-out;
+    }
+
+    .code-block-copy-btn:hover {
+      border-color: var(--border-active);
+      color: var(--text-primary);
+      background: var(--surface-hover);
+    }
+
+    /* Code block with line numbers — two-column layout */
+    .code-pre {
+      padding: 0;
+      margin: 0;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: var(--type-sm);
+      line-height: 1.6;
+      display: flex;
+    }
+
+    .code-line-numbers {
+      padding: var(--space-lg) var(--space-sm) var(--space-lg) var(--space-md);
+      text-align: right;
+      border-right: 1px solid rgba(232, 153, 43, 0.08);
+      color: var(--text-muted);
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      display: flex;
+      flex-direction: column;
+      min-width: 2.5em;
+      flex-shrink: 0;
+      font-size: var(--type-sm);
+      line-height: 1.6;
+      opacity: 0.6;
+    }
+
+    .code-line-num {
+      display: block;
+      line-height: 1.6;
+    }
+
+    .code-lines {
+      padding: var(--space-lg);
+      flex-grow: 1;
+      overflow-x: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .code-line {
+      display: block;
+      white-space: pre;
+      line-height: 1.6;
+    }
+
+    /* G-Code / Config Highlight Colors */
+    .code-keyword { color: var(--accent-primary); }
+    .code-string { color: var(--accent-sage); }
+    .code-comment { color: var(--text-muted); font-style: italic; }
+    .code-number { color: var(--accent-gold); }
+
+    code.inline-code {
+      font-family: var(--font-mono);
+      font-size: 90%;
+      background: var(--bg-deepest);
+      border: 1px solid var(--border-default);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--accent-primary);
+    }
+

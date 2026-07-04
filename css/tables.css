@@ -1,0 +1,70 @@
+/* === TABLES === */
+    /* 6. TABLES */
+    .table-container {
+      overflow-x: auto;
+      border: 1px solid var(--border-default);
+      border-radius: 6px;
+      background: var(--bg-deepest);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-family: var(--font-body);
+      font-size: var(--type-sm);
+    }
+
+    .data-table th {
+      background: var(--bg-deepest);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      font-size: var(--type-xs);
+      letter-spacing: 0.08em;
+      padding: var(--space-md) var(--space-lg);
+      border-bottom: 1px solid var(--border-default);
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+    }
+
+    .data-table th:hover {
+      color: var(--text-primary);
+      background: var(--surface-hover);
+    }
+
+    .data-table th.sort-asc::after {
+      content: " ▲";
+      color: var(--accent-primary);
+      font-size: var(--type-xs);
+    }
+
+    .data-table th.sort-desc::after {
+      content: " ▼";
+      color: var(--accent-primary);
+      font-size: var(--type-xs);
+    }
+
+    .data-table td {
+      padding: var(--space-md) var(--space-lg);
+      border-bottom: 1px solid var(--border-default);
+      color: var(--text-secondary);
+      transition: all 0.15s ease-out;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table tr:hover td {
+      background: var(--surface-hover);
+      color: var(--text-primary);
+    }
+
+    .tabular-nums {
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
+    }
+

@@ -1,0 +1,167 @@
+/* === RATING & TESTIMONIAL === */
+    /* === 37: Rating & Testimonial === */
+    .testimonial-demos {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+    }
+    .testimonial-demo {
+      padding-bottom: var(--space-lg);
+      border-bottom: 1px solid var(--border-default);
+    }
+    .testimonial-demo:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .testimonial-demo-label {
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: var(--space-md);
+    }
+
+    /* Stars — amber as punctuation */
+    .star {
+      color: var(--text-muted);
+      font-size: var(--type-lg);
+      line-height: 1;
+    }
+    .star.filled {
+      color: var(--accent-primary);
+      text-shadow: 0 0 8px currentColor;
+    }
+
+    /* Inline rating rows */
+    .rating-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .rating-group {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+    .rating-stars {
+      display: inline-flex;
+      gap: var(--space-xs);
+      flex-shrink: 0;
+    }
+    .rating-snippet {
+      font-family: var(--font-mono);
+      font-size: var(--type-sm);
+      line-height: 1.5;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    .rating-score {
+      color: var(--accent-primary);
+      font-weight: 700;
+      margin-right: var(--space-sm);
+    }
+
+    /* Featured testimonial card */
+    .testimonial-card {
+      position: relative;
+      background: var(--surface-card);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-lg);
+      padding: var(--space-2xl) var(--space-xl) var(--space-xl);
+      max-width: 560px;
+      overflow: hidden;
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    }
+    .testimonial-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-active);
+      box-shadow: var(--shadow-elevated), var(--glow-amber);
+    }
+    /* Decorative quote sits behind the content as a faint watermark */
+    .testimonial-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 50%;
+      left: var(--space-lg);
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-size: 140px;
+      line-height: 1;
+      color: var(--accent-primary);
+      opacity: 0.07;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .testimonial-stars {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      gap: var(--space-xs);
+      margin-bottom: var(--space-md);
+    }
+    .testimonial-stars-sm .star {
+      font-size: var(--type-sm);
+    }
+    .testimonial-quote {
+      position: relative;
+      z-index: 1;
+      font-family: var(--font-body);
+      font-size: var(--type-md);
+      line-height: 1.7;
+      color: var(--text-primary);
+      margin: 0 0 var(--space-lg) 0;
+      font-style: italic;
+    }
+    .testimonial-author {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    .testimonial-name {
+      font-family: var(--font-body);
+      font-size: var(--type-sm);
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .testimonial-role {
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      color: var(--text-muted);
+    }
+
+    /* Compact testimonial */
+    .testimonial-compact {
+      background: var(--surface-card);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    }
+    .testimonial-compact:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-active);
+      box-shadow: var(--shadow-card);
+    }
+    .testimonial-compact-text {
+      font-family: var(--font-body);
+      font-size: var(--type-base);
+      font-style: italic;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .testimonial-compact-author {
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      color: var(--text-muted);
+    }
+

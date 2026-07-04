@@ -1,0 +1,86 @@
+/* === METER / GAUGE === */
+/* === 41: METER / GAUGE === */
+/* Circular gauge — pure CSS + SVG. The value ring uses pathLength="100"
+   so the arc can be driven directly from a unitless --gauge-pct custom
+   property (0-100) via stroke-dashoffset: calc(100 - var(--gauge-pct)). */
+.gauge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.gauge-lg { width: 160px; height: 160px; }
+.gauge-md { width: 120px; height: 120px; }
+.gauge-sm { width: 80px;  height: 80px;  }
+
+.gauge-svg {
+  width: 100%;
+  height: 100%;
+  /* rotate so the arc starts at 12 o'clock */
+  transform: rotate(-90deg);
+}
+.gauge-track {
+  fill: none;
+  stroke: var(--bg-deepest);
+  stroke-width: 8;
+}
+.gauge-value {
+  fill: none;
+  stroke: var(--accent-primary);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: calc(100 - var(--gauge-pct, 0));
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Threshold colors — mirror the KPI progress bar convention. */
+.gauge--high .gauge-value { stroke: var(--accent-sage); }
+.gauge--mid  .gauge-value { stroke: var(--accent-primary); }
+.gauge--low  .gauge-value { stroke: var(--accent-rose); }
+
+.gauge-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  text-align: center;
+  padding: 0 var(--space-sm);
+}
+.gauge-number {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-primary);
+}
+.gauge-percent {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.gauge-label {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  line-height: 1.2;
+}
+/* Per-size typography so the readout scales with the ring. */
+.gauge-lg .gauge-number { font-size: var(--type-2xl); }
+.gauge-lg .gauge-percent { font-size: var(--type-md); }
+.gauge-lg .gauge-label  { font-size: var(--type-xs); margin-top: 2px; }
+.gauge-md .gauge-number { font-size: var(--type-xl); }
+.gauge-md .gauge-percent { font-size: var(--type-sm); }
+.gauge-md .gauge-label  { font-size: 10px; }
+.gauge-sm .gauge-number { font-size: var(--type-base); }
+.gauge-sm .gauge-percent { font-size: var(--type-xs); }
+.gauge-sm .gauge-label  { display: none; }
+
+.gauge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xl);
+  align-items: center;
+  justify-content: center;
+}
+

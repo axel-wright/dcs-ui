@@ -12,10 +12,39 @@ warn() { echo -e "${RED}[build]${NC} $*"; }
 
 VERSION_FILE="build-version.txt"
 CSS_SRC="css/dcs-components.css"
+CSS_TMP="/tmp/dcs-css-concat-$$.css"
 CSS_OUT="css/dcs-components.min.css"
+CORE_SRC="css/dcs-core.css"
+CORE_OUT="css/dcs-core.min.css"
 JS_OUT="js/dcs-components.min.js"
 GUIDE_SRC="guide.js"
 GUIDE_OUT="js/guide.min.js"
+
+# ── Concatenate CSS from @import order ──────────────────────
+concat_css() {
+    local master="${1:-$CSS_SRC}"  # source master file with @imports
+    local out="${2:-$CSS_TMP}"     # output concatenated file
+    say "CSS: concatenating from @import order ($(basename "$master"))"
+    > "$out"
+
+    # Parse @import lines from the master file, preserving order
+    local count=0
+    while IFS= read -r line; do
+        # Match: @import 'filename.css';
+        if [[ "$line" =~ @import[[:space:]]+[\'\"]([^\'\"]+\.css)[\'\"] ]]; then
+            local f="css/${BASH_REMATCH[1]}"
+            if [ -f "$f" ]; then
+                cat "$f" >> "$out"
+                echo "" >> "$out"
+                count=$((count + 1))
+            else
+                warn "  missing: $f"
+            fi
+        fi
+    done < "$master"
+
+    say "  $count files concatenated"
+}
 
 # ── Minify CSS ──────────────────────────────────────────────
 minify_css() {
@@ -122,14 +151,19 @@ bump_html() {
 
         cp "$f" "$tmp"
 
-        # Replace CSS references: dcs-components.css → dcs-components.min.css
+        # Replace CSS references: .css → .min.css with version, and update existing .min.css versions
         sed -i -E "
             s|dcs-components\.css(\?v=[^\"']*)?|dcs-components.min.css?v=${version}|g
+            s|dcs-components\.min\.css\?v=[^\"']*|dcs-components.min.css?v=${version}|g
+            s|dcs-core\.css(\?v=[^\"']*)?|dcs-core.min.css?v=${version}|g
+            s|dcs-core\.min\.css\?v=[^\"']*|dcs-core.min.css?v=${version}|g
         " "$tmp"
 
-        # Replace guide.js references: guide.js → guide.min.js
+        # Replace JS references: guide.js → guide.min.js with version, and update existing
         sed -i -E "
             s|guide\.js(\?v=[^\"']*)?|guide.min.js?v=${version}|g
+            s|guide\.min\.js\?v=[^\"']*|guide.min.js?v=${version}|g
+            s|dcs-components\.min\.js\?v=[^\"']*|dcs-components.min.js?v=${version}|g
         " "$tmp"
 
         # Replace multiple dcs-*.js with single minified bundle
@@ -199,7 +233,14 @@ run_build() {
     echo "$version" > "$VERSION_FILE"
     say "Version: $version"
 
-    minify_css "$CSS_SRC" "$CSS_OUT"
+    concat_css
+    minify_css "$CSS_TMP" "$CSS_OUT"
+    rm -f "$CSS_TMP"
+
+    # Core CSS — base layer (tokens, reset, typography, nav)
+    concat_css "$CORE_SRC" "$CSS_TMP"
+    minify_css "$CSS_TMP" "$CORE_OUT"
+    rm -f "$CSS_TMP"
     concat_js
     minify_js "$GUIDE_SRC" "$GUIDE_OUT"
     bump_html "$version"
