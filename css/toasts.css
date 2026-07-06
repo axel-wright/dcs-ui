@@ -52,3 +52,142 @@
       box-shadow: 0 0 20px rgba(184, 69, 58, 0.15);
     }
 
+    /* ── P1: Stacking container + position variants ──────── */
+    .dcs-toast-container {
+      position: fixed;
+      z-index: var(--z-toast);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      pointer-events: none;
+      width: 100%;
+      max-width: 380px;
+    }
+    /* Default / bottom-center: centered along the bottom edge. */
+    .toast-container--bottom,
+    .toast-container--bottom-center {
+      bottom: var(--space-xl);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .toast-container--top-center {
+      top: var(--space-xl);
+      left: 50%;
+      transform: translateX(-50%);
+      flex-direction: column-reverse;
+    }
+    .toast-container--top-right {
+      top: var(--space-xl);
+      right: var(--space-xl);
+      flex-direction: column-reverse;
+    }
+
+    /* ── P1: Rich toast body ─────────────────────────────── */
+    .dcs-toast {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .dcs-toast .toast-msg {
+      flex: 1 1 auto;
+    }
+
+    /* Type tints layered onto the existing border-left accents. */
+    .dcs-toast.toast-info {
+      border-left-color: var(--color-info);
+      background: var(--color-info-bg);
+    }
+    .dcs-toast.toast-success {
+      border-left-color: var(--color-success);
+      background: var(--color-success-bg);
+    }
+    .dcs-toast.toast-warning {
+      border-left-color: var(--color-warning);
+      background: var(--color-warning-bg);
+    }
+    .dcs-toast.toast-error {
+      border-left-color: var(--color-error);
+      background: var(--color-error-bg);
+    }
+
+    /* Action + close buttons */
+    .toast-action {
+      flex: 0 0 auto;
+      background: transparent;
+      border: 1px solid currentColor;
+      border-radius: var(--radius-sm);
+      color: inherit;
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 2px var(--space-sm);
+      cursor: pointer;
+      transition: background var(--transition-fast), color var(--transition-fast);
+    }
+    .dcs-toast.toast-info .toast-action { color: var(--color-info-text); }
+    .dcs-toast.toast-success .toast-action { color: var(--color-success-text); }
+    .dcs-toast.toast-warning .toast-action { color: var(--color-warning-text); }
+    .dcs-toast.toast-error .toast-action { color: var(--color-error-text); }
+    .toast-action:hover {
+      background: currentColor;
+      color: var(--text-inverse);
+    }
+    .toast-close {
+      flex: 0 0 auto;
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: var(--type-md);
+      line-height: 1;
+      cursor: pointer;
+      padding: 0 var(--space-xs);
+    }
+    .toast-close:hover {
+      color: var(--text-primary);
+    }
+
+    /* ── P1: Auto-dismiss progress bar ───────────────────── */
+    .toast-progress {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: currentColor;
+      opacity: 0.5;
+      transform-origin: left center;
+      animation-name: toast-progress-shrink;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+    @keyframes toast-progress-shrink {
+      from { transform: scaleX(1); }
+      to { transform: scaleX(0); }
+    }
+
+    /* ── P1: Entrance / exit animation per position ──────── */
+    .toast-container--top-right .dcs-toast {
+      transform: translateX(120%);
+    }
+    .toast-container--top-right .dcs-toast.show {
+      transform: translateX(0);
+    }
+    .toast-container--top-center .dcs-toast {
+      transform: translateY(-20px);
+    }
+    .toast-container--top-center .dcs-toast.show {
+      transform: translateY(0);
+    }
+    .dcs-toast.toast-hide {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    .toast-container--top-right .dcs-toast.toast-hide {
+      transform: translateX(120%);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .toast-progress { animation: none; }
+    }
+

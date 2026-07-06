@@ -31,10 +31,11 @@ function initMobileSidebar() {
     }
   }
 
-  // Delegate click on ANY mobile-menu-toggle
+  // Delegate click on ANY mobile-menu-toggle — except those inside a header
+  // component demo, which toggle their own nav-links (see register('header')).
   document.addEventListener('click', function(e) {
     var toggle = e.target.closest('.mobile-menu-toggle');
-    if (toggle) {
+    if (toggle && !toggle.closest('[data-dcs-component="header"]')) {
       e.preventDefault();
       sidebar.classList.contains('open') ? close() : open();
     }
@@ -50,3 +51,24 @@ function initMobileSidebar() {
 }
 
 document.addEventListener('DOMContentLoaded', initMobileSidebar);
+
+// Header component — self-contained nav specimen. Its hamburger toggles the
+// instance's own .nav-links dropdown rather than the page sidebar.
+if (typeof window.DCS === 'undefined') {
+  console.warn('DCS registry missing');
+} else {
+  window.DCS.register('header', {
+    init: function(el) {
+      el.addEventListener('click', function(e) {
+        var toggle = e.target.closest('.mobile-menu-toggle');
+        if (!toggle) return;
+        e.preventDefault();
+        var links = el.querySelector('.nav-links');
+        if (!links) return;
+        var isOpen = links.classList.toggle('open');
+        toggle.textContent = isOpen ? '✕' : '☰';
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+  });
+}

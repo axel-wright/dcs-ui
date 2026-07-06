@@ -146,6 +146,11 @@ bump_html() {
             s|dcs-components\.min\.js\?v=[^\"']*|dcs-components.min.js?v=${version}|g
         " "$tmp"
 
+        # Generic cache-bust: update ?v= on ALL remaining local .css/.js refs
+        # (guide.css, dcs-specimen.css, demo blog/blog-post/coming-soon .css/.js,
+        #  ../js/dcs-core.js, and any others). Idempotent for already-bumped refs.
+        sed -i -E "s#([\"'][^\"']*\.(css|js))\?v=[^\"']*#\1?v=${version}#g" "$tmp"
+
         # Replace multiple dcs-*.js with single minified bundle
         # Only if the file references individual dcs-*.js files
         if grep -q 'dcs-core\.js\|dcs-drawer\.js\|dcs-cards\.js\|dcs-header\.js' "$tmp" 2>/dev/null; then

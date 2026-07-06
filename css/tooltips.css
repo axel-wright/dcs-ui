@@ -48,3 +48,25 @@
       transform: translateX(-50%) translateY(0);
     }
 
+    /* JS-positioned tooltip (dcs-tooltip.js). Appended to <body> and placed
+       with getBoundingClientRect so it can flip/nudge away from viewport edges.
+       Matches the warm-dark CSS-only tooltip styling above. */
+    .dcs-tooltip-js {
+      background: var(--bg-deepest);
+      border: 1px solid var(--border-active);
+      color: var(--text-primary);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: 4px;
+      font-size: var(--type-xs);
+      max-width: 240px;
+      box-shadow: var(--shadow-elevated);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity var(--duration-fast) var(--ease-out);
+      z-index: var(--z-tooltip);
+    }
+
+    .dcs-tooltip-js.is-visible {
+      opacity: 1;
+    }
+

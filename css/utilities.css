@@ -280,3 +280,100 @@
   white-space: nowrap;
   border: 0;
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   TEXT UTILITIES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Text Color */
+.dcs-text-primary  { color: var(--text-primary) !important; }
+.dcs-text-secondary { color: var(--text-secondary) !important; }
+.dcs-text-muted    { color: var(--text-muted) !important; }
+.dcs-text-accent   { color: var(--accent-primary) !important; }
+.dcs-text-success  { color: var(--color-success-text) !important; }
+.dcs-text-warning  { color: var(--color-warning-text) !important; }
+.dcs-text-error    { color: var(--color-error-text) !important; }
+.dcs-text-info     { color: var(--color-info-text) !important; }
+
+/* Font Size */
+.dcs-fs-xs  { font-size: var(--type-xs) !important; }
+.dcs-fs-sm  { font-size: var(--type-sm) !important; }
+.dcs-fs-base { font-size: var(--type-base) !important; }
+.dcs-fs-lg  { font-size: var(--type-lg) !important; }
+.dcs-fs-xl  { font-size: var(--type-xl) !important; }
+.dcs-fs-2xl { font-size: var(--type-2xl) !important; }
+
+/* Font Weight */
+.dcs-fw-normal  { font-weight: 400 !important; }
+.dcs-fw-medium  { font-weight: 500 !important; }
+.dcs-fw-semibold { font-weight: 600 !important; }
+.dcs-fw-bold    { font-weight: 700 !important; }
+
+/* Text Alignment */
+.dcs-text-left   { text-align: left !important; }
+.dcs-text-center { text-align: center !important; }
+.dcs-text-right  { text-align: right !important; }
+
+/* Text Transform */
+.dcs-uppercase { text-transform: uppercase !important; letter-spacing: 0.06em !important; }
+.dcs-truncate  { overflow: hidden !important; text-overflow: ellipsis !important; white-space: nowrap !important; }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SPACING UTILITIES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Margin Top/Bottom */
+.dcs-mt-xs  { margin-top: var(--space-xs) !important; }
+.dcs-mt-sm  { margin-top: var(--space-sm) !important; }
+.dcs-mt-md  { margin-top: var(--space-md) !important; }
+.dcs-mt-lg  { margin-top: var(--space-lg) !important; }
+.dcs-mt-xl  { margin-top: var(--space-xl) !important; }
+.dcs-mt-0   { margin-top: 0 !important; }
+
+.dcs-mb-xs  { margin-bottom: var(--space-xs) !important; }
+.dcs-mb-sm  { margin-bottom: var(--space-sm) !important; }
+.dcs-mb-md  { margin-bottom: var(--space-md) !important; }
+.dcs-mb-lg  { margin-bottom: var(--space-lg) !important; }
+.dcs-mb-xl  { margin-bottom: var(--space-xl) !important; }
+.dcs-mb-0   { margin-bottom: 0 !important; }
+
+/* Gap */
+.dcs-gap-xs  { gap: var(--space-xs) !important; }
+.dcs-gap-sm  { gap: var(--space-sm) !important; }
+.dcs-gap-md  { gap: var(--space-md) !important; }
+.dcs-gap-lg  { gap: var(--space-lg) !important; }
+
+/* Padding */
+.dcs-p-xs  { padding: var(--space-xs) !important; }
+.dcs-p-sm  { padding: var(--space-sm) !important; }
+.dcs-p-md  { padding: var(--space-md) !important; }
+.dcs-p-lg  { padding: var(--space-lg) !important; }
+.dcs-p-0   { padding: 0 !important; }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   DISPLAY & LAYOUT UTILITIES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Display */
+.dcs-flex       { display: flex !important; }
+.dcs-inline-flex { display: inline-flex !important; }
+.dcs-block      { display: block !important; }
+.dcs-inline-block { display: inline-block !important; }
+.dcs-hidden      { display: none !important; }
+
+/* Flex helpers */
+.dcs-flex-col    { flex-direction: column !important; }
+.dcs-flex-wrap    { flex-wrap: wrap !important; }
+.dcs-items-center { align-items: center !important; }
+.dcs-items-start  { align-items: flex-start !important; }
+.dcs-justify-between { justify-content: space-between !important; }
+.dcs-justify-center  { justify-content: center !important; }
+.dcs-flex-1      { flex: 1 !important; }
+.dcs-flex-shrink-0 { flex-shrink: 0 !important; }
+
+/* Width */
+.dcs-w-full { width: 100% !important; }
+.dcs-w-auto { width: auto !important; }

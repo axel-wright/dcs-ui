@@ -1128,3 +1128,98 @@
           color: var(--accent-primary);
           text-shadow: var(--glow-amber);
         }
+
+        /* Section 05 — Photography / Imagery */
+        .photography-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: var(--space-lg);
+        }
+
+        .photography-text-card {
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
+          border-radius: 12px;
+          padding: var(--space-xl);
+        }
+
+        .photography-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-md);
+        }
+
+        .photography-list-item {
+          position: relative;
+          padding-left: var(--space-lg);
+          color: var(--text-secondary);
+          font-size: var(--type-sm);
+          line-height: 1.7;
+        }
+
+        .photography-list-item::before {
+          content: '—';
+          position: absolute;
+          left: 0;
+          color: var(--accent-primary);
+        }
+
+        .photography-list-item strong {
+          color: var(--text-primary);
+        }
+
+        /* Section 06 — Layout principles grid */
+        .principles-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: var(--space-lg);
+        }
+
+        .principle-card {
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
+          border-radius: 12px;
+          padding: var(--space-lg);
+        }
+
+        .principle-title {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: var(--space-sm);
+          font-family: var(--font-headings);
+          font-size: var(--type-lg);
+          font-weight: 700;
+          color: var(--text-primary);
+          margin-bottom: var(--space-sm);
+        }
+
+        .principle-tag {
+          font-family: var(--font-mono);
+          font-size: var(--type-xs);
+          font-weight: 500;
+          letter-spacing: 0.05em;
+          color: var(--accent-primary);
+          background: rgba(232, 153, 43, 0.08);
+          border: 1px solid var(--border-active);
+          border-radius: 4px;
+          padding: 2px 8px;
+        }
+
+        .principle-body {
+          color: var(--text-secondary);
+          font-size: var(--type-sm);
+          line-height: 1.7;
+          margin: 0 0 var(--space-sm) 0;
+        }
+
+        /* Comparison preview wells (glow vs border evaluation) */
+        .comparison-preview-glow,
+        .comparison-preview-border {
+          background: var(--bg-deepest);
+          border-radius: 8px;
+          border: 1px solid var(--border-default);
+        }

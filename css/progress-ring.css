@@ -1,0 +1,41 @@
+/* === PROGRESS RING === */
+    /* CSS-only circular progress via conic-gradient. dcs-progress.js sets the
+       --ring-pct / --ring-color / --ring-stroke custom properties at init. */
+    .dcs-progress-ring {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dcs-progress-ring::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: 50%;
+      background: conic-gradient(
+        var(--ring-color, var(--accent-primary)) calc(var(--ring-pct, 0) * 1%),
+        transparent 0
+      );
+      mask: radial-gradient(circle closest-side, transparent calc(100% - var(--ring-stroke, 6px)), black calc(100% - var(--ring-stroke, 6px)));
+      -webkit-mask: radial-gradient(circle closest-side, transparent calc(100% - var(--ring-stroke, 6px)), black calc(100% - var(--ring-stroke, 6px)));
+    }
+
+    .dcs-progress-ring::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      border-radius: 50%;
+      border: var(--ring-stroke, 6px) solid var(--surface-hover);
+    }
+
+    .dcs-progress-ring-label {
+      position: relative;
+      z-index: 1;
+      font-family: var(--font-headings);
+      font-size: var(--type-sm);
+      font-weight: 600;
+      color: var(--text-primary);
+    }

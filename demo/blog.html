@@ -11,11 +11,11 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../css/dcs-core.min.css?v=20260704-7a201cc">
-  <link rel="stylesheet" href="../css/dcs-components.min.css?v=20260704-7a201cc">
-  <script src="../js/dcs-core.js?v=1789999999" defer></script>
-  <script src="../guide.min.js?v=20260704-7a201cc" defer></script>
-  <link rel="stylesheet" href="blog.css?v=1789999999">
+  <link rel="stylesheet" href="../css/dcs-core.min.css?v=20260706-d4bdad4">
+  <link rel="stylesheet" href="../css/dcs-components.min.css?v=20260706-d4bdad4">
+  <script src="../js/dcs-components.min.js?v=20260706-d4bdad4" defer></script>
+  <script src="../guide.min.js?v=20260706-d4bdad4" defer></script>
+  <link rel="stylesheet" href="blog.css?v=20260706-d4bdad4">
 </head>
 <body>
 
@@ -62,6 +62,9 @@
       <span class="header-badge">Diaz Creative Studio &middot; Petaluma, CA</span>
       <h1 class="blog-title">Workshop Notes</h1>
       <p class="blog-tagline">Build logs, project diaries, and technical guides from a workshop at night.</p>
+      <div data-dcs-component="truncate" data-truncate-lines="2" style="max-width: 640px; margin-top: var(--space-md); color: var(--text-secondary); font-size: var(--type-sm); line-height: 1.7;">
+        Everything here starts on the shop floor in Petaluma. These notes are the written companions to the videos — the measurements that scrolled by too fast, the failed first attempts that got cut for time, the exact feeds and speeds that finally worked, and the small jigs and fixtures that made each project repeatable. If a build taught me something worth keeping, it ends up written down here.
+      </div>
     </header>
 
     <!-- Category Filters -->
@@ -74,6 +77,9 @@
         <button class="filter-tab" data-category="projects" role="tab" aria-selected="false">Projects</button>
         <button class="filter-tab" data-category="tools-upgrades" role="tab" aria-selected="false">Tools & Upgrades</button>
       </div>
+      <aside class="filter-shortcuts" style="margin-top: var(--space-md); font-size: var(--type-xs); color: var(--text-muted);">
+        Keyboard: press <kbd>/</kbd> to focus filters, <span class="dcs-kbd-group"><kbd>J</kbd><kbd>K</kbd></span> to move between posts.
+      </aside>
     </section>
 
     <!-- Blog Grid -->
@@ -188,6 +194,6 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="blog.js?v=1789999999" defer></script>
+  <script src="blog.js?v=20260706-d4bdad4" defer></script>
 </body>
 </html>

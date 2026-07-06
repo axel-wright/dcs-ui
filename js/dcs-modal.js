@@ -51,6 +51,9 @@ if (typeof window.DCS === 'undefined') {
       if (e.key !== 'Escape') return;
       var openModals = document.querySelectorAll('.modal-backdrop.open, .modal-overlay.open');
       for (var i = 0; i < openModals.length; i++) {
+        // Static modals ignore Escape — only an explicit close button or a
+        // programmatic close dismisses them.
+        if (openModals[i].hasAttribute('data-modal-static')) continue;
         closeModal(openModals[i]);
       }
     });
@@ -97,6 +100,8 @@ if (typeof window.DCS === 'undefined') {
 
         var backdrop = e.target;
         if (backdrop.classList.contains('modal-backdrop') || backdrop.classList.contains('modal-overlay')) {
+          // Static modals ignore backdrop clicks.
+          if (backdrop.hasAttribute('data-modal-static')) return;
           closeModal(backdrop);
         }
       });

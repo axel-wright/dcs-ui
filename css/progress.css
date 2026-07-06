@@ -18,6 +18,30 @@
       box-shadow: 0 0 10px rgba(232, 153, 43, 0.3);
     }
 
+    /* ── P1: Indeterminate animation ─────────────────────── */
+    .dcs-progress.is-indeterminate .dcs-progress-bar,
+    .progress-bar-container.is-indeterminate .progress-bar-fill {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 30% !important;
+      animation: progress-indeterminate 1.5s var(--ease-in-out) infinite;
+      background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-primary-hover) 50%, var(--accent-primary) 100%);
+      background-size: 200% 100%;
+    }
+    @keyframes progress-indeterminate {
+      0% { left: -30%; }
+      100% { left: 100%; }
+    }
+
+    /* ── P1: Progress label ──────────────────────────────── */
+    .dcs-progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: var(--type-sm);
+      margin-bottom: var(--space-xs);
+    }
+
     /* Spinner loader */
     .spinner-loader {
       width: 32px;

@@ -68,3 +68,102 @@
       font-variant-numeric: tabular-nums;
     }
 
+    /* ── P1: Base alias ──────────────────────────────────── */
+    .dcs-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-family: var(--font-body);
+      font-size: var(--type-sm);
+    }
+
+    /* ── P1: Sticky header ───────────────────────────────── */
+    .data-table[data-sticky-header] thead {
+      position: sticky;
+      top: 70px;
+      z-index: var(--z-sticky);
+    }
+    .data-table[data-sticky-header] thead th {
+      background: var(--bg-deepest);
+    }
+
+    /* ── P1: Row selection ───────────────────────────────── */
+    .data-table tr.selected td,
+    .data-table tr.selected:hover td {
+      background: var(--color-info-bg);
+      color: var(--text-primary);
+    }
+    .data-table .dcs-select-cell {
+      width: 44px;
+      text-align: center;
+      cursor: default;
+    }
+    .data-table th.dcs-select-cell:hover {
+      background: var(--bg-deepest);
+      color: var(--text-secondary);
+    }
+    .data-table .dcs-select-cell input {
+      cursor: pointer;
+      accent-color: var(--accent-primary);
+    }
+
+    /* Selection count bar — absolutely positioned above the table so it
+       floats as an overlay without ever shifting the table (or its sticky
+       thead) down. The table wrapper needs position:relative. */
+    .table-container,
+    .demo-area > .data-table {
+      position: relative;
+    }
+    .dcs-table-select-bar {
+      display: none;
+      align-items: center;
+      gap: var(--space-sm);
+      position: absolute;
+      top: -42px;
+      left: 0;
+      right: 0;
+      padding: var(--space-sm) var(--space-md);
+      background: var(--color-info-bg);
+      border: 1px solid var(--color-info-border);
+      border-radius: var(--radius-md);
+      color: var(--color-info-text);
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      letter-spacing: 0.04em;
+      z-index: 10;
+    }
+    .dcs-table-select-bar.is-visible {
+      display: flex;
+    }
+
+    /* ── P1: Loading shimmer ─────────────────────────────── */
+    tbody[data-loading] {
+      position: relative;
+      pointer-events: none;
+    }
+    tbody[data-loading]::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(232, 153, 43, 0.06), transparent);
+      background-size: 200% 100%;
+      animation: dcs-table-shimmer 1.5s var(--ease-in-out) infinite;
+    }
+    @keyframes dcs-table-shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* ── P1: Empty state ─────────────────────────────────── */
+    .data-table .dcs-empty-cell {
+      text-align: center;
+      color: var(--text-muted);
+      padding: var(--space-2xl) var(--space-lg);
+      font-family: var(--font-mono);
+      font-size: var(--type-sm);
+    }
+    .data-table tr.dcs-empty-row:hover td {
+      background: transparent;
+      color: var(--text-muted);
+    }
+

@@ -63,7 +63,7 @@
     }
     .context-menu-item-danger:hover {
       background: rgba(184, 69, 58, 0.08);
-      color: #ff5c4d;
+      color: var(--accent-rose);
     }
 
     .context-menu-item-icon-wrapper {

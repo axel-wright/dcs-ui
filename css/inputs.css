@@ -14,7 +14,7 @@
       color: var(--text-primary);
     }
 
-    .form-input, .form-textarea {
+    .form-input, .form-textarea, .dcs-input {
       width: 100%;
       background: var(--bg-deepest);
       border: 1px solid var(--border-default);
@@ -26,13 +26,13 @@
       transition: all 0.2s ease-out;
     }
 
-    .form-input:focus, .form-textarea:focus {
+    .form-input:focus, .form-textarea:focus, .dcs-input:focus {
       outline: none;
       border-color: var(--accent-primary);
       box-shadow: var(--glow-amber);
     }
 
-    .form-input:disabled, .form-textarea:disabled {
+    .form-input:disabled, .form-textarea:disabled, .dcs-input:disabled {
       opacity: 0.5;
       cursor: not-allowed;
       background: var(--surface-elevated);
@@ -41,6 +41,42 @@
     .form-helper {
       font-size: var(--type-xs);
       color: var(--text-muted);
+    }
+
+    /* ── P1: Validation states ───────────────────────────── */
+    /* Use with [aria-invalid="true"] or .dcs-input--error */
+    .dcs-input--error,
+    .form-input[aria-invalid="true"],
+    .form-textarea[aria-invalid="true"] {
+      border-color: var(--color-error-border);
+      box-shadow: 0 0 0 1px var(--color-error-border);
+    }
+    .dcs-input--error:focus,
+    .form-input[aria-invalid="true"]:focus,
+    .form-textarea[aria-invalid="true"]:focus {
+      border-color: var(--color-error);
+      box-shadow: 0 0 0 3px var(--color-error-bg);
+    }
+
+    /* Help/error text below input */
+    .dcs-input-help {
+      font-size: var(--type-xs);
+      color: var(--text-muted);
+      margin-top: var(--space-xs);
+    }
+    .dcs-input-error-text {
+      font-size: var(--type-xs);
+      color: var(--color-error-text);
+      margin-top: var(--space-xs);
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    /* Required indicator */
+    .dcs-label-required::after {
+      content: ' *';
+      color: var(--color-error);
     }
 
     /* Form Speeds & Feeds Live Calculator widget styling */

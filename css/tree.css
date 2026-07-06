@@ -1,0 +1,86 @@
+/* === TREE VIEW === */
+    /* Hierarchical, expandable tree with roving tabindex (dcs-tree.js). */
+    .dcs-tree {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: var(--type-sm);
+    }
+
+    .dcs-tree .dcs-tree-group {
+      list-style: none;
+      margin: 0;
+      padding-left: var(--space-lg);
+    }
+
+    /* Collapsed groups are hidden; the JS toggles aria-expanded on the item. */
+    .dcs-tree-item[aria-expanded="false"] > .dcs-tree-group {
+      display: none;
+    }
+
+    /* Each item is a flex row holding the toggle + label. Nested groups are
+       block-level so they stack below the row rather than beside it. */
+    .dcs-tree-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      outline: none;
+      transition: background-color var(--duration-fast) var(--ease-out);
+    }
+
+    .dcs-tree-item > .dcs-tree-group {
+      flex-basis: 100%;
+    }
+
+    .dcs-tree-item:hover {
+      background: var(--surface-hover);
+    }
+
+    .dcs-tree-item.is-selected {
+      background: var(--color-info-bg);
+      color: var(--color-info-text);
+    }
+
+    .dcs-tree-item:focus-visible {
+      outline: 2px solid var(--accent-primary);
+      outline-offset: -2px;
+    }
+
+    /* Toggle chevron — rotates from ▸ to ▾ when the item is expanded. */
+    .dcs-tree-toggle {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      margin-right: var(--space-xs);
+      color: var(--text-muted);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .dcs-tree-toggle::before {
+      content: '\25B8'; /* ▸ */
+      font-size: var(--type-sm);
+      line-height: 1;
+      transition: transform var(--duration-fast) var(--ease-out);
+    }
+
+    .dcs-tree-item[aria-expanded="true"] > .dcs-tree-toggle::before {
+      transform: rotate(90deg);
+    }
+
+    .dcs-tree-label {
+      flex: 1 1 auto;
+      font-size: var(--type-sm);
+      cursor: default;
+    }
+
+    /* Leaf items have no toggle — pad the label to align with parent labels
+       (toggle width 16px + its right margin). */
+    .dcs-tree-item:not([aria-expanded]) > .dcs-tree-label {
+      padding-left: calc(16px + var(--space-xs));
+    }

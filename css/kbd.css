@@ -1,0 +1,48 @@
+/* === KBD / KEYBOARD SHORTCUTS === */
+kbd, .dcs-kbd {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--surface-hover);
+  border: 1px solid var(--border-default);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 1px 6px;
+  display: inline-block;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.dcs-kbd-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.dcs-kbd-group kbd + kbd::before,
+.dcs-kbd-group .dcs-kbd + .dcs-kbd::before {
+  content: '+';
+  margin: 0 2px;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+}
+
+/* Shortcut hint — a subtle, raised keycap that sits at the right edge of an
+   interactive element (think VS Code command palette / macOS menu shortcuts).
+   Uses an explicit dark/light surface so it always reads as a distinct pill. */
+.dcs-shortcut-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 6px;
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  background: var(--bg-deepest);
+  border: 1px solid var(--border-default);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}

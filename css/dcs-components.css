@@ -65,3 +65,13 @@
 @import 'sticky-action-bar.css';
 @import 'carousel.css';
 @import 'skip-link.css';
+
+/* Components P2 */
+@import 'progress-ring.css';
+@import 'radio.css';
+@import 'sparkline.css';
+@import 'tree.css';
+
+/* P3 — Polish */
+@import 'print.css';
+@import 'kbd.css';

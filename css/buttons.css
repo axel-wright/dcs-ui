@@ -37,14 +37,14 @@
 
     .btn-danger {
       background-color: var(--accent-rose);
-      color: #ffffff;
+      color: var(--text-on-accent);
       border: 1px solid var(--accent-rose);
     }
     .btn-danger:hover {
-      background-color: #c85146;
-      border-color: #c85146;
+      background-color: var(--accent-rose-hover);
+      border-color: var(--accent-rose-hover);
       transform: translateY(-2px);
-      box-shadow: var(--glow-amber);
+      box-shadow: var(--glow-rose);
     }
     .btn-danger:active {
       transform: translateY(0);

@@ -143,6 +143,6 @@
       text-align: center;
     }
     .sheet-apply-btn:hover {
-      background: #fca83a;
+      background: var(--accent-primary-hover);
     }
 

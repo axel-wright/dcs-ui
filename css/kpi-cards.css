@@ -53,10 +53,10 @@
 
     /* Light theme overrides */
     [data-theme="light"] .kpi-card {
-      background: #ffffff;
+      background: var(--surface-elevated);
     }
     [data-theme="light"] .kpi-card--featured {
-      background: linear-gradient(135deg, #ffffff 60%, rgba(232, 153, 43, 0.04) 100%), #ffffff;
+      background: linear-gradient(135deg, var(--surface-elevated) 60%, rgba(232, 153, 43, 0.04) 100%), var(--surface-elevated);
     }
 
     /* Icon wrapper */

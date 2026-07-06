@@ -1,0 +1,12 @@
+/* === SPARKLINE === */
+    /* Inline SVG trend line — scales to the width/height set on the element. */
+    .dcs-sparkline {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 0;
+    }
+
+    .dcs-sparkline svg {
+      display: block;
+      overflow: visible;
+    }

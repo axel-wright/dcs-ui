@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script src="js/dcs-components.min.js?v=20260704-7a201cc"></script>
-<script>(function(){var t;try{t=localStorage.getItem("dcs-theme")}catch(e){}if(t==="light")document.documentElement.setAttribute("data-theme","light")})()</script>
+  <script>(function(){var t;try{t=localStorage.getItem("dcs-theme")}catch(e){}if(t==="light")document.documentElement.setAttribute("data-theme","light")})()</script>
+  <script src="js/dcs-components.min.js?v=20260706-d4bdad4" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DCS Complete Component Library</title>
   
@@ -13,16 +13,16 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/dcs-core.min.css?v=20260704-7a201cc">
-  <link rel="stylesheet" href="css/dcs-components.min.css?v=20260704-7a201cc">
-  <link rel="stylesheet" href="css/dcs-specimen.css?v=1789999999">
+  <link rel="stylesheet" href="css/dcs-core.min.css?v=20260706-d4bdad4">
+  <link rel="stylesheet" href="css/dcs-components.min.css?v=20260706-d4bdad4">
+  <link rel="stylesheet" href="css/dcs-specimen.css?v=20260706-d4bdad4">
   <!-- Demo-only enhancements for the component library page -->
-  <script src="js/demo/dcs-kpi-demo.js?v=2" defer></script>
-  <script src="js/demo/dcs-cards-demo.js?v=2" defer></script>
-  <script src="js/demo/dcs-header-demo.js?v=2" defer></script>
-  <script src="js/demo/dcs-modal-demo.js?v=2" defer></script>
-  <script src="js/demo/dcs-stepper-demo.js?v=2" defer></script>
-  <script src="js/demo/dcs-progress.js?v=2" defer></script>
+  <script src="js/demo/dcs-kpi-demo.js?v=20260706-d4bdad4" defer></script>
+  <script src="js/demo/dcs-cards-demo.js?v=20260706-d4bdad4" defer></script>
+  <script src="js/demo/dcs-header-demo.js?v=20260706-d4bdad4" defer></script>
+  <script src="js/demo/dcs-modal-demo.js?v=20260706-d4bdad4" defer></script>
+  <script src="js/demo/dcs-stepper-demo.js?v=20260706-d4bdad4" defer></script>
+  <script src="js/demo/dcs-progress.js?v=20260706-d4bdad4" defer></script>
 </head>
 <body>
 
@@ -110,7 +110,7 @@
     </div>
   </nav>
 
-  <button class="fab-button fab-back-to-top" aria-label="Back to top" style="position: fixed !important; bottom: var(--space-lg); right: var(--space-lg); width: 48px; height: 48px; z-index: 900; opacity: 1; pointer-events: auto;">
+  <button class="fab-button fab-back-to-top" aria-label="Back to top" style="position: fixed !important; bottom: var(--space-lg); right: var(--space-lg); width: 48px; height: 48px; z-index: 900;">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
@@ -127,6 +127,7 @@
           <li class="sidebar-item active" data-section="buttons"><a href="#buttons"><span class="sidebar-num"></span> Buttons</a></li>
           <li class="sidebar-item" data-section="toggles"><a href="#toggles"><span class="sidebar-num"></span> Toggle Switches</a></li>
           <li class="sidebar-item" data-section="checkboxes"><a href="#checkboxes"><span class="sidebar-num"></span> Checkboxes</a></li>
+          <li class="sidebar-item" data-section="radio-sec"><a href="#radio-sec"><span class="sidebar-num"></span> Radio Group</a></li>
           <li class="sidebar-item" data-section="fab-sec"><a href="#fab-sec"><span class="sidebar-num"></span> Floating Action Button</a></li>
           <li class="sidebar-item" data-section="inputs"><a href="#inputs"><span class="sidebar-num"></span> Inputs &amp; Forms</a></li>
           <li class="sidebar-item" data-section="dropdown-sec"><a href="#dropdown-sec"><span class="sidebar-num"></span> Dropdown Select</a></li>
@@ -162,6 +163,9 @@
           <li class="sidebar-item" data-section="avatars"><a href="#avatars"><span class="sidebar-num"></span> Avatars</a></li>
           <li class="sidebar-item" data-section="testimonial-sec"><a href="#testimonial-sec"><span class="sidebar-num"></span> Rating &amp; Testimonial</a></li>
           <li class="sidebar-item" data-section="carousel-sec"><a href="#carousel-sec"><span class="sidebar-num"></span> Carousel</a></li>
+          <li class="sidebar-item" data-section="sparkline-sec"><a href="#sparkline-sec"><span class="sidebar-num"></span> Sparkline</a></li>
+          <li class="sidebar-item" data-section="tree-sec"><a href="#tree-sec"><span class="sidebar-num"></span> Tree View</a></li>
+          <li class="sidebar-item" data-section="taggroup-sec"><a href="#taggroup-sec"><span class="sidebar-num"></span> Tag Group</a></li>
 
           <!-- ===== FEEDBACK ===== -->
           <li class="sidebar-section-header">Feedback</li>
@@ -169,6 +173,7 @@
           <li class="sidebar-item" data-section="alert-sec"><a href="#alert-sec"><span class="sidebar-num"></span> Alert Banner</a></li>
           <li class="sidebar-item" data-section="modal-sec"><a href="#modal-sec"><span class="sidebar-num"></span> Modal / Dialog</a></li>
           <li class="sidebar-item" data-section="loading"><a href="#loading"><span class="sidebar-num"></span> Progress &amp; Loading</a></li>
+          <li class="sidebar-item" data-section="ring-sec"><a href="#ring-sec"><span class="sidebar-num"></span> Progress Ring</a></li>
           <li class="sidebar-item" data-section="empty-sec"><a href="#empty-sec"><span class="sidebar-num"></span> Empty State</a></li>
 
           <!-- ===== OVERLAYS ===== -->
@@ -192,6 +197,13 @@
           <li class="sidebar-item" data-section="splitpane-sec"><a href="#splitpane-sec"><span class="sidebar-num"></span> Split Pane</a></li>
           <li class="sidebar-item" data-section="stickybar-sec"><a href="#stickybar-sec"><span class="sidebar-num"></span> Sticky Action Bar</a></li>
           <li class="sidebar-item" data-section="compare-sec"><a href="#compare-sec"><span class="sidebar-num"></span> Image Comparison</a></li>
+
+          <!-- ===== UTILITIES ===== -->
+          <li class="sidebar-section-header">Utilities</li>
+          <li class="sidebar-item" data-section="kbd-sec"><a href="#kbd-sec"><span class="sidebar-num"></span> Keyboard Keys</a></li>
+          <li class="sidebar-item" data-section="clipboard-sec"><a href="#clipboard-sec"><span class="sidebar-num"></span> Copy to Clipboard</a></li>
+          <li class="sidebar-item" data-section="truncate-sec"><a href="#truncate-sec"><span class="sidebar-num"></span> Truncate / Show More</a></li>
+          <li class="sidebar-item" data-section="shortcut-sec"><a href="#shortcut-sec"><span class="sidebar-num"></span> Shortcut Hint</a></li>
 
         </ul>
       </nav>
@@ -400,6 +412,45 @@
         </div>
       </section>
 
+<!-- RADIO GROUP -->
+      <section id="radio-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Radio Group</h2>
+          </div>
+          <p class="section-description">Single-choice selection with rich labels and descriptions. Arrow keys move between options; disabled options are skipped. Add <code>data-dcs-component="radio-group"</code>.</p>
+        </div>
+        <div class="demo-area">
+          <div data-dcs-component="radio-group" data-radio-name="demo-machine" style="max-width: 480px;">
+            <label class="dcs-radio">
+              <input type="radio" name="demo-machine" value="contour" checked>
+              <span class="dcs-radio-indicator"></span>
+              <span class="dcs-radio-content">
+                <span class="dcs-radio-label">Contour</span>
+                <span class="dcs-radio-desc">Follow surface profile at constant Z offset. Best for 3D surfaces and organic shapes.</span>
+              </span>
+            </label>
+            <label class="dcs-radio">
+              <input type="radio" name="demo-machine" value="pocket">
+              <span class="dcs-radio-indicator"></span>
+              <span class="dcs-radio-content">
+                <span class="dcs-radio-label">Pocket</span>
+                <span class="dcs-radio-desc">Clear material inside a closed boundary. Ideal for flat-bottomed cavities.</span>
+              </span>
+            </label>
+            <label class="dcs-radio">
+              <input type="radio" name="demo-machine" value="drill" disabled>
+              <span class="dcs-radio-indicator"></span>
+              <span class="dcs-radio-content">
+                <span class="dcs-radio-label">Drill (disabled)</span>
+                <span class="dcs-radio-desc">Plunge operations at marked points. Requires drill bit in tool library.</span>
+              </span>
+            </label>
+          </div>
+        </div>
+      </section>
+
 <!-- 38. FLOATING ACTION BUTTON -->
       <section id="fab-sec" class="section-specimen">
         <div class="section-meta">
@@ -497,6 +548,19 @@
               </div>
             </div>
 
+          </div>
+        </div>
+        <div class="demo-area">
+          <h4 style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase; margin-bottom: var(--space-md);">Validation States</h4>
+          <div class="form-group" style="max-width: 320px;">
+            <label class="form-label dcs-label-required" for="demo-name">Machine Name</label>
+            <input type="text" id="demo-name" class="dcs-input dcs-input--error" value="Bad!" aria-invalid="true" aria-describedby="demo-name-error">
+            <p class="dcs-input-error-text" id="demo-name-error">Machine name must be at least 3 characters.</p>
+          </div>
+          <div class="form-group" style="max-width: 320px; margin-top: var(--space-md);">
+            <label class="form-label" for="demo-speed">Feed Rate</label>
+            <input type="text" id="demo-speed" class="dcs-input">
+            <p class="dcs-input-help">Enter feed rate in mm/min. Typical range: 500–2000.</p>
           </div>
         </div>
       </section>
@@ -1414,6 +1478,57 @@
             </table>
           </div>
         </div>
+        <div class="demo-area">
+          <h4 style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase; margin-bottom: var(--space-md);">Selectable Rows</h4>
+          <p class="section-description" style="margin-bottom: var(--space-md);">Add <code>data-selectable</code> to inject a checkbox column and a live “N selected” count bar. Add <code>data-sticky-header</code> to pin the header below the nav while scrolling long datasets.</p>
+          <div class="table-container" data-dcs-component="tables">
+            <!-- Add data-sticky-header for scrollable tables (pins thead below the 70px nav).
+                 Omitted here: this specimen isn't in a scroll container, so a sticky top:70px
+                 would push the header down over the first rows. -->
+            <table class="data-table" data-selectable>
+              <thead>
+                <tr>
+                  <th class="sort-header" data-col="0">Job</th>
+                  <th class="sort-header" data-col="1">Machine</th>
+                  <th class="sort-header" data-col="2">Duration</th>
+                  <th class="sort-header" data-col="3">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>cabinet_face_v3.nc</td>
+                  <td>Onefinity Elite</td>
+                  <td class="tabular-nums">3h 12m</td>
+                  <td><span class="badge badge-success">complete</span></td>
+                </tr>
+                <tr>
+                  <td>bracket_batch.nc</td>
+                  <td>Shapeoko Pro</td>
+                  <td class="tabular-nums">1h 44m</td>
+                  <td><span class="badge badge-warning">running</span></td>
+                </tr>
+                <tr>
+                  <td>spindle_mount.nc</td>
+                  <td>Onefinity Elite</td>
+                  <td class="tabular-nums">0h 58m</td>
+                  <td><span class="badge badge-success">complete</span></td>
+                </tr>
+                <tr>
+                  <td>gantry_plate.nc</td>
+                  <td>PrintNC</td>
+                  <td class="tabular-nums">4h 05m</td>
+                  <td><span class="badge badge-error">faulted</span></td>
+                </tr>
+                <tr>
+                  <td>knob_x12.nc</td>
+                  <td>Shapeoko Pro</td>
+                  <td class="tabular-nums">0h 22m</td>
+                  <td><span class="badge badge-success">complete</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
 
 <!-- 4. BADGES & STATUS -->
@@ -1910,6 +2025,16 @@
             <div class="avatar avatar-sm avatar-counter tooltip-trigger" data-tooltip="+3 Apprentices" style="z-index: 1;">+3</div>
           </div>
         </div>
+        <div class="demo-area">
+          <h4 style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase; margin-bottom: var(--space-md);">Overlapping Group — <code>.dcs-avatar-group</code></h4>
+          <p class="section-description" style="margin-bottom: var(--space-md);">Stacked initials with an overflow chip. The stack fans out on hover.</p>
+          <div class="dcs-avatar-group">
+            <div class="dcs-avatar" style="background: var(--accent-primary);">RW</div>
+            <div class="dcs-avatar" style="background: var(--accent-sage);">KD</div>
+            <div class="dcs-avatar" style="background: var(--color-info);">AM</div>
+            <div class="dcs-avatar-overflow">+3</div>
+          </div>
+        </div>
       </section>
 
 <!-- 37. RATING & TESTIMONIAL -->
@@ -2187,6 +2312,76 @@
         </div>
       </section>
 
+<!-- SPARKLINE -->
+      <section id="sparkline-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Sparkline</h2>
+          </div>
+          <p class="section-description">Compact inline trend charts rendered from a comma-separated value list. Colour can be set explicitly or derived from an up/down trend.</p>
+        </div>
+        <div class="demo-area">
+          <div style="display: flex; align-items: center; gap: var(--space-xl); flex-wrap: wrap;">
+            <div data-dcs-component="sparkline" data-sparkline-values="12,18,15,22,19,25,20,28,24,30" data-sparkline-color="var(--color-success)" data-sparkline-width="150" data-sparkline-height="40" aria-label="Upward trend: 12 to 30"></div>
+            <div data-dcs-component="sparkline" data-sparkline-values="30,28,25,22,20,18,15,14,12,10" data-sparkline-color="var(--color-error)" data-sparkline-width="150" data-sparkline-height="40" aria-label="Downward trend: 30 to 10"></div>
+            <div data-dcs-component="sparkline" data-sparkline-values="20,22,19,21,20,22,21,20,22,21" data-sparkline-width="150" data-sparkline-height="40" aria-label="Flat trend around 21"></div>
+          </div>
+        </div>
+      </section>
+
+<!-- TREE VIEW -->
+      <section id="tree-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Tree View</h2>
+          </div>
+          <p class="section-description">Collapsible hierarchy for file browsers and nested structures. Click a toggle to expand; arrow keys navigate and expand/collapse. Fully <code>role="tree"</code> accessible.</p>
+        </div>
+        <div class="demo-area">
+          <ul data-dcs-component="tree" class="dcs-tree" role="tree" aria-label="Project files" style="max-width: 320px;">
+            <li class="dcs-tree-item" role="treeitem" aria-expanded="true">
+              <span class="dcs-tree-toggle" tabindex="-1"></span>
+              <span class="dcs-tree-label">Parts</span>
+              <ul class="dcs-tree-group" role="group">
+                <li class="dcs-tree-item" role="treeitem"><span class="dcs-tree-label">bracket.stl</span></li>
+                <li class="dcs-tree-item" role="treeitem"><span class="dcs-tree-label">spindle-mount.stl</span></li>
+                <li class="dcs-tree-item" role="treeitem"><span class="dcs-tree-label">gantry-plate.stl</span></li>
+              </ul>
+            </li>
+            <li class="dcs-tree-item" role="treeitem" aria-expanded="false">
+              <span class="dcs-tree-toggle" tabindex="-1"></span>
+              <span class="dcs-tree-label">Toolpaths</span>
+              <ul class="dcs-tree-group" role="group">
+                <li class="dcs-tree-item" role="treeitem"><span class="dcs-tree-label">roughing.nc</span></li>
+                <li class="dcs-tree-item" role="treeitem"><span class="dcs-tree-label">finish-pass.nc</span></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+<!-- TAG GROUP -->
+      <section id="taggroup-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Tag Group</h2>
+          </div>
+          <p class="section-description">Compact semantic labels for statuses and categories. Colour variants map to the semantic token families.</p>
+        </div>
+        <div class="demo-area">
+          <div class="dcs-tag-group">
+            <span class="dcs-tag">CNC</span>
+            <span class="dcs-tag dcs-tag--success">Complete</span>
+            <span class="dcs-tag dcs-tag--warning">Review</span>
+            <span class="dcs-tag dcs-tag--info">3D Print</span>
+            <span class="dcs-tag dcs-tag--error">Failed</span>
+          </div>
+        </div>
+      </section>
+
 <!-- 7. TOAST NOTIFICATIONS -->
       <section id="toasts" class="section-specimen">
         <div class="section-meta">
@@ -2201,6 +2396,15 @@
             <button class="btn btn-md btn-secondary" data-action="show-toast" data-toast-msg="SETTINGS SAVED SUCCESSFULLY" data-toast-type="success">Trigger SUCCESS Toast</button>
             <button class="btn btn-md btn-secondary" data-action="show-toast" data-toast-msg="EXPORT SEQUENCE COMPLETE" data-toast-type="info">Trigger INFO Toast</button>
             <button class="btn btn-md btn-secondary" style="border-color: var(--accent-rose); color: var(--accent-rose);" data-action="show-toast" data-toast-msg="⚠ CONNECTION LOST / RE-ESTABLISHING" data-toast-type="error">Trigger ALERT Toast</button>
+          </div>
+        </div>
+        <div class="demo-area">
+          <h4 style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase; margin-bottom: var(--space-md);">Programmatic API — <code>DCS.toast(message, options)</code></h4>
+          <p class="section-description" style="margin-bottom: var(--space-md);">Call from anywhere. Options accept <code>type</code>, <code>position</code>, <code>duration</code>, and an <code>action</code> button with a <code>callback</code>.</p>
+          <div class="flex-wrap-gap">
+            <button class="btn btn-md btn-secondary" onclick="DCS.toast('Item saved', {type:'success'})">Success Toast</button>
+            <button class="btn btn-md btn-secondary" onclick="DCS.toast('Update available', {type:'info', action:{label:'Update', callback:function(){DCS.toast('Updating…')}}})">Action Toast</button>
+            <button class="btn btn-md btn-secondary" onclick="DCS.toast('Deleted', {type:'error', position:'top-right'})">Top-Right Error</button>
           </div>
         </div>
       </section>
@@ -2306,6 +2510,77 @@
                 </div>
               </div>
             </div>
+
+            <!-- Size variant triggers -->
+            <button class="btn btn-md btn-secondary" data-action="modal-open" data-modal="size-sm">Small Modal</button>
+            <button class="btn btn-md btn-secondary" data-action="modal-open" data-modal="size-lg">Large Modal</button>
+            <button class="btn btn-md btn-secondary" data-action="modal-open" data-modal="size-full">Fullscreen Modal</button>
+            <button class="btn btn-md btn-secondary" data-action="modal-open" data-modal="static">Static Modal</button>
+
+            <!-- SIZE: SMALL (data-modal-size="sm") -->
+            <div class="modal-backdrop" data-modal="size-sm" data-modal-size="sm">
+              <div class="modal-box">
+                <div class="modal-header">
+                  <h3 class="modal-title">Small Dialog</h3>
+                  <button class="modal-close-btn" data-action="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <p><code>data-modal-size="sm"</code> constrains the box to a compact width — ideal for confirmations and short prompts.</p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-sm btn-primary" data-action="modal-close">Got it</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- SIZE: LARGE (data-modal-size="lg") -->
+            <div class="modal-backdrop" data-modal="size-lg" data-modal-size="lg">
+              <div class="modal-box">
+                <div class="modal-header">
+                  <h3 class="modal-title">Large Dialog</h3>
+                  <button class="modal-close-btn" data-action="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <p><code>data-modal-size="lg"</code> widens the box for content-heavy dialogs — settings panels, multi-column forms, or detailed toolpath previews.</p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-sm btn-primary" data-action="modal-close">Close</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- SIZE: FULLSCREEN (data-modal-size="fullscreen") -->
+            <div class="modal-backdrop" data-modal="size-full" data-modal-size="fullscreen">
+              <div class="modal-box">
+                <div class="modal-header">
+                  <h3 class="modal-title">Fullscreen Dialog</h3>
+                  <button class="modal-close-btn" data-action="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <p><code>data-modal-size="fullscreen"</code> expands to fill the viewport — best for immersive editors, 3D previews, or focused single-task flows.</p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-sm btn-primary" data-action="modal-close">Exit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- STATIC (data-modal-static — cannot dismiss via backdrop or ESC) -->
+            <div class="modal-backdrop" data-modal="static" data-modal-static>
+              <div class="modal-box">
+                <div class="modal-header">
+                  <h3 class="modal-title">Confirm Required</h3>
+                  <button class="modal-close-btn" data-action="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <p>A static modal ignores backdrop clicks and the <kbd>Esc</kbd> key. The user must make an explicit choice — use it for destructive or blocking decisions.</p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-sm btn-ghost" data-action="modal-close">Cancel</button>
+                  <button class="btn btn-sm btn-danger" data-action="modal-close">Proceed</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -2331,6 +2606,25 @@
                 </div>
                 <div class="progress-bar-container">
                   <div class="progress-bar-fill progress-fill" style="width: 68%;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div style="margin-bottom: var(--space-xs); font-family: var(--font-mono); font-size: var(--type-xs);">
+                  <span class="progress-step-text">Status: Indeterminate</span>
+                </div>
+                <div class="progress-bar-container" data-progress-indeterminate aria-label="Loading toolpath">
+                  <div class="progress-bar-fill progress-fill"></div>
+                </div>
+              </div>
+
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xs); font-family: var(--font-mono); font-size: var(--type-xs);">
+                  <span class="progress-step-text">Operations Complete</span>
+                  <span class="dcs-progress-label"></span>
+                </div>
+                <div class="progress-bar-container" data-progress-label data-progress-value="3" data-progress-max="8" aria-label="Operations complete">
+                  <div class="progress-bar-fill progress-fill" style="width: 40%;"></div>
                 </div>
               </div>
 
@@ -2362,6 +2656,30 @@
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+<!-- PROGRESS RING -->
+      <section id="ring-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Progress Ring</h2>
+          </div>
+          <p class="section-description">Circular determinate progress driven by a conic gradient. Size, stroke, colour, and value are all set through <code>data-*</code> attributes.</p>
+        </div>
+        <div class="demo-area">
+          <div style="display: flex; align-items: center; gap: var(--space-xl); flex-wrap: wrap;">
+            <div class="dcs-progress-ring" data-dcs-component="progress" data-progress-value="72" data-progress-max="100" data-progress-size="80" data-progress-stroke="6" style="width:80px;height:80px;--ring-pct:72;--ring-stroke:6px;" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" aria-label="72% complete">
+              <span class="dcs-progress-ring-label">72%</span>
+            </div>
+            <div class="dcs-progress-ring" data-dcs-component="progress" data-progress-value="45" data-progress-max="100" data-progress-size="80" data-progress-stroke="6" data-progress-color="var(--color-warning)" style="width:80px;height:80px;--ring-pct:45;--ring-stroke:6px;--ring-color:var(--color-warning);" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" aria-label="45% complete">
+              <span class="dcs-progress-ring-label">45%</span>
+            </div>
+            <div class="dcs-progress-ring" data-dcs-component="progress" data-progress-value="100" data-progress-max="100" data-progress-size="80" data-progress-stroke="6" data-progress-color="var(--color-success)" style="width:80px;height:80px;--ring-pct:100;--ring-stroke:6px;--ring-color:var(--color-success);" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="100% complete">
+              <span class="dcs-progress-ring-label">✓</span>
+            </div>
           </div>
         </div>
       </section>
@@ -2410,6 +2728,14 @@
               <a href="#" class="empty-state-link empty-action" data-toast-msg="Resetting search filters..." data-toast-type="success">Clear Search</a>
             </div>
           </div>
+
+          <!-- Variant 3: Error with retry -->
+          <div>
+            <p class="specimen-label">Variant C: Error + Retry</p>
+            <div class="empty-state-card" data-dcs-component="empty" data-empty-state="error" data-empty-retry="true">
+              <p class="empty-state-desc">Failed to load machine data</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -2430,6 +2756,14 @@
             <span class="tooltip-trigger" data-tooltip="Maximum safe structural rotation limit: 24,000 RPM">RPM range</span> 
             will cause localized burning and premature tool breakdown.
           </p>
+        </div>
+        <div class="demo-area">
+          <h4 style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase; margin-bottom: var(--space-md);">JS-Positioned Tooltips — <code>dcs-tooltip.js</code></h4>
+          <p class="section-description" style="margin-bottom: var(--space-md);">The enhanced variant floats above <code>&lt;body&gt;</code>, flips to stay in view, and supports keyboard focus and touch. Add <code>data-dcs-component="tooltip"</code> and <code>data-tooltip</code>.</p>
+          <div style="display: flex; gap: var(--space-md); align-items: center;">
+            <button data-dcs-component="tooltip" data-tooltip="Save current project" class="btn btn-sm btn-secondary">💾 Save</button>
+            <button data-dcs-component="tooltip" data-tooltip="Export G-code for CNC" class="btn btn-sm btn-secondary">📤 Export</button>
+          </div>
         </div>
       </section>
 
@@ -3062,6 +3396,79 @@ M30</pre>
               <input type="range" min="0" max="100" value="50" class="compare-slider" aria-label="Comparison slider">
           </div>
           <p style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--text-muted); margin-top: var(--space-md); text-align: center;">Drag the handle to compare before and after finishes</p>
+        </div>
+      </section>
+
+<!-- KEYBOARD KEYS -->
+      <section id="kbd-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Keyboard Keys</h2>
+          </div>
+          <p class="section-description">Styled <code>&lt;kbd&gt;</code> elements for documenting shortcuts. Wrap multiple keys in <code>.dcs-kbd-group</code> to join them with separators.</p>
+        </div>
+        <div class="demo-area">
+          <p style="line-height: 2;">Press <kbd>⌘</kbd> + <kbd>K</kbd> to open the command palette.</p>
+          <p style="line-height: 2;">Use <span class="dcs-kbd-group"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>R</kbd></span> to reload.</p>
+        </div>
+      </section>
+
+<!-- CLIPBOARD -->
+      <section id="clipboard-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Copy to Clipboard</h2>
+          </div>
+          <p class="section-description">A button that copies text to the clipboard and flashes confirmation. Set the payload with <code>data-clipboard-text</code>.</p>
+        </div>
+        <div class="demo-area">
+          <div style="display: flex; align-items: center; gap: var(--space-sm); background: var(--surface-elevated); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); max-width: 320px;">
+            <code style="font-family: var(--font-mono); font-size: var(--type-sm); flex: 1;">npm install @dcs/ui</code>
+            <button data-dcs-component="clipboard" data-clipboard-text="npm install @dcs/ui" class="btn btn-sm btn-secondary">Copy</button>
+          </div>
+        </div>
+      </section>
+
+<!-- TRUNCATE -->
+      <section id="truncate-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Truncate / Show More</h2>
+          </div>
+          <p class="section-description">Clamps long text to a fixed number of lines with a Show more toggle. Set the limit with <code>data-truncate-lines</code>.</p>
+        </div>
+        <div class="demo-area">
+          <div data-dcs-component="truncate" data-truncate-lines="2" style="max-width: 400px;">
+            This text is quite long and will be clamped to two lines. When it overflows, a Show more button appears that lets the user expand the full content. This is useful for descriptions, release notes, and any text-heavy UI where you want to save vertical space while still giving access to the full content when needed.
+          </div>
+        </div>
+      </section>
+
+<!-- SHORTCUT HINT -->
+      <section id="shortcut-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Shortcut Hint</h2>
+          </div>
+          <p class="section-description">A subtle keycap badge that shows a keyboard shortcut. Add <code>data-shortcut</code> to any element and the JS controller appends one automatically.</p>
+        </div>
+        <div class="demo-area">
+          <p style="color:var(--text-secondary);font-size:var(--type-xs);margin-bottom:var(--space-sm);">The component — just the keycap badge:</p>
+          <div style="display:flex;gap:var(--space-sm);margin-bottom:var(--space-lg);">
+            <span class="dcs-shortcut-hint">⌘K</span>
+            <span class="dcs-shortcut-hint">⌘/</span>
+            <span class="dcs-shortcut-hint">Esc</span>
+          </div>
+          <p style="color:var(--text-secondary);font-size:var(--type-xs);margin-bottom:var(--space-sm);">Attached to a host via <code>data-shortcut</code> (JS appends the badge):</p>
+          <div style="display:flex;flex-direction:column;gap:var(--space-xs);">
+            <span data-dcs-component="shortcut-hint" data-shortcut="⌘K" style="display:inline-flex;align-items:center;gap:var(--space-sm);color:var(--text-primary);">Command Palette</span>
+            <span data-dcs-component="shortcut-hint" data-shortcut="⌘/" style="display:inline-flex;align-items:center;gap:var(--space-sm);color:var(--text-primary);">Search Documentation</span>
+            <span data-dcs-component="shortcut-hint" data-shortcut="Esc" style="display:inline-flex;align-items:center;gap:var(--space-sm);color:var(--text-primary);">Close Panel</span>
+          </div>
         </div>
       </section>
 

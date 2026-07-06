@@ -81,3 +81,12 @@
       border-color: var(--accent-primary);
     }
 
+    /* Error variant — rendered by dcs-empty.js when data-empty-state="error" */
+    .dcs-empty--error .dcs-empty-icon {
+      color: var(--color-error-text);
+      opacity: 0.6;
+    }
+    .dcs-empty--error .dcs-empty-retry {
+      margin-top: var(--space-md);
+    }
+

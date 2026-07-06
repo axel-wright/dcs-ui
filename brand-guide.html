@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script src="js/dcs-components.min.js?v=20260704-7a201cc"></script>
-<script>(function(){var t;try{t=localStorage.getItem("dcs-theme")}catch(e){}if(t==="light")document.documentElement.setAttribute("data-theme","light")})()</script>
+  <script>(function(){var t;try{t=localStorage.getItem("dcs-theme")}catch(e){}if(t==="light")document.documentElement.setAttribute("data-theme","light")})()</script>
+  <script src="js/dcs-components.min.js?v=20260706-d4bdad4" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diaz Creative Studio — Warm Dark Brand Design System</title>
 
@@ -13,13 +13,13 @@
   <!-- Design System Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/dcs-core.min.css?v=20260704-7a201cc">
-  <link rel="stylesheet" href="css/dcs-components.min.css?v=20260704-7a201cc">
-  <link rel="stylesheet" href="guide.css?v=1789999999">
+  <link rel="stylesheet" href="css/dcs-core.min.css?v=20260706-d4bdad4">
+  <link rel="stylesheet" href="css/dcs-components.min.css?v=20260706-d4bdad4">
+  <link rel="stylesheet" href="guide.css?v=20260706-d4bdad4">
 
   <!-- Design System Component Registry (defer) -->
   <!-- Page-specific layer (defer) -->
-  <script src="guide.min.js?v=20260704-7a201cc" defer></script>
+  <script src="guide.min.js?v=20260706-d4bdad4" defer></script>
 </head>
 <body>
   <!-- Sticky Navigation -->
@@ -61,7 +61,7 @@
   <!-- Main Content Container -->
   <main class="container">
     <!-- Brand Header -->
-    <header class="brand-header">
+    <header id="brand-philosophy" class="brand-header">
       <span class="header-badge">WARM DARK DESIGN SYSTEM</span>
       <h1 class="brand-title">Workshop at night.</h1>
       <p class="brand-subtitle">Diaz Creative Studio — Brand Design System Specification</p>
@@ -577,6 +577,35 @@
           <div class="spacing-info-val">64px / 96px</div>
         </div>
       </div>
+
+      <!-- New token families -->
+      <div style="background: var(--surface-elevated); border: 1px solid var(--border-default); border-radius: 12px; padding: var(--space-lg); margin-top: var(--space-3xl);">
+        <h3 style="font-family: var(--font-headings); font-size: var(--type-xl); font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-sm);">Extended Token Families</h3>
+        <p style="color: var(--text-secondary); font-size: var(--type-sm); line-height: 1.7; max-width: 760px; margin-bottom: var(--space-lg);">
+          Beyond the core color, type, and spacing scales, DCS UI ships four supporting token families. They keep semantic intent, stacking order, and motion consistent across every component so you rarely need bespoke values.
+        </p>
+        <div class="spacing-info-grid">
+          <div class="spacing-info-card">
+            <div class="spacing-info-title">Semantic Colors</div>
+            <div class="spacing-info-val" style="font-size: var(--type-sm);"><code>--color-success / warning / error / info</code>, each with matching <code>-bg</code>, <code>-border</code>, and <code>-text</code> variants for badges, tags, alerts, and validation.</div>
+          </div>
+          <div class="spacing-info-card">
+            <div class="spacing-info-title">Z-Index Scale</div>
+            <div class="spacing-info-val" style="font-size: var(--type-sm);"><code>--z-base</code> through <code>--z-tooltip</code> — a named stacking order so overlays, drawers, modals, and tooltips never fight for layering.</div>
+          </div>
+          <div class="spacing-info-card">
+            <div class="spacing-info-title">Motion</div>
+            <div class="spacing-info-val" style="font-size: var(--type-sm);"><code>--duration-*</code> and <code>--ease-*</code> drive every transition, keeping timing and easing curves uniform and easy to tune globally.</div>
+          </div>
+          <div class="spacing-info-card">
+            <div class="spacing-info-title">Utilities</div>
+            <div class="spacing-info-val" style="font-size: var(--type-sm);">A growing set of atomic helpers in <code>utilities.css</code> for spacing, flex, text, and visibility — reach for these before writing inline styles.</div>
+          </div>
+        </div>
+        <p style="color: var(--text-secondary); font-size: var(--type-sm); line-height: 1.7; max-width: 760px; margin-top: var(--space-lg);">
+          <strong style="color: var(--text-primary);">Print styles.</strong> DCS UI includes a print stylesheet (<code>print.css</code>) that forces the light theme, hides chrome such as navigation, toasts, and floating buttons, and expands collapsed content — accordions and tree groups — so a printed or PDF export reads as a clean, complete document.
+        </p>
+      </div>
     </section>
 
     <!-- Divider -->
@@ -625,7 +654,7 @@
               <strong>Macro detail:</strong> Close-ups of steel blades, wood grains, dust particles, and material finishes.
             </li>
             <li class="photography-list-item">
-              <strong>Maker context:</strong> Focus on hands actively craftmaking. The creator is implied, the physical process is the focus.
+              <strong>Maker context:</strong> Focus on hands actively crafting. The creator is implied, the physical process is the focus.
             </li>
             <li class="photography-list-item">
               <strong>Atmospheric motion:</strong> Stutter sparks, dust floating, lathe turn speeds, using slight motion blur to indicate authenticity.

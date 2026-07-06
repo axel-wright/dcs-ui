@@ -55,3 +55,56 @@
       border-color: var(--border-default);
     }
 
+    /* Base avatar (dcs- prefixed alias — not every avatar carries .avatar) */
+    .dcs-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-hover);
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: var(--type-xs);
+      font-weight: 700;
+      flex-shrink: 0;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    /* Overlapping avatar group */
+    .dcs-avatar-group {
+      display: inline-flex;
+      flex-direction: row-reverse;
+    }
+    .dcs-avatar-group .dcs-avatar,
+    .dcs-avatar-group .avatar {
+      margin-left: -8px;
+      border: 2px solid var(--bg-default);
+      transition: margin 0.2s var(--ease-out);
+    }
+    .dcs-avatar-group .dcs-avatar:first-child,
+    .dcs-avatar-group .avatar:first-child {
+      margin-left: 0;
+    }
+    .dcs-avatar-group:hover .dcs-avatar,
+    .dcs-avatar-group:hover .avatar {
+      margin-left: 0;
+    }
+    /* The "+N more" overflow avatar */
+    .dcs-avatar-overflow {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--surface-hover);
+      border: 2px solid var(--bg-default);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--type-xs);
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-left: -8px;
+    }
+

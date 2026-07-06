@@ -148,10 +148,6 @@
   background-color: rgba(232, 153, 43, 0.06);
 }
 
-[data-theme="light"] .badge-default {
-  color: #8B5E14;
-}
-
 [data-theme="light"] .sticky-nav {
   background: rgba(245, 242, 235, 0.85);
 }

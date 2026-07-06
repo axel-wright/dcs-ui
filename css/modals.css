@@ -81,3 +81,26 @@
       gap: var(--space-sm);
     }
 
+    /* ── P1: Z-index token ───────────────────────────────── */
+    .modal-backdrop,
+    .modal-overlay {
+      z-index: var(--z-modal);
+    }
+
+    /* ── P1: Size variants (set on the backdrop) ─────────── */
+    .modal-backdrop[data-modal-size="sm"] .modal-box {
+      max-width: 400px;
+    }
+    .modal-backdrop[data-modal-size="md"] .modal-box {
+      max-width: 560px;
+    }
+    .modal-backdrop[data-modal-size="lg"] .modal-box {
+      max-width: 800px;
+    }
+    .modal-backdrop[data-modal-size="fullscreen"] .modal-box {
+      max-width: 100vw;
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+    }
+

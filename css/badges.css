@@ -27,7 +27,7 @@
     }
     .badge-info {
       background: rgba(102, 153, 204, 0.10);
-      color: #8ab4e0;
+      color: var(--accent-info);
       border-color: rgba(102, 153, 204, 0.20);
     }
     .badge-success {
@@ -69,10 +69,12 @@
       min-width: 20px;
       text-align: center;
       justify-content: center;
-      color: #fff;
+      color: var(--text-on-accent);
     }
-    .badge--count.badge-default { background: var(--surface-elevated); }
-    .badge--count.badge-info    { background: #4988c8; }
+    /* Neutral count sits on a surface fill, not an accent — use adaptive text
+       so it stays readable in light theme (surface-elevated is white there). */
+    .badge--count.badge-default { background: var(--surface-elevated); color: var(--text-secondary); }
+    .badge--count.badge-info    { background: var(--accent-info); }
     .badge--count.badge-success { background: var(--accent-sage); }
     .badge--count.badge-warning { background: var(--accent-primary); }
     .badge--count.badge-error   { background: var(--accent-rose); }
@@ -98,7 +100,7 @@
       line-height: 0;
     }
     .badge--dot.badge-default { background: var(--text-secondary); }
-    .badge--dot.badge-info    { background: #8ab4e0; }
+    .badge--dot.badge-info    { background: var(--accent-info); }
     .badge--dot.badge-success { background: var(--accent-sage); }
     .badge--dot.badge-warning { background: var(--accent-primary); }
     .badge--dot.badge-error   { background: var(--accent-rose); }
@@ -131,7 +133,7 @@
       background: currentColor;
     }
     .badge--status.badge-default { color: var(--text-secondary); }
-    .badge--status.badge-info    { color: #8ab4e0; }
+    .badge--status.badge-info    { color: var(--accent-info); }
     .badge--status.badge-success { color: var(--accent-sage); }
     .badge--status.badge-warning { color: var(--accent-primary); }
     .badge--status.badge-error   { color: var(--accent-rose); }

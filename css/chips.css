@@ -73,3 +73,24 @@
       to { transform: scale(0.8); opacity: 0; width: 0; padding-left: 0; padding-right: 0; margin-left: 0; margin-right: 0; }
     }
 
+    /* Read-only tag group — static, non-interactive labels */
+    .dcs-tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+    }
+    .dcs-tag {
+      font-size: var(--type-xs);
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+      background: var(--surface-hover);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-default);
+      white-space: nowrap;
+    }
+    .dcs-tag--info { background: var(--color-info-bg); color: var(--color-info-text); border-color: var(--color-info-border); }
+    .dcs-tag--success { background: var(--color-success-bg); color: var(--color-success-text); border-color: var(--color-success-border); }
+    .dcs-tag--warning { background: var(--color-warning-bg); color: var(--color-warning-text); border-color: var(--color-warning-border); }
+    .dcs-tag--error { background: var(--color-error-bg); color: var(--color-error-text); border-color: var(--color-error-border); }
+
