@@ -1,148 +1,153 @@
 /* === BOTTOM SHEET === */
-    /* === 39: Bottom Sheet === */
-    .bottom-sheet-viewport {
-      position: relative;
-      height: 380px;
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-lg);
-      background: var(--bg-deepest);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      max-width: 480px;
-    }
-    .bottom-sheet-backdrop {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(2px);
-      z-index: 20;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-    .bottom-sheet {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: var(--surface-card);
-      border-top: 1px solid var(--border-light);
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      z-index: 25;
-      transform: translateY(100%);
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      max-height: 85%;
-      display: flex;
-      flex-direction: column;
-    }
-    .bottom-sheet-viewport.open .bottom-sheet-backdrop {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .bottom-sheet-viewport.open .bottom-sheet {
-      transform: translateY(0);
-      box-shadow: 0 -8px 32px rgba(0,0,0,0.4);
-      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-    .bottom-sheet::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      height: 60px;
-      background: var(--surface-card);
-    }
-    .bottom-sheet-drag-handle {
-      width: 32px;
-      height: 4px;
-      background: var(--border-default);
-      border-radius: var(--radius-full);
-      margin: var(--space-sm) auto;
-      cursor: grab;
-      flex-shrink: 0;
-    }
-    .bottom-sheet-header {
-      padding: 0 var(--space-lg) var(--space-sm) var(--space-lg);
-      text-align: center;
-      flex-shrink: 0;
-    }
-    .bottom-sheet-title {
-      font-family: var(--font-display);
-      font-size: var(--type-md);
-      color: var(--text-primary);
-      margin: 0;
-    }
-    .bottom-sheet-content {
-      padding: var(--space-md) var(--space-lg) var(--space-lg) var(--space-lg);
-      overflow-y: auto;
-      scrollbar-width: none;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-    }
-    .bottom-sheet-content::-webkit-scrollbar {
-      display: none;
-    }
-    .bottom-sheet-filter-group {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-xs);
-    }
-    .bottom-sheet-filter-label {
-      font-family: var(--font-mono);
-      font-size: var(--type-xs);
-      color: var(--text-muted);
-      text-transform: uppercase;
-    }
-    .bottom-sheet-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-sm);
-    }
-    .sheet-chip {
-      background: var(--surface-elevated);
-      border: 1px solid var(--border-default);
-      color: var(--text-secondary);
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      font-size: var(--type-xs);
-      cursor: pointer;
-      transition: all var(--transition-fast);
-      user-select: none;
-    }
-    .sheet-chip:hover {
-      border-color: var(--text-secondary);
-      color: var(--text-primary);
-    }
-    .sheet-chip.active {
-      background: rgba(232, 153, 43, 0.12);
-      border-color: var(--accent-primary);
-      color: var(--accent-primary);
-    }
-    .sheet-apply-btn {
-      width: 100%;
-      background: var(--accent-primary);
-      color: var(--text-inverse);
-      border: none;
-      border-radius: var(--radius-full);
-      padding: var(--space-sm);
-      font-family: var(--font-mono);
-      font-size: var(--type-sm);
-      font-weight: 600;
-      cursor: pointer;
-      text-transform: uppercase;
-      transition: background var(--transition-fast);
-      margin-top: var(--space-sm);
-      text-align: center;
-    }
-    .sheet-apply-btn:hover {
-      background: var(--accent-primary-hover);
-    }
+/* Demo viewport that stages the sheet. overflow: hidden clips the sheet
+   when it sits at translateY(100%), so no gap-fill hacks are needed. */
+.bottom-sheet-viewport {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  background: var(--bg-deepest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+}
 
+.bottom-sheet-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-out;
+}
+.bottom-sheet-viewport.open .bottom-sheet-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Closed state: fully off-screen. The closed transition also serves as the
+   exit animation, so it lives on the base selector. */
+.bottom-sheet {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--surface-card);
+  border-top: 1px solid var(--border-light);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  z-index: 25;
+  max-height: 85%;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bottom-sheet-viewport.open .bottom-sheet {
+  transform: translateY(0);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.4);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bottom-sheet-drag-handle {
+  width: 32px;
+  height: 4px;
+  background: var(--border-default);
+  border-radius: var(--radius-full);
+  margin: var(--space-sm) auto;
+  cursor: grab;
+  flex-shrink: 0;
+  touch-action: none;
+}
+.bottom-sheet-drag-handle:active {
+  cursor: grabbing;
+}
+
+.bottom-sheet-header {
+  padding: 0 var(--space-lg) var(--space-sm) var(--space-lg);
+  text-align: center;
+  flex-shrink: 0;
+}
+.bottom-sheet-title {
+  font-family: var(--font-display);
+  font-size: var(--type-md);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.bottom-sheet-content {
+  padding: var(--space-md) var(--space-lg) var(--space-lg) var(--space-lg);
+  overflow-y: auto;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.bottom-sheet-content::-webkit-scrollbar {
+  display: none;
+}
+
+.bottom-sheet-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+.bottom-sheet-filter-label {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.bottom-sheet-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+.sheet-chip {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: var(--type-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+.sheet-chip:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+.sheet-chip.active {
+  background: rgba(232, 153, 43, 0.12);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.sheet-apply-btn {
+  width: 100%;
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: var(--radius-full);
+  padding: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--type-sm);
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background var(--transition-fast);
+  margin-top: var(--space-sm);
+  text-align: center;
+}
+.sheet-apply-btn:hover {
+  background: var(--accent-primary-hover);
+}

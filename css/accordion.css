@@ -41,13 +41,11 @@
       letter-spacing: -0.01em;
       text-align: left;
       cursor: pointer;
-      transition: color 0.25s ease, background 0.25s ease, padding-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: color 0.25s ease, background 0.25s ease;
     }
 
     .accordion-trigger:hover {
       background: var(--surface-hover);
-      color: var(--accent-primary-hover);
-      padding-left: calc(var(--space-lg) + var(--space-xs));
     }
     .accordion-item.open .accordion-trigger {
       color: var(--accent-primary);
