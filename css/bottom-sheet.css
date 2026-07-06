@@ -1,6 +1,4 @@
 /* === BOTTOM SHEET === */
-/* Demo viewport that stages the sheet. overflow: hidden clips the sheet
-   when it sits at translateY(100%), so no gap-fill hacks are needed. */
 .bottom-sheet-viewport {
   position: relative;
   height: 380px;
@@ -15,24 +13,25 @@
   max-width: 480px;
 }
 
+/* Backdrop — plain background, NO backdrop-filter (GPU expensive) */
 .bottom-sheet-backdrop {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.55);
   z-index: 20;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease-out;
+  transition: opacity 0.25s ease;
 }
 .bottom-sheet-viewport.open .bottom-sheet-backdrop {
   opacity: 1;
   pointer-events: auto;
 }
 
+/* Sheet — single transition on base selector, both directions */
 .bottom-sheet {
   position: absolute;
   bottom: 0;
@@ -46,13 +45,15 @@
   display: flex;
   flex-direction: column;
   transform: translateY(100%);
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease;
+  will-change: transform;
 }
 .bottom-sheet-viewport.open .bottom-sheet {
   transform: translateY(0);
   box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.4);
 }
 
+/* Drag handle */
 .bottom-sheet-drag-handle {
   width: 32px;
   height: 4px;
@@ -63,10 +64,8 @@
   flex-shrink: 0;
   touch-action: none;
 }
-.bottom-sheet-drag-handle:active {
-  cursor: grabbing;
-}
 
+/* Header */
 .bottom-sheet-header {
   padding: 0 var(--space-lg) var(--space-sm) var(--space-lg);
   text-align: center;
@@ -79,6 +78,7 @@
   margin: 0;
 }
 
+/* Content */
 .bottom-sheet-content {
   padding: var(--space-md) var(--space-lg) var(--space-lg) var(--space-lg);
   overflow-y: auto;
@@ -91,6 +91,7 @@
   display: none;
 }
 
+/* Filter groups */
 .bottom-sheet-filter-group {
   display: flex;
   flex-direction: column;
@@ -102,12 +103,13 @@
   color: var(--text-muted);
   text-transform: uppercase;
 }
-
 .bottom-sheet-chips {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
 }
+
+/* Chips */
 .sheet-chip {
   background: var(--surface-elevated);
   border: 1px solid var(--border-default);
@@ -129,6 +131,7 @@
   color: var(--accent-primary);
 }
 
+/* Apply button */
 .sheet-apply-btn {
   width: 100%;
   background: var(--accent-primary);

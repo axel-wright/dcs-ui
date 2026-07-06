@@ -5,21 +5,20 @@ if (typeof window.DCS === 'undefined') {
 } else {
   window.DCS.register('bottom-sheet', {
     init: function(el) {
-      // el is the bottom-sheet viewport [data-dcs-component="bottom-sheet"]
       var sheet = el.querySelector('.bottom-sheet');
       var handle = el.querySelector('.bottom-sheet-drag-handle');
       var releaseTrap = null;
 
-      // Label the dialog from its title if it isn't already labelled.
-      if (sheet && !sheet.getAttribute('aria-label') && !sheet.getAttribute('aria-labelledby')) {
+      // --- aria labelling ---
+      if (sheet && !sheet.getAttribute('aria-labelledby')) {
         var title = sheet.querySelector('.bottom-sheet-title');
         if (title) {
-          if (!title.id) title.id = 'dcs-sheet-title-' + Math.floor(Math.random() * 1e6);
+          if (!title.id) title.id = 'dcs-sht-' + Math.floor(Math.random() * 1e6);
           sheet.setAttribute('aria-labelledby', title.id);
         }
       }
 
-      // CSS owns all animation timing; JS only toggles the class.
+      // --- open / close ---
       function open() {
         el.classList.add('open');
         if (sheet) releaseTrap = window.DCS._trapFocus(sheet);
@@ -30,149 +29,116 @@ if (typeof window.DCS === 'undefined') {
         if (releaseTrap) { releaseTrap(); releaseTrap = null; }
       }
 
-      // ---- Drag-to-dismiss ----
-      var dragging = false;      // pointer is down on the handle
-      var moved = false;         // travel exceeded the tap tolerance
-      var startY = 0;            // pointer y at drag start
-      var dragOffset = 0;        // current applied translateY in px
-      var sheetHeight = 0;       // measured at drag start
-      var suppressClick = false; // swallow the click synthesized after a drag
+      // --- drag to dismiss ---
+      var drag = {
+        active: false,
+        moved: false,
+        startY: 0,
+        offset: 0,
+        height: 0,
+        supress: false
+      };
 
-      var DOWN_RESIST = 0.85; // sticky feel when pulling down
-      var UP_RESIST = 0.3;    // strong resistance pulling up
-      var MAX_UP = 50;        // px the sheet may rise above its rest position
-      var MOVE_TOLERANCE = 3; // px of travel before a press counts as a drag
-
-      function offsetFor(delta) {
-        if (delta < 0) {
-          return Math.max(delta * UP_RESIST, -MAX_UP);
-        }
-        // Never translate past the fully-hidden position.
-        return Math.min(delta * DOWN_RESIST, sheetHeight);
+      function dragStart(e) {
+        if (!el.classList.contains('open')) return;
+        drag.active = true;
+        drag.moved = false;
+        drag.startY = e.clientY;
+        drag.offset = 0;
+        drag.height = sheet.offsetHeight;
+        sheet.style.transition = 'none';
+        if (handle.setPointerCapture) handle.setPointerCapture(e.pointerId);
       }
 
-      function clearDragStyles() {
-        // Hand control back to the stylesheet transitions.
+      function dragMove(e) {
+        if (!drag.active) return;
+        var dy = e.clientY - drag.startY;
+        if (!drag.moved && Math.abs(dy) > 3) drag.moved = true;
+        // Clamp: no higher than 0, no lower than fully closed
+        if (dy < 0) dy = Math.max(dy * 0.3, -50); // stiff upward resistance
+        dy = Math.min(dy * 0.85, drag.height);     // sticky downward
+        drag.offset = dy;
+        sheet.style.transform = 'translateY(' + dy + 'px)';
+      }
+
+      function dragEnd(e) {
+        if (!drag.active) return;
+        drag.active = false;
+        if (handle.releasePointerCapture && e.pointerId !== undefined) {
+          try { handle.releasePointerCapture(e.pointerId); } catch (_) {}
+        }
+
+        if (!drag.moved) {
+          // Tap — let click handler close
+          sheet.style.transition = '';
+          sheet.style.transform = '';
+          return;
+        }
+
+        // Real drag — suppress the synthetic click
+        drag.supress = true;
+
+        var threshold = Math.min(drag.height * 0.3, 100);
+        if (drag.offset > threshold) {
+          // Dismiss: animate out from current drag position
+          el.classList.remove('open');
+          if (releaseTrap) { releaseTrap(); releaseTrap = null; }
+          // Force layout flush so the browser sees the drag offset as starting point
+          sheet.offsetHeight;
+          sheet.style.transition = '';
+          sheet.style.transform = '';
+        } else {
+          // Spring back to open
+          sheet.style.transition = '';
+          sheet.style.transform = '';
+        }
+      }
+
+      function dragCancel() {
+        if (!drag.active) return;
+        drag.active = false;
         sheet.style.transition = '';
         sheet.style.transform = '';
       }
 
-      function onPointerDown(e) {
-        if (!el.classList.contains('open')) return;
-        dragging = true;
-        moved = false;
-        startY = e.clientY;
-        dragOffset = 0;
-        sheetHeight = sheet.offsetHeight;
-        // The pointer drives the sheet directly; no transition while dragging.
-        sheet.style.transition = 'none';
-        if (handle.setPointerCapture) {
-          handle.setPointerCapture(e.pointerId);
-        }
+      if (handle) {
+        handle.addEventListener('pointerdown', dragStart);
+        handle.addEventListener('pointermove', dragMove);
+        handle.addEventListener('pointerup', dragEnd);
+        handle.addEventListener('pointercancel', dragCancel);
       }
 
-      function onPointerMove(e) {
-        if (!dragging) return;
-        var delta = e.clientY - startY;
-        if (!moved && Math.abs(delta) > MOVE_TOLERANCE) moved = true;
-        dragOffset = offsetFor(delta);
-        sheet.style.transform = 'translateY(' + dragOffset + 'px)';
-      }
-
-      function onPointerUp(e) {
-        if (!dragging) return;
-        dragging = false;
-        if (handle.releasePointerCapture && e.pointerId !== undefined) {
-          try { handle.releasePointerCapture(e.pointerId); } catch (err) {}
-        }
-
-        if (!moved) {
-          // A plain tap: fall through to the handle's click-to-close action.
-          clearDragStyles();
-          return;
-        }
-
-        // A real drag happened — swallow the trailing synthetic click.
-        suppressClick = true;
-
-        var threshold = Math.min(sheetHeight * 0.3, 100);
-        if (dragOffset > threshold) {
-          close();
-        }
-        // Clearing inline styles either springs back to the open position or,
-        // after close(), animates out from the dragged position.
-        clearDragStyles();
-      }
-
-      function onPointerCancel() {
-        if (!dragging) return;
-        dragging = false;
-        clearDragStyles();
-      }
-
-      if (handle && sheet) {
-        handle.addEventListener('pointerdown', onPointerDown);
-        handle.addEventListener('pointermove', onPointerMove);
-        handle.addEventListener('pointerup', onPointerUp);
-        handle.addEventListener('pointercancel', onPointerCancel);
-      }
-
+      // --- click delegation ---
       el.addEventListener('click', function(e) {
-        if (suppressClick) {
-          suppressClick = false;
+        if (drag.supress) { drag.supress = false; return; }
+
+        if (e.target.closest('[data-action="sheet-open"]')) { open(); return; }
+        if (e.target.closest('[data-action="sheet-close"]')) { close(); return; }
+
+        var tc = e.target.closest('[data-action="sheet-chip-toggle"]');
+        if (tc) { tc.classList.toggle('active'); return; }
+
+        var sc = e.target.closest('[data-action="sheet-chip-single"]');
+        if (sc) {
+          var sibs = sc.parentNode.querySelectorAll('[data-action="sheet-chip-single"]');
+          for (var i = 0; i < sibs.length; i++) sibs[i].classList.remove('active');
+          sc.classList.add('active');
           return;
         }
 
-        if (e.target.closest('[data-action="sheet-open"]')) {
-          open();
-          return;
-        }
-
-        // Backdrop and drag handle both close.
-        if (e.target.closest('[data-action="sheet-close"]')) {
-          close();
-          return;
-        }
-
-        // Multi-select chip: toggle active.
-        var toggleChip = e.target.closest('[data-action="sheet-chip-toggle"]');
-        if (toggleChip) {
-          toggleChip.classList.toggle('active');
-          return;
-        }
-
-        // Single-select chip: exclusive within its group.
-        var singleChip = e.target.closest('[data-action="sheet-chip-single"]');
-        if (singleChip) {
-          var siblings = singleChip.parentNode.querySelectorAll('[data-action="sheet-chip-single"]');
-          for (var i = 0; i < siblings.length; i++) {
-            siblings[i].classList.remove('active');
-          }
-          singleChip.classList.add('active');
-          return;
-        }
-
-        // Apply: summarize active chips in a toast, then close.
         if (e.target.closest('[data-action="sheet-apply"]')) {
-          var active = el.querySelectorAll('.sheet-chip.active');
-          var labels = [];
-          for (var j = 0; j < active.length; j++) {
-            labels.push(active[j].textContent.trim());
-          }
-          var summary = labels.length
-            ? 'Filters applied: ' + labels.join(', ')
-            : 'Filters cleared';
-          if (window.DCS._showToast) {
-            window.DCS._showToast(summary, 'success');
-          }
+          var chips = el.querySelectorAll('.sheet-chip.active');
+          var names = [];
+          for (var j = 0; j < chips.length; j++) names.push(chips[j].textContent.trim());
+          var msg = names.length ? 'Filters applied: ' + names.join(', ') : 'Filters cleared';
+          if (window.DCS._showToast) window.DCS._showToast(msg, 'success');
           close();
         }
       });
 
+      // --- escape key ---
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && el.classList.contains('open')) {
-          close();
-        }
+        if (e.key === 'Escape' && el.classList.contains('open')) close();
       });
     }
   });
