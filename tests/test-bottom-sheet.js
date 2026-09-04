@@ -4,8 +4,9 @@ DCS_TEST.suite('bottom-sheet', function () {
   var html =
     '<div data-dcs-component="bottom-sheet">' +
       '<button data-action="sheet-open" id="open-btn">Open Sheet</button>' +
-      '<div class="bottom-sheet">' +
+      '<div class="bottom-sheet" role="dialog">' +
         '<div class="bottom-sheet-drag-handle" id="handle"></div>' +
+        '<div class="bottom-sheet-header"><h4 class="bottom-sheet-title">Sheet Title</h4></div>' +
         '<p>Sheet content</p>' +
         '<button data-action="sheet-close" id="close-btn">Close Sheet</button>' +
       '</div>' +
@@ -17,6 +18,10 @@ DCS_TEST.suite('bottom-sheet', function () {
 
   T.assertHasAttribute(el, 'data-dcs-initialized', undefined, 'bottom-sheet is initialized');
   T.assertNotHasClass(el, 'open', 'bottom-sheet starts closed');
+
+  var sheet = fix.querySelector('.bottom-sheet');
+  var title = fix.querySelector('.bottom-sheet-title');
+  T.assertAttr(sheet, 'aria-labelledby', title.id, 'bottom-sheet receives aria-labelledby linking to title');
 
   var openBtn = fix.querySelector('#open-btn');
   var closeBtn = fix.querySelector('#close-btn');

@@ -5,9 +5,11 @@
   "private": true,
   "scripts": {
     "test": "node tests/run-node.js",
+    "test:a11y": "node tests/a11y/axe-audit.mjs",
     "test:e2e": "playwright test"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@playwright/test": "^1.62.1",
     "http-server": "^14.1.1",
     "jsdom": "^26.0.0"

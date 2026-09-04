@@ -1,0 +1,1110 @@
+{
+  "timestamp": "2026-09-04T17:05:18.260Z",
+  "totalTargets": 66,
+  "summary": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 18,
+    "minor": 0
+  },
+  "components": [
+    {
+      "id": "buttons",
+      "title": "Buttons",
+      "selector": "#buttons",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 style=\"font-size: var(--type-sm); color: var(--text-muted); margin-bottom: var(--space-sm); text-transform: uppercase; font-family: var(--font-mono);\">Large Buttons (height: 48px)</h4>",
+              "target": [
+                "div[data-dcs-component=\"buttons\"] > div:nth-child(1) > h4"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "toggles",
+      "title": "Toggle Switches",
+      "selector": "#toggles",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "checkboxes",
+      "title": "Checkboxes",
+      "selector": "#checkboxes",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "radio-sec",
+      "title": "Radio Group",
+      "selector": "#radio-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "fab-sec",
+      "title": "Floating Action Button",
+      "selector": "#fab-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "inputs",
+      "title": "Inputs & Forms",
+      "selector": "#inputs",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 style=\"font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase;\">Standard Form Inputs</h4>",
+              "target": [
+                "div[data-dcs-component=\"inputs\"] > div:nth-child(1) > h4"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dropdown-sec",
+      "title": "Dropdown Select",
+      "selector": "#dropdown-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "combo-sec",
+      "title": "Combo Box",
+      "selector": "#combo-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "search-sec",
+      "title": "Search Input",
+      "selector": "#search-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "landmark-unique",
+          "impact": "moderate",
+          "description": "Ensure landmarks are unique",
+          "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=playwright",
+          "nodes": [
+            {
+              "html": "<div class=\"dcs-search dcs-search-lg\" data-dcs-component=\"search\" data-dcs-instance=\"1\" data-dcs-initialized=\"\" role=\"search\">",
+              "target": [
+                ".dcs-search-lg"
+              ],
+              "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chips-sec",
+      "title": "Chips / Tags",
+      "selector": "#chips-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "slider-sec",
+      "title": "Slider / Range Input",
+      "selector": "#slider-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "dropzone-sec",
+      "title": "File Drop Zone",
+      "selector": "#dropzone-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "segment-sec",
+      "title": "Segmented Control",
+      "selector": "#segment-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "tabs",
+      "title": "Tabs",
+      "selector": "#tabs",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 style=\"margin-bottom: var(--space-xs); font-size: var(--type-md);\">Speeds &amp; Feeds Profiles</h4>",
+              "target": [
+                "#dcs-tabs-oqzsmo-panel-0 > h4"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "breadcrumbs-sec",
+      "title": "Breadcrumbs",
+      "selector": "#breadcrumbs-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "pagination-sec",
+      "title": "Pagination",
+      "selector": "#pagination-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "landmark-unique",
+          "impact": "moderate",
+          "description": "Ensure landmarks are unique",
+          "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=playwright",
+          "nodes": [
+            {
+              "html": "<div class=\"pagination-bar\" data-dcs-component=\"pagination\" data-dcs-instance=\"1\" data-dcs-initialized=\"\" role=\"navigation\" aria-label=\"Pagination\">",
+              "target": [
+                ".pagination-wrapper:nth-child(1) > .pagination-bar[data-dcs-component=\"pagination\"][role=\"navigation\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stepper-sec",
+      "title": "Stepper / Wizard",
+      "selector": "#stepper-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "command-palette",
+      "title": "Command Palette (⌘K)",
+      "selector": "#command-palette",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "scrollspy-sec",
+      "title": "Scroll Spy",
+      "selector": "#scrollspy-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 class=\"scrollspy-section-title\">Introduction</h4>",
+              "target": [
+                "div[data-spy-target=\"spy-intro\"] > .scrollspy-section-title"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "header-sec",
+      "title": "Header / Navigation",
+      "selector": "#header-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 class=\"specimen-label\" style=\"margin-top: var(--space-xl);\">Full-Width Variant</h4>",
+              "target": [
+                "#header-sec > .demo-area > .specimen-label"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "skiplink-sec",
+      "title": "Skip Link",
+      "selector": "#skiplink-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "theme-sec",
+      "title": "Theme Toggle",
+      "selector": "#theme-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 class=\"specimen-label\">Live Toggle</h4>",
+              "target": [
+                "#theme-sec > .demo-area > .specimen-label:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cards",
+      "title": "Cards",
+      "selector": "#cards",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "tables",
+      "title": "Tables",
+      "selector": "#tables",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 style=\"font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase; margin-bottom: var(--space-md);\">Selectable Rows</h4>",
+              "target": [
+                "#tables > .demo-area:nth-child(3) > h4"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "badges",
+      "title": "Badges & Status",
+      "selector": "#badges",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 class=\"specimen-label\">Sizes</h4>",
+              "target": [
+                "div[data-dcs-component=\"badges\"] > div:nth-child(1) > .specimen-label"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kpi-sec",
+      "title": "KPI / Stat Cards",
+      "selector": "#kpi-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "gauge-sec",
+      "title": "Meter / Gauge",
+      "selector": "#gauge-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "kvlist-sec",
+      "title": "Key-Value List",
+      "selector": "#kvlist-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "code",
+      "title": "Code Blocks",
+      "selector": "#code",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "timeline-sec",
+      "title": "Timeline / Activity Feed",
+      "selector": "#timeline-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "avatars",
+      "title": "Avatars",
+      "selector": "#avatars",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 style=\"font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase; margin-bottom: var(--space-md);\">Overlapping Group — <code>.dcs-avatar-group</code></h4>",
+              "target": [
+                "#avatars > .demo-area:nth-child(3) > h4"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "testimonial-sec",
+      "title": "Rating & Testimonial",
+      "selector": "#testimonial-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 class=\"testimonial-demo-label\">Inline Ratings</h4>",
+              "target": [
+                ".testimonial-demo:nth-child(1) > .testimonial-demo-label"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "carousel-sec",
+      "title": "Carousel",
+      "selector": "#carousel-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 class=\"specimen-label\">Standard Autoplay</h4>",
+              "target": [
+                "#carousel-sec > .demo-area > .specimen-label:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sparkline-sec",
+      "title": "Sparkline",
+      "selector": "#sparkline-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "tree-sec",
+      "title": "Tree View",
+      "selector": "#tree-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "taggroup-sec",
+      "title": "Tag Group",
+      "selector": "#taggroup-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "toasts",
+      "title": "Toast Notifications",
+      "selector": "#toasts",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 style=\"font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase; margin-bottom: var(--space-md);\">Programmatic API — <code>DCS.toast(message, options)</code></h4>",
+              "target": [
+                "#toasts > .demo-area:nth-child(3) > h4"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alert-sec",
+      "title": "Alert Banner",
+      "selector": "#alert-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "modal-sec",
+      "title": "Modal / Dialog",
+      "selector": "#modal-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "loading",
+      "title": "Progress & Loading",
+      "selector": "#loading",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 style=\"font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase; margin-bottom: var(--space-sm);\">Spinner</h4>",
+              "target": [
+                "div:nth-child(4) > div:nth-child(1) > h4"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ring-sec",
+      "title": "Progress Ring",
+      "selector": "#ring-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "empty-sec",
+      "title": "Empty State",
+      "selector": "#empty-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "tooltips",
+      "title": "Tooltips",
+      "selector": "#tooltips",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 style=\"font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase; margin-bottom: var(--space-md);\">JS-Positioned Tooltips — <code>dcs-tooltip.js</code></h4>",
+              "target": [
+                "#tooltips > .demo-area:nth-child(3) > h4"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "popover-sec",
+      "title": "Popover",
+      "selector": "#popover-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "context-sec",
+      "title": "Context Menu",
+      "selector": "#context-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 style=\"margin-bottom: var(--space-xs);\">cabinet_door_v4.nc</h4>",
+              "target": [
+                ".context-card > h4"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drawer-sec",
+      "title": "Drawer / Slide-Out Panel",
+      "selector": "#drawer-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "sheet-sec",
+      "title": "Bottom Sheet",
+      "selector": "#sheet-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "description": "Ensure the order of headings is semantically correct",
+          "help": "Heading levels should only increase by one",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=playwright",
+          "nodes": [
+            {
+              "html": "<h4 class=\"bottom-sheet-title\" id=\"sheet-demo-title\">✨ REWRITTEN — v3</h4>",
+              "target": [
+                "#sheet-demo-title"
+              ],
+              "failureSummary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "accordion",
+      "title": "Accordion",
+      "selector": "#accordion",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "container-sec",
+      "title": "Container",
+      "selector": "#container-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "dividers",
+      "title": "Dividers",
+      "selector": "#dividers",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "grid-sec",
+      "title": "Grid",
+      "selector": "#grid-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "stack-sec",
+      "title": "Stack",
+      "selector": "#stack-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "cluster-sec",
+      "title": "Inline Cluster",
+      "selector": "#cluster-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "toolbar-sec",
+      "title": "Toolbar",
+      "selector": "#toolbar-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "panel-sec",
+      "title": "Panel",
+      "selector": "#panel-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "splitpane-sec",
+      "title": "Split Pane",
+      "selector": "#splitpane-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "stickybar-sec",
+      "title": "Sticky Action Bar",
+      "selector": "#stickybar-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "compare-sec",
+      "title": "Image Comparison Slider",
+      "selector": "#compare-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "kbd-sec",
+      "title": "Keyboard Keys",
+      "selector": "#kbd-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "clipboard-sec",
+      "title": "Copy to Clipboard",
+      "selector": "#clipboard-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "truncate-sec",
+      "title": "Truncate / Show More",
+      "selector": "#truncate-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "shortcut-sec",
+      "title": "Shortcut Hint",
+      "selector": "#shortcut-sec",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "global-nav",
+      "title": "Global Navigation Header",
+      "selector": "nav.sticky-nav",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "global-toast",
+      "title": "Global Toast Container",
+      "selector": "#toast-container",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "global-context-menu",
+      "title": "Global Context Menu Floating",
+      "selector": ".context-menu-floating",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    {
+      "id": "global-drawer",
+      "title": "Global Drawer Panel",
+      "selector": ".drawer-overlay",
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    }
+  ]
+}

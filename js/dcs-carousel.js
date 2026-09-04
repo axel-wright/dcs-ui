@@ -27,6 +27,12 @@ if (typeof window.DCS === 'undefined') {
         el.setAttribute('aria-label', 'Carousel');
       }
       var liveRegion = el.querySelector('.dcs-carousel-track') || el;
+      if (multiMode && liveRegion) {
+        liveRegion.setAttribute('tabindex', '0');
+        if (!liveRegion.getAttribute('aria-label')) {
+          liveRegion.setAttribute('aria-label', 'Carousel track');
+        }
+      }
       // Announce slide changes only when the user drives navigation; keep it
       // silent while autoplay is running so a screen reader isn't spammed.
       liveRegion.setAttribute('aria-live', autoplayEnabled ? 'off' : 'polite');

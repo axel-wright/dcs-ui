@@ -8,6 +8,18 @@ if (typeof window.DCS === 'undefined') {
       var sheet = el.querySelector('.bottom-sheet');
       var handle = el.querySelector('.bottom-sheet-drag-handle');
 
+      if (sheet && sheet.getAttribute('role') === 'dialog' && !sheet.getAttribute('aria-label') && !sheet.getAttribute('aria-labelledby')) {
+        var title = sheet.querySelector('.bottom-sheet-title');
+        if (title) {
+          if (!title.id) {
+            title.id = 'bottom-sheet-title-' + Math.random().toString(36).substring(2, 9);
+          }
+          sheet.setAttribute('aria-labelledby', title.id);
+        } else {
+          sheet.setAttribute('aria-label', 'Bottom Sheet');
+        }
+      }
+
       // --- open / close ---
       function open() { el.classList.add('open'); }
       function close() { el.classList.remove('open'); }

@@ -3,8 +3,8 @@ DCS_TEST.suite('header', function () {
 
   var html =
     '<header data-dcs-component="header">' +
-      '<button class="mobile-menu-toggle" id="toggle" aria-expanded="false">☰</button>' +
       '<nav class="nav-links" id="links">' +
+        '<button class="mobile-menu-toggle" id="toggle" aria-expanded="false">☰</button>' +
         '<a href="#">Home</a>' +
         '<a href="#">Docs</a>' +
       '</nav>' +
@@ -18,7 +18,9 @@ DCS_TEST.suite('header', function () {
 
   var toggle = fix.querySelector('#toggle');
   var links = fix.querySelector('#links');
+  var nav = fix.querySelector('nav');
 
+  T.assertAttr(nav, 'aria-label', 'Header Navigation', 'nav receives aria-label');
   T.assertNotHasClass(links, 'open', 'nav-links starts closed');
   T.assertAttr(toggle, 'aria-expanded', 'false', 'toggle starts aria-expanded="false"');
 

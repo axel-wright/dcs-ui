@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <script>(function(){var t;try{t=localStorage.getItem("dcs-theme")}catch(e){}if(t==="light")document.documentElement.setAttribute("data-theme","light")})()</script>
-  <script src="js/dcs-components.min.js?v=20260904-98c181b" defer></script>
+  <script src="js/dcs-components.min.js?v=20260904-0ebaf54" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DCS Complete Component Library</title>
   
@@ -13,16 +13,16 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/dcs-core.min.css?v=20260904-98c181b">
-  <link rel="stylesheet" href="css/dcs-components.min.css?v=20260904-98c181b">
-  <link rel="stylesheet" href="css/dcs-specimen.css?v=20260904-98c181b">
+  <link rel="stylesheet" href="css/dcs-core.min.css?v=20260904-0ebaf54">
+  <link rel="stylesheet" href="css/dcs-components.min.css?v=20260904-0ebaf54">
+  <link rel="stylesheet" href="css/dcs-specimen.css?v=20260904-0ebaf54">
   <!-- Demo-only enhancements for the component library page -->
-  <script src="js/demo/dcs-kpi-demo.js?v=20260904-98c181b" defer></script>
-  <script src="js/demo/dcs-cards-demo.js?v=20260904-98c181b" defer></script>
-  <script src="js/demo/dcs-header-demo.js?v=20260904-98c181b" defer></script>
-  <script src="js/demo/dcs-modal-demo.js?v=20260904-98c181b" defer></script>
-  <script src="js/demo/dcs-stepper-demo.js?v=20260904-98c181b" defer></script>
-  <script src="js/demo/dcs-progress.js?v=20260904-98c181b" defer></script>
+  <script src="js/demo/dcs-kpi-demo.js?v=20260904-0ebaf54" defer></script>
+  <script src="js/demo/dcs-cards-demo.js?v=20260904-0ebaf54" defer></script>
+  <script src="js/demo/dcs-header-demo.js?v=20260904-0ebaf54" defer></script>
+  <script src="js/demo/dcs-modal-demo.js?v=20260904-0ebaf54" defer></script>
+  <script src="js/demo/dcs-stepper-demo.js?v=20260904-0ebaf54" defer></script>
+  <script src="js/demo/dcs-progress.js?v=20260904-0ebaf54" defer></script>
 </head>
 <body>
 
@@ -92,7 +92,7 @@
 
 
   <!-- Sticky Navigation -->
-  <nav class="sticky-nav">
+  <nav class="sticky-nav" aria-label="Main Navigation">
     <div class="nav-container nav-container--full">
       <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">☰</button>
       <a href="component-library.html" class="nav-logo">
@@ -119,7 +119,7 @@
     <!-- SIDEBAR NAVIGATION -->
     <aside class="nav-sidebar" id="sidebar" data-dcs-component="scrollspy">
       <h3 class="sidebar-section-title">SPECIMEN LIST</h3>
-      <nav>
+      <nav aria-label="Specimen List">
         <ul class="sidebar-menu">
 
           <!-- ===== FORMS & INPUT ===== -->
@@ -514,8 +514,8 @@
               </div>
 
               <div class="form-group">
-                <label class="form-label">Controller IP (Static)</label>
-                <input class="form-input" type="text" value="192.168.1.142" disabled>
+                <label class="form-label" for="demo-controller-ip">Controller IP (Static)</label>
+                <input class="form-input" id="demo-controller-ip" type="text" value="192.168.1.142" disabled>
                 <span class="form-helper">Hardware device path locked by network admin.</span>
               </div>
             </div>
@@ -526,16 +526,16 @@
               
               <div class="calc-grid">
                 <div class="form-group">
-                  <label class="form-label">Spindle RPM</label>
-                  <input class="form-input tabular-nums" type="number" data-calc-input="rpm" value="18000" min="6000" max="24000" step="500">
+                  <label class="form-label" for="calc-rpm">Spindle RPM</label>
+                  <input class="form-input tabular-nums" id="calc-rpm" type="number" data-calc-input="rpm" value="18000" min="6000" max="24000" step="500">
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Flute Count</label>
-                  <input class="form-input tabular-nums" type="number" data-calc-input="flutes" value="2" min="1" max="4" step="1">
+                  <label class="form-label" for="calc-flutes">Flute Count</label>
+                  <input class="form-input tabular-nums" id="calc-flutes" type="number" data-calc-input="flutes" value="2" min="1" max="4" step="1">
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Chipload (in)</label>
-                  <input class="form-input tabular-nums" type="number" data-calc-input="chipload" value="0.003" min="0.001" max="0.015" step="0.001">
+                  <label class="form-label" for="calc-chipload">Chipload (in)</label>
+                  <input class="form-input tabular-nums" id="calc-chipload" type="number" data-calc-input="chipload" value="0.003" min="0.001" max="0.015" step="0.001">
                 </div>
               </div>
 
@@ -577,13 +577,13 @@
         <div class="demo-area" style="min-height: 280px;">
           
           <div class="dropdown-container" data-dropdown data-dcs-component="dropdown">
-            <label class="form-label" style="margin-bottom: var(--space-xs); display: block;">Select Target Workpiece Material</label>
+            <label class="form-label" id="dropdown-material-label" style="margin-bottom: var(--space-xs); display: block;">Select Target Workpiece Material</label>
             <button class="dropdown-trigger" data-dropdown-trigger aria-haspopup="listbox" aria-expanded="false">
               <span data-dropdown-label>Baltic Birch</span>
               <svg style="fill: var(--text-secondary); width: 12px; height: 12px;" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
             </button>
             
-            <div class="dropdown-panel" data-dropdown-panel role="listbox">
+            <div class="dropdown-panel" data-dropdown-panel role="listbox" aria-labelledby="dropdown-material-label">
               <div class="dropdown-option selected" role="option" aria-selected="true" data-value="Baltic Birch" tabindex="0">
                 <span>Baltic Birch</span>
                 <svg class="dropdown-checkmark" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
@@ -828,7 +828,7 @@
           <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-md);">
             <button class="btn btn-sm btn-secondary" data-action="dz-dragover">⇄ Simulate Drag Over</button>
             <button class="btn btn-sm btn-secondary" data-action="dz-valid">✓ Simulate File Select</button>
-            <button class="btn btn-sm btn-ghost" style="border-color: rgba(184,69,58,0.3); color: var(--accent-rose);" data-action="dz-invalid">✕ Simulate Invalid File</button>
+            <button class="btn btn-sm btn-ghost" style="border-color: rgba(216,93,82,0.3); color: var(--color-error-text);" data-action="dz-invalid">✕ Simulate Invalid File</button>
             <button class="btn btn-sm btn-ghost" data-action="dz-reset">↺ Reset</button>
           </div>
 
@@ -1226,7 +1226,7 @@
               <div class="toc-item" data-target="spy-finish">Results & Finish</div>
             </div>
 
-            <div class="scrollspy-content-area" data-scrollspy-content>
+            <div class="scrollspy-content-area" data-scrollspy-content tabindex="0" aria-label="Scrollable article content">
               <div class="scrollspy-section" data-spy-target="spy-intro">
                 <h4 class="scrollspy-section-title">Introduction</h4>
                 <p>Establishing proper machine alignment is the foundation of high-precision CNC manufacturing. In this study, we look at milling custom brackets for our dust collection manifolds using 3/4-inch stock. A structured approach ensures consistent tolerances and prevents waste.</p>
@@ -1262,7 +1262,7 @@
         </div>
         <div class="demo-area">
           <div class="header-demo" data-dcs-component="header">
-            <nav class="sticky-nav" style="position: sticky; top: 0; z-index: 10;">
+            <nav class="sticky-nav" aria-label="Constrained Header Specimen" style="position: sticky; top: 0; z-index: 10;">
               <div class="nav-container">
                 <button class="mobile-menu-toggle" type="button" aria-label="Toggle Navigation" aria-expanded="false">☰</button>
                 <a href="#" class="nav-logo">
@@ -1292,7 +1292,7 @@
           </div>
           <h4 class="specimen-label" style="margin-top: var(--space-xl);">Full-Width Variant</h4>
           <div class="header-demo" data-dcs-component="header">
-            <nav class="sticky-nav" style="position: sticky; top: 0; z-index: 10;">
+            <nav class="sticky-nav" aria-label="Full-Width Header Specimen" style="position: sticky; top: 0; z-index: 10;">
               <div class="nav-container nav-container--full">
                 <button class="mobile-menu-toggle" type="button" aria-label="Toggle Navigation" aria-expanded="false">☰</button>
                 <a href="#" class="nav-logo">
@@ -2029,9 +2029,9 @@
           <h4 style="font-family: var(--font-mono); font-size: var(--type-sm); color: var(--text-muted); text-transform: uppercase; margin-bottom: var(--space-md);">Overlapping Group — <code>.dcs-avatar-group</code></h4>
           <p class="section-description" style="margin-bottom: var(--space-md);">Stacked initials with an overflow chip. The stack fans out on hover.</p>
           <div class="dcs-avatar-group">
-            <div class="dcs-avatar" style="background: var(--accent-primary);">RW</div>
-            <div class="dcs-avatar" style="background: var(--accent-sage);">KD</div>
-            <div class="dcs-avatar" style="background: var(--color-info);">AM</div>
+            <div class="dcs-avatar" style="background: var(--accent-primary); color: var(--text-inverse);">RW</div>
+            <div class="dcs-avatar" style="background: var(--accent-sage); color: var(--text-inverse);">KD</div>
+            <div class="dcs-avatar" style="background: var(--color-info); color: var(--text-inverse);">AM</div>
             <div class="dcs-avatar-overflow">+3</div>
           </div>
         </div>
@@ -2395,7 +2395,7 @@
           <div class="flex-wrap-gap" data-dcs-component="toasts">
             <button class="btn btn-md btn-secondary" data-action="show-toast" data-toast-msg="SETTINGS SAVED SUCCESSFULLY" data-toast-type="success">Trigger SUCCESS Toast</button>
             <button class="btn btn-md btn-secondary" data-action="show-toast" data-toast-msg="EXPORT SEQUENCE COMPLETE" data-toast-type="info">Trigger INFO Toast</button>
-            <button class="btn btn-md btn-secondary" style="border-color: var(--accent-rose); color: var(--accent-rose);" data-action="show-toast" data-toast-msg="⚠ CONNECTION LOST / RE-ESTABLISHING" data-toast-type="error">Trigger ALERT Toast</button>
+            <button class="btn btn-md btn-secondary" style="border-color: var(--accent-rose); color: var(--color-error-text);" data-action="show-toast" data-toast-msg="⚠ CONNECTION LOST / RE-ESTABLISHING" data-toast-type="error">Trigger ALERT Toast</button>
           </div>
         </div>
         <div class="demo-area">
@@ -2472,7 +2472,7 @@
         <div class="demo-area">
           <div class="flex-wrap-gap" data-dcs-component="modal">
             <button class="btn btn-md btn-secondary" data-action="modal-open" data-modal="info">Open Info Success Dialog</button>
-            <button class="btn btn-md btn-secondary" style="border-color: var(--accent-rose); color: var(--accent-rose);" data-action="modal-open" data-modal="confirm">Open Confirm Delete Dialog</button>
+            <button class="btn btn-md btn-secondary" style="border-color: var(--accent-rose); color: var(--color-error-text);" data-action="modal-open" data-modal="confirm">Open Confirm Delete Dialog</button>
 
             <!-- MODAL 1: CONFIRM DELETE -->
             <div class="modal-backdrop" data-modal="confirm">
@@ -2903,10 +2903,10 @@
           <div class="bottom-sheet-viewport" data-dcs-component="bottom-sheet">
             <button class="btn btn-md btn-secondary" data-action="sheet-open">Trigger Bottom Sheet</button>
             <div class="bottom-sheet-backdrop" data-action="sheet-close"></div>
-            <div class="bottom-sheet" aria-modal="true" role="dialog">
+            <div class="bottom-sheet" aria-modal="true" role="dialog" aria-labelledby="sheet-demo-title">
               <div class="bottom-sheet-drag-handle" data-action="sheet-close"></div>
               <div class="bottom-sheet-header">
-                <h4 class="bottom-sheet-title">✨ REWRITTEN — v3</h4>
+                <h4 class="bottom-sheet-title" id="sheet-demo-title">✨ REWRITTEN — v3</h4>
               </div>
               <div class="bottom-sheet-content">
                 <p style="color:var(--accent-primary);text-align:center;font-weight:700;margin:0;">This is the NEW bottom sheet.</p>

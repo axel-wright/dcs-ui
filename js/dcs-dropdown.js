@@ -13,6 +13,20 @@ if (typeof window.DCS === 'undefined') {
         return;
       }
 
+      if (panel.getAttribute('role') === 'listbox' && !panel.getAttribute('aria-label') && !panel.getAttribute('aria-labelledby')) {
+        var formLabel = el.querySelector('.form-label, label') || (el.parentElement && el.parentElement.querySelector('.form-label, label')) || el.previousElementSibling;
+        if (formLabel) {
+          if (!formLabel.id) {
+            formLabel.id = 'dcs-dropdown-lbl-' + Math.random().toString(36).substring(2, 9);
+          }
+          panel.setAttribute('aria-labelledby', formLabel.id);
+        } else if (label) {
+          panel.setAttribute('aria-label', label.textContent.trim());
+        } else {
+          panel.setAttribute('aria-label', 'Options');
+        }
+      }
+
       function isOpen() {
         return panel.classList.contains('open');
       }

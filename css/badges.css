@@ -26,9 +26,9 @@
       border-color: rgba(168, 158, 146, 0.18);
     }
     .badge-info {
-      background: rgba(102, 153, 204, 0.10);
+      background: rgba(84, 148, 212, 0.10);
       color: var(--accent-info);
-      border-color: rgba(102, 153, 204, 0.20);
+      border-color: rgba(84, 148, 212, 0.20);
     }
     .badge-success {
       background: rgba(90, 158, 111, 0.10);
@@ -41,9 +41,9 @@
       border-color: rgba(232, 153, 43, 0.22);
     }
     .badge-error {
-      background: rgba(184, 69, 58, 0.10);
-      color: var(--accent-rose);
-      border-color: rgba(184, 69, 58, 0.22);
+      background: rgba(216, 93, 82, 0.10);
+      color: var(--color-error-text);
+      border-color: rgba(216, 93, 82, 0.22);
     }
 
     /* === SIZES === */
@@ -74,10 +74,10 @@
     /* Neutral count sits on a surface fill, not an accent — use adaptive text
        so it stays readable in light theme (surface-elevated is white there). */
     .badge--count.badge-default { background: var(--surface-elevated); color: var(--text-secondary); }
-    .badge--count.badge-info    { background: var(--accent-info); }
-    .badge--count.badge-success { background: var(--accent-sage); }
-    .badge--count.badge-warning { background: var(--accent-primary); }
-    .badge--count.badge-error   { background: var(--accent-rose); }
+    .badge--count.badge-info    { background: var(--accent-info); color: var(--text-on-accent); }
+    .badge--count.badge-success { background: var(--accent-sage); color: var(--text-inverse); }
+    .badge--count.badge-warning { background: var(--accent-primary); color: var(--text-inverse); }
+    .badge--count.badge-error   { background: var(--accent-rose); color: var(--text-on-accent); }
 
     /* Overflow count (99+) */
     .badge--count .badge-overflow {
@@ -136,7 +136,7 @@
     .badge--status.badge-info    { color: var(--accent-info); }
     .badge--status.badge-success { color: var(--accent-sage); }
     .badge--status.badge-warning { color: var(--accent-primary); }
-    .badge--status.badge-error   { color: var(--accent-rose); }
+    .badge--status.badge-error   { color: var(--color-error-text); }
 
     /* Processing variant — animated dot */
     .badge--status.badge--processing::before {
@@ -148,10 +148,10 @@
       background: transparent !important;
     }
     .badge-outline.badge-default { border-color: rgba(168, 158, 146, 0.30); }
-    .badge-outline.badge-info    { border-color: rgba(102, 153, 204, 0.30); }
+    .badge-outline.badge-info    { border-color: rgba(84, 148, 212, 0.30); }
     .badge-outline.badge-success { border-color: rgba(90, 158, 111, 0.30); }
     .badge-outline.badge-warning { border-color: rgba(232, 153, 43, 0.30); }
-    .badge-outline.badge-error   { border-color: rgba(184, 69, 58, 0.30); }
+    .badge-outline.badge-error   { border-color: rgba(216, 93, 82, 0.30); }
 
     /* === ICON BADGE === */
     .badge--icon {
@@ -241,10 +241,10 @@
 
     /* Ribbon content */
     .badge-ribbon-content {
-      color: #fff;
+      color: var(--text-inverse);
     }
     .badge-ribbon .badge-ribbon-content {
-      color: #fff;
+      color: var(--text-inverse);
     }
 
     /* Corner fold triangle */
@@ -272,10 +272,14 @@
     /* Ribbon color variants */
     .badge-ribbon.badge-default { background: var(--surface-elevated); color: var(--surface-elevated); }
     .badge-ribbon.badge-default .badge-ribbon-content { color: var(--text-secondary); }
-    .badge-ribbon.badge-info    { background: rgba(102, 153, 204, 0.90); color: rgba(102, 153, 204, 0.90); }
+    .badge-ribbon.badge-info    { background: var(--accent-info); color: var(--accent-info); }
+    .badge-ribbon.badge-info .badge-ribbon-content { color: var(--text-on-accent); }
     .badge-ribbon.badge-success { background: var(--accent-sage); color: var(--accent-sage); }
+    .badge-ribbon.badge-success .badge-ribbon-content { color: var(--text-inverse); }
     .badge-ribbon.badge-error   { background: var(--accent-rose); color: var(--accent-rose); }
+    .badge-ribbon.badge-error .badge-ribbon-content { color: var(--text-on-accent); }
     .badge-ribbon.badge-warning { background: var(--accent-primary); color: var(--accent-primary); }
+    .badge-ribbon.badge-warning .badge-ribbon-content { color: var(--text-inverse); }
 
     /* === BADGE OVERLAY — wraps a container and positions a count/dot badge at the corner === */
     .badge-overlay-wrapper {
@@ -317,13 +321,13 @@
     .badge.is-active.badge-default,
     .badge.active.badge-default { background: rgba(168, 158, 146, 0.20); }
     .badge.is-active.badge-info,
-    .badge.active.badge-info { background: rgba(102, 153, 204, 0.20); }
+    .badge.active.badge-info { background: rgba(84, 148, 212, 0.20); }
     .badge.is-active.badge-success,
     .badge.active.badge-success { background: rgba(90, 158, 111, 0.20); }
     .badge.is-active.badge-warning,
     .badge.active.badge-warning { background: rgba(232, 153, 43, 0.20); }
     .badge.is-active.badge-error,
-    .badge.active.badge-error { background: rgba(184, 69, 58, 0.20); }
+    .badge.active.badge-error { background: rgba(216, 93, 82, 0.20); }
 
     /* Backward-compat alias: badge--counter behaves as badge--count */
     .badge--counter {
@@ -392,7 +396,7 @@
       background-color: var(--accent-rose);
     }
     .pulse-red::after {
-      border: 2px solid rgba(184, 69, 58, 0.6);
+      border: 2px solid rgba(216, 93, 82, 0.6);
     }
 
     /* Grey pulse */
@@ -400,7 +404,7 @@
       background-color: var(--text-muted);
     }
     .pulse-grey::after {
-      border: 2px solid rgba(107, 99, 90, 0.6);
+      border: 2px solid rgba(150, 140, 126, 0.6);
     }
 
     @keyframes pulse-ring {
@@ -413,4 +417,3 @@
         opacity: 0;
       }
     }
-

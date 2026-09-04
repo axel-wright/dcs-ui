@@ -59,6 +59,10 @@ if (typeof window.DCS === 'undefined') {
 } else {
   window.DCS.register('header', {
     init: function(el) {
+      var nav = el.querySelector('nav');
+      if (nav && !nav.getAttribute('aria-label')) {
+        nav.setAttribute('aria-label', 'Header Navigation');
+      }
       el.addEventListener('click', function(e) {
         var toggle = e.target.closest('.mobile-menu-toggle');
         if (!toggle) return;

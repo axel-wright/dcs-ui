@@ -8,16 +8,16 @@
   
   --accent-primary: #e8992b; 
   --accent-primary-hover: #f0a83d; 
-  --accent-terracotta: #c4653a; 
+  --accent-terracotta: #cb6f43; 
   --accent-gold: #d4a853; 
   --accent-sage: #5a9e6f; 
-  --accent-rose: #b8453a;
-  --accent-rose-hover: #c85146;
-  --accent-info: #4988c8;
-  --accent-info-hover: #5a9ed8;
+  --accent-rose: #d85d52;
+  --accent-rose-hover: #e26b60;
+  --accent-info: #5494d4;
+  --accent-info-hover: #68a4e2;
   --accent-purple: #a78bfa;
   --accent-purple-hover: #c4b5fd;
-  --glow-rose: 0 0 12px rgba(184, 69, 58, 0.25);
+  --glow-rose: 0 0 12px rgba(216, 93, 82, 0.25);
   --accent-amber: var(--accent-primary);
   --accent-green: var(--accent-sage);
   --accent-red: var(--accent-rose);
@@ -34,13 +34,13 @@
   --color-warning-text: #e8992b;
 
   --color-error: var(--accent-rose);
-  --color-error-bg: rgba(184, 69, 58, 0.10);
-  --color-error-border: rgba(184, 69, 58, 0.20);
-  --color-error-text: #d47272;
+  --color-error-bg: rgba(216, 93, 82, 0.10);
+  --color-error-border: rgba(216, 93, 82, 0.20);
+  --color-error-text: #e57870;
 
   --color-info: var(--accent-info);
-  --color-info-bg: rgba(73, 136, 200, 0.10);
-  --color-info-border: rgba(73, 136, 200, 0.20);
+  --color-info-bg: rgba(84, 148, 212, 0.10);
+  --color-info-border: rgba(84, 148, 212, 0.20);
   --color-info-text: #7aafdb;
 
   /* Z-Index Scale */
@@ -66,7 +66,7 @@
 
   --text-primary: #ede6dc;
   --text-secondary: #a89e92;
-  --text-muted: #6b635a;
+  --text-muted: #968c7e;
   --text-inverse: #1a1814;
   /* White text for solid accent fills (danger buttons, count badges) —
      stays white in both themes because the accent fills don't change. */
@@ -129,7 +129,7 @@
   --surface-hover: #f0ece4;
   --text-primary: #1a1510;
   --text-secondary: #5c5348;
-  --text-muted: #8a8178;
+  --text-muted: #665f57;
   --text-inverse: #f5f2eb;
   --border-default: rgba(26, 21, 16, 0.10);
   --border-active: rgba(232, 153, 43, 0.30);
@@ -137,8 +137,8 @@
   --glow-terracotta: 0 0 12px rgba(196, 101, 58, 0.15);
   --shadow-card: 0 1px 3px rgba(26, 21, 16, 0.08), 0 4px 16px rgba(26, 21, 16, 0.06);
   --shadow-elevated: 0 2px 8px rgba(26, 21, 16, 0.10), 0 8px 24px rgba(26, 21, 16, 0.08);
-  --accent-info: #3b7ab5;
-  --accent-info-hover: #2d6090;
+  --accent-info: #2d6090;
+  --accent-info-hover: #1f4870;
   --accent-purple: #7c5ce7;
   --accent-purple-hover: #6a4bd8;
   --glow-rose: 0 0 12px rgba(184, 69, 58, 0.15);

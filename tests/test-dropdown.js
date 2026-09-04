@@ -3,14 +3,17 @@ DCS_TEST.suite('dropdown', function() {
   var T = DCS_TEST;
 
   var fix = T.fixture(
-    '<div data-dcs-component="dropdown">' +
-      '<button data-dropdown-trigger aria-expanded="false">' +
-        '<span data-dropdown-label>Select</span>' +
-      '</button>' +
-      '<div data-dropdown-panel>' +
-        '<div class="dropdown-option" data-value="Opt 1">Opt 1</div>' +
-        '<div class="dropdown-option" data-value="Opt 2">Opt 2</div>' +
-        '<div class="dropdown-option" data-value="Opt 3">Opt 3</div>' +
+    '<div>' +
+      '<label class="form-label" id="lbl-mat">Workpiece Material</label>' +
+      '<div data-dcs-component="dropdown">' +
+        '<button data-dropdown-trigger aria-expanded="false">' +
+          '<span data-dropdown-label>Select</span>' +
+        '</button>' +
+        '<div data-dropdown-panel role="listbox">' +
+          '<div class="dropdown-option" data-value="Opt 1">Opt 1</div>' +
+          '<div class="dropdown-option" data-value="Opt 2">Opt 2</div>' +
+          '<div class="dropdown-option" data-value="Opt 3">Opt 3</div>' +
+        '</div>' +
       '</div>' +
     '</div>'
   );
@@ -27,6 +30,7 @@ DCS_TEST.suite('dropdown', function() {
   T.assertOk(container.hasAttribute('data-dcs-initialized'), 'dropdown is initialized');
   T.assertNotHasClass(panel, 'open', 'panel starts closed');
   T.assertAttr(trigger, 'aria-expanded', 'false', 'trigger starts aria-expanded="false"');
+  T.assertAttr(panel, 'aria-labelledby', 'lbl-mat', 'listbox panel receives aria-labelledby from form label');
 
   // Open via click
   T.click(trigger);
