@@ -1,0 +1,12 @@
+{
+  "name": "dcs-ui",
+  "version": "1.0.0",
+  "description": "DCS Component Library",
+  "private": true,
+  "scripts": {
+    "test": "node tests/run-node.js"
+  },
+  "devDependencies": {
+    "jsdom": "^26.0.0"
+  }
+}
