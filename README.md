@@ -262,6 +262,25 @@ Documentation pages live at the repository root. Demo pages live in `demo/`. Bot
 | Blog Post | `demo/blog-post.html` | Single blog post layout with hero image, article typography, video embed, and figure captions |
 | Coming Soon | `demo/coming-soon.html` | Pre-launch landing page with subscribe form |
 
+## Testing & Visual Regression
+
+The library includes unit tests, accessibility audits, E2E interactive scenarios, and visual regression tests:
+
+- **Unit tests (jsdom):** `npm test`
+- **Accessibility audit (axe-core):** `npm run test:a11y`
+- **E2E interactive tests:** `npm run test:e2e`
+- **Visual regression tests:** `npm run test:visual`
+
+### Visual Regression Regeneration
+
+To regenerate visual regression baselines after an intentional component or style change:
+
+```bash
+npx playwright test tests/visual --update-snapshots
+```
+
+For more details, see [`tests/visual/README.md`](tests/visual/README.md).
+
 ## How to Add a Component
 
 1. **Add HTML** to the showcase page with `data-dcs-component="my-component"` on the container element
