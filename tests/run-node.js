@@ -61,6 +61,63 @@ window.Element.prototype.getBoundingClientRect = function() {
   return { width: 100, height: 100, top: 0, left: 0, right: 100, bottom: 100, x: 0, y: 0 };
 };
 
+// 4. Async Clipboard API (navigator.clipboard.writeText):
+// JSDOM does not implement navigator.clipboard. Used by dcs-clipboard.js.
+if (!window.navigator.clipboard) {
+  window.navigator.clipboard = {
+    writeText: function(text) {
+      return Promise.resolve(text);
+    }
+  };
+}
+
+// 5. IntersectionObserver:
+// JSDOM does not calculate element layout intersection. Used by dcs-sticky-bar.js.
+if (typeof window.IntersectionObserver === 'undefined') {
+  window.IntersectionObserver = global.IntersectionObserver = class IntersectionObserver {
+    constructor(callback) {
+      this.callback = callback;
+    }
+    observe(target) {
+      if (this.callback) {
+        this.callback([{
+          isIntersecting: false,
+          intersectionRatio: 0.5,
+          target: target
+        }]);
+      }
+    }
+    unobserve() {}
+    disconnect() {}
+  };
+}
+
+// 6. Pointer Capture API (setPointerCapture / releasePointerCapture):
+// JSDOM does not implement pointer capture on Element. Used by dcs-bottom-sheet.js.
+if (!window.Element.prototype.setPointerCapture) {
+  window.Element.prototype.setPointerCapture = function() {};
+}
+if (!window.Element.prototype.releasePointerCapture) {
+  window.Element.prototype.releasePointerCapture = function() {};
+}
+
+// 7. scrollHeight / clientHeight:
+// JSDOM defaults layout heights to 0. Used by dcs-truncate.js for overflow detection.
+Object.defineProperty(window.HTMLElement.prototype, 'scrollHeight', {
+  get() {
+    return this._scrollHeight !== undefined ? this._scrollHeight : (this.style.display === 'none' ? 0 : 100);
+  },
+  set(v) { this._scrollHeight = v; },
+  configurable: true
+});
+Object.defineProperty(window.HTMLElement.prototype, 'clientHeight', {
+  get() {
+    return this._clientHeight !== undefined ? this._clientHeight : (this.style.display === 'none' ? 0 : 100);
+  },
+  set(v) { this._clientHeight = v; },
+  configurable: true
+});
+
 // 2. Load minified component bundle
 const bundlePath = path.join(__dirname, '../js/dcs-components.min.js');
 const bundleCode = fs.readFileSync(bundlePath, 'utf8');
@@ -72,7 +129,7 @@ const testHarnessCode = fs.readFileSync(testHarnessPath, 'utf8');
 window.eval(testHarnessCode);
 global.DCS_TEST = window.DCS_TEST;
 
-// 4. List of all 15 test suites
+// 4. List of all 39 test suites
 const testSuites = [
   'test-modal.js',
   'test-drawer.js',
@@ -88,7 +145,31 @@ const testSuites = [
   'test-tables.js',
   'test-pagination.js',
   'test-stepper.js',
-  'test-slider.js'
+  'test-slider.js',
+  'test-alerts.js',
+  'test-bottom-sheet.js',
+  'test-breadcrumbs.js',
+  'test-buttons.js',
+  'test-checkboxes.js',
+  'test-chips.js',
+  'test-clipboard.js',
+  'test-dropzone.js',
+  'test-fab.js',
+  'test-header.js',
+  'test-image-compare.js',
+  'test-inputs.js',
+  'test-popover.js',
+  'test-progress.js',
+  'test-radio.js',
+  'test-scrollspy.js',
+  'test-search.js',
+  'test-segmented-control.js',
+  'test-shortcut-hint.js',
+  'test-split-pane.js',
+  'test-sticky-bar.js',
+  'test-toggles.js',
+  'test-sparkline.js',
+  'test-truncate.js'
 ];
 
 // Load and execute each test suite
