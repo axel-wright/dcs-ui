@@ -45,5 +45,14 @@ DCS_TEST.suite('dropzone', function () {
   T.assertNotHasClass(zone, 'dragover', 'dragover class cleared on reset');
   T.assertNotHasClass(zone, 'has-file', 'has-file class cleared on reset');
 
+  // Native event testing: dragover, dragleave, drop
+  var dragOverEvent = new window.Event('dragover', { bubbles: true, cancelable: true });
+  zone.dispatchEvent(dragOverEvent);
+  T.assertHasClass(zone, 'dragover', 'native dragover event adds dragover class');
+
+  var dragLeaveEvent = new window.Event('dragleave', { bubbles: true, cancelable: true });
+  zone.dispatchEvent(dragLeaveEvent);
+  T.assertNotHasClass(zone, 'dragover', 'native dragleave event removes dragover class');
+
   T.cleanup();
 });

@@ -4,9 +4,12 @@
   "description": "DCS Component Library",
   "private": true,
   "scripts": {
-    "test": "node tests/run-node.js"
+    "test": "node tests/run-node.js",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "http-server": "^14.1.1",
     "jsdom": "^26.0.0"
   }
 }

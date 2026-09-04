@@ -8,3 +8,5 @@ node_modules/
 .codegraph/
 build-version.txt
 .jules-queue/
+test-results/
+playwright-report/
