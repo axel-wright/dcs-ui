@@ -19,6 +19,9 @@ if (typeof window.DCS === 'undefined') {
           pnl.setAttribute('aria-labelledby', allTabs[t].id);
           pnl.setAttribute('tabindex', '0');
         }
+        var isActive = allTabs[t].classList.contains('active');
+        allTabs[t].setAttribute('aria-selected', isActive ? 'true' : 'false');
+        allTabs[t].setAttribute('tabindex', isActive ? '0' : '-1');
       }
 
       var realignIndicator = function() {

@@ -47,13 +47,24 @@ if (typeof window.DCS === 'undefined') {
 
       // Keyboard navigation
       el.addEventListener('keydown', function(e) {
-        var trigger = e.target.closest('.accordion-trigger');
+        var trigger = e.target ? e.target.closest('.accordion-trigger') : null;
+        var key = e.key;
+
+        if (!trigger) {
+          if (key === 'ArrowDown' || key === 'ArrowUp' || key === 'Home' || key === 'End') {
+            trigger = document.activeElement && document.activeElement.closest
+              ? document.activeElement.closest('.accordion-trigger')
+              : null;
+            if (!trigger && triggers.length > 0) {
+              trigger = triggers[0];
+            }
+          }
+        }
+
         if (!trigger) return;
 
         var idx = triggers.indexOf(trigger);
         if (idx === -1) return;
-
-        var key = e.key;
 
         if (key === 'ArrowDown') {
           e.preventDefault();

@@ -18,7 +18,10 @@
 
   window.DCS._init = function(container) {
     container = container || document;
-    var els = container.querySelectorAll('[data-dcs-component]:not([data-dcs-initialized])');
+    var els = Array.prototype.slice.call(container.querySelectorAll('[data-dcs-component]:not([data-dcs-initialized])'));
+    if (container.matches && container.matches('[data-dcs-component]:not([data-dcs-initialized])')) {
+      els.unshift(container);
+    }
     for (var i = 0; i < els.length; i++) {
       var el = els[i];
       var name = el.getAttribute('data-dcs-component');
