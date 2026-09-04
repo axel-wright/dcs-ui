@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node tests/run-node.js",
     "test:a11y": "node tests/a11y/axe-audit.mjs",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:types": "npx -y --package=typescript tsc --noEmit --strict --lib es2020,dom types/consumer-smoke.ts"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
