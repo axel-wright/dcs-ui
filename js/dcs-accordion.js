@@ -55,9 +55,6 @@ if (typeof window.DCS === 'undefined') {
             trigger = document.activeElement && document.activeElement.closest
               ? document.activeElement.closest('.accordion-trigger')
               : null;
-            if (!trigger && triggers.length > 0) {
-              trigger = triggers[0];
-            }
           }
         }
 

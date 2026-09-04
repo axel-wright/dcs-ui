@@ -52,7 +52,7 @@ DCS_TEST.suite('accordion', function() {
       '</div>' +
       '<div class="accordion-item">' +
         '<button class="accordion-trigger">Section Y</button>' +
-        '<div class="accordion-content">Content Y</div>' +
+        '<div class="accordion-content"><a href="#" id="linkY">Content Y Link</a></div>' +
       '</div>' +
     '</div>'
   );
@@ -73,10 +73,15 @@ DCS_TEST.suite('accordion', function() {
   T.assertNotHasClass(itemX, 'open', 'single: item X closes when Y opens');
 
   // Keyboard navigation
-  T.keydown(acc2, 'ArrowDown');
-  // focus should move to next trigger
-  T.assertOk(document.activeElement === trigX || document.activeElement === trigY,
-    'keyboard: ArrowDown moves focus');
+  trigX.focus();
+  T.keydown(trigX, 'ArrowDown');
+  T.assertOk(document.activeElement === trigY, 'keyboard: ArrowDown moves focus to next trigger');
+
+  // Regression test: non-trigger focus in content
+  var linkY = fix2.querySelector('#linkY');
+  linkY.focus();
+  T.keydown(linkY, 'ArrowDown');
+  T.assertOk(document.activeElement === linkY, 'keyboard: ArrowDown on non-trigger inside content does not move focus');
 
   T.cleanup();
 
