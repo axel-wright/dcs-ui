@@ -75,3 +75,7 @@
 /* P3 — Polish */
 @import 'print.css';
 @import 'kbd.css';
+
+/* Components C1 */
+@import 'skeleton.css';
+@import 'number-input.css';

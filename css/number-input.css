@@ -1,0 +1,113 @@
+/* === NUMERIC INPUT / SPIN BUTTON === */
+.number-input,
+.dcs-number-input {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-deepest);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  height: 40px;
+  box-sizing: border-box;
+  transition: border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.number-input:focus-within,
+.dcs-number-input:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: var(--glow-amber);
+}
+
+.number-input-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: var(--surface-hover);
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--type-md);
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+  transition: background-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.number-input-btn:hover:not(:disabled) {
+  background: var(--border-active);
+  color: var(--accent-primary);
+}
+
+.number-input-btn:active:not(:disabled) {
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+}
+
+.number-input-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.number-input-field {
+  flex: 1 1 auto;
+  width: 60px;
+  min-width: 48px;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--type-sm);
+  text-align: center;
+  padding: 0 var(--space-xs);
+  margin: 0;
+  box-sizing: border-box;
+  -moz-appearance: textfield;
+}
+
+.number-input-field::-webkit-outer-spin-button,
+.number-input-field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ── Size Variants ───────────────────────────────────────── */
+.number-input-sm {
+  height: 32px;
+}
+.number-input-sm .number-input-btn {
+  width: 28px;
+  font-size: var(--type-sm);
+}
+
+.number-input-lg {
+  height: 48px;
+}
+.number-input-lg .number-input-btn {
+  width: 44px;
+  font-size: var(--type-lg);
+}
+
+/* ── Disabled State ──────────────────────────────────────── */
+.number-input--disabled,
+.number-input[data-disabled],
+.number-input.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.number-input--disabled .number-input-btn,
+.number-input--disabled .number-input-field,
+.number-input[data-disabled] .number-input-btn,
+.number-input[data-disabled] .number-input-field,
+.number-input.disabled .number-input-btn,
+.number-input.disabled .number-input-field {
+  cursor: not-allowed;
+  pointer-events: none;
+}

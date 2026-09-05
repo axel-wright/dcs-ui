@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <script>(function(){var t;try{t=localStorage.getItem("dcs-theme")}catch(e){}if(t==="light")document.documentElement.setAttribute("data-theme","light")})()</script>
-  <script src="js/dcs-components.min.js?v=20260904-0ebaf54" defer></script>
+  <script src="js/dcs-components.min.js?v=20260905-72f91e3" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DCS Complete Component Library</title>
   
@@ -13,16 +13,16 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/dcs-core.min.css?v=20260904-0ebaf54">
-  <link rel="stylesheet" href="css/dcs-components.min.css?v=20260904-0ebaf54">
-  <link rel="stylesheet" href="css/dcs-specimen.css?v=20260904-0ebaf54">
+  <link rel="stylesheet" href="css/dcs-core.min.css?v=20260905-72f91e3">
+  <link rel="stylesheet" href="css/dcs-components.min.css?v=20260905-72f91e3">
+  <link rel="stylesheet" href="css/dcs-specimen.css?v=20260905-72f91e3">
   <!-- Demo-only enhancements for the component library page -->
-  <script src="js/demo/dcs-kpi-demo.js?v=20260904-0ebaf54" defer></script>
-  <script src="js/demo/dcs-cards-demo.js?v=20260904-0ebaf54" defer></script>
-  <script src="js/demo/dcs-header-demo.js?v=20260904-0ebaf54" defer></script>
-  <script src="js/demo/dcs-modal-demo.js?v=20260904-0ebaf54" defer></script>
-  <script src="js/demo/dcs-stepper-demo.js?v=20260904-0ebaf54" defer></script>
-  <script src="js/demo/dcs-progress.js?v=20260904-0ebaf54" defer></script>
+  <script src="js/demo/dcs-kpi-demo.js?v=20260905-72f91e3" defer></script>
+  <script src="js/demo/dcs-cards-demo.js?v=20260905-72f91e3" defer></script>
+  <script src="js/demo/dcs-header-demo.js?v=20260905-72f91e3" defer></script>
+  <script src="js/demo/dcs-modal-demo.js?v=20260905-72f91e3" defer></script>
+  <script src="js/demo/dcs-stepper-demo.js?v=20260905-72f91e3" defer></script>
+  <script src="js/demo/dcs-progress.js?v=20260905-72f91e3" defer></script>
 </head>
 <body>
 
@@ -137,6 +137,7 @@
           <li class="sidebar-item" data-section="slider-sec"><a href="#slider-sec"><span class="sidebar-num"></span> Slider / Range</a></li>
           <li class="sidebar-item" data-section="dropzone-sec"><a href="#dropzone-sec"><span class="sidebar-num"></span> File Drop Zone</a></li>
           <li class="sidebar-item" data-section="segment-sec"><a href="#segment-sec"><span class="sidebar-num"></span> Segmented Control</a></li>
+          <li class="sidebar-item" data-section="number-sec"><a href="#number-sec"><span class="sidebar-num"></span> Numeric Input</a></li>
 
           <!-- ===== NAVIGATION ===== -->
           <li class="sidebar-section-header">Navigation</li>
@@ -175,6 +176,7 @@
           <li class="sidebar-item" data-section="loading"><a href="#loading"><span class="sidebar-num"></span> Progress &amp; Loading</a></li>
           <li class="sidebar-item" data-section="ring-sec"><a href="#ring-sec"><span class="sidebar-num"></span> Progress Ring</a></li>
           <li class="sidebar-item" data-section="empty-sec"><a href="#empty-sec"><span class="sidebar-num"></span> Empty State</a></li>
+          <li class="sidebar-item" data-section="skeleton-sec"><a href="#skeleton-sec"><span class="sidebar-num"></span> Skeleton Loaders</a></li>
 
           <!-- ===== OVERLAYS ===== -->
           <li class="sidebar-section-header">Overlays</li>
@@ -890,6 +892,50 @@
             </div>
             <div class="segmented-feedback" style="font-family: var(--font-mono); font-size: var(--type-xs); color: var(--accent-primary); margin-top: var(--space-sm);">
               ACTIVE FILTER: ALL
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- NUMERIC INPUT -->
+      <section id="number-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Numeric Input</h2>
+          </div>
+          <p class="section-description">Single-line numeric input with increment and decrement buttons. Supports keyboard controls (ArrowUp / ArrowDown), direct typing validation, min/max clamping, and custom step increments.</p>
+        </div>
+        <div class="demo-area">
+          <div style="display: flex; flex-direction: column; gap: var(--space-xl);">
+            <!-- Default Instance -->
+            <div>
+              <p class="specimen-label">Default Instance</p>
+              <div class="number-input" data-dcs-component="number" data-value="0">
+                <button class="number-input-btn" data-action="decrement" aria-label="Decrease">−</button>
+                <input class="number-input-field" type="text" inputmode="numeric" value="0">
+                <button class="number-input-btn" data-action="increment" aria-label="Increase">+</button>
+              </div>
+            </div>
+
+            <!-- Constrained Instance -->
+            <div>
+              <p class="specimen-label">Constrained Instance (Min 0, Max 100, Step 5)</p>
+              <div class="number-input" data-dcs-component="number" data-value="25" data-min="0" data-max="100" data-step="5">
+                <button class="number-input-btn" data-action="decrement" aria-label="Decrease">−</button>
+                <input class="number-input-field" type="text" inputmode="numeric" value="25">
+                <button class="number-input-btn" data-action="increment" aria-label="Increase">+</button>
+              </div>
+            </div>
+
+            <!-- Disabled Instance -->
+            <div>
+              <p class="specimen-label">Disabled State</p>
+              <div class="number-input number-input--disabled" data-dcs-component="number" data-value="10" data-disabled>
+                <button class="number-input-btn" data-action="decrement" aria-label="Decrease" disabled>−</button>
+                <input class="number-input-field" type="text" inputmode="numeric" value="10" disabled>
+                <button class="number-input-btn" data-action="increment" aria-label="Increase" disabled>+</button>
+              </div>
             </div>
           </div>
         </div>
@@ -2734,6 +2780,69 @@
             <p class="specimen-label">Variant C: Error + Retry</p>
             <div class="empty-state-card" data-dcs-component="empty" data-empty-state="error" data-empty-retry="true">
               <p class="empty-state-desc">Failed to load machine data</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- SKELETON LOADERS -->
+      <section id="skeleton-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Skeleton Loaders</h2>
+          </div>
+          <p class="section-description">Placeholder shapes for content loading states with subtle shimmer animation. Automatically pauses shimmer when reduced motion is preferred.</p>
+        </div>
+        <div class="demo-area">
+          <div style="display: flex; flex-direction: column; gap: var(--space-xl);">
+            <!-- Text Lines -->
+            <div>
+              <p class="specimen-label">Text Lines</p>
+              <div style="display: flex; flex-direction: column; gap: var(--space-xs); max-width: 480px;">
+                <div class="skeleton skeleton--text"></div>
+                <div class="skeleton skeleton--text"></div>
+                <div class="skeleton skeleton--text skeleton--text-short"></div>
+              </div>
+            </div>
+
+            <!-- Avatars & Buttons -->
+            <div>
+              <p class="specimen-label">Avatars &amp; Buttons</p>
+              <div style="display: flex; align-items: center; gap: var(--space-md);">
+                <div class="skeleton skeleton--circle"></div>
+                <div class="skeleton skeleton--button"></div>
+                <div class="skeleton skeleton--button" style="width: 80px;"></div>
+              </div>
+            </div>
+
+            <!-- Card Composition -->
+            <div>
+              <p class="specimen-label">Card Composition</p>
+              <div class="skeleton-card" style="max-width: 380px;">
+                <div class="skeleton skeleton-card-media"></div>
+                <div class="skeleton skeleton--text"></div>
+                <div class="skeleton skeleton--text skeleton--text-short"></div>
+              </div>
+            </div>
+
+            <!-- Table Row -->
+            <div>
+              <p class="specimen-label">Table Row</p>
+              <div style="border: 1px solid var(--border-default); border-radius: var(--radius-sm); max-width: 600px;">
+                <div class="skeleton-row">
+                  <div class="skeleton skeleton-cell" style="width: 30%;"></div>
+                  <div class="skeleton skeleton-cell" style="width: 25%;"></div>
+                  <div class="skeleton skeleton-cell" style="width: 20%;"></div>
+                  <div class="skeleton skeleton-cell" style="width: 15%;"></div>
+                </div>
+                <div class="skeleton-row">
+                  <div class="skeleton skeleton-cell" style="width: 30%;"></div>
+                  <div class="skeleton skeleton-cell" style="width: 25%;"></div>
+                  <div class="skeleton skeleton-cell" style="width: 20%;"></div>
+                  <div class="skeleton skeleton-cell" style="width: 15%;"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
