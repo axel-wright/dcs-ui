@@ -79,3 +79,8 @@
 /* Components C1 */
 @import 'skeleton.css';
 @import 'number-input.css';
+
+/* Components C2 */
+@import 'bar-chart.css';
+@import 'donut-chart.css';
+@import 'area-chart.css';

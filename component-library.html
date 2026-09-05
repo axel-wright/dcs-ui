@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <script>(function(){var t;try{t=localStorage.getItem("dcs-theme")}catch(e){}if(t==="light")document.documentElement.setAttribute("data-theme","light")})()</script>
-  <script src="js/dcs-components.min.js?v=20260905-72f91e3" defer></script>
+  <script src="js/dcs-components.min.js?v=20260905-3c6bdba" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DCS Complete Component Library</title>
   
@@ -13,16 +13,16 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/dcs-core.min.css?v=20260905-72f91e3">
-  <link rel="stylesheet" href="css/dcs-components.min.css?v=20260905-72f91e3">
-  <link rel="stylesheet" href="css/dcs-specimen.css?v=20260905-72f91e3">
+  <link rel="stylesheet" href="css/dcs-core.min.css?v=20260905-3c6bdba">
+  <link rel="stylesheet" href="css/dcs-components.min.css?v=20260905-3c6bdba">
+  <link rel="stylesheet" href="css/dcs-specimen.css?v=20260905-3c6bdba">
   <!-- Demo-only enhancements for the component library page -->
-  <script src="js/demo/dcs-kpi-demo.js?v=20260905-72f91e3" defer></script>
-  <script src="js/demo/dcs-cards-demo.js?v=20260905-72f91e3" defer></script>
-  <script src="js/demo/dcs-header-demo.js?v=20260905-72f91e3" defer></script>
-  <script src="js/demo/dcs-modal-demo.js?v=20260905-72f91e3" defer></script>
-  <script src="js/demo/dcs-stepper-demo.js?v=20260905-72f91e3" defer></script>
-  <script src="js/demo/dcs-progress.js?v=20260905-72f91e3" defer></script>
+  <script src="js/demo/dcs-kpi-demo.js?v=20260905-3c6bdba" defer></script>
+  <script src="js/demo/dcs-cards-demo.js?v=20260905-3c6bdba" defer></script>
+  <script src="js/demo/dcs-header-demo.js?v=20260905-3c6bdba" defer></script>
+  <script src="js/demo/dcs-modal-demo.js?v=20260905-3c6bdba" defer></script>
+  <script src="js/demo/dcs-stepper-demo.js?v=20260905-3c6bdba" defer></script>
+  <script src="js/demo/dcs-progress.js?v=20260905-3c6bdba" defer></script>
 </head>
 <body>
 
@@ -167,6 +167,9 @@
           <li class="sidebar-item" data-section="sparkline-sec"><a href="#sparkline-sec"><span class="sidebar-num"></span> Sparkline</a></li>
           <li class="sidebar-item" data-section="tree-sec"><a href="#tree-sec"><span class="sidebar-num"></span> Tree View</a></li>
           <li class="sidebar-item" data-section="taggroup-sec"><a href="#taggroup-sec"><span class="sidebar-num"></span> Tag Group</a></li>
+          <li class="sidebar-item" data-section="barchart-sec"><a href="#barchart-sec"><span class="sidebar-num"></span> Bar Chart</a></li>
+          <li class="sidebar-item" data-section="donutchart-sec"><a href="#donutchart-sec"><span class="sidebar-num"></span> Donut Chart</a></li>
+          <li class="sidebar-item" data-section="areachart-sec"><a href="#areachart-sec"><span class="sidebar-num"></span> Area Chart</a></li>
 
           <!-- ===== FEEDBACK ===== -->
           <li class="sidebar-section-header">Feedback</li>
@@ -2425,6 +2428,48 @@
             <span class="dcs-tag dcs-tag--info">3D Print</span>
             <span class="dcs-tag dcs-tag--error">Failed</span>
           </div>
+        </div>
+      </section>
+
+<!-- BAR CHART -->
+      <section id="barchart-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Bar Chart</h2>
+          </div>
+          <p class="section-description">Vertical bar chart rendered as dependency-free inline SVG. Supports numeric value labels, x-axis category labels, custom colors, and height scaling.</p>
+        </div>
+        <div class="demo-area">
+          <div class="bar-chart" data-dcs-component="bar-chart" data-values="12,34,23,45,56" data-labels="Jan,Feb,Mar,Apr,May"></div>
+        </div>
+      </section>
+
+<!-- DONUT CHART -->
+      <section id="donutchart-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Donut Chart</h2>
+          </div>
+          <p class="section-description">Circular segment ring chart showing proportions with a center total and category legend. Renders via SVG circle stroke-dasharray styling.</p>
+        </div>
+        <div class="demo-area">
+          <div class="donut-chart" data-dcs-component="donut-chart" data-values="30,50,20" data-labels="Cut,Engrave,Scan" data-center-label="Parts"></div>
+        </div>
+      </section>
+
+<!-- AREA CHART -->
+      <section id="areachart-sec" class="section-specimen">
+        <div class="section-meta">
+          <div class="section-heading-wrapper">
+            <span class="section-index"></span>
+            <h2 class="section-title">Area Chart</h2>
+          </div>
+          <p class="section-description">Line and area fill trend chart featuring a gradient opacity fill, background grid lines, data points, and x-axis tick labels.</p>
+        </div>
+        <div class="demo-area">
+          <div class="area-chart" data-dcs-component="area-chart" data-values="12,34,23,45,56" data-labels="Jan,Feb,Mar,Apr,May"></div>
         </div>
       </section>
 

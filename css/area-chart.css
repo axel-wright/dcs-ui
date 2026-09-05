@@ -1,0 +1,29 @@
+/* === AREA CHART === */
+.dcs-area-chart {
+  display: block;
+  width: 100%;
+}
+
+.dcs-area-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.dcs-area-chart .chart-grid-line,
+.dcs-area-chart .chart-axis {
+  stroke: var(--border-default);
+  stroke-width: 1;
+}
+
+.dcs-area-chart .chart-tick-label {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  fill: var(--text-secondary);
+  text-anchor: middle;
+}
+
+.dcs-area-chart .chart-data-point {
+  transition: r 0.15s ease;
+}

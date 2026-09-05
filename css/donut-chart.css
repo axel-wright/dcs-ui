@@ -1,0 +1,64 @@
+/* === DONUT CHART === */
+.dcs-donut-chart {
+  display: block;
+  width: 100%;
+}
+
+.dcs-donut-chart svg {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.dcs-donut-chart .chart-center-total {
+  font-family: var(--font-headings);
+  font-weight: 600;
+  fill: var(--text-primary);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.dcs-donut-chart .chart-center-label {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  fill: var(--text-secondary);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.dcs-donut-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+  justify-content: center;
+  margin-top: var(--space-md);
+  font-family: var(--font-body);
+  font-size: var(--type-sm);
+  color: var(--text-secondary);
+}
+
+.dcs-donut-chart-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.dcs-donut-chart-legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.dcs-donut-chart-legend-text {
+  color: var(--text-primary);
+}
+
+.dcs-donut-chart-legend-val {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}

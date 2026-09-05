@@ -1,0 +1,31 @@
+/* === BAR CHART === */
+.dcs-bar-chart {
+  display: block;
+  width: 100%;
+}
+
+.dcs-bar-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.dcs-bar-chart .chart-axis {
+  stroke: var(--border-default);
+  stroke-width: 1;
+}
+
+.dcs-bar-chart .chart-value-label {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  fill: var(--text-secondary);
+  text-anchor: middle;
+}
+
+.dcs-bar-chart .chart-category-label {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  fill: var(--text-secondary);
+  text-anchor: middle;
+}
