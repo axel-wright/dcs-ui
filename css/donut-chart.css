@@ -7,7 +7,7 @@
 .dcs-donut-chart svg {
   display: block;
   width: 100%;
-  max-width: 220px;
+  max-width: 200px;
   height: auto;
   margin: 0 auto;
   overflow: visible;
@@ -15,6 +15,7 @@
 
 .dcs-donut-chart .chart-center-total {
   font-family: var(--font-headings);
+  font-size: 20px;
   font-weight: 600;
   fill: var(--text-primary);
   text-anchor: middle;
@@ -24,7 +25,7 @@
 .dcs-donut-chart .chart-center-label {
   font-family: var(--font-mono);
   font-size: var(--type-xs);
-  fill: var(--text-secondary);
+  fill: var(--text-muted);
   text-anchor: middle;
   dominant-baseline: central;
 }
@@ -32,7 +33,7 @@
 .dcs-donut-chart-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-sm) var(--space-md);
+  gap: var(--space-xs) var(--space-md);
   justify-content: center;
   margin-top: var(--space-md);
   font-family: var(--font-body);
@@ -47,18 +48,20 @@
 }
 
 .dcs-donut-chart-legend-swatch {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 2px;
   display: inline-block;
   flex-shrink: 0;
 }
 
 .dcs-donut-chart-legend-text {
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 .dcs-donut-chart-legend-val {
-  color: var(--text-secondary);
+  color: var(--text-muted);
   font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  margin-left: 2px;
 }

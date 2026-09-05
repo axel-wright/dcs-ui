@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <script>(function(){var t;try{t=localStorage.getItem("dcs-theme")}catch(e){}if(t==="light")document.documentElement.setAttribute("data-theme","light")})()</script>
-  <script src="js/dcs-components.min.js?v=20260905-3c6bdba" defer></script>
+  <script src="js/dcs-components.min.js?v=20260905-d11560b" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DCS Complete Component Library</title>
   
@@ -13,16 +13,16 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/dcs-core.min.css?v=20260905-3c6bdba">
-  <link rel="stylesheet" href="css/dcs-components.min.css?v=20260905-3c6bdba">
-  <link rel="stylesheet" href="css/dcs-specimen.css?v=20260905-3c6bdba">
+  <link rel="stylesheet" href="css/dcs-core.min.css?v=20260905-d11560b">
+  <link rel="stylesheet" href="css/dcs-components.min.css?v=20260905-d11560b">
+  <link rel="stylesheet" href="css/dcs-specimen.css?v=20260905-d11560b">
   <!-- Demo-only enhancements for the component library page -->
-  <script src="js/demo/dcs-kpi-demo.js?v=20260905-3c6bdba" defer></script>
-  <script src="js/demo/dcs-cards-demo.js?v=20260905-3c6bdba" defer></script>
-  <script src="js/demo/dcs-header-demo.js?v=20260905-3c6bdba" defer></script>
-  <script src="js/demo/dcs-modal-demo.js?v=20260905-3c6bdba" defer></script>
-  <script src="js/demo/dcs-stepper-demo.js?v=20260905-3c6bdba" defer></script>
-  <script src="js/demo/dcs-progress.js?v=20260905-3c6bdba" defer></script>
+  <script src="js/demo/dcs-kpi-demo.js?v=20260905-d11560b" defer></script>
+  <script src="js/demo/dcs-cards-demo.js?v=20260905-d11560b" defer></script>
+  <script src="js/demo/dcs-header-demo.js?v=20260905-d11560b" defer></script>
+  <script src="js/demo/dcs-modal-demo.js?v=20260905-d11560b" defer></script>
+  <script src="js/demo/dcs-stepper-demo.js?v=20260905-d11560b" defer></script>
+  <script src="js/demo/dcs-progress.js?v=20260905-d11560b" defer></script>
 </head>
 <body>
 
@@ -2441,7 +2441,11 @@
           <p class="section-description">Vertical bar chart rendered as dependency-free inline SVG. Supports numeric value labels, x-axis category labels, custom colors, and height scaling.</p>
         </div>
         <div class="demo-area">
-          <div class="bar-chart" data-dcs-component="bar-chart" data-values="12,34,23,45,56" data-labels="Jan,Feb,Mar,Apr,May"></div>
+          <div class="card">
+            <div class="card-meta">MONTHLY OUTPUT</div>
+            <h3 class="card-title">Production Throughput</h3>
+            <div class="bar-chart" data-dcs-component="bar-chart" data-values="12,34,23,45,56" data-labels="Jan,Feb,Mar,Apr,May"></div>
+          </div>
         </div>
       </section>
 
@@ -2455,7 +2459,11 @@
           <p class="section-description">Circular segment ring chart showing proportions with a center total and category legend. Renders via SVG circle stroke-dasharray styling.</p>
         </div>
         <div class="demo-area">
-          <div class="donut-chart" data-dcs-component="donut-chart" data-values="30,50,20" data-labels="Cut,Engrave,Scan" data-center-label="Parts"></div>
+          <div class="card">
+            <div class="card-meta">JOB BREAKDOWN</div>
+            <h3 class="card-title">Operation Share</h3>
+            <div class="donut-chart" data-dcs-component="donut-chart" data-values="30,50,20" data-labels="Cut,Engrave,Scan" data-center-label="Parts"></div>
+          </div>
         </div>
       </section>
 
@@ -2469,7 +2477,11 @@
           <p class="section-description">Line and area fill trend chart featuring a gradient opacity fill, background grid lines, data points, and x-axis tick labels.</p>
         </div>
         <div class="demo-area">
-          <div class="area-chart" data-dcs-component="area-chart" data-values="12,34,23,45,56" data-labels="Jan,Feb,Mar,Apr,May"></div>
+          <div class="card">
+            <div class="card-meta">SPINDLE RUNTIME</div>
+            <h3 class="card-title">Efficiency Trend</h3>
+            <div class="area-chart" data-dcs-component="area-chart" data-values="12,34,23,45,56" data-labels="Jan,Feb,Mar,Apr,May"></div>
+          </div>
         </div>
       </section>
 

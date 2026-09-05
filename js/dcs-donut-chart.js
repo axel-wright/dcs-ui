@@ -6,7 +6,6 @@ if (typeof window.DCS === 'undefined') {
   var DEFAULT_PALETTE = [
     'var(--accent-primary)',
     'var(--accent-sage)',
-    'var(--color-info)',
     'var(--accent-terracotta)',
     'var(--accent-gold)',
     'var(--accent-rose)'
@@ -58,7 +57,7 @@ if (typeof window.DCS === 'undefined') {
       var cx = viewWidth / 2;
       var cy = viewHeight / 2;
 
-      var strokeWidth = 18;
+      var strokeWidth = 14;
       var pad = 12;
       var outerRadius = Math.min(viewWidth, viewHeight) / 2 - pad;
       var r = outerRadius - strokeWidth / 2;
@@ -74,6 +73,10 @@ if (typeof window.DCS === 'undefined') {
       var circlesHtml = '';
       var summaryItems = [];
       var legendHtml = '';
+
+      // Track ring behind segments
+      var trackHtml = '<circle cx="' + round(cx) + '" cy="' + round(cy) +
+        '" r="' + round(r) + '" fill="none" stroke="var(--surface-hover)" stroke-width="' + strokeWidth + '" />';
 
       for (var idx = 0; idx < values.length; idx++) {
         var val = values[idx];
@@ -111,17 +114,16 @@ if (typeof window.DCS === 'undefined') {
       }
 
       var formattedTotal = Math.round(sum * 100) / 100;
-      var totalFontSize = Math.min(28, Math.max(16, viewHeight / 6));
 
       var centerTextHtml = '';
       if (centerLabel) {
-        centerTextHtml += '<text x="' + round(cx) + '" y="' + round(cy - 8) +
-          '" class="chart-center-total" font-size="' + totalFontSize + '">' + formattedTotal + '</text>';
-        centerTextHtml += '<text x="' + round(cx) + '" y="' + round(cy + 14) +
+        centerTextHtml += '<text x="' + round(cx) + '" y="' + round(cy - 7) +
+          '" class="chart-center-total">' + formattedTotal + '</text>';
+        centerTextHtml += '<text x="' + round(cx) + '" y="' + round(cy + 12) +
           '" class="chart-center-label">' + escapeAttr(centerLabel) + '</text>';
       } else {
         centerTextHtml += '<text x="' + round(cx) + '" y="' + round(cy) +
-          '" class="chart-center-total" font-size="' + totalFontSize + '">' + formattedTotal + '</text>';
+          '" class="chart-center-total">' + formattedTotal + '</text>';
       }
 
       var defaultAria = 'Donut chart: ' + summaryItems.join(', ');
@@ -132,6 +134,7 @@ if (typeof window.DCS === 'undefined') {
         '" width="100%" height="' + viewHeight +
         '" preserveAspectRatio="xMidYMid meet">' +
         '<g transform="rotate(-90 ' + round(cx) + ' ' + round(cy) + ')">' +
+        trackHtml +
         circlesHtml +
         '</g>' +
         centerTextHtml +

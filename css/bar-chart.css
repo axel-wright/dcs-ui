@@ -11,21 +11,23 @@
   overflow: visible;
 }
 
-.dcs-bar-chart .chart-axis {
+.dcs-bar-chart .chart-axis,
+.dcs-bar-chart .chart-grid-line {
   stroke: var(--border-default);
   stroke-width: 1;
 }
 
-.dcs-bar-chart .chart-value-label {
+.dcs-bar-chart .chart-tick-label {
   font-family: var(--font-mono);
   font-size: var(--type-xs);
-  fill: var(--text-secondary);
-  text-anchor: middle;
+  fill: var(--text-muted);
+  text-anchor: end;
+  dominant-baseline: middle;
 }
 
 .dcs-bar-chart .chart-category-label {
   font-family: var(--font-mono);
   font-size: var(--type-xs);
-  fill: var(--text-secondary);
+  fill: var(--text-muted);
   text-anchor: middle;
 }

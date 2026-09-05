@@ -3,6 +3,8 @@
 if (typeof window.DCS === 'undefined') {
   console.warn('DCS registry is undefined. dcs-bar-chart.js could not register the bar-chart component.');
 } else {
+  var barChartCounter = 0;
+
   window.DCS.register('bar-chart', {
     init: function(el) {
       if (!el) return;
@@ -35,10 +37,10 @@ if (typeof window.DCS === 'undefined') {
       var viewWidth = Math.max(400, values.length * 50);
       var viewHeight = reqHeight;
 
-      var topPad = 28;
-      var bottomPad = hasLabels ? 32 : 16;
-      var leftPad = 24;
-      var rightPad = 24;
+      var topPad = 24;
+      var bottomPad = hasLabels ? 32 : 20;
+      var leftPad = 36;
+      var rightPad = 20;
 
       var baselineY = viewHeight - bottomPad;
       var drawableHeight = baselineY - topPad;
@@ -51,14 +53,38 @@ if (typeof window.DCS === 'undefined') {
 
       var drawableWidth = viewWidth - leftPad - rightPad;
       var stepWidth = drawableWidth / values.length;
-      var barWidth = Math.min(44, Math.max(12, stepWidth * 0.55));
+      var barWidth = Math.min(30, stepWidth * 0.4);
+
+      barChartCounter++;
+      var gradId = 'dcs-bar-grad-' + barChartCounter;
 
       var svgContent = '';
 
-      // Baseline
-      svgContent += '<line x1="' + (leftPad - 8) + '" y1="' + round(baselineY) +
-        '" x2="' + (viewWidth - rightPad + 8) + '" y2="' + round(baselineY) +
+      // Shared vertical linear gradient definition
+      svgContent += '<defs>' +
+        '<linearGradient id="' + gradId + '" x1="0" y1="0" x2="0" y2="1">' +
+        '<stop offset="0%" stop-color="' + color + '" stop-opacity="0.9" />' +
+        '<stop offset="100%" stop-color="' + color + '" stop-opacity="0.45" />' +
+        '</linearGradient>' +
+        '</defs>';
+
+      // Horizontal grid lines and Y-axis tick labels (~4 steps)
+      for (var g = 1; g <= 4; g++) {
+        var gridY = baselineY - (drawableHeight * (g / 4));
+        var tickVal = Math.round((maxVal * (g / 4)) * 10) / 10;
+        svgContent += '<line x1="' + leftPad + '" y1="' + round(gridY) +
+          '" x2="' + (viewWidth - rightPad) + '" y2="' + round(gridY) +
+          '" class="chart-grid-line" />';
+        svgContent += '<text x="' + (leftPad - 6) + '" y="' + round(gridY) +
+          '" class="chart-tick-label">' + tickVal + '</text>';
+      }
+
+      // Baseline and zero tick
+      svgContent += '<line x1="' + (leftPad - 4) + '" y1="' + round(baselineY) +
+        '" x2="' + (viewWidth - rightPad + 4) + '" y2="' + round(baselineY) +
         '" class="chart-axis" />';
+      svgContent += '<text x="' + (leftPad - 6) + '" y="' + round(baselineY) +
+        '" class="chart-tick-label">0</text>';
 
       var summaryItems = [];
 
@@ -78,14 +104,10 @@ if (typeof window.DCS === 'undefined') {
 
         var tooltip = lbl ? escapeAttr(lbl + ': ' + val) : escapeAttr(String(val));
 
-        // Bar rect
+        // Bar rect with gradient fill and subtle radius
         svgContent += '<rect x="' + round(barX) + '" y="' + round(barY) +
           '" width="' + round(barWidth) + '" height="' + round(barH) +
-          '" rx="3" ry="3" fill="' + color + '"><title>' + tooltip + '</title></rect>';
-
-        // Value label above bar
-        svgContent += '<text x="' + round(barX + barWidth / 2) + '" y="' + round(barY - 6) +
-          '" class="chart-value-label">' + val + '</text>';
+          '" rx="2" ry="2" fill="url(#' + gradId + ')"><title>' + tooltip + '</title></rect>';
 
         // Category label below baseline
         if (hasLabels && lbl) {

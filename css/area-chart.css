@@ -20,7 +20,15 @@
 .dcs-area-chart .chart-tick-label {
   font-family: var(--font-mono);
   font-size: var(--type-xs);
-  fill: var(--text-secondary);
+  fill: var(--text-muted);
+  text-anchor: end;
+  dominant-baseline: middle;
+}
+
+.dcs-area-chart .chart-category-label {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  fill: var(--text-muted);
   text-anchor: middle;
 }
 

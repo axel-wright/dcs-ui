@@ -39,8 +39,8 @@ if (typeof window.DCS === 'undefined') {
 
       var topPad = 24;
       var bottomPad = hasLabels ? 32 : 20;
-      var leftPad = 24;
-      var rightPad = 24;
+      var leftPad = 36;
+      var rightPad = 20;
 
       var baselineY = viewHeight - bottomPad;
       var drawableHeight = baselineY - topPad;
@@ -58,26 +58,31 @@ if (typeof window.DCS === 'undefined') {
 
       var svgContent = '';
 
-      // Defs with linear gradient
+      // Defs with linear gradient (subtle 0.22 top -> 0.0 bottom)
       svgContent += '<defs>' +
         '<linearGradient id="' + gradId + '" x1="0" y1="0" x2="0" y2="1">' +
-        '<stop offset="0%" stop-color="' + color + '" stop-opacity="0.35" />' +
+        '<stop offset="0%" stop-color="' + color + '" stop-opacity="0.22" />' +
         '<stop offset="100%" stop-color="' + color + '" stop-opacity="0.0" />' +
         '</linearGradient>' +
         '</defs>';
 
-      // Grid lines (25%, 50%, 75%)
-      for (var g = 1; g <= 3; g++) {
+      // Grid lines and Y-axis tick values (4 steps)
+      for (var g = 1; g <= 4; g++) {
         var gridY = baselineY - (drawableHeight * (g / 4));
+        var tickVal = Math.round((baseVal + range * (g / 4)) * 10) / 10;
         svgContent += '<line x1="' + leftPad + '" y1="' + round(gridY) +
           '" x2="' + (viewWidth - rightPad) + '" y2="' + round(gridY) +
           '" class="chart-grid-line" />';
+        svgContent += '<text x="' + (leftPad - 6) + '" y="' + round(gridY) +
+          '" class="chart-tick-label">' + tickVal + '</text>';
       }
 
-      // Baseline
-      svgContent += '<line x1="' + (leftPad - 8) + '" y1="' + round(baselineY) +
-        '" x2="' + (viewWidth - rightPad + 8) + '" y2="' + round(baselineY) +
+      // Baseline and zero/min tick
+      svgContent += '<line x1="' + (leftPad - 4) + '" y1="' + round(baselineY) +
+        '" x2="' + (viewWidth - rightPad + 4) + '" y2="' + round(baselineY) +
         '" class="chart-axis" />';
+      svgContent += '<text x="' + (leftPad - 6) + '" y="' + round(baselineY) +
+        '" class="chart-tick-label">' + Math.round(baseVal * 10) / 10 + '</text>';
 
       var points = [];
       var summaryItems = [];
@@ -117,18 +122,17 @@ if (typeof window.DCS === 'undefined') {
         svgContent += '<path d="' + lineD + '" fill="none" stroke="' + color +
           '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />';
 
-        // Data points and labels
+        // Data points (small unstroked dots) and category labels
         for (var ptIdx = 0; ptIdx < points.length; ptIdx++) {
           var pt = points[ptIdx];
           var title = pt.lbl ? escapeAttr(pt.lbl + ': ' + pt.val) : escapeAttr(String(pt.val));
 
           svgContent += '<circle cx="' + round(pt.x) + '" cy="' + round(pt.y) +
-            '" r="4" fill="' + color + '" stroke="var(--surface-default)" stroke-width="2"' +
-            ' class="chart-data-point"><title>' + title + '</title></circle>';
+            '" r="2.5" fill="' + color + '" class="chart-data-point"><title>' + title + '</title></circle>';
 
           if (hasLabels && pt.lbl) {
             svgContent += '<text x="' + round(pt.x) + '" y="' + round(baselineY + 18) +
-              '" class="chart-tick-label">' + escapeAttr(pt.lbl) + '</text>';
+              '" class="chart-category-label">' + escapeAttr(pt.lbl) + '</text>';
           }
         }
       }
